@@ -4,7 +4,7 @@
 2. 安装依赖 
 `pip install -r requirements.txt`
 
-3. 然后新建project/instance/文件夹，创建两个文件`__init__.py`, `config.py`
+3. 然后新建biai/instance/文件夹，创建两个文件`__init__.py`, `config.py`
 
 `config.py`内容如下：
 
