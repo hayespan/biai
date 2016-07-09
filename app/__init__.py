@@ -59,28 +59,16 @@ class App(object):
         from flask.ext.migrate import MigrateCommand
         self.manager.add_command('db', MigrateCommand)
         def make_shell_context():
-            from .model.admin import Admin
-            from .model.banner import Banner
-            from .model.product_category import ProductCategory
-            from .model.product import Product
-            from .model.application import Application
-            from .model.nav import Nav
-            from .model.simple_nav_page import SimpleNavPage
-            from .model.cooperation import Cooperation
-            from .model.news import News
-            from .model.news_category import NewsCategory
+            import controller
+            import model
+            import service
+            import util
             return dict(app=self.app,
-                    db=self.db,
-                    Admin=Admin,
-                    Banner=Banner,
-                    Product=Product,
-                    ProductCategory=ProductCategory,
-                    Application=Application,
-                    Nav=Nav,
-                    SimpleNavPage=SimpleNavPage,
-                    Cooperation=Cooperation,
-                    News=News,
-                    NewsCategory=NewsCategory,
+                    db=db,
+                    controller=controller,
+                    model=model,
+                    service=service,
+                    util=util,
                     )
         self.manager.add_command('shell', Shell(make_context=make_shell_context))
 

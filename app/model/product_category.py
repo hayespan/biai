@@ -10,7 +10,10 @@ class ProductCategory(db.Model):
     create_time = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     name = db.Column(db.String(512), nullable=False)
     file_id = db.Column(db.String(32), nullable=True)
-    order = db.Column(db.Integer, nullable=False, default=0)
+    weight = db.Column(db.Integer, nullable=False, default=0)
+
+    def get_file_path(self):
+        return 'img/product_category/' + self.file_id
 
     def __init__(self, *args, **kwargs): 
         super(ProductCategory, self).__init__(*args, **kwargs) 

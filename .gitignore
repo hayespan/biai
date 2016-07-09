@@ -1,0 +1,8 @@
+*.swp
+*.swo
+*.pyc
+.svn/
+instance/
+migrations/
+app/node_modules/
+app/static/tmp/
