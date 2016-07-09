@@ -25,15 +25,15 @@ class RequestLogger(object):
         return getattr(self.logger, attrname)
 logger = RequestLogger()
 
-def jsonError(ERROR):
+def json_error(ERROR):
     return jsonify({'code': ERROR[0], 'data': ERROR[1]})
 
-def jsonResponse(data):
+def json_response(**data):
     return jsonify({'code': 0, 'data': data})
 
 USERAGENT = ('micromessenger', 'Mobile', 'iPhone', 'Windows Phone', 'UCWEB', 'Fennec', 'Opera Mobi', 'BlackBerry', )
 
-def viaMobile():
+def via_mobile():
     s = request.headers.get('User-Agent')
     if s is None:
         return False
