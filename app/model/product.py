@@ -38,9 +38,14 @@ class Product(db.Model):
             COLOR=1<<0,
             PRICE=1<<1,
             )
+
     def get_attr_by_bit(self, attr_bit):
         return json.loads(self.attrs)[getattr(ATTR_BITS, attr_bit)] if attr_bit&self.attr_bits else None
 
     def get_pics(self):
-        return json.loads(self.pics) if self.pics else None
+        pics = json.loads(self.pics) if self.pics else []
+        abs_path_pics = []
+        for i in pics:
+            abs_path_pics.append('img/product/' + i)
+        return abs_path_pics
 

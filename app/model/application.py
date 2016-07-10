@@ -12,6 +12,9 @@ class Application(db.Model):
     mobile = db.Column(db.String(32), nullable=False)
     file_id = db.Column(db.String(32), nullable=False)
     
+    def get_file_path(self):
+        return 'img/application/' + self.file_id
+
     def __init__(self, *args, **kwargs): 
         super(Application, self).__init__(*args, **kwargs) 
 
