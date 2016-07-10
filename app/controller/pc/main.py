@@ -22,6 +22,7 @@ def search():
     product_list = product_service.search_key(key)
     return response('pc/search_product_list.html',
             product_list=product_list,
+            key=key,
             )
 
 @pcbp.route('/')
