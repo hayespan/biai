@@ -3,5 +3,5 @@
 from .. import db
 from ..model.product_category import ProductCategory
 
-def get_category_list():
+def get_categories():
     return ProductCategory.query.order_by(db.desc('weight')).order_by(db.desc('id')).all()
