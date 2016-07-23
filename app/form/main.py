@@ -5,5 +5,11 @@ from wtforms.fields import TextAreaField, StringField, BooleanField, DateField, 
 from wtforms.validators import Required, Length, Optional, ValidationError, Regexp
 
 class SearchForm(Form):
-    key = StringField(validators=[Required(), ])
+    key = StringField('key', validators=[Required(), ])
+
+class CaptchaForm(Form):
+    code = StringField(validators=[Required(), Regexp('\d{4}')])
+
+class MobileForm(Form):
+    mobile = StringField(validators=[Required(), Regexp(r'^0?(13[0-9]|15[012356789]|18[0236789]|14[57])[0-9]{8}$')])
 

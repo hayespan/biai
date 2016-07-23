@@ -12,4 +12,5 @@ pcbp = Blueprint(
         )
 
 from . import main
+from . import news
 

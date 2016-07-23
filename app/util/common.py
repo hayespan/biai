@@ -62,3 +62,7 @@ def timedelta_2_second(hours_f):
     '''floating type, hour-delta, parsed to seconds
     '''
     return datetime.timedelta(hours=float(hours_f)).seconds
+
+def get_now_timestamp():
+    return datetime_2_unixstamp(datetime.datetime.now())
+
