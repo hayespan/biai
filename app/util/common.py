@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 import time
+import os
 import datetime 
 from flask import jsonify, request, redirect, current_app
 from functools import wraps
+from hashlib import md5
 
 class AttrDict(dict):
     def __init__(self, *args, **kwargs):
@@ -65,4 +67,34 @@ def timedelta_2_second(hours_f):
 
 def get_now_timestamp():
     return datetime_2_unixstamp(datetime.datetime.now())
+
+SAVE_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), '/../static/')
+def save_form_file(file_, subpath=None, filename_=None):
+    '''
+    save pic data and return file object
+    '''
+    full_path = os.path.join(SAVE_PATH, subpath) if subpath is not None else SAVE_PATH
+    try:
+        if filename_ is None:
+            fm = file_.filename.rsplit('.', 1)[1]
+            filename = md5(os.urandom(64)).hexdigest()+'.'+fm
+        else:
+            filename = filename_
+        file_.save('%s/%s' % (full_path, filename))
+    except Exception, e:
+        logger.error('save file fail, exception: ' + e.message)
+        return (False, None, ) 
+    return (True, filename)
+
+def remove_file(subpath, filename):
+    '''
+    remove file
+    '''
+    full_path = os.path.join(SAVE_PATH, subpath, filename)
+    try:
+        os.remove(full_path)
+    except Exception, e:
+        logger.error('remove file fail, exception: ' + e.message)
+        return (False, full_path)
+    return (True, full_path)
 
