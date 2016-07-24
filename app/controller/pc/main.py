@@ -52,11 +52,25 @@ def captcha_mobile_trigger():
     valid_delta = 5
     randi = random.randint(0, 9999)
     code = '%04d' % randi
-    session['captcha_mobile'] = randi
+    session['captcha_mobile_code'] = randi
     session['captcha_mobile_expire'] = get_now_timestamp() + valid_delta*60
     succ = send_sms(form.mobile.data, '您的验证码是：%s，有效期为%d分钟' % (code, valid_delta, ))
-    response(
+    return response(
             ret=1-succ,
             msg='send fail' if not succ else 'send succ',
             )
+
+@pcbp.route('/captcha/mobile_check', methods=['POST', ])
+def captcha_mobile_check():
+    from ...form.main import CaptchaForm
+    form = CaptchaForm()
+    if not form.validate():
+        return response(
+                ret=-1,
+                msg='captcha code format error',
+                )
+    code = session.get('captcha_mobile_code', '')
+    expire = session.get('captcha_mobile_expire', 0)
+    correct = code == form.code.data and expire>get_now_timestamp()
+    return response(ret=0, correct=correct)
 
