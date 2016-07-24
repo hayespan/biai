@@ -9,3 +9,6 @@ def get_navs():
         nav_dict[nav.meta_name] = nav
     return nav_dict
 
+def get_nav_by_meta_name(meta_name):
+    return Nav.query.filter_by(meta_name=meta_name).first()
+

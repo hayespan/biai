@@ -13,4 +13,10 @@ pcbp = Blueprint(
 
 from . import main
 from . import news
+from . import about
+from . import creativity
+from . import product
+from . import shop
+from . import contact
+from . import join_us
 
