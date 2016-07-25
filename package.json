@@ -1,0 +1,28 @@
+{
+  "name": "biai",
+  "version": "1.0.0",
+  "description": "first package",
+  "main": "",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.3.2",
+    "gulp-watch": "^4.3.9"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hayespan/biai.git"
+  },
+  "keywords": [
+    "biai"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hayespan/biai/issues"
+  },
+  "homepage": "https://github.com/hayespan/biai#readme"
+}
