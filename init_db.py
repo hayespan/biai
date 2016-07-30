@@ -28,3 +28,4 @@ with app.app.app_context():
     db.create_all()
 
     create_default_nav()
+
