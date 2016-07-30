@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% block head %}
+	<meta charset="UTF-8">
+	<title>{% block title %}{% endblock %}</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/swiper-3.3.1.min.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+	{% endblock %}
+</head>
+<body>
+	<header>
+		{% block header %}
+		<div class="header-block">
+			<a id="logo" href="http://weibo.com/u/2584433424/home"><img src="{{ url_for('static', filename='img/logo.png') }}" alt="logo"></a>
+			<div class="header-info">
+				<p class="header-text">比爱，给宝宝无限的爱</p>
+				<p class="header-link">http://weibo.com/u/2584433424/home</p>
+			</div>
+			<div class="header-search">
+				<input type="text" placeholder="搜索">
+			</div>
+		</div>
+		<nav class="header-nav">
+			<a class="header-nav-item" href="/">首页</a>
+			<a class="header-nav-item" href="/about">关于比爱</a>
+			<a class="header-nav-item" href="#">新闻动态</a>
+			<a class="header-nav-item" href="#">产品中心</a>
+			<a class="header-nav-item" href="/creativity">创意中心</a>
+			<a class="header-nav-item" href="/join_us">加入我们</a>
+			<a class="header-nav-item" href="/shop">官方商城</a>
+			<a class="header-nav-item" href="/contact">联系我们</a>
+		</nav>
+		{% endblock %}
+	</header>
+	<main>
+		{% block main %}
+		{% endblock %}
+	</main>
+	<footer>
+		{% block footer %}
+		<div class="footer-info">
+			<p>广东省汕头市澄海区岫鸿玩具</p>
+			<p>服务热线：0754-86986938</p>
+			<p>地址：汕头市澄海区莱美工业区海升路2号</p>
+		</div>
+		<div class="qr-code">
+			<p>敬请关注比爱官方微信公众号</p>
+			<img src="{{ url_for('static', filename='img/wechat.png') }}" alt="qr-code">
+		</div>
+		{% endblock %}
+	</footer>
+	{% block script %}
+	<script src="{{ url_for('static', filename='js/jquery-3.0.0.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/swiper-3.3.1.min.js') }}"></script>
+	{% endblock %}
+</body>
+</html>
