@@ -4,5 +4,6 @@
 .svn/
 instance/
 migrations/
-node_modules/
+app/node_modules/
 app/static/tmp/
+node_modules/
