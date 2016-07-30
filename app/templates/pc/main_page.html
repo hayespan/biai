@@ -3,21 +3,27 @@
 {% block main %}
 		<div class="swiper-container">
 			<div class="swiper-wrapper">
-				<div class="swiper-slide" id="slide-1"><img src="{{ url_for('static', filename='img/1.jpg') }}" alt="1"></div>
+<!-- 				<div class="swiper-slide" id="slide-1"><img src="{{ url_for('static', filename='img/1.jpg') }}" alt="1"></div>
 				<div class="swiper-slide" id="slide-2"><img src="{{ url_for('static', filename='img/2.jpg') }}" alt="2"></div>
-				<div class="swiper-slide" id="slide-3"><img src="{{ url_for('static', filename='img/3.jpg') }}" alt="3"></div>
+				<div class="swiper-slide" id="slide-3"><img src="{{ url_for('static', filename='img/3.jpg') }}" alt="3"></div> -->
 				{# {{ banner_list }} #}
+				{# {% for idx, img in enumerate(banner_list) %} #}
+				{% for banner_img in banner_list %}
+					<div class="swiper-slide" id="slide-{{ index }}"><img src="/static/{{ banner_img.get_file_path() }}" alt="{{ index }}"></div>
+				{% endfor %}
 			</div>
 		    <div class="swiper-button-prev"></div>
 		    <div class="swiper-button-next"></div>
 		</div>
 		<nav class="product-nav">
-			<a href="#" class="product-nav-item">摇铃</a>
+<!-- 			<a href="#" class="product-nav-item">摇铃</a>
 			<a href="#" class="product-nav-item">床铃</a>
 			<a href="#" class="product-nav-item">健身架</a>
 			<a href="#" class="product-nav-item">益智玩具</a>
-			<a href="#" class="product-nav-item">其他</a>
-			{# {{ product_category_list }} #}
+			<a href="#" class="product-nav-item">其他</a> -->
+			{% for product in product_category_list %}
+				<a href="#" class="product-nav-item">{{ product }}</a>
+			{% endfor %}
 		</nav>
 		<div class="video-block">
 			<div class="consult-block">
@@ -29,7 +35,7 @@
 					<source src="video/1.mp4" type="video/mp4">
 					您的浏览器不支持Video标签。
 				</video> #}
-				{# {{ video_list }} #}
+				{{ video_list }}
 			</div>
 			<nav class="video-list">
 				<span>产品视频目录</span>
