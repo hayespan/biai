@@ -1,0 +1,11 @@
+{% extends "pc/base.html" %}
+{% block title %}官方商城{% endblock %}
+{% block main %}
+		<div class="shop-container">
+			<ul class="shop-list">
+				<li><a href="https://xiuhong.1688.com">1688官网</a></li>
+				<li><a href="https://shop128415302.taobao.com">比爱企业店</a></li>
+				<li>比爱公众号 <img src="{{ url_for('static', filename='img/qr-code.png') }}" alt="qr-code"></li>
+			</ul>
+		</div>
+{% endblock %}

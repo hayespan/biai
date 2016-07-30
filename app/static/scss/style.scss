@@ -1,3 +1,5 @@
+/******************************base style******************************/
+
 * {
 	box-sizing: inherit;
 }
@@ -13,6 +15,24 @@ html, body {
 header, main, footer {
 	width: 1500px;
 	margin: 20px auto;
+}
+
+main {
+	min-height: 600px;
+}
+
+footer {
+	height: 200px;
+	.footer-info {
+		float: left;
+	}
+	.qr-code {
+		img {
+			width: 150px;
+			margin: 0 30px;
+		}
+		float: right;
+	}
 }
 
 .logo {
@@ -58,6 +78,8 @@ header, main, footer {
 .nav-active {
 	background-color: rgba(160, 145, 145, 0.2);
 }
+
+/******************************main page******************************/
 
 .product-nav {
 	overflow: hidden;
@@ -134,19 +156,7 @@ header, main, footer {
     }
 }
 
-footer {
-	height: 200px;
-	.footer-info {
-		float: left;
-	}
-	.qr-code {
-		img {
-			width: 150px;
-			margin: 0 30px;
-		}
-		float: right;
-	}
-}
+/******************************about page******************************/
 
 .about-container {
   padding: 10px 30px;
@@ -157,15 +167,18 @@ footer {
   }
 }
 
+/******************************shop page******************************/
 
-// #slide-1 {
-// 	background-color: red;
-// }
+.shop-container {
+	li {
+		margin-bottom: 17px;
+	}
+}
 
-// #slide-2 {
-// 	background-color: green;
-// }
+/*****************************contact page*****************************/
 
-// #slide-3 {
-// 	background-color: blue;
-// }
+.contact-container {
+	li {
+		margin-bottom: 17px;
+	}
+}

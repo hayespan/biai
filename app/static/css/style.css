@@ -1,3 +1,4 @@
+/******************************base style******************************/
 * {
   box-sizing: inherit; }
 
@@ -11,6 +12,19 @@ html, body {
 header, main, footer {
   width: 1500px;
   margin: 20px auto; }
+
+main {
+  min-height: 600px; }
+
+footer {
+  height: 200px; }
+  footer .footer-info {
+    float: left; }
+  footer .qr-code {
+    float: right; }
+    footer .qr-code img {
+      width: 150px;
+      margin: 0 30px; }
 
 .logo {
   float: left; }
@@ -47,6 +61,7 @@ header, main, footer {
 .nav-active {
   background-color: rgba(160, 145, 145, 0.2); }
 
+/******************************main page******************************/
 .product-nav {
   overflow: hidden;
   text-align: center;
@@ -109,19 +124,18 @@ header, main, footer {
   .swiper-container img {
     width: 1500px; }
 
-footer {
-  height: 200px; }
-  footer .footer-info {
-    float: left; }
-  footer .qr-code {
-    float: right; }
-    footer .qr-code img {
-      width: 150px;
-      margin: 0 30px; }
-
+/******************************about page******************************/
 .about-container {
   padding: 10px 30px;
   border: 1px solid #5D5D5D;
   border-radius: 5px; }
   .about-container p {
     TEXT-INDENT: 2em; }
+
+/******************************shop page******************************/
+.shop-container li {
+  margin-bottom: 17px; }
+
+/*****************************contact page*****************************/
+.contact-container li {
+  margin-bottom: 17px; }
