@@ -12,13 +12,11 @@
 	<header>
 		{% block header %}
 		<div class="header-block">
-			<a id="logo" href="http://weibo.com/u/2584433424/home"><img src="{{ url_for('static', filename='img/logo.png') }}" alt="logo"></a>
-			<div class="header-info">
-				<p class="header-text">比爱，给宝宝无限的爱</p>
-				<p class="header-link">https://shop128415302.taobao.com</p>
-			</div>
-			<div class="header-search">
-				<input type="text" placeholder="搜索">
+			<a id="logo" href="http://weibo.com/u/2584433424/home"><img src="{{ url_for('static', filename='img/icon/slogan.png') }}" alt="logo"></a>
+			<div class="header-link">
+				<div class="link-item" id="wechat-link">微信公众号</div>
+				<div class="link-item" id="tmall-link">官方商场</div>
+				<div class="link-item">English</div>
 			</div>
 		</div>
 		<nav class="header-nav">
@@ -30,6 +28,7 @@
 			<a class="header-nav-item" href="/join_us">加入我们</a>
 			<a class="header-nav-item" href="/shop">官方商城</a>
 			<a class="header-nav-item" href="/contact">联系我们</a>
+			<input type="text" placeholder="请输入搜索内容">
 		</nav>
 		{% endblock %}
 	</header>
@@ -43,11 +42,9 @@
 			<p>广东省汕头市澄海区岫泓玩具</p>
 			<p>服务热线：0754-86986938</p>
 			<p>地址：汕头市澄海区莱美工业区海升路2号</p>
+			<p>备案编号：ISD900876544</p>
 		</div>
-		<div class="qr-code">
-			<p>敬请关注比爱官方微信公众号</p>
-			<img src="{{ url_for('static', filename='img/wechat.png') }}" alt="qr-code">
-		</div>
+		<img id="qr-code" src="{{ url_for('static', filename='img/icon/qr-code.png') }}" alt="qr-code">
 		{% endblock %}
 	</footer>
 	{% block script %}

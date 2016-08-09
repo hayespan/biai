@@ -13,24 +13,33 @@ html, body {
 }
 
 header, main, footer {
-	width: 1500px;
-	margin: 20px auto;
+	width: 1440px;
+	// width: 100%;
+	margin: 0 auto;
 }
 
 main {
 	min-height: 600px;
+	background-color: #d5d5f0;
 }
 
 footer {
-	height: 200px;
+	background-color: #9193d5;
+	height: 206px;
+	padding: 0 169px 0 169px;
+	background-image: url('../img/icon/monkey2.png');
+	background-repeat: no-repeat;
+	background-position: 850px 20px;
+	background-size: 240px;
 	.footer-info {
+		color: #fbd7a4;
+		font-size: 12px;
+		margin-top: 40px;
 		float: left;
 	}
-	.qr-code {
-		img {
-			width: 150px;
-			margin: 0 30px;
-		}
+	#qr-code {
+		width: 150px;
+		margin-top: 30px;
 		float: right;
 	}
 }
@@ -39,39 +48,68 @@ footer {
 	float: left;
 }
 
-.header-info {
-	display: inline-block;
-	margin-top: 30px;
-	p {
-		margin: 0;
-	}
-	.header-link {
-		font-size: 8px;
+.header-block {
+	position: relative;
+	height: 69px;
+	margin: 19px 169px;
+}
+
+.header-link {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	.link-item {
+		font-size: 12px;
+		margin-left: 40px;
+		color: #8d8d8d;
+		display: inline-block;
 	}
 }
 
-.header-search {
-	display: inline-block;
-	float: right;
+#wechat-link {
+	width: 82px;
+	text-indent: 20px;
+	background-image: url('../img/icon/wechat.png');
+	background-repeat: no-repeat;
+	background-position-y: 2px;
+	background-size: 16px;
 }
+
+#tmall-link {
+	width: 86px;
+	text-indent: 36px;
+	background-image: url('../img/icon/tmall.png');
+	background-repeat: no-repeat;
+	background-position-y: 2px;
+	background-size: 32px;
+}
+
 
 .header-nav {
-	margin-top: 20px;
-	padding: 0 1px;
-	border: 1px solid #5D5D5D;
-	border-radius: 8px;
+	padding: 0 169px;
+	background-color: #9193d5;
 	overflow: hidden;
-	text-align: center;
 	.header-nav-item {
-		color: #5D5D5D;
+		font-size: 18px;
+		margin: 16px 33px 16px 0;
+		color: #d5d5f0;
 		float: left;
-		width: 187px;
-		height: 60px;
-		line-height: 60px;
 		text-decoration: none;
 		&:hover {
-			background-color: rgba(160, 145, 145, 0.2);
+			color: #ffffff;
 		}
+	}
+	input {
+		padding-left: 35px;
+		font-size: 14px;
+		height: 36px;
+		margin: 10px 0 10px 17px;
+		width: 280px;
+		border-radius: 6px;
+		background-image: url('../img/icon/search-icon.png');
+		background-repeat: no-repeat;
+		background-position: 10px 7px;
+		background-size: 18px;
 	}
 }
 
@@ -81,80 +119,158 @@ footer {
 
 /******************************main page******************************/
 
-.product-nav {
-	overflow: hidden;
-	text-align: center;
-	margin: 30px auto;
-	width: 1535px;
-	.product-nav-item {
-		margin-right: 37px;
-		color: #5D5D5D;
-		float: left;
-		width: 270px;
-		height: 120px;
-		line-height: 120px;
-		text-decoration: none;
-		border: solid 1px gray;
-		border-radius: 8px;
-	}
-}
-
-.video-block {
-	padding: 0 250px 0 350px;
-	height: 450px;
-}
-
-.consult-block {
-	height: 100%;
-	border: solid 1px black;
-	float: left;
-	width: 350px;
-	margin-left: -350px;
-}
-
-.video {
-	height: 100%;
-	border: solid 1px black;
-	float: left;
-	width: 100%;
-	video {
-		width: 100%;
-	}
-}
-
-.video-list {
-	height: 100%;
-	border: solid 1px black;
-	float: right;
-	width: 250px;
-	margin-right: -250px;
-	text-align: center;
-	span, a {
-		float: left;
-		width: 100%;
-		height: 60px;
-		line-height: 60px;
-		border-bottom: solid 1px black;
-	}
-	a {
-		&:hover {
-			background-color: rgba(160, 145, 145, 0.2);	
-		}
-		color: #5D5D5D;
-		text-decoration: none;
-	}
-}
-
-.tab-active {
-	background-color: rgba(160, 145, 145, 0.2);	
-}
-
-.swiper-container {
-    height: 600px;
-    img {
-    	width: 1500px;
+.banner-container {
+	padding-top: 40px;
+    .swiper-container {
+    	width: 1100px;
+    	margin: auto;
     }
 }
+
+.product-container {
+	position: relative;
+	margin: 80px 169px 52px 169px;
+	.product-header {
+		position: absolute;
+		left: -6px;
+		top: -65px;
+		span {
+			background-color: #ffffff;
+			position: absolute;
+			left: 40px;
+			top: 25px;
+			width: 135px;
+			height: 30px;
+			color: #f8487e;
+			font-size: 18px;
+			line-height: 30px;
+			text-indent: 45px;
+			border-radius: 4px;
+		}
+		img {
+			position: absolute;
+			z-index: 999;
+		}
+	}
+}
+
+.product-nav {
+	overflow: hidden;
+	border: solid 1px #f8487e;
+	border-radius: 10px;
+	.product-nav-item {
+		font-size: 24px;
+		color: black;
+		line-height: 50px;
+		text-indent: 20px;
+		float: left;
+		width: 240px;
+		height: 240px;
+		text-decoration: none;
+	}
+}
+
+#yaoling {
+	background-image: url('../img/temp/yaoling.png');
+}
+
+#chuangling {
+	background-image: url('../img/temp/chuangling.png');
+}
+
+#jianshen {
+	background-image: url('../img/temp/jianshen.png');
+}
+
+#yizhi {
+	background-image: url('../img/temp/yizhi.png');
+}
+
+#other {
+	background-image: url('../img/temp/other.png');
+	width: 138px;
+}
+
+.consult-video-container {
+	padding-bottom: 52px;
+	margin: 0 169px;
+	overflow: hidden;
+}
+
+.consult-container {
+	float: left;
+	padding: 24px 31px 42px 31px;
+	background-color: #e9998e;
+	border-radius: 10px;
+	width: 360px;
+	height: 360px;
+}
+
+.consult-header {
+	position: relative;
+	margin-bottom: 20px;
+	h3 {
+		color: #ffffff;
+		font-size: 18px;
+		margin: 0;
+	}
+	a {
+		position: absolute;
+		right: 0;
+		top: 5px;
+		color: #ffffff;
+		font-size: 14px;
+		text-decoration: none;
+	}
+}
+
+.consult-list {
+	overflow: hidden;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	li {
+		height: 30px;
+		line-height: 30px;
+		overflow: hidden;
+		padding: 0;
+		a {
+			font-size: 14px;
+			color: #ffffff;
+			text-decoration: none;
+			float: left;
+			width: 200px;
+		}
+		span {
+			font-size: 12px;
+			color: #ffffff;
+			float: right;
+			width: 80px;
+			text-align: right;
+		}
+	}
+}
+
+.video-container {
+	float: right;
+	padding: 24px 30px 20px 30px;
+	background-color: #cda6ee;
+	border-radius: 10px;
+	width: 690px;
+	height: 360px;
+	margin-left: 40px;
+}
+
+.video-header {
+	position: relative;
+	margin-bottom: 20px;
+	h3 {
+		color: #ffffff;
+		font-size: 18px;
+		margin: 0;
+	}
+}
+
 
 /******************************about page******************************/
 
@@ -163,7 +279,7 @@ footer {
   border: 1px solid #5D5D5D;
   border-radius: 5px;
   p {
-  	TEXT-INDENT: 2em;
+  	text-indent: 2em;
   }
 }
 

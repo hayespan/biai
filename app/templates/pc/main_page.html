@@ -1,49 +1,63 @@
 {% extends "pc/base.html" %}
 {% block title %}比爱首页{% endblock %}
 {% block main %}
-		<div class="swiper-container">
-			<div class="swiper-wrapper">
-<!-- 				<div class="swiper-slide" id="slide-1"><img src="{{ url_for('static', filename='img/1.jpg') }}" alt="1"></div>
-				<div class="swiper-slide" id="slide-2"><img src="{{ url_for('static', filename='img/2.jpg') }}" alt="2"></div>
-				<div class="swiper-slide" id="slide-3"><img src="{{ url_for('static', filename='img/3.jpg') }}" alt="3"></div> -->
-				{# {{ banner_list }} #}
-				{# {% for idx, img in enumerate(banner_list) %} #}
-				{% for banner_img in banner_list %}
-					<div class="swiper-slide" id="slide-{{ index }}"><img src="/static/{{ banner_img.get_file_path() }}" alt="{{ index }}"></div>
-				{% endfor %}
-			</div>
-		    <div class="swiper-button-prev"></div>
-		    <div class="swiper-button-next"></div>
+		<div class="banner-container">
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+	 				<div class="swiper-slide" id="slide-1"><img src="{{ url_for('static', filename='img/banner/1.png') }}" alt="1"></div>
+					<div class="swiper-slide" id="slide-2"><img src="{{ url_for('static', filename='img/banner/1.png') }}" alt="2"></div>
+					<div class="swiper-slide" id="slide-3"><img src="{{ url_for('static', filename='img/banner/1.png') }}" alt="3"></div>
+	{# 				{% for banner_img in banner_list %}
+						<div class="swiper-slide" id="slide-{{ index }}"><img src="/static/{{ banner_img.get_file_path() }}" alt="{{ index }}"></div>
+					{% endfor %} #}
+				</div>
+			    <div class="swiper-button-prev"></div>
+			    <div class="swiper-button-next"></div>
+			</div>			
 		</div>
-		<nav class="product-nav">
-<!-- 			<a href="#" class="product-nav-item">摇铃</a>
-			<a href="#" class="product-nav-item">床铃</a>
-			<a href="#" class="product-nav-item">健身架</a>
-			<a href="#" class="product-nav-item">益智玩具</a>
-			<a href="#" class="product-nav-item">其他</a> -->
+		<div class="product-container">
+			<div class="product-header">
+				<img src="{{ url_for('static', filename='img/icon/monkey.png') }}" alt="monkey">
+				<span class="title">产品分类</span>
+			</div>
+			<nav class="product-nav">
+	 			<a href="#" id="yaoling" class="product-nav-item">摇铃</a>
+				<a href="#" id="chuangling" class="product-nav-item">床铃</a>
+				<a href="#" id="jianshen" class="product-nav-item">健身架</a>
+				<a href="#" id="yizhi" class="product-nav-item">益智玩具</a>
+				<a href="#" id="other" class="product-nav-item">其他</a>
+			</nav>
+		</div>
+{# 		<nav class="product-nav">
+
 			{% for product in product_category_list %}
 				<a href="#" class="product-nav-item">{{ product }}</a>
 			{% endfor %}
-		</nav>
-		<div class="video-block">
-			<div class="consult-block">
-				公司咨询
-				{# {{ consult_page_content }} #}
+		</nav> #}
+		<div class="consult-video-container">
+			<div class="consult-container">
+				<div class="consult-header">
+					<h3>公司资讯</h3>
+					<a href="#">查看更多>></a>
+				</div>
+				<ul class="consult-list">
+					<li><a href="#">标题1</a><span>2016-07-22</span></li>
+					<li><a href="#">标题1</a><span>2016-07-22</span></li>
+					<li><a href="#">标题1</a><span>2016-07-22</span></li>
+					<li><a href="#">标题1</a><span>2016-07-22</span></li>
+					<li><a href="#">标题1</a><span>2016-07-22</span></li>
+					<li><a href="#">标题1</a><span>2016-07-22</span></li>
+					<li><a href="#">标题1</a><span>2016-07-22</span></li>
+				</ul>
 			</div>
-			<div class="video">
-{# 				<video width="400" height="400" controls>
-					<source src="video/1.mp4" type="video/mp4">
-					您的浏览器不支持Video标签。
-				</video> #}
-				{{ video_list }}
+			<div class="video-container">
+				<div class="video-header">
+					<h3>产品视频</h3>
+				</div>
+				{# <video src=""></video> #}
+				<img src="{{ url_for('static', filename='img/temp/video.png') }}" alt="video">
 			</div>
-			<nav class="video-list">
-				<span>产品视频目录</span>
-				<a class="video-tab tab-active" href="#">比爱小小乐队</a>
-				<a class="video-tab" href="#">苹果乐园 蘑菇乐园</a>
-				<a class="video-tab" href="#">音乐转转乐</a>
-			</nav>
-		</div>	
+		</div>
 {% endblock %}
 {% block script %}
 {{ super() }}
