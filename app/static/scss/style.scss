@@ -19,7 +19,7 @@ header, main, footer {
 }
 
 main {
-	min-height: 600px;
+	padding: 1px;
 	background-color: #d5d5f0;
 }
 
@@ -275,12 +275,45 @@ footer {
 /******************************about page******************************/
 
 .about-container {
-  padding: 10px 30px;
-  border: 1px solid #5D5D5D;
-  border-radius: 5px;
-  p {
-  	text-indent: 2em;
-  }
+	width: 1102px;
+	height: 720px;
+	background-color: #ffffff;
+	padding: 60px 60px;
+	margin: 40px auto 60px auto;
+	border-radius: 9px;
+	background-image: url('../img/temp/background-cut.png');
+	background-repeat: no-repeat;
+	background-position: 666px 591px;
+	h1 {
+		color: #9193d5;
+		margin: 0;
+	}
+}
+
+.about-text {
+	width: 430px;
+	float: left;
+	margin-right: 20px;
+	p {
+		font-size: 16px;
+		color: #1e1e1e;
+		margin-top: 0;
+		margin-bottom: 24px;
+	}
+}
+
+.about-img {
+	float: right;
+	img {
+		width: 530px;
+	}
+}
+
+.split {
+	width: 44px;
+	border-bottom: 3px solid #9193d5;
+	margin-top: 28px;
+	margin-bottom: 45px;
 }
 
 /******************************shop page******************************/
@@ -294,7 +327,31 @@ footer {
 /*****************************contact page*****************************/
 
 .contact-container {
+	padding: 60px;
+	width: 1102px;
+	height: 630px;
+	margin: 40px auto 52px auto;
+	background-color: #ffffff;
+	border-radius: 9px;
+	background-image: url('../img/temp/background-cut.png');
+	background-repeat: no-repeat;
+	background-position: 666px 501px;
+	h1 {
+		color: #9193d5;
+		margin: 0;
+	}
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
 	li {
-		margin-bottom: 17px;
+		color: #1e1e1e;
+		font-size: 16px;
+		margin-bottom: 14px;
+		img {
+			position: relative;
+			top: 10px;
+		}
 	}
 }
