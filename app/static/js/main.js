@@ -6,6 +6,6 @@ $(document).ready(function() {
 		loop: true,
 	});
 
-
+	$('#video')
 })
 

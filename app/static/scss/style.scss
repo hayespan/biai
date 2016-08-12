@@ -14,13 +14,26 @@ html, body {
 
 header, main, footer {
 	width: 1440px;
-	// width: 100%;
 	margin: 0 auto;
 }
 
 main {
 	padding: 1px;
 	background-color: #d5d5f0;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+h1, h2, h3 {
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
 }
 
 footer {
@@ -94,7 +107,8 @@ footer {
 		margin: 16px 33px 16px 0;
 		color: #d5d5f0;
 		float: left;
-		text-decoration: none;
+		// position: relative;
+		// display: inline-block;
 		&:hover {
 			color: #ffffff;
 		}
@@ -104,7 +118,7 @@ footer {
 		font-size: 14px;
 		height: 36px;
 		margin: 10px 0 10px 17px;
-		width: 280px;
+		width: 270px;
 		border-radius: 6px;
 		background-image: url('../img/icon/search-icon.png');
 		background-repeat: no-repeat;
@@ -117,9 +131,65 @@ footer {
 	background-color: rgba(160, 145, 145, 0.2);
 }
 
+#nav-market {
+	margin: 0;
+	width: 115px;
+	height: 56px;
+	line-height: 56px;
+	a {
+		color: #d5d5f0;
+	}
+	&:hover .dropdown-btn {
+		color: #ffffff;
+	}
+	&:hover .dropdown {
+		display: block;
+	}
+}
+
+.nav-dropdown {
+	position: relative;
+}
+
+.dropdown-btn {
+	&:after {
+		font-family: FontAwesome;
+		content: "\f0dd";
+		position: relative;
+		bottom: 3px;
+		left: 4px;
+	}
+	&:hover {
+		color: #ffffff;
+	}
+}
+
+.dropdown {
+	width: 100px;
+	height: 112px;
+	position: absolute;
+	left: 990px;
+	top: 163px;
+	background-color: #9391d5;
+	z-index: 999;
+	display: none;
+	a {
+		font-size: 15px;
+		display: block;
+		width: 100px;
+		height: 56px;
+		color: white;
+		text-indent: 7px;
+		line-height: 56px;
+		&:hover {
+			background-color: #7d7fc9;
+		}
+	}
+}
+
 /******************************main page******************************/
 
-.banner-container {
+.banner-block {
 	padding-top: 40px;
     .swiper-container {
     	width: 1100px;
@@ -127,30 +197,31 @@ footer {
     }
 }
 
-.product-container {
+.product-block {
 	position: relative;
 	margin: 80px 169px 52px 169px;
-	.product-header {
+}
+
+.product-header {
+	position: absolute;
+	left: -6px;
+	top: -65px;
+	span {
+		background-color: #ffffff;
 		position: absolute;
-		left: -6px;
-		top: -65px;
-		span {
-			background-color: #ffffff;
-			position: absolute;
-			left: 40px;
-			top: 25px;
-			width: 135px;
-			height: 30px;
-			color: #f8487e;
-			font-size: 18px;
-			line-height: 30px;
-			text-indent: 45px;
-			border-radius: 4px;
-		}
-		img {
-			position: absolute;
-			z-index: 999;
-		}
+		left: 40px;
+		top: 25px;
+		width: 135px;
+		height: 30px;
+		color: #f8487e;
+		font-size: 18px;
+		line-height: 30px;
+		text-indent: 45px;
+		border-radius: 4px;
+	}
+	img {
+		position: absolute;
+		z-index: 999;
 	}
 }
 
@@ -166,7 +237,6 @@ footer {
 		float: left;
 		width: 240px;
 		height: 240px;
-		text-decoration: none;
 	}
 }
 
@@ -191,13 +261,13 @@ footer {
 	width: 138px;
 }
 
-.consult-video-container {
+.consult-video-block {
 	padding-bottom: 52px;
 	margin: 0 169px;
 	overflow: hidden;
 }
 
-.consult-container {
+.consult-block {
 	float: left;
 	padding: 24px 31px 42px 31px;
 	background-color: #e9998e;
@@ -220,15 +290,12 @@ footer {
 		top: 5px;
 		color: #ffffff;
 		font-size: 14px;
-		text-decoration: none;
 	}
 }
 
 .consult-list {
 	overflow: hidden;
-	padding: 0;
-	margin: 0;
-	list-style: none;
+
 	li {
 		height: 30px;
 		line-height: 30px;
@@ -237,7 +304,6 @@ footer {
 		a {
 			font-size: 14px;
 			color: #ffffff;
-			text-decoration: none;
 			float: left;
 			width: 200px;
 		}
@@ -251,7 +317,7 @@ footer {
 	}
 }
 
-.video-container {
+.video-block {
 	float: right;
 	padding: 24px 30px 20px 30px;
 	background-color: #cda6ee;
@@ -269,6 +335,42 @@ footer {
 		font-size: 18px;
 		margin: 0;
 	}
+}
+
+.video-content {
+	float: left;
+}
+
+.video-menu {
+	position: relative;
+	height: 273px;
+	padding: 22px 0;
+	float: right;
+}
+
+.video-list {
+	a {
+		display: block;
+		height: auto;
+	}
+	li {
+		margin-bottom: 10px;
+	}
+}
+
+#list-up, #list-down {
+	position: absolute;
+}
+
+#list-up {
+	top: -3px;
+	left: 27px;
+}
+
+#list-down {
+	bottom: -3px;
+	left: 27px;
+	transform: rotate(180deg);
 }
 
 
@@ -316,12 +418,110 @@ footer {
 	margin-bottom: 45px;
 }
 
-/******************************shop page******************************/
+/******************************product page******************************/
 
-.shop-container {
-	li {
-		margin-bottom: 17px;
+.product-container {
+	margin: 40px 169px 60px 169px;
+	overflow: hidden;
+}
+
+.product-type-nav {
+	float: left;
+	width: 160px;
+	height: 320px;
+	padding-top: 62px;
+	background-color: #fce9cb;
+	border-radius: 10px;
+	background-image: url('../img/icon/title2.png');
+	background-repeat: no-repeat;
+	background-position: 36px 16px;
+	ul {
+		width: 144px;
+		height: 250px;
+		background-color: #ffffff;
+		border-radius: 6px;
+		margin: auto;
+		li {
+			text-align: center;
+			line-height: 42px;
+			width: 100px;
+			height: 42px;
+			margin: auto;
+			border-bottom: 1px solid #e6e5f4;
+			a {
+				color: #b5b4b3;
+				font-size: 14px;
+			}
+			.chosen {
+				position: relative;
+				color: #b4b3dd;
+				font-size: 16px;
+				&:after {
+					font-family: FontAwesome;
+					content: "\f0da";
+					position: relative;
+					left: 4px;
+				}
+			}
+		}
 	}
+}
+
+.product-content-container {
+	width: 920px;
+	float: right;
+}
+
+.product-content {
+	width: 920px;
+	height: 1136px;
+	background-color: #ffffff;
+	border-radius: 6px;
+	padding: 24px 0 24px 24px;
+}
+
+.product-item {
+	float: left;
+	margin-right: 24px;
+	margin-bottom: 24px;
+	padding: 5px;
+	width: 200px;
+	height: 254px;
+	border: 1px solid #d5d5f0;
+	border-radius: 10px;
+	h3 {
+		padding: 5px;
+		font-size: 14px;
+		color: #5c5ec2;
+	}
+}
+
+.product-page-nav {
+	margin-top: 20px;
+	float: right;
+	li {
+		float: left;
+		height: 28px;
+		background-color: #e2e2f5;
+		line-height: 28px;
+		width: 26px;
+		text-align: center;
+		margin-left: 10px;
+		a {
+			font-size: 14px;
+			color: #bebebe;
+		}
+	}
+	.chosen {
+		background-color: #d5d5f0;
+		a {
+			color: #5c5ec2;
+		}
+	}
+}
+
+#last-page, #next-page {
+	width: 66px;
 }
 
 /*****************************contact page*****************************/
@@ -339,11 +539,6 @@ footer {
 	h1 {
 		color: #9193d5;
 		margin: 0;
-	}
-	ul {
-		list-style: none;
-		margin: 0;
-		padding: 0;
 	}
 	li {
 		color: #1e1e1e;

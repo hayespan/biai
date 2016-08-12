@@ -1,7 +1,7 @@
 {% extends "pc/base.html" %}
 {% block title %}比爱首页{% endblock %}
 {% block main %}
-		<div class="banner-container">
+		<div class="banner-block">
 			<div class="swiper-container">
 				<div class="swiper-wrapper">
 	 				<div class="swiper-slide" id="slide-1"><img src="{{ url_for('static', filename='img/banner/1.png') }}" alt="1"></div>
@@ -15,7 +15,7 @@
 			    <div class="swiper-button-next"></div>
 			</div>			
 		</div>
-		<div class="product-container">
+		<div class="product-block">
 			<div class="product-header">
 				<img src="{{ url_for('static', filename='img/icon/monkey.png') }}" alt="monkey">
 				<span class="title">产品分类</span>
@@ -34,8 +34,8 @@
 				<a href="#" class="product-nav-item">{{ product }}</a>
 			{% endfor %}
 		</nav> #}
-		<div class="consult-video-container">
-			<div class="consult-container">
+		<div class="consult-video-block">
+			<div class="consult-block">
 				<div class="consult-header">
 					<h3>公司资讯</h3>
 					<a href="#">查看更多>></a>
@@ -50,12 +50,23 @@
 					<li><a href="#">标题1</a><span>2016-07-22</span></li>
 				</ul>
 			</div>
-			<div class="video-container">
+			<div class="video-block">
 				<div class="video-header">
 					<h3>产品视频</h3>
 				</div>
 				{# <video src=""></video> #}
-				<img src="{{ url_for('static', filename='img/temp/video.png') }}" alt="video">
+				<div class="video-content">
+					<img src="{{ url_for('static', filename='img/temp/video.png') }}" alt="video">
+				</div>
+				<div class="video-menu">
+					<a id="list-up" href="#"><img src="{{ url_for('static', filename='img/icon/video-button.png') }}" alt="up"></a>
+					<ul class="video-list">
+						<li><a href="#"><img src="{{ url_for('static', filename='img/temp/video1.png') }}" alt="1"></a></li>
+						<li><a href="#"><img src="{{ url_for('static', filename='img/temp/video2.png') }}" alt="2"></a></li>
+						<li><a href="#"><img src="{{ url_for('static', filename='img/temp/video3.png') }}" alt="3"></a></li>
+					</ul>
+					<a id="list-down" href="#"><img src="{{ url_for('static', filename='img/icon/video-button.png') }}" alt="down"></a>
+				</div>
 			</div>
 		</div>
 {% endblock %}
