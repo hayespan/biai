@@ -5,7 +5,5 @@ $(document).ready(function() {
 		autoplay: 5000,
 		loop: true,
 	});
-
-	$('#video')
 })
 

@@ -8,12 +8,9 @@
 		<div class="banner-block">
 			<div class="swiper-container">
 				<div class="swiper-wrapper">
-	 				<div class="swiper-slide" id="slide-1"><img src="{{ url_for('static', filename='img/banner/1.png') }}" alt="1"></div>
-					<div class="swiper-slide" id="slide-2"><img src="{{ url_for('static', filename='img/banner/1.png') }}" alt="2"></div>
-					<div class="swiper-slide" id="slide-3"><img src="{{ url_for('static', filename='img/banner/1.png') }}" alt="3"></div>
-	{# 				{% for banner_img in banner_list %}
+					{% for banner_img in banner_list %}
 						<div class="swiper-slide" id="slide-{{ index }}"><img src="/static/{{ banner_img.get_file_path() }}" alt="{{ index }}"></div>
-					{% endfor %} #}
+					{% endfor %}
 				</div>
 			    <div class="swiper-button-prev"></div>
 			    <div class="swiper-button-next"></div>
