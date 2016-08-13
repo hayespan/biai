@@ -1,0 +1,303 @@
+/******************************base style******************************/
+* {
+  box-sizing: inherit; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: "Microsoft YaHei", Helvetica, Arial, sans-serif; }
+
+header, main, footer {
+  width: 1440px;
+  margin: 0 auto; }
+
+main {
+  padding: 1px;
+  background-color: #d5d5f0; }
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+h1, h2, h3 {
+  margin: 0; }
+
+a {
+  text-decoration: none; }
+
+footer {
+  background-color: #9193d5;
+  height: 206px;
+  padding: 0 169px 0 169px;
+  background-image: url("../img/icon/monkey2.png");
+  background-repeat: no-repeat;
+  background-position: 850px 20px;
+  background-size: 240px; }
+  footer .footer-info {
+    color: #fbd7a4;
+    font-size: 12px;
+    margin-top: 40px;
+    float: left; }
+  footer #qr-code {
+    width: 150px;
+    margin-top: 30px;
+    float: right; }
+
+.logo {
+  float: left; }
+
+.header-block {
+  position: relative;
+  height: 69px;
+  margin: 19px 169px; }
+
+.header-link {
+  position: absolute;
+  right: 0;
+  bottom: 0; }
+  .header-link .link-item {
+    font-size: 12px;
+    margin-left: 40px;
+    color: #8d8d8d;
+    display: inline-block; }
+
+#wechat-link {
+  width: 82px;
+  text-indent: 20px;
+  background-image: url("../img/icon/wechat.png");
+  background-repeat: no-repeat;
+  background-position-y: 2px;
+  background-size: 16px; }
+
+#tmall-link {
+  width: 86px;
+  text-indent: 36px;
+  background-image: url("../img/icon/tmall.png");
+  background-repeat: no-repeat;
+  background-position-y: 2px;
+  background-size: 32px; }
+
+.header-nav {
+  padding: 0 169px;
+  background-color: #9193d5;
+  overflow: hidden; }
+  .header-nav .header-nav-item {
+    font-size: 18px;
+    margin: 16px 33px 16px 0;
+    color: #d5d5f0;
+    float: left; }
+    .header-nav .header-nav-item:hover {
+      color: #ffffff; }
+  .header-nav input {
+    padding-left: 35px;
+    font-size: 14px;
+    height: 36px;
+    margin: 10px 0 10px 17px;
+    width: 270px;
+    border-radius: 6px;
+    background-image: url("../img/icon/search-icon.png");
+    background-repeat: no-repeat;
+    background-position: 10px 7px;
+    background-size: 18px; }
+
+.nav-active {
+  background-color: rgba(160, 145, 145, 0.2); }
+
+#nav-market {
+  margin: 0;
+  width: 115px;
+  height: 56px;
+  line-height: 56px; }
+  #nav-market a {
+    color: #d5d5f0; }
+  #nav-market:hover .dropdown-btn {
+    color: #ffffff; }
+  #nav-market:hover .dropdown {
+    display: block; }
+
+.nav-dropdown {
+  position: relative; }
+
+.dropdown-btn:after {
+  font-family: FontAwesome;
+  content: "\f0dd";
+  position: relative;
+  bottom: 3px;
+  left: 4px; }
+
+.dropdown-btn:hover {
+  color: #ffffff; }
+
+.dropdown {
+  width: 100px;
+  height: 112px;
+  position: absolute;
+  left: 990px;
+  top: 163px;
+  background-color: #9391d5;
+  z-index: 999;
+  display: none; }
+  .dropdown a {
+    font-size: 15px;
+    display: block;
+    width: 100px;
+    height: 56px;
+    color: white;
+    text-indent: 7px;
+    line-height: 56px; }
+    .dropdown a:hover {
+      background-color: #7d7fc9; }
+
+/******************************main page******************************/
+.banner-block {
+  padding-top: 40px; }
+  .banner-block .swiper-container {
+    width: 1100px;
+    margin: auto; }
+
+.product-block {
+  position: relative;
+  margin: 80px 169px 52px 169px; }
+
+.product-header {
+  position: absolute;
+  left: -6px;
+  top: -65px; }
+  .product-header span {
+    background-color: #ffffff;
+    position: absolute;
+    left: 40px;
+    top: 25px;
+    width: 135px;
+    height: 30px;
+    color: #f8487e;
+    font-size: 18px;
+    line-height: 30px;
+    text-indent: 45px;
+    border-radius: 4px; }
+  .product-header img {
+    position: absolute;
+    z-index: 999; }
+
+.product-nav {
+  overflow: hidden;
+  border: solid 1px #f8487e;
+  border-radius: 10px; }
+  .product-nav .product-nav-item {
+    font-size: 24px;
+    color: black;
+    line-height: 50px;
+    text-indent: 20px;
+    float: left;
+    width: 240px;
+    height: 240px; }
+
+#yaoling {
+  background-image: url("../img/temp/yaoling.png"); }
+
+#chuangling {
+  background-image: url("../img/temp/chuangling.png"); }
+
+#jianshen {
+  background-image: url("../img/temp/jianshen.png"); }
+
+#yizhi {
+  background-image: url("../img/temp/yizhi.png"); }
+
+#other {
+  background-image: url("../img/temp/other.png");
+  width: 138px; }
+
+.consult-video-block {
+  padding-bottom: 52px;
+  margin: 0 169px;
+  overflow: hidden; }
+
+.consult-block {
+  float: left;
+  padding: 24px 31px 42px 31px;
+  background-color: #e9998e;
+  border-radius: 10px;
+  width: 360px;
+  height: 360px; }
+
+.consult-header {
+  position: relative;
+  margin-bottom: 20px; }
+  .consult-header h3 {
+    color: #ffffff;
+    font-size: 18px;
+    margin: 0; }
+  .consult-header a {
+    position: absolute;
+    right: 0;
+    top: 5px;
+    color: #ffffff;
+    font-size: 14px; }
+
+.consult-list {
+  overflow: hidden; }
+  .consult-list li {
+    height: 30px;
+    line-height: 30px;
+    overflow: hidden;
+    padding: 0; }
+    .consult-list li a {
+      font-size: 14px;
+      color: #ffffff;
+      float: left;
+      width: 200px; }
+    .consult-list li span {
+      font-size: 12px;
+      color: #ffffff;
+      float: right;
+      width: 80px;
+      text-align: right; }
+
+.video-block {
+  float: right;
+  padding: 24px 30px 20px 30px;
+  background-color: #cda6ee;
+  border-radius: 10px;
+  width: 690px;
+  height: 360px;
+  margin-left: 40px; }
+
+.video-header {
+  position: relative;
+  margin-bottom: 20px; }
+  .video-header h3 {
+    color: #ffffff;
+    font-size: 18px;
+    margin: 0; }
+
+.video-content {
+  float: left; }
+
+.video-menu {
+  position: relative;
+  height: 273px;
+  padding: 22px 0;
+  float: right; }
+
+.video-list a {
+  display: block;
+  height: auto; }
+
+.video-list li {
+  margin-bottom: 10px; }
+
+#list-up, #list-down {
+  position: absolute; }
+
+#list-up {
+  top: -3px;
+  left: 27px; }
+
+#list-down {
+  bottom: -3px;
+  left: 27px;
+  transform: rotate(180deg); }

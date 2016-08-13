@@ -1,13 +1,19 @@
 {% extends "pc/base.html" %}
 {% block title %}加入我们{% endblock %}
+{% block stylesheet %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
+{% endblock %}
 {% block main %}
 		<div class="contact-container">
+			<h1>联系我们</h1>
+			<div class="split"></div>
 			<ul class="contact-list">
 				<li>地址：汕头市澄海区莱美工业区海升路2号岫泓玩具厂</li>
 				<li>电话：0754-86986868</li>
 				<li>传真：0754-86986938</li>
 				<li>比爱企业店：https://shop128415302.taobao.com</li>
-				<li>比爱公众号：<img src="{{ url_for('static', filename='img/qr-code.png') }}" alt="qr-code"></li>
+				<li>比爱公众号：<img src="{{ url_for('static', filename='img/icon/qr-code.png') }}" alt="qr-code"></li>
 			</ul>
 		</div>
 {% endblock %}
