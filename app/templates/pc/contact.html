@@ -1,5 +1,9 @@
 {% extends "pc/base.html" %}
 {% block title %}加入我们{% endblock %}
+{% block stylesheet %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
+{% endblock %}
 {% block main %}
 		<div class="contact-container">
 			<h1>联系我们</h1>

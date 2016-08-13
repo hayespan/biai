@@ -1,5 +1,9 @@
 {% extends "pc/base.html" %}
 {% block title %}产品中心{% endblock %}
+{% block stylesheet %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/product.css') }}">
+{% endblock %}
 {% block main %}
 		<div class="product-container">
 			<div class="product-type-nav">

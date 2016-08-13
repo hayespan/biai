@@ -1,5 +1,9 @@
 {% extends "pc/base.html" %}
 {% block title %}比爱首页{% endblock %}
+{% block stylesheet %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+{% endblock %}
 {% block main %}
 		<div class="banner-block">
 			<div class="swiper-container">
