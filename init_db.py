@@ -22,6 +22,16 @@ def create_default_nav():
                     )
             about_nav.simple_nav_page = page
             db.session.add(about_nav)
+        if i[0] == 'shop':
+            shop_nav = Nav.query.filter_by(meta_name=i[0]).first()
+            if shop_nav and not shop_nav.subnavs:
+                from app.model.subnav import SubNav
+                sn1 = SubNav(title='1688官网', nav=shop_nav)
+                sn2 = SubNav(title='比爱企业店', nav=shop_nav)
+                db.session.add(sn1)
+                db.session.add(sn2)
+
+
     db.session.commit()
 
 with app.app.app_context():
