@@ -23,7 +23,7 @@
 			</div>
 		</div>
 		<nav class="header-nav">
-			<a class="header-nav-item" href="/">首页</a>
+{# 			<a class="header-nav-item" href="/">首页</a>
 			<a class="header-nav-item" href="/about">关于比爱</a>
 			<a class="header-nav-item" href="/news">新闻动态</a>
 			<a class="header-nav-item" href="/shop">产品中心</a>
@@ -37,7 +37,23 @@
 					<a href="#">比爱企业店</a>
 				</div>
 			</div>
-			<a class="header-nav-item" href="/contact">联系我们</a>
+			<a class="header-nav-item" href="/contact">联系我们</a> #}
+			<a class="header-nav-item" href="{{ nav_dict['main'].link }}">{{ nav_dict['main'].title }}</a>
+			<a class="header-nav-item" href="{{ nav_dict['about'].link }}">{{ nav_dict['about'].title }}</a>
+			<a class="header-nav-item" href="{{ nav_dict['news'].link }}">{{ nav_dict['news'].title }}</a>
+			<a class="header-nav-item" href="{{ nav_dict['product'].link }}">{{ nav_dict['product'].title }}</a>
+			<a class="header-nav-item" href="{{ nav_dict['creativity'].link }}">{{ nav_dict['creativity'].title }}</a>
+			<a class="header-nav-item" href="{{ nav_dict['join_us'].link }}">{{ nav_dict['join_us'].title }}</a>
+			<!-- <a id="nav-market" class="header-nav-item" href="#">官方商城</a> -->
+			<div id="nav-market" class="header-nav-item">
+				<a class="dropdown-btn" href="#">{{ nav_dict['shop'].title }}</a>
+				<div class="dropdown">
+					{% for subnavs in nav_dict['shop'].subnavs %}
+						<a href="{{ subnavs.link }}">{{ subnavs.title }}</a>
+					{% endfor %}
+				</div>
+			</div>
+			<a class="header-nav-item" href="{{ nav_dict['contact'].link }}">{{ nav_dict['contact'].title }}</a>
 			<input type="text" placeholder="请输入搜索内容">
 		</nav>
 		{% endblock %}
