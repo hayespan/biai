@@ -6,6 +6,10 @@
 <script type="text/javascript" charset="utf-8" src="{{ url_for('static', filename='ueditor/lang/zh-cn/zh-cn.js') }}"></script>
 {% endblock %}
 {% block title %}创意中心{% endblock %}
+{% block stylesheet %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/product.css') }}">
+{% endblock %}
 {% block main %}
 	<div class="editor-container">
 		<script id="editor" type="text/plain"></script>
