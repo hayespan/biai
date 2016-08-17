@@ -26,13 +26,15 @@ class Product(db.Model):
 
     product_categories = db.relationship('ProductCategory', 
             secondary=association_category_product,
-            backref='products')
+            backref='products',
+            lazy='dynamic',
+            )
 
     def __init__(self, *args, **kwargs):
         super(Product, self).__init__(*args, **kwargs)
         
     def __repr__(self):
-        return '<Product %d %s>' % (self.id, self.name)
+        return '<Product %d>' % (self.id, )
 
     ATTR_BITS = AttrDict(
             COLOR=1<<0,

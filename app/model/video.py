@@ -19,4 +19,4 @@ class Video(db.Model):
         super(Video, self).__init__(*args, **kwargs) 
 
     def __repr__(self):
-        return '<Video %d %s>' % (self.id, self.name)
+        return '<Video %d>' % (self.id, )

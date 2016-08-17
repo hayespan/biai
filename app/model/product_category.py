@@ -19,4 +19,4 @@ class ProductCategory(db.Model):
         super(ProductCategory, self).__init__(*args, **kwargs) 
 
     def __repr__(self):
-        return '<ProductCategory %d %s>' % (self.id, self.name)
+        return '<ProductCategory %d>' % (self.id, )

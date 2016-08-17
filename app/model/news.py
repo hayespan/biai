@@ -19,4 +19,4 @@ class News(db.Model):
         super(News, self).__init__(*args, **kwargs) 
 
     def __repr__(self):
-        return '<News %d %s>' % (self.id, self.name)
+        return '<News %d>' % (self.id, )

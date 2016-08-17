@@ -18,4 +18,4 @@ class SimpleNavPage(db.Model):
         super(SimpleNavPage, self).__init__(*args, **kwargs) 
 
     def __repr__(self):
-        return '<SimpleNavPage %d %s>' % (self.id, self.nav.title)
+        return '<SimpleNavPage %d>' % (self.id, )
