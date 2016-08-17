@@ -36,7 +36,7 @@ class Admin(UserMixin, db.Model):
         return self.is_active
         
     def __repr__(self):
-        return '<User %d %s>' % (self.id, self.username)
+        return '<User %d>' % (self.id, )
 
 
 from flask.ext.login import AnonymousUserMixin

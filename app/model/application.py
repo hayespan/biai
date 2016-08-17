@@ -24,4 +24,4 @@ class Application(db.Model):
         super(Application, self).__init__(*args, **kwargs) 
 
     def __repr__(self):
-        return '<Application %d %s>' % (self.id, self.mobile)
+        return '<Application %d>' % (self.id, )

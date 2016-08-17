@@ -19,4 +19,4 @@ class Cooperation(db.Model):
         super(Cooperation, self).__init__(*args, **kwargs) 
 
     def __repr__(self):
-        return '<Cooperation %d %s>' % (self.id, self.name, )
+        return '<Cooperation %d>' % (self.id, )

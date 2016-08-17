@@ -19,4 +19,4 @@ class Banner(db.Model):
         super(Banner, self).__init__(*args, **kwargs) 
 
     def __repr__(self):
-        return '<Banner %d %s>' % (self.id, self.name)
+        return '<Banner %d>' % (self.id, )

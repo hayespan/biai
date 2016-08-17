@@ -11,5 +11,5 @@ class Nav(db.Model):
         super(Nav, self).__init__(*args, **kwargs) 
 
     def __repr__(self):
-        return '<Nav %d %s>' % (self.id, self.meta_name)
+        return '<Nav %d>' % (self.id, )
 
