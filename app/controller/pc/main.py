@@ -74,3 +74,11 @@ def captcha_mobile_check():
     correct = code == form.code.data and expire>get_now_timestamp()
     return response(ret=0, correct=correct)
 
+@pcbp.route('/set_locale/<string:lang>', methods=['GET', ])
+def set_locale(lang):
+    if lang in ('zh_CN', 'en_US', ):
+        session['locale'] = lang
+    elif session.get('locale', None):
+        del session['locale']
+    return response(ret=0)
+
