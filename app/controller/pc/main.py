@@ -22,7 +22,7 @@ def search():
     if form.validate():
         key = form.key.data
     product_list = product_service.search_key(key)
-    return response('pc/search_product_list.html',
+    return response('search_product_list.html',
             product_list=product_list,
             key=key,
             )
@@ -33,7 +33,7 @@ def index():
     product_category_list = product_category_service.get_categories()
     video_list = video_service.get_videos()
     consult_page_content = consult_service.get_page_content()
-    return response('pc/main_page.html', 
+    return response('main_page.html', 
             banner_list=banner_list,
             product_category_list=product_category_list,
             video_list=video_list,

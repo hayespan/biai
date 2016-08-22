@@ -3,4 +3,5 @@
 from . import base_func
 from . import pc
 from . import mb
+from . import admin
 

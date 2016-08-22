@@ -17,7 +17,7 @@ def news_list(category_name):
     else:
         current_category = news_category_list[0] if news_category_list else None
     news_list = news_service.get_news_list(current_category)
-    return response('pc/news_list.html',
+    return response('news_list.html',
             current_category=current_category,
             news_category_list=news_category_list,
             news_list=news_list,
@@ -28,7 +28,7 @@ def news(news_id):
     news_category_list = news_category_service.get_categories()
     news = news_service.get_news(news_id)
     current_category = news.news_category if news else None
-    return response('pc/news.html',
+    return response('news.html',
             current_category=current_category,
             news_category_list=news_category_list,
             news=news,

@@ -40,7 +40,7 @@ class App(object):
         from flask.ext.login import LoginManager
         self.login_manager = LoginManager()
         self.login_manager.session_protection = 'strong'
-        self.login_manager.login_view = 'pc.admin.login'
+        self.login_manager.login_view = 'admin.login'
 
         from .model.admin import Admin
         @self.login_manager.user_loader
@@ -48,6 +48,7 @@ class App(object):
             return Admin.query.get(int(admin_id))
         from .model.admin import MyAnonymousUser
         self.login_manager.anonymous_user = MyAnonymousUser
+        self.login_manager.init_app(self.app)
 
     def __init_migrate(self):
         from flask.ext.migrate import Migrate
@@ -82,5 +83,10 @@ class App(object):
                 mbbp,
                 url_prefix='/m'
                 # subdomain='m',
+                )
+        from .controller.admin import adminbp
+        self.app.register_blueprint(
+                adminbp,
+                url_prefix='/admin',
                 )
 

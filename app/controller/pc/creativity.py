@@ -9,7 +9,7 @@ from ...model.application import Application
 
 @pcbp.route('/creativity')
 def creativity():
-    return response('pc/creativity.html')
+    return response('creativity.html')
 
 @pcbp.route('/creativity/post', methods=['POST', ])
 def post_creativity():
