@@ -5,7 +5,7 @@ from wtforms.fields import TextAreaField, StringField, BooleanField, DateField, 
 from wtforms.validators import Required, Length, Optional, ValidationError, Regexp
 from ..util.regexp import mobile_s, captcha_s
 
-class PostCreativity(Form):
-    img = FileField(validators=[FileRequired(), ])
-    mobile = StringField(validators=[Required(), Regexp(mobile_s), ])
-    code = StringField(validators=[Required(), Regexp(captcha_s), ])
+class LoginForm(Form):
+    username = StringField(validators=[Required(), Length(1, 64), ])
+    password = PasswordField(validators=[Required(), ])
+    remember_me = BooleanField()

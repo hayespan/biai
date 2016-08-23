@@ -13,6 +13,6 @@ def shop():
     if not nav:
         return abort(404)
     page = nav.simple_nav_page
-    return response('pc/shop.html',
+    return response('shop.html',
             page=page,
             )

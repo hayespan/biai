@@ -13,7 +13,7 @@ from uploader import Uploader
 
 @pcbp.route('/ueditor_test')
 def ueditor_test():
-    return render_template('pc/ueditor.html')
+    return render_template('ueditor.html')
 
 @pcbp.route('/upload/', methods=['GET', 'POST', 'OPTIONS', ])
 def ueditor_upload():
