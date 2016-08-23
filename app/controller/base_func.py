@@ -30,9 +30,9 @@ def response(tmpl_path=None, **kwargs):
             abort(404)
         kwargs.update(get_common_data())
         if not via_mobile():
-            tmpl_path = os.path.join('pc', tmpl_path)
+            tmpl_path = 'pc/' + tmpl_path
         else:
-            tmpl_path = os.path.join('mb', tmpl_path)
+            tmpl_path = 'mb/' + tmpl_path
         return render_template(tmpl_path,
                 **kwargs
                 )
