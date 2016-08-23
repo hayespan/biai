@@ -187,103 +187,80 @@ footer {
 	}
 }
 
-/******************************product page******************************/
+/******************************creativity page******************************/
 
-.product-container {
-	margin: 40px 169px;
+.creativity-container {
+	margin: 40px 169px 60px 169px;
+	height: 1035px;
 	background-color: #ffffff;
-	padding: 30px 60px;
 	border-radius: 10px;
-	overflow: hidden;
-	h2 {
-		font-size: 24px;
-		margin-bottom: 22px;
+	padding: 60px;
+	h1 {
+		font-size: 30px;
+		color: #9193d5;
+		margin-bottom: 30px;
 	}
-}
-
-.product-path {
-	font-size: 12px;
-	color: #bbbbbb;
-	margin-bottom: 20px;
-	a {
-		font-size: 12px;
-		color: #bbbbbb;
-	}
-}
-
-.info-block {
-	overflow: hidden;
-	margin-bottom: 50px;
-}
-
-.img-info {
-	width: 460px;
-	height: 364px;
-	float: left;
-	margin-right: 30px;
-	img {
-		border: 1px solid #e6e6e6;
-	}
-}
-
-.text-info {
-	height: 400px;
-	float: left;
-	button {
-		font-size: 18px;
-		color: #ffffff;
-		background-color: #f18e43;
-		border: none;
-		border-radius: 10px;
-		width: 200px;
-		height: 50px;
-	}
-}
-
-.big {
-	float: right;
-}
-
-.info-red {
-	background-color: #fff4e6;
-	padding: 20px 20px 10px 20px;
-	width: 482px;
-	margin-bottom: 18px;
-	ul {
-		overflow: hidden;
-	}
-	li {
-		display: inline;
-		float: left;
-		width: 220px;
-		font-size: 12px;
-		margin-bottom: 10px;
-	}
-}
-
-.info-white {
-	ul {
-		padding-left: 5px;
-		margin-bottom: 16px;
-	}
-	li {
-		font-size: 12px;
+	p {
+		font-size: 14px;
 		color: #777777;
+		margin-top: 0;
 		margin-bottom: 12px;
 	}
 }
 
-.detail-header {
-	background-color: #fff4e6;
-	border-radius: 10px;
-	height: 36px;
-	position: relative;
-	background-image: url('../img/icon/title3.png');
-	background-position: 70px 5px;
-	background-repeat: no-repeat;
-	margin-bottom: 32px;
-	img {
-		position: absolute;
-		top: -44px;
+#creativity-sketch {
+	background-color: #d5d5f0;
+	margin-top: 10px;
+	margin-bottom: 30px;
+}
+
+.form-item {
+	margin: 0 auto 20px auto;
+	width: 420px;
+	overflow: hidden;
+	label {
+		float: left;
+		text-align: right;
+		height: 35px;
+		width: 70px;
+		line-height: 35px;
+		margin-right: 10px;
+	}
+	input[type="text"] {
+		border: 1px solid #bebebe;
+		border-radius: 6px;
+		height: 35px;
+		float: left;
+		width: 340px;
+	}
+	input[type="submit"] {
+		color: #ffffff;
+		background-color: #f18e43;
+		border: none;
+		border-radius: 6px;
+		width: 180px;
+		height: 48px;
+		display: block;
+		margin: 10px auto;
+		font-size: 15px;
+	}
+	h3 {
+		text-align: center;
+		font-size: 18px;
+	}
+}
+
+.form-verify-phone {
+	input[type="text"] {
+		width: 230px;
+		margin-right: 10px;
+	}
+	button {
+		color: #ffffff;
+		background-color: #f18e43;
+		border: none;
+		border-radius: 6px;
+		width: 100px;
+		height: 35px;
 	}
 }

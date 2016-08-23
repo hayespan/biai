@@ -151,158 +151,67 @@ footer {
     .dropdown a:hover {
       background-color: #7d7fc9; }
 
-/******************************main page******************************/
-.banner-block {
-  padding-top: 40px; }
-  .banner-block .swiper-container {
-    width: 1100px;
-    margin: auto; }
+/******************************creativity page******************************/
+.creativity-container {
+  margin: 40px 169px 60px 169px;
+  height: 1035px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 60px; }
+  .creativity-container h1 {
+    font-size: 30px;
+    color: #9193d5;
+    margin-bottom: 30px; }
+  .creativity-container p {
+    font-size: 14px;
+    color: #777777;
+    margin-top: 0;
+    margin-bottom: 12px; }
 
-.product-block {
-  position: relative;
-  margin: 80px 169px 52px 169px; }
+#creativity-sketch {
+  background-color: #d5d5f0;
+  margin-top: 10px;
+  margin-bottom: 30px; }
 
-.product-header {
-  position: absolute;
-  left: -6px;
-  top: -65px; }
-  .product-header span {
-    background-color: #ffffff;
-    position: absolute;
-    left: 40px;
-    top: 25px;
-    width: 135px;
-    height: 30px;
-    color: #f8487e;
-    font-size: 18px;
-    line-height: 30px;
-    text-indent: 45px;
-    border-radius: 4px; }
-  .product-header img {
-    position: absolute;
-    z-index: 999; }
-
-.product-nav {
-  overflow: hidden;
-  border: solid 1px #f8487e;
-  border-radius: 10px; }
-  .product-nav .product-nav-item {
-    font-size: 24px;
-    color: black;
-    line-height: 50px;
-    text-indent: 20px;
+.form-item {
+  margin: 0 auto 20px auto;
+  width: 420px;
+  overflow: hidden; }
+  .form-item label {
     float: left;
-    width: 240px;
-    height: 240px; }
-  .product-nav > a:last-child {
-    width: 138px; }
-
-#yaoling {
-  background-image: url("../img/temp/yaoling.png"); }
-
-#chuangling {
-  background-image: url("../img/temp/chuangling.png"); }
-
-#jianshen {
-  background-image: url("../img/temp/jianshen.png"); }
-
-#yizhi {
-  background-image: url("../img/temp/yizhi.png"); }
-
-#other {
-  background-image: url("../img/temp/other.png");
-  width: 138px; }
-
-.consult-video-block {
-  padding-bottom: 52px;
-  margin: 0 169px;
-  overflow: hidden; }
-
-.consult-block {
-  float: left;
-  padding: 24px 31px 42px 31px;
-  background-color: #e9998e;
-  border-radius: 10px;
-  width: 360px;
-  height: 360px; }
-
-.consult-header {
-  position: relative;
-  margin-bottom: 20px; }
-  .consult-header h3 {
+    text-align: right;
+    height: 35px;
+    width: 70px;
+    line-height: 35px;
+    margin-right: 10px; }
+  .form-item input[type="text"] {
+    border: 1px solid #bebebe;
+    border-radius: 6px;
+    height: 35px;
+    float: left;
+    width: 340px; }
+  .form-item input[type="submit"] {
     color: #ffffff;
-    font-size: 18px;
-    margin: 0; }
-  .consult-header a {
-    position: absolute;
-    right: 0;
-    top: 5px;
-    color: #ffffff;
-    font-size: 14px; }
+    background-color: #f18e43;
+    border: none;
+    border-radius: 6px;
+    width: 180px;
+    height: 48px;
+    display: block;
+    margin: 10px auto;
+    font-size: 15px; }
+  .form-item h3 {
+    text-align: center;
+    font-size: 18px; }
 
-.consult-list {
-  overflow: hidden; }
-  .consult-list li {
-    height: 30px;
-    line-height: 30px;
-    overflow: hidden;
-    padding: 0; }
-    .consult-list li a {
-      font-size: 14px;
-      color: #ffffff;
-      float: left;
-      width: 200px; }
-    .consult-list li span {
-      font-size: 12px;
-      color: #ffffff;
-      float: right;
-      width: 80px;
-      text-align: right; }
+.form-verify-phone input[type="text"] {
+  width: 230px;
+  margin-right: 10px; }
 
-.video-block {
-  float: right;
-  padding: 24px 30px 20px 30px;
-  background-color: #cda6ee;
-  border-radius: 10px;
-  width: 690px;
-  height: 360px;
-  margin-left: 40px; }
-
-.video-header {
-  position: relative;
-  margin-bottom: 20px; }
-  .video-header h3 {
-    color: #ffffff;
-    font-size: 18px;
-    margin: 0; }
-
-.video-content {
-  float: left; }
-
-.video-menu {
-  overflow: hidden;
-  position: relative;
-  height: 273px;
-  padding: 22px 0;
-  float: right; }
-  .video-menu .swiper-container {
-    height: 229px; }
-
-.video-list a {
-  display: block;
-  height: auto; }
-
-.video-list li {
-  margin-bottom: 10px; }
-
-#list-up, #list-down {
-  position: absolute; }
-
-#list-up {
-  top: -3px;
-  left: 27px; }
-
-#list-down {
-  bottom: -3px;
-  left: 27px;
-  transform: rotate(180deg); }
+.form-verify-phone button {
+  color: #ffffff;
+  background-color: #f18e43;
+  border: none;
+  border-radius: 6px;
+  width: 100px;
+  height: 35px; }

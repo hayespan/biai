@@ -7,7 +7,13 @@ from ...util.common import logger, json_response, get_now_timestamp
 
 @pcbp.route('/join_us', methods=['GET', ])
 def join_us():
-    pass
+    nav = nav_service.get_nav_by_meta_name('join_us')
+    if not nav:
+        return abort(404)
+    page = nav.simple_nav_page
+    return response('pc/join_us.html',
+            page=page,
+            )
 
 @pcbp.route('/join_us/cooperation/post', methods=['POST', ])
 def cooperation_post():

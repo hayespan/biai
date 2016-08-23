@@ -187,103 +187,160 @@ footer {
 	}
 }
 
-/******************************product page******************************/
+/******************************join page******************************/
 
-.product-container {
-	margin: 40px 169px;
-	background-color: #ffffff;
-	padding: 30px 60px;
+.join-container {
+	margin: 40px 169px 100px 169px;
+	overflow: hidden;
+}
+
+.join-type-nav {
+	float: left;
+	width: 160px;
+	padding-top: 62px;
+	padding-bottom: 8px;
+	background-color: #fce9cb;
 	border-radius: 10px;
+	background-image: url('../img/icon/title.png');
+	background-repeat: no-repeat;
+	background-position: 36px 16px;
+	ul {
+		width: 144px;
+		background-color: #ffffff;
+		border-radius: 6px;
+		margin: auto;
+		li {
+			text-align: center;
+			line-height: 42px;
+			width: 100px;
+			height: 42px;
+			margin: auto;
+			border-bottom: 1px solid #e6e5f4;
+			a {
+				color: #b5b4b3;
+				font-size: 14px;
+			}
+			.chosen {
+				position: relative;
+				color: #b4b3dd;
+				font-size: 16px;
+				&:after {
+					font-family: FontAwesome;
+					content: "\f0da";
+					position: relative;
+					left: 4px;
+				}
+			}
+		}
+		& > li:last-child {
+			border-bottom: none;
+		}
+	}
+}
+
+.join-page-container {
+	width: 920px;
+	float: right;
+	padding: 40px 45px;
+	background-color: #ffffff;
+	border-radius: 6px;
+}
+
+.join-cooperate {
+
+}
+
+.form-item {
+	margin: 0 auto 20px auto;
+	width: 420px;
 	overflow: hidden;
-	h2 {
-		font-size: 24px;
-		margin-bottom: 22px;
+	label {
+		float: left;
+		text-align: right;
+		height: 35px;
+		width: 70px;
+		line-height: 35px;
+		margin-right: 10px;
 	}
-}
-
-.product-path {
-	font-size: 12px;
-	color: #bbbbbb;
-	margin-bottom: 20px;
-	a {
-		font-size: 12px;
-		color: #bbbbbb;
+	input[type="text"] {
+		border: 1px solid #bebebe;
+		border-radius: 6px;
+		height: 35px;
+		float: left;
+		width: 340px;
 	}
-}
-
-.info-block {
-	overflow: hidden;
-	margin-bottom: 50px;
-}
-
-.img-info {
-	width: 460px;
-	height: 364px;
-	float: left;
-	margin-right: 30px;
-	img {
-		border: 1px solid #e6e6e6;
+	textarea {
+		resize: none;
+		border-radius: 6px;
+		float: right;
+		width: 340px;
+		height: 100px;
 	}
-}
-
-.text-info {
-	height: 400px;
-	float: left;
-	button {
-		font-size: 18px;
+	input[type="submit"] {
 		color: #ffffff;
 		background-color: #f18e43;
 		border: none;
-		border-radius: 10px;
-		width: 200px;
-		height: 50px;
+		border-radius: 6px;
+		width: 180px;
+		height: 48px;
+		display: block;
+		margin: 10px auto;
+		font-size: 15px;
 	}
 }
 
-.big {
-	float: right;
-}
-
-.info-red {
-	background-color: #fff4e6;
-	padding: 20px 20px 10px 20px;
-	width: 482px;
-	margin-bottom: 18px;
-	ul {
-		overflow: hidden;
+.form-verify-phone {
+	input[type="text"] {
+		width: 230px;
+		margin-right: 10px;
 	}
-	li {
-		display: inline;
-		float: left;
-		width: 220px;
-		font-size: 12px;
-		margin-bottom: 10px;
+	button {
+		color: #ffffff;
+		background-color: #f18e43;
+		border: none;
+		border-radius: 6px;
+		width: 100px;
+		height: 35px;
 	}
 }
 
-.info-white {
-	ul {
-		padding-left: 5px;
-		margin-bottom: 16px;
-	}
-	li {
-		font-size: 12px;
-		color: #777777;
-		margin-bottom: 12px;
+.form-split {
+	border-bottom: 1px solid #bebebe;
+	margin: 30px 10px;
+}
+
+.join-recruit {
+	h1 {
+		font-size: 20px;
+		color: #9193d5;
+		margin: 0;
 	}
 }
 
-.detail-header {
-	background-color: #fff4e6;
-	border-radius: 10px;
-	height: 36px;
-	position: relative;
-	background-image: url('../img/icon/title3.png');
-	background-position: 70px 5px;
-	background-repeat: no-repeat;
-	margin-bottom: 32px;
-	img {
-		position: absolute;
-		top: -44px;
-	}
+.job-item {
+	overflow: hidden;
+	margin-bottom: 25px;
+}
+
+.job-img {
+	float: left;
+	width: 350px;
+	margin-right: 20px;
+}
+
+.job-info {
+	float: left;
+	width: 400px;
+}
+
+.split {
+	width: 40px;
+	border-bottom: 3px solid #9193d5;
+	margin-top: 28px;
+	margin-bottom: 45px;
+}
+
+
+.hidden {
+	display: none;
 }

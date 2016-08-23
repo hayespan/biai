@@ -6,9 +6,14 @@ app = App()
 def create_default_nav():
     from app.model.nav import Nav
     nav_meta_names = [
+            ('main','首页','/'),
             ('about', '关于比爱', '/about'),
+            ('news','新闻动态','/news'),
+            ('product','产品中心','/product'),
+            ('creativity','创意中心','/creativity'),
+            ('join_us','加入我们','/join_us'),
             ('shop', '官方商城', '/shop'), 
-            ('contact', '联系我们', '/contact'),
+            ('contact', '联系我们', '/contact')
             ]
     for i in nav_meta_names:
         if Nav.query.filter_by(meta_name=i[0]).count() == 0:

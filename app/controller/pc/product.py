@@ -27,7 +27,7 @@ def product_list(category_name):
 def product(product_id):
     product_category_list = product_category_service.get_categories()
     product = product_service.get_product(product_id)
-    current_category = product.product_category if product else None
+    current_category = product.product_categories[0] if product else None
     return response('pc/product.html',
             current_category=current_category,
             product_category_list=product_category_list,
