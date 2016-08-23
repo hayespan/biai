@@ -2,18 +2,25 @@
 {% block title %}产品中心{% endblock %}
 {% block stylesheet %}
 {{ super() }}
-<link rel="stylesheet" href="{{ url_for('static', filename='css/product.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/product_list.css') }}">
 {% endblock %}
 {% block main %}
-		<div class="product-container">
+		<div class="product-list-container">
 			<div class="product-type-nav">
 				<ul>
-					<li><a class="chosen" href="#">摇铃</a></li>
+					{% for product_category in product_category_list|reverse %}
+						{% if product_category == current_category %}
+							<li><a class="chosen" href="/product/category/{{ product_category.name }}">{{ product_category.name }}</a></li>
+						{% else %}
+							<li><a href="/product/category/{{ product_category.name }}">{{ product_category.name }}</a></li>
+						{% endif %}
+					{% endfor %}
+<!-- 					<li><a class="chosen" href="#">摇铃</a></li>
 					<li><a href="#">床铃</a></li>
 					<li><a href="#">健身架</a></li>
 					<li><a href="#">益智玩具</a></li>
 					<li><a href="#">戏水玩具</a></li>
-					<li><a href="#">其他</a></li>
+					<li><a href="#">其他</a></li> -->
 				</ul>
 			</div>
 			<div class="product-content-container">

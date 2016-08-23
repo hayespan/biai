@@ -238,6 +238,9 @@ footer {
 		width: 240px;
 		height: 240px;
 	}
+	& > a:last-child {
+		width: 138px;
+	}
 }
 
 #yaoling {
@@ -342,10 +345,14 @@ footer {
 }
 
 .video-menu {
+	overflow: hidden;
 	position: relative;
 	height: 273px;
 	padding: 22px 0;
 	float: right;
+    .swiper-container {
+    	height: 229px;
+    }
 }
 
 .video-list {

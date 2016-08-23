@@ -23,7 +23,7 @@ def news_list(category_name):
             news_list=news_list,
             )
 
-@pcbp.route('/news/<int:id>', methods=['GET', ])
+@pcbp.route('/news/<int:news_id>', methods=['GET', ])
 def news(news_id):
     news_category_list = news_category_service.get_categories()
     news = news_service.get_news(news_id)
