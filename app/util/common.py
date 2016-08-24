@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import time
 import os
+import math
 import datetime 
 from flask import jsonify, request, redirect, current_app
 from functools import wraps
@@ -97,4 +98,21 @@ def remove_file(subpath, filename):
         logger.error('remove file fail, exception: ' + e.message)
         return (False, full_path)
     return (True, full_path)
+
+def page_info(tot, per, cur):
+    return {
+            'min': 1,
+            'max': int(math.ceil(tot*1./per)) or 1, 
+            'cur': cur,
+            }
+
+def page_limit(tot, per, cur):
+    if tot == 0:
+        return (0, 0)
+    minpage = 1
+    maxpage = int(math.ceil(tot*1./per))
+    cur = max(minpage, cur)
+    cur = min(maxpage, cur)
+    idx = (cur-1)*per
+    return (idx, per)
 
