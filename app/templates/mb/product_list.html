@@ -1,0 +1,89 @@
+{% extends "mb/base.html" %}
+{% block title %}产品中心{% endblock %}
+{% block stylesheet %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/product_list_mb.css') }}">
+{% endblock %}
+{% block main %}
+	<div class="product-list-container">
+		<div class="product-category-nav">
+			<div class="nav-header">
+			</div>
+			<ul class="nav-list">
+				{% for product_category in product_category_list|reverse %}
+					{% if product_category == current_category %}
+						<li><a class="chosen" href="/product/category/{{ product_category.name }}">{{ product_category.name }}</a></li>
+					{% else %}
+						<li><a href="/product/category/{{ product_category.name }}">{{ product_category.name }}</a></li>
+					{% endif %}
+				{% endfor %}
+			</ul>
+		</div>
+		<div class="product-list-page">
+			<div class="page-content">
+				<div class="product-item">
+					<img src="{{ url_for('static', filename='img/temp/product-item.png') }}" alt="product-item">
+					<h3>比爱音乐-宝宝益智手拍鼓乐器-音乐世家系列</h3>
+				</div>
+				<div class="product-item">
+					<img src="{{ url_for('static', filename='img/temp/product-item.png') }}" alt="product-item">
+					<h3>比爱音乐-宝宝益智手拍鼓乐器-音乐世家系列</h3>
+				</div>
+				<div class="product-item">
+					<img src="{{ url_for('static', filename='img/temp/product-item.png') }}" alt="product-item">
+					<h3>比爱音乐-宝宝益智手拍鼓乐器-音乐世家系列</h3>
+				</div>
+				<div class="product-item">
+					<img src="{{ url_for('static', filename='img/temp/product-item.png') }}" alt="product-item">
+					<h3>比爱音乐-宝宝益智手拍鼓乐器-音乐世家系列</h3>
+				</div>
+				<div class="product-item">
+					<img src="{{ url_for('static', filename='img/temp/product-item.png') }}" alt="product-item">
+					<h3>比爱音乐-宝宝益智手拍鼓乐器-音乐世家系列</h3>
+				</div>
+				<div class="product-item">
+					<img src="{{ url_for('static', filename='img/temp/product-item.png') }}" alt="product-item">
+					<h3>比爱音乐-宝宝益智手拍鼓乐器-音乐世家系列</h3>
+				</div>
+				<div class="product-item">
+					<img src="{{ url_for('static', filename='img/temp/product-item.png') }}" alt="product-item">
+					<h3>比爱音乐-宝宝益智手拍鼓乐器-音乐世家系列</h3>
+				</div>
+				<div class="product-item">
+					<img src="{{ url_for('static', filename='img/temp/product-item.png') }}" alt="product-item">
+					<h3>比爱音乐-宝宝益智手拍鼓乐器-音乐世家系列</h3>
+				</div>
+				<div class="product-item">
+					<img src="{{ url_for('static', filename='img/temp/product-item.png') }}" alt="product-item">
+					<h3>比爱音乐-宝宝益智手拍鼓乐器-音乐世家系列</h3>
+				</div>
+				<div class="product-item">
+					<img src="{{ url_for('static', filename='img/temp/product-item.png') }}" alt="product-item">
+					<h3>比爱音乐-宝宝益智手拍鼓乐器-音乐世家系列</h3>
+				</div>
+				<div class="product-item">
+					<img src="{{ url_for('static', filename='img/temp/product-item.png') }}" alt="product-item">
+					<h3>比爱音乐-宝宝益智手拍鼓乐器-音乐世家系列</h3>
+				</div>
+				<div class="product-item">
+					<img src="{{ url_for('static', filename='img/temp/product-item.png') }}" alt="product-item">
+					<h3>比爱音乐-宝宝益智手拍鼓乐器-音乐世家系列</h3>
+				</div>
+			</div>
+			<div class="page-nav">
+				<a id="last-page" href="#">上一页</a>
+				<a class="chosen" href="#">1</a>
+				<a href="#">2</a>
+				<a href="#">3</a>
+				<a href="#">4</a>
+				<a href="#">5</a>
+				<a href="#">6</a>
+				<a id="next-page" href="#">下一页</a>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+{% block script %}
+{{ super() }}
+<script src="{{ url_for('static', filename='js/main_mb.js') }}"></script>
+{% endblock %}

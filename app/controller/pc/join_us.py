@@ -11,7 +11,7 @@ def join_us():
     if not nav:
         return abort(404)
     page = nav.simple_nav_page
-    return response('pc/join_us.html',
+    return response('join_us.html',
             page=page,
             )
 

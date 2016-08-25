@@ -8,8 +8,15 @@
 		<div class="news-container">
 			<div class="news-type-nav">
 				<ul>
-					<li><a class="chosen" href="#">比爱早教</a></li>
-					<li><a href="#">企业新闻</a></li>
+					{% for news_category in news_category_list|reverse %}
+						{% if news_category == current_category %}
+							<li><a class="chosen" href="/news/category/{{ news_category.name }}">{{ news_category.name }}</a></li>
+						{% else %}
+							<li><a href="/news/category/{{ news_category.name }}">{{ news_category.name }}</a></li>
+						{% endif %}
+					{% endfor %}
+<!-- 					<li><a class="chosen" href="#">比爱早教</a></li>
+					<li><a href="#">企业新闻</a></li> -->
 				</ul>
 			</div>
 			<div class="news-list-container">
