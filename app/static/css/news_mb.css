@@ -1,0 +1,132 @@
+/******************************base style******************************/
+* {
+  box-sizing: inherit; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: "Microsoft YaHei", Helvetica, Arial, sans-serif;
+  background-color: #e2e2f4; }
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+h1, h2, h3 {
+  margin: 0; }
+
+a {
+  text-decoration: none; }
+
+header, main, footer {
+  width: 100%;
+  margin: 0 auto; }
+
+header {
+  background-color: #ffffff; }
+
+.header-slogan {
+  width: 56%;
+  padding: 5px 0;
+  margin: auto; }
+  .header-slogan img {
+    width: 100%; }
+
+.header-block {
+  position: relative;
+  background-color: #9193d5;
+  height: 50px; }
+
+.nav-button {
+  float: left;
+  width: 14%;
+  height: 100%;
+  text-align: center; }
+  .nav-button i {
+    font-size: 1.3rem;
+    color: #ffffff;
+    line-height: 50px; }
+
+.header-nav {
+  z-index: 999;
+  background-color: #9799d7;
+  position: absolute;
+  top: 49px;
+  width: 100%;
+  padding-bottom: 5px; }
+  .header-nav a {
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 1rem;
+    display: block;
+    width: 100%; }
+
+.search-bar {
+  float: left;
+  width: 72%;
+  height: 34px;
+  margin-top: 8px;
+  border-radius: 10px;
+  font-size: 1rem;
+  text-align: center; }
+
+.language {
+  float: left;
+  width: 14%;
+  height: 100%;
+  font-size: 1.3rem;
+  color: #ffffff;
+  line-height: 50px;
+  text-align: center; }
+
+footer {
+  padding-top: 20px;
+  padding-bottom: 10px; }
+
+.footer-img {
+  width: 70%;
+  margin: auto;
+  overflow: hidden;
+  margin-bottom: 10px; }
+
+#qr-code {
+  width: 36%;
+  float: left; }
+
+.footer-icon {
+  width: 55%;
+  float: right; }
+
+.footer-info {
+  width: 80%;
+  margin: auto; }
+  .footer-info li {
+    text-align: center;
+    margin-bottom: 3px;
+    font-size: 0.8rem;
+    color: #ffffff; }
+
+.hidden {
+  display: none; }
+
+/******************************main page******************************/
+.news-container {
+  background-color: #ffffff; }
+
+.news-path {
+  padding-left: 10px;
+  background-color: #e2e2f4;
+  height: 40px;
+  line-height: 40px;
+  color: #777777; }
+  .news-path a {
+    color: #777777;
+    font-size: 0.9rem; }
+
+.news-page-content {
+  height: 200px; }

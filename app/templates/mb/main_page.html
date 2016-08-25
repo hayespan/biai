@@ -1,0 +1,54 @@
+{% extends "mb/base.html" %}
+{% block title %}比爱首页{% endblock %}
+{% block stylesheet %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main_mb.css') }}">
+{% endblock %}
+{% block main %}
+	<div class="banner-block">
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+				{% for banner_img in banner_list %}
+					<div class="swiper-slide" id="slide-{{ index }}"><img src="/static/{{ banner_img.get_file_path() }}" alt="{{ index }}"></div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+	<div class="product-block">
+		<div class="product-header">
+			<span class="title">产品分类</span>
+		</div>
+		<nav class="product-nav">
+<!-- 			{% for product in product_category_list|reverse %}
+				<a href="/product/category/{{ product.name }}" class="product-nav-item" style="background-image: url('static/{{ product.get_file_path() }}')">{{ product.name }}</a>
+			{% endfor %}	 -->
+			<a href="#" class="product-nav-item" style="background-image: url('static/img/icon-mb/yaoling.png')">摇铃</a>
+			<a href="#" class="product-nav-item" style="background-image: url('static/img/icon-mb/chuangling.png')">床铃</a>
+			<a href="#" class="product-nav-item" style="background-image: url('static/img/icon-mb/jianshen.png')">健身架</a>
+			<a href="#" class="product-nav-item" style="background-image: url('static/img/icon-mb/yizhi.png')">益智玩具</a>
+			<a href="#" class="product-nav-item" style="background-image: url('static/img/icon-mb/other.png')">其他</a>
+		</nav>
+	</div>
+	<div class="video-block">
+		<div class="video-header">
+			<span class="title">产品视频</span>
+		</div>
+	</div>
+	<div class="consult-block">
+		<div class="consult-header">
+			<span class="title">公司资讯</span>
+		</div>
+		<ul class="consult-list">
+			<li><a href="#">标题1</a><span>2016-07-22</span></li>
+			<li><a href="#">标题1</a><span>2016-07-22</span></li>
+			<li><a href="#">标题1</a><span>2016-07-22</span></li>
+			<li><a href="#">标题1</a><span>2016-07-22</span></li>
+			<li><a href="#">标题1</a><span>2016-07-22</span></li>
+			<li><a href="#">标题1</a><span>2016-07-22</span></li>
+		</ul>
+	</div>
+{% endblock %}
+{% block script %}
+{{ super() }}
+<script src="{{ url_for('static', filename='js/main_mb.js') }}"></script>
+{% endblock %}
