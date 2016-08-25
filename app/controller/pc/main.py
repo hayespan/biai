@@ -3,7 +3,7 @@ import random
 
 from . import pcbp 
 
-from flask import render_template, request, abort, url_for, session
+from flask import render_template, request, abort, url_for, session, redirect
 
 from ..base_func import *
 from ...util.common import logger, json_response, get_now_timestamp
@@ -80,5 +80,5 @@ def set_locale(lang):
         session['locale'] = lang
     elif session.get('locale', None):
         del session['locale']
-    return response(ret=0)
+    return redirect(url_for('pc.index'))
 

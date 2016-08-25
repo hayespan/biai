@@ -6,6 +6,7 @@ from flask import render_template, request, abort
 
 from ..util.common import logger, json_response, json_error
 from ..service import nav_service
+from ..service import locale_service
 
 USER_AGENT = ('micromessenger', 'Mobile', 'iPhone', 'Windows Phone', 'UCWEB', 'Fennec', 'Opera Mobi', 'BlackBerry', )
 
@@ -21,6 +22,7 @@ def via_mobile():
 def get_common_data():
     common_data = {}
     common_data['nav_dict'] = nav_service.get_navs()
+    common_data['locale'] = locale_service.get_locale()
     return common_data
 
 def response(tmpl_path=None, **kwargs):
