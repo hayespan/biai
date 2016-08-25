@@ -8,19 +8,22 @@ from ...util.common import logger, json_response
 from ...service import news_category_service
 from ...service import news_service
 
-@pcbp.route('/news/category/<string:category_name>', methods=['GET', ])
-def news_list(category_name):
+@pcbp.route('/news', defaults={'category_name': None, 'page': 1}, methods=['GET', ])
+@pcbp.route('/news/category/<string:category_name>/<int:page>', methods=['GET', ])
+def news_list(category_name, page):
     news_category_list = news_category_service.get_categories()
     current_category = filter(lambda x:x.name == category_name, news_category_list)
     if current_category:
         current_category = current_category[0]
     else:
         current_category = news_category_list[0] if news_category_list else None
-    news_list = news_service.get_news_list(current_category)
+    news_list = news_service.get_news_list(current_category, page)
+    page_info = news_service.get_news_page_info(current_category, page)
     return response('news_list.html',
             current_category=current_category,
             news_category_list=news_category_list,
             news_list=news_list,
+            page_info=page_info,
             )
 
 @pcbp.route('/news/<int:news_id>', methods=['GET', ])
