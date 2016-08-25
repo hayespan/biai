@@ -11,6 +11,7 @@ association_category_product = db.Table(
         'association_category_product', db.metadata,
         db.Column('product_category_id', db.Integer, db.ForeignKey('product_category.id')),
         db.Column('product_id', db.Integer, db.ForeignKey('product.id')),
+        db.UniqueConstraint('product_category_id', 'product_id'),
         )
 class Product(db.Model):
     __tablename__ = 'product'
@@ -26,7 +27,7 @@ class Product(db.Model):
 
     product_categories = db.relationship('ProductCategory', 
             secondary=association_category_product,
-            backref='products',
+            backref=db.backref('products', lazy='dynamic'),
             lazy='dynamic',
             )
 
