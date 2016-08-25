@@ -190,30 +190,11 @@ footer {
 /******************************main page******************************/
 
 .banner-block {
-	position: relative;
 	padding-top: 40px;
-	.swiper-container {
-		width: 1100px;
-		margin: auto;
-	}
-	.swiper-button-prev {
-		top: 230px;
-		left: 100px;
-		width: 50px;
-		height: 100px;
-		border-radius: 5px;
-		background-color: rgb(235,234,248);
-		position: absolute;
-	}
-	.swiper-button-next {
-		top: 230px;
-		right: 100px;
-		width: 50px;
-		height: 100px;
-		border-radius: 5px;
-		background-color: rgb(235,234,248);
-		position: absolute;
-	}
+    .swiper-container {
+    	width: 1100px;
+    	margin: auto;
+    }
 }
 
 .product-block {
@@ -324,9 +305,6 @@ footer {
 		overflow: hidden;
 		padding: 0;
 		a {
-			white-space: nowrap;
-			overflow: hidden;
-			text-overflow: ellipsis;
 			font-size: 14px;
 			color: #ffffff;
 			float: left;
@@ -372,29 +350,9 @@ footer {
 	height: 273px;
 	padding: 22px 0;
 	float: right;
-	.swiper-container {
-		height: 229px;
-	}
-	.swiper-button-prev {
-		transform: rotate(90deg) scaleX(0.4);
-		top: 0px;
-		left: 40px;
-		width: 40px;
-		height: 60px;
-		border-radius: 5px;
-		background-color: rgb(235,234,248);
-		position: absolute;
-	}
-	.swiper-button-next {
-		transform: rotate(90deg) scaleX(0.4);
-		top: 256px;
-		left: 40px;
-		width: 40px;
-		height: 60px;
-		border-radius: 5px;
-		background-color: rgb(235,234,248);
-		position: absolute;
-	}
+    .swiper-container {
+    	height: 229px;
+    }
 }
 
 .video-list {

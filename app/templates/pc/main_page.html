@@ -12,18 +12,25 @@
 						<div class="swiper-slide" id="slide-{{ index }}"><img src="/static/{{ banner_img.get_file_path() }}" alt="{{ index }}"></div>
 					{% endfor %}
 				</div>
-			</div>
-		    <div class="swiper-button-prev swiper-button-white"></div>
-		    <div class="swiper-button-next swiper-button-white"></div>		
+			    <div class="swiper-button-prev"></div>
+			    <div class="swiper-button-next"></div>
+			</div>			
 		</div>
 		<div class="product-block">
 			<div class="product-header">
 				<img src="{{ url_for('static', filename='img/icon/monkey.png') }}" alt="monkey">
 				<span class="title">产品分类</span>
 			</div>
+{# 			<nav class="product-nav">
+	 			<a href="#" id="yaoling" class="product-nav-item">摇铃</a>
+				<a href="#" id="chuangling" class="product-nav-item">床铃</a>
+				<a href="#" id="jianshen" class="product-nav-item">健身架</a>
+				<a href="#" id="yizhi" class="product-nav-item">益智玩具</a>
+				<a href="#" id="other" class="product-nav-item">其他</a>
+			</nav> #}
 			<nav class="product-nav">
 				{% for product in product_category_list|reverse %}
-					<a href="/product/category/{{ product.name }}/1" class="product-nav-item" style="background-image: url('static/{{ product.get_file_path() }}')">{{ product.name }}</a>
+					<a href="#" class="product-nav-item" style="background-image: url('static/{{ product.get_file_path() }}')">{{ product.name }}</a>
 				{% endfor %}		
 			</nav>
 		</div>
@@ -34,7 +41,7 @@
 					<a href="#">查看更多>></a>
 				</div>
 				<ul class="consult-list">
-					<li><a href="#">标题1dasdsafasdfsadfdsafdsafdsafsdaf</a><span>2016-07-22</span></li>
+					<li><a href="#">标题1</a><span>2016-07-22</span></li>
 					<li><a href="#">标题1</a><span>2016-07-22</span></li>
 					<li><a href="#">标题1</a><span>2016-07-22</span></li>
 					<li><a href="#">标题1</a><span>2016-07-22</span></li>
@@ -63,16 +70,14 @@
 				<div class="video-menu">
 					<div class="swiper-container">
 						<div class="swiper-wrapper">
-							<div class="swiper-slide" id="1"><input type="image" src="{{ url_for('static', filename='img/temp/video1.png') }}" alt="1"></div>
-							<div class="swiper-slide" id="2"><input type="image" src="{{ url_for('static', filename='img/temp/video2.png') }}" alt="2"></div>
-							<div class="swiper-slide" id="3"><input type="image" src="{{ url_for('static', filename='img/temp/video3.png') }}" alt="3"></div>
-							<div class="swiper-slide" id="4"><input type="image" src="{{ url_for('static', filename='img/temp/video1.png') }}" alt="4"></div>
-							<div class="swiper-slide" id="5"><input type="image" src="{{ url_for('static', filename='img/temp/video2.png') }}" alt="5"></div>
-							<div class="swiper-slide" id="6"><input type="image" src="{{ url_for('static', filename='img/temp/video3.png') }}" alt="6"></div>
+							<div class="swiper-slide" id="1"><img src="{{ url_for('static', filename='img/temp/video1.png') }}" alt="1"></div>
+							<div class="swiper-slide" id="2"><img src="{{ url_for('static', filename='img/temp/video2.png') }}" alt="2"></div>
+							<div class="swiper-slide" id="3"><img src="{{ url_for('static', filename='img/temp/video3.png') }}" alt="3"></div>
+							<div class="swiper-slide" id="4"><img src="{{ url_for('static', filename='img/temp/video1.png') }}" alt="4"></div>
+							<div class="swiper-slide" id="5"><img src="{{ url_for('static', filename='img/temp/video2.png') }}" alt="5"></div>
+							<div class="swiper-slide" id="6"><img src="{{ url_for('static', filename='img/temp/video3.png') }}" alt="6"></div>
 						</div>
 					</div>
-				    <div class="swiper-button-prev swiper-button-white"></div>
-				    <div class="swiper-button-next swiper-button-white"></div>
 				</div>
 			</div>
 		</div>

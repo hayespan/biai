@@ -290,7 +290,7 @@ footer {
 	li {
 		float: left;
 		height: 28px;
-		background-color: #ffffff;
+		background-color: #e2e2f5;
 		line-height: 28px;
 		width: 26px;
 		text-align: center;
@@ -306,14 +306,7 @@ footer {
 	.chosen {
 		background-color: #d5d5f0;
 		a {
-			pointer-events: none;
 			color: #5c5ec2;
-		}
-	}
-	.disabled {
-		background-color: #e2e2f5;
-		a {
-			pointer-events: none;
 		}
 	}
 }

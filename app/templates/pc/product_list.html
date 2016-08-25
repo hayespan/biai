@@ -10,11 +10,17 @@
 				<ul>
 					{% for product_category in product_category_list|reverse %}
 						{% if product_category == current_category %}
-							<li><a class="chosen" href="/product/category/{{ product_category.name }}/1">{{ product_category.name }}</a></li>
+							<li><a class="chosen" href="/product/category/{{ product_category.name }}">{{ product_category.name }}</a></li>
 						{% else %}
-							<li><a href="/product/category/{{ product_category.name }}/1">{{ product_category.name }}</a></li>
+							<li><a href="/product/category/{{ product_category.name }}">{{ product_category.name }}</a></li>
 						{% endif %}
 					{% endfor %}
+<!-- 					<li><a class="chosen" href="#">摇铃</a></li>
+					<li><a href="#">床铃</a></li>
+					<li><a href="#">健身架</a></li>
+					<li><a href="#">益智玩具</a></li>
+					<li><a href="#">戏水玩具</a></li>
+					<li><a href="#">其他</a></li> -->
 				</ul>
 			</div>
 			<div class="product-content-container">
@@ -85,8 +91,8 @@
 					</div>
 				</div>
 				<div class="product-page-nav">
-{#  					<ul>
-						<li class="disabled" id="last-page"><a>上一页</a></li>
+					<ul>
+						<li id="last-page"><a href="#">上一页</a></li>
 						<li class="chosen"><a href="#">1</a></li>
 						<li><a href="#">2</a></li>
 						<li><a href="#">3</a></li>
@@ -94,25 +100,6 @@
 						<li><a href="#">5</a></li>
 						<li><a href="#">6</a></li>
 						<li id="next-page"><a href="#">下一页</a></li>
-					</ul> #}
-					<ul>
-						{% if page_info['cur'] == page_info['min'] %}
-							<li class="disabled" id="last-page"><a>上一页</a></li>
-						{% else %}
-							<li id="last-page"><a href="/product/category/{{ current_category.name }}/{{ page_info['cur']-1 }}">上一页</a></li>
-						{% endif %}
-						{% for i in range(page_info['min'], page_info['max']+1) %}
-							{% if i == page_info['cur'] %}
-								<li class="chosen"><a href="/product/category/{{ current_category.name }}/{{ i }}">{{ i }}</a></li>
-							{% else %}
-								<li><a href="/product/category/{{ current_category.name }}/{{ i }}">{{ i }}</a></li>
-							{% endif %}
-						{% endfor %}
-						{% if page_info['cur'] == page_info['max'] %}
-							<li class="disabled" id="next-page"><a>下一页</a></li>
-						{% else %}
-							<li id="next-page"><a href="/product/category/{{ current_category.name }}/{{ page_info['cur']+1 }}">下一页</a></li>
-						{% endif %}
 					</ul>
 				</div>
 			</div>
