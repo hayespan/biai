@@ -235,7 +235,7 @@ footer {
   .news-page-nav li {
     float: left;
     height: 28px;
-    background-color: #e2e2f5;
+    background-color: #ffffff;
     line-height: 28px;
     width: 26px;
     text-align: center;
@@ -248,7 +248,12 @@ footer {
   .news-page-nav .chosen {
     background-color: #d5d5f0; }
     .news-page-nav .chosen a {
+      pointer-events: none;
       color: #5c5ec2; }
+  .news-page-nav .disabled {
+    background-color: #e2e2f5; }
+    .news-page-nav .disabled a {
+      pointer-events: none; }
 
 #last-page, #next-page {
   width: 66px; }
