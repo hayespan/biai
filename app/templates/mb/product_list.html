@@ -12,9 +12,9 @@
 			<ul class="nav-list">
 				{% for product_category in product_category_list|reverse %}
 					{% if product_category == current_category %}
-						<li><a class="chosen" href="/product/category/{{ product_category.name }}">{{ product_category.name }}</a></li>
+						<li><a class="chosen" href="/product/category/{{ product_category.name }}/1">{{ product_category.name }}</a></li>
 					{% else %}
-						<li><a href="/product/category/{{ product_category.name }}">{{ product_category.name }}</a></li>
+						<li><a href="/product/category/{{ product_category.name }}/1">{{ product_category.name }}</a></li>
 					{% endif %}
 				{% endfor %}
 			</ul>

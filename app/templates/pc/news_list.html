@@ -22,7 +22,7 @@
 			<div class="news-list-container">
 				<div class="news-list">
 					<div class="news-list-content">
-						<h3>比爱早教</h3>
+						<h3>{{ current_category.name }}</h3>
 						<ul>
 							<li><a href="#">宝宝玩具的选择要点</a></li>
 							<li><a href="#">给孩子立规矩的十九原则</a></li>
@@ -35,8 +35,8 @@
 					</div>
 				</div>
 				<div class="news-page-nav">
-					<ul>
-						<li id="last-page"><a href="#">上一页</a></li>
+ 					<ul>
+						<li class="disabled" id="last-page"><a>上一页</a></li>
 						<li class="chosen"><a href="#">1</a></li>
 						<li><a href="#">2</a></li>
 						<li><a href="#">3</a></li>
@@ -45,6 +45,25 @@
 						<li><a href="#">6</a></li>
 						<li id="next-page"><a href="#">下一页</a></li>
 					</ul>
+{# 					<ul>
+						{% if page_info['cur'] == page_info['min'] %}
+							<li class="disabled" id="last-page"><a>上一页</a></li>
+						{% else %}
+							<li id="last-page"><a href="/product/category/{{ current_category.name }}/{{ page_info['cur']-1 }}">上一页</a></li>
+						{% endif %}
+						{% for i in range(page_info['min'], page_info['max']+1) %}
+							{% if i == page_info['cur'] %}
+								<li class="chosen"><a href="/product/category/{{ current_category.name }}/{{ i }}">{{ i }}</a></li>
+							{% else %}
+								<li><a href="/product/category/{{ current_category.name }}/{{ i }}">{{ i }}</a></li>
+							{% endif %}
+						{% endfor %}
+						{% if page_info['cur'] == page_info['max'] %}
+							<li class="disabled" id="next-page"><a>下一页</a></li>
+						{% else %}
+							<li id="next-page"><a href="/product/category/{{ current_category.name }}/{{ page_info['cur']+1 }}">下一页</a></li>
+						{% endif %}
+					</ul> #}
 				</div>
 			</div>
 		</div>

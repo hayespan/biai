@@ -153,10 +153,27 @@ footer {
 
 /******************************main page******************************/
 .banner-block {
+  position: relative;
   padding-top: 40px; }
   .banner-block .swiper-container {
     width: 1100px;
     margin: auto; }
+  .banner-block .swiper-button-prev {
+    top: 230px;
+    left: 100px;
+    width: 50px;
+    height: 100px;
+    border-radius: 5px;
+    background-color: #ebeaf8;
+    position: absolute; }
+  .banner-block .swiper-button-next {
+    top: 230px;
+    right: 100px;
+    width: 50px;
+    height: 100px;
+    border-radius: 5px;
+    background-color: #ebeaf8;
+    position: absolute; }
 
 .product-block {
   position: relative;
@@ -248,6 +265,9 @@ footer {
     overflow: hidden;
     padding: 0; }
     .consult-list li a {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
       font-size: 14px;
       color: #ffffff;
       float: left;
@@ -287,6 +307,24 @@ footer {
   float: right; }
   .video-menu .swiper-container {
     height: 229px; }
+  .video-menu .swiper-button-prev {
+    transform: rotate(90deg) scaleX(0.4);
+    top: 0px;
+    left: 40px;
+    width: 40px;
+    height: 60px;
+    border-radius: 5px;
+    background-color: #ebeaf8;
+    position: absolute; }
+  .video-menu .swiper-button-next {
+    transform: rotate(90deg) scaleX(0.4);
+    top: 256px;
+    left: 40px;
+    width: 40px;
+    height: 60px;
+    border-radius: 5px;
+    background-color: #ebeaf8;
+    position: absolute; }
 
 .video-list a {
   display: block;
