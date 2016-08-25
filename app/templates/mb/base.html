@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% block head %}
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>{% block title %}{% endblock %}</title>
+	{% block stylesheet %}
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/swiper-3.3.1.min.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css') }}">
+	{% endblock %}
+	{% endblock %}
+</head>
+<body>
+	<header>
+		{% block header %}
+			<div class="header-slogan">
+				<img src="{{ url_for('static', filename='img/icon/slogan.png') }}" alt="slogan">
+			</div>
+			<div class="header-block">
+				<a class="nav-button" href="#"><i class="fa fa-bars"></i></a>
+				<div class="header-nav hidden">
+					<a class="header-nav-item" href="{{ nav_dict['main'].link }}">{{ nav_dict['main'].title }}</a>
+					<a class="header-nav-item" href="{{ nav_dict['about'].link }}">{{ nav_dict['about'].title }}</a>
+					<a class="header-nav-item" href="{{ nav_dict['news'].link }}">{{ nav_dict['news'].title }}</a>
+					<a class="header-nav-item" href="{{ nav_dict['product'].link }}">{{ nav_dict['product'].title }}</a>
+					<a class="header-nav-item" href="{{ nav_dict['creativity'].link }}">{{ nav_dict['creativity'].title }}</a>
+					<a class="header-nav-item" href="{{ nav_dict['join_us'].link }}">{{ nav_dict['join_us'].title }}</a>
+					<a id="nav-market" class="header-nav-item" href="#">官方商城</a>
+					<a class="header-nav-item" href="{{ nav_dict['contact'].link }}">{{ nav_dict['contact'].title }}</a>
+				</div>
+				<input class="search-bar" type="text" placeholder="输入搜索内容">
+				<a class="language" href="#">En</a>
+			</div>
+		{% endblock %}
+	</header>
+	<main>
+		{% block main %}
+		{% endblock %}
+	</main>
+	<footer>
+		{% block footer %}
+		<div class="footer-img">
+			<img id="qr-code" src="{{ url_for('static', filename='img/icon/qr-code.png') }}" alt="qr-code">
+			<img class="footer-icon" src="{{ url_for('static', filename='img/icon/monkey2.png') }}" alt="icon">
+		</div>
+		<div class="footer-info">
+			<ul>
+				<li>广东省汕头市澄海区岫泓玩具</li>
+				<li>服务热线：0754-86986938</li>
+				<li>地址：汕头市澄海区莱美工业区海升路2号</li>
+				<li>备案编号：ISD900876544</li>
+			</ul>
+		</div>
+		{% endblock %}
+	</footer>
+	{% block script %}
+	<script src="{{ url_for('static', filename='js/jquery-3.0.0.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/swiper-3.3.1.min.js') }}"></script>
+	{% endblock %}
+</body>
+</html>
