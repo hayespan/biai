@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
+import os
+
 from . import pcbp 
 
 from flask import render_template, request, abort, url_for
 
 from ..base_func import *
-from ...util.common import logger, json_response, save_form_file
+from ...util.common import logger, json_response, save_form_file, gen_random_filename
 from ...model.application import Application
 from ...service import captcha_service
 
@@ -17,16 +19,21 @@ def post_creativity():
     from ...form.creativity import PostCreativity
     form = PostCreativity()
     if not form.validate():
+        print form.errors['mobile'][0]
         return response(
                 ret=-1,
                 msg='input error',
                 )
-    if not captcha_service.check_captcha(form.code.data):
-        return response(
-                ret=-3,
-                msg='captcha code error',
-                )
-    succ, _ = save_form_file(form.img.data, Application.get_file_dir())
+    # if not captcha_service.check_captcha(form.code.data):
+        # return response(
+                # ret=-3,
+                # msg='captcha code error',
+                # )
+    if form.img.data:
+        succ, _ = save_form_file(form.img.data, Application.get_file_dir())
+    else:
+        succ, _ = save_form_file(form.b64img_data, Application.get_file_dir(), gen_random_filename(form.b64img_fmt))
+        pass
     if not succ:
         return response(
                 ret=-2,
