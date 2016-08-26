@@ -8,6 +8,7 @@ from ...util.common import logger, json_response
 from ...service import product_category_service
 from ...service import product_service
 
+@pcbp.route('/product', defaults={'category_name': None, 'page': 1}, methods=['GET', ])
 @pcbp.route('/product/category/<string:category_name>/<int:page>', methods=['GET', ])
 def product_list(category_name, page):
     product_category_list = product_category_service.get_categories()
@@ -23,14 +24,13 @@ def product_list(category_name, page):
             product_category_list=product_category_list,
             product_list=product_list,
             page_info=page_info,
-            current_page=page,
             )
 
 @pcbp.route('/product/<int:product_id>', methods=['GET', ])
 def product(product_id):
     product_category_list = product_category_service.get_categories()
     product = product_service.get_product(product_id)
-    current_category = product.product_categories[0] if product else None
+    current_category = product.product_categories.all()[0] if product else None
     return response('product.html',
             current_category=current_category,
             product_category_list=product_category_list,
