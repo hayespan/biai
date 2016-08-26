@@ -6,6 +6,7 @@ from flask import render_template, request, abort, url_for
 from ..base_func import *
 from ...util.common import logger, json_response, save_form_file
 from ...model.application import Application
+from ...service import captcha_service
 
 @pcbp.route('/creativity')
 def creativity():
@@ -19,6 +20,11 @@ def post_creativity():
         return response(
                 ret=-1,
                 msg='input error',
+                )
+    if not captcha_service.check_captcha(form.code.data):
+        return response(
+                ret=-3,
+                msg='captcha code error',
                 )
     succ, _ = save_form_file(form.img.data, Application.get_file_dir())
     if not succ:

@@ -69,7 +69,7 @@ def timedelta_2_second(hours_f):
 def get_now_timestamp():
     return datetime_2_unixstamp(datetime.datetime.now())
 
-SAVE_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), '/../static/')
+SAVE_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../static/')
 def save_form_file(file_, subpath=None, filename_=None):
     '''
     save pic data and return file object
@@ -81,9 +81,9 @@ def save_form_file(file_, subpath=None, filename_=None):
             filename = md5(os.urandom(64)).hexdigest()+'.'+fm
         else:
             filename = filename_
-        file_.save('%s/%s' % (full_path, filename))
+        file_.save(os.path.join(full_path, filename))
     except Exception, e:
-        logger.error('save file fail, exception: ' + e.message)
+        logger.error('save file fail, exception: ' + str(e) +', hayes')
         return (False, None, ) 
     return (True, filename)
 

@@ -5,7 +5,8 @@ from flask import current_app
 
 def send_sms(mobile_list, content):
     mobiles = None
-    if isinstance(mobile_list, str):
+    if isinstance(mobile_list, unicode) or \
+            isinstance(mobile_list, str):
         mobiles = mobile_list
     else:
         mobiles = ','.join(mobile_list)
@@ -13,6 +14,7 @@ def send_sms(mobile_list, content):
         return None
     if current_app.config['SMS_FAKE']:
         return True 
+    logger.info('mobile: ' + mobiles)
     try:
         resp = requests.post(current_app.config['SMS_ADDR'],
                 data={
