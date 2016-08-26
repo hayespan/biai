@@ -8,11 +8,11 @@
 		<div class="news-container">
 			<div class="news-type-nav">
 				<ul>
-					{% for news_category in news_category_list|reverse %}
+					{% for news_category in news_category_list %}
 						{% if news_category == current_category %}
-							<li><a class="chosen" href="/news/category/{{ news_category.name }}">{{ news_category.name }}</a></li>
+							<li><a class="chosen" href="/news/category/{{ news_category.name }}/1">{{ news_category.name }}</a></li>
 						{% else %}
-							<li><a href="/news/category/{{ news_category.name }}">{{ news_category.name }}</a></li>
+							<li><a href="/news/category/{{ news_category.name }}/1">{{ news_category.name }}</a></li>
 						{% endif %}
 					{% endfor %}
 <!-- 					<li><a class="chosen" href="#">比爱早教</a></li>
@@ -24,18 +24,21 @@
 					<div class="news-list-content">
 						<h3>{{ current_category.name }}</h3>
 						<ul>
-							<li><a href="#">宝宝玩具的选择要点</a></li>
+							{% for news in news_list %}
+								<li><a href="/news/{{ news.id }}">{{ news.title }}</a></li>
+							{% endfor %}
+{# 							<li><a href="#">宝宝玩具的选择要点</a></li>
 							<li><a href="#">给孩子立规矩的十九原则</a></li>
 							<li><a href="#">一点寒芒先到，随后枪出如龙</a></li>
 							<li><a href="#">我们心有灵犀，不是么</a></li>
 							<li><a href="#">给孩子选玩具的原则</a></li>
 							<li><a href="#">上班族妈妈们，不这样陪孩子，当心孩子就跟你们不亲了</a></li>
-							<li><a href="#">正确帮宝宝洗澡的好方法</a></li>
+							<li><a href="#">正确帮宝宝洗澡的好方法</a></li> #}
 						</ul>
 					</div>
 				</div>
 				<div class="news-page-nav">
- 					<ul>
+{#  					<ul>
 						<li class="disabled" id="last-page"><a>上一页</a></li>
 						<li class="chosen"><a href="#">1</a></li>
 						<li><a href="#">2</a></li>
@@ -44,8 +47,8 @@
 						<li><a href="#">5</a></li>
 						<li><a href="#">6</a></li>
 						<li id="next-page"><a href="#">下一页</a></li>
-					</ul>
-{# 					<ul>
+					</ul> #}
+					<ul>
 						{% if page_info['cur'] == page_info['min'] %}
 							<li class="disabled" id="last-page"><a>上一页</a></li>
 						{% else %}
@@ -63,7 +66,7 @@
 						{% else %}
 							<li id="next-page"><a href="/product/category/{{ current_category.name }}/{{ page_info['cur']+1 }}">下一页</a></li>
 						{% endif %}
-					</ul> #}
+					</ul>
 				</div>
 			</div>
 		</div>
