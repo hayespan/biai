@@ -8,7 +8,7 @@
 		<div class="product-list-container">
 			<div class="product-type-nav">
 				<ul>
-					{% for product_category in product_category_list|reverse %}
+					{% for product_category in product_category_list %}
 						{% if product_category == current_category %}
 							<li><a class="chosen" href="/product/category/{{ product_category.name }}/1">{{ product_category.name }}</a></li>
 						{% else %}
@@ -19,7 +19,13 @@
 			</div>
 			<div class="product-content-container">
 				<div class="product-content">
-					<div class="product-item">
+					{% for product in product_list %}
+						<a href="/product/{{ product.id }}" class="product-item">
+							<img src="{{ url_for('static', filename='img/temp/product-item.png') }}" alt="product-item">
+							<h3>{{ product.name }}</h3>
+						</a>
+					{% endfor %}
+{# 					<div href="#" class="product-item">
 						<img src="{{ url_for('static', filename='img/temp/product-item.png') }}" alt="product-item">
 						<h3>比爱音乐-宝宝益智手拍鼓乐器-音乐世家系列</h3>
 					</div>
@@ -82,7 +88,7 @@
 					<div class="product-item">
 						<img src="{{ url_for('static', filename='img/temp/product-item.png') }}" alt="product-item">
 						<h3>比爱音乐-宝宝益智手拍鼓乐器-音乐世家系列</h3>
-					</div>
+					</div> #}
 				</div>
 				<div class="product-page-nav">
 {#  					<ul>

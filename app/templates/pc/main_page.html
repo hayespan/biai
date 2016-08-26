@@ -22,7 +22,7 @@
 				<span class="title">产品分类</span>
 			</div>
 			<nav class="product-nav">
-				{% for product in product_category_list|reverse %}
+				{% for product in product_category_list %}
 					<a href="/product/category/{{ product.name }}/1" class="product-nav-item" style="background-image: url('static/{{ product.get_file_path() }}')">{{ product.name }}</a>
 				{% endfor %}		
 			</nav>
@@ -34,6 +34,11 @@
 					<a href="#">查看更多>></a>
 				</div>
 				<ul class="consult-list">
+					{% for consult in consult_page_content %}
+						<li><a href="/news/{{ consult.id }}">{{ consult.title }}</a><span>2016-07-22</span></li>
+					{% endfor %}
+				</ul>
+{# 				<ul class="consult-list">
 					<li><a href="#">标题1dasdsafasdfsadfdsafdsafdsafsdaf</a><span>2016-07-22</span></li>
 					<li><a href="#">标题1</a><span>2016-07-22</span></li>
 					<li><a href="#">标题1</a><span>2016-07-22</span></li>
@@ -41,25 +46,15 @@
 					<li><a href="#">标题1</a><span>2016-07-22</span></li>
 					<li><a href="#">标题1</a><span>2016-07-22</span></li>
 					<li><a href="#">标题1</a><span>2016-07-22</span></li>
-				</ul>
+				</ul> #}
 			</div>
 			<div class="video-block">
 				<div class="video-header">
 					<h3>产品视频</h3>
 				</div>
-				{# <video src=""></video> #}
 				<div class="video-content">
 					<img src="{{ url_for('static', filename='img/temp/video.png') }}" alt="video">
 				</div>
-{# 				<div class="video-menu">
-					<a id="list-up" href="#"><img src="{{ url_for('static', filename='img/icon/video-button.png') }}" alt="up"></a>
-					<ul class="video-list">
-						<li><a href="#"><img src="{{ url_for('static', filename='img/temp/video1.png') }}" alt="1"></a></li>
-						<li><a href="#"><img src="{{ url_for('static', filename='img/temp/video2.png') }}" alt="2"></a></li>
-						<li><a href="#"><img src="{{ url_for('static', filename='img/temp/video3.png') }}" alt="3"></a></li>
-					</ul>
-					<a id="list-down" href="#"><img src="{{ url_for('static', filename='img/icon/video-button.png') }}" alt="down"></a>
-				</div> #}
 				<div class="video-menu">
 					<div class="swiper-container">
 						<div class="swiper-wrapper">
