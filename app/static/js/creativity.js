@@ -29,22 +29,23 @@ $(document).ready(function() {
 			},
 			success : function(result) {
 				if (result.correct) {
-					upload_work();
+					upload_work(valid_code);
 				} else {
 					// console.log('verify failed!');
-					upload_work();
+					upload_work(valid_code);
 				}
 			}
 		});
 	});
 
-	function upload_work() {
+	function upload_work(valid_code) {
 		var form_data = new FormData();
+		form_data.append("code", valid_code);
 		if ($("form input[type=file]")[0].files[0]) {
 			form_data.append("img", $("form input[type=file]")[0].files[0]);
 			console.log($("form input[type=file]")[0].files[0]);
 		} else {
-			form_data.append("img", $('#creativity-sketch').get(0).toDataURL());
+			form_data.append("b64img", $('#creativity-sketch').get(0).toDataURL());
 			console.log($('#creativity-sketch').get(0).toDataURL());
 		}
 		console.log(form_data.get('img'));
