@@ -6,4 +6,5 @@ instance/
 migrations/
 app/node_modules/
 app/static/tmp/
+app/static/img/application/*
 node_modules/

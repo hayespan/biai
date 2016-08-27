@@ -9,7 +9,7 @@ class ProductCategory(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     create_time = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     name = db.Column(db.String(512), nullable=False)
-    file_id = db.Column(db.String(32), nullable=True)
+    file_id = db.Column(db.String(512), nullable=True)
     weight = db.Column(db.Integer, nullable=False, default=0)
 
     def get_file_path(self):

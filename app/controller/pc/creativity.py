@@ -5,6 +5,7 @@ from . import pcbp
 
 from flask import render_template, request, abort, url_for
 
+from ... import db
 from ..base_func import *
 from ...util.common import logger, json_response, save_form_file, gen_random_filename
 from ...model.application import Application
@@ -29,22 +30,30 @@ def post_creativity():
                 # ret=-3,
                 # msg='captcha code error',
                 # )
+    file_id, draw_file_id = '', ''
     if form.img.data:
         succ, _ = save_form_file(form.img.data, Application.get_file_dir())
-    else:
+        if not succ:
+            return response(
+                    ret=-2,
+                    msg='save file fail',
+                    )
+        file_id = _
+    if form.b64img_data:
         succ, _ = save_form_file(form.b64img_data, Application.get_file_dir(), gen_random_filename(form.b64img_fmt))
-        pass
-    if not succ:
-        return response(
-                ret=-2,
-                msg='save file fail',
-                )
-    file_id = _
+        if not succ:
+            return response(
+                    ret=-3,
+                    msg='save draw file fail',
+                    )
+        draw_file_id = _
     application = Application(
             mobile=form.mobile.data,
             file_id=file_id,
+            draw_file_id=draw_file_id,
             )
     db.session.add(application)
     return response(
             ret=0,
             )
+
