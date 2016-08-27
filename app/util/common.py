@@ -69,7 +69,13 @@ def timedelta_2_second(hours_f):
 def get_now_timestamp():
     return datetime_2_unixstamp(datetime.datetime.now())
 
-SAVE_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), '/../static/')
+def gen_random_filename(fmt=None):
+    filename = md5(os.urandom(64)).hexdigest()
+    if fmt:
+        return filename + '.' + fmt
+    return filename 
+
+SAVE_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../static/')
 def save_form_file(file_, subpath=None, filename_=None):
     '''
     save pic data and return file object
@@ -77,13 +83,19 @@ def save_form_file(file_, subpath=None, filename_=None):
     full_path = os.path.join(SAVE_PATH, subpath) if subpath is not None else SAVE_PATH
     try:
         if filename_ is None:
-            fm = file_.filename.rsplit('.', 1)[1]
-            filename = md5(os.urandom(64)).hexdigest()+'.'+fm
+            if isinstance(file_, bytes):
+                return (False, None) 
+            fmt = file_.filename.rsplit('.', 1)[1]
+            filename = gen_random_filename(fmt)
         else:
             filename = filename_
-        file_.save('%s/%s' % (full_path, filename))
+        if isinstance(file_, bytes):
+            with open(os.path.join(full_path, filename), 'wb') as _f:
+                _f.write(file_)
+        else:
+            file_.save(os.path.join(full_path, filename))
     except Exception, e:
-        logger.error('save file fail, exception: ' + e.message)
+        logger.error('save file fail, exception: ' + str(e))
         return (False, None, ) 
     return (True, filename)
 

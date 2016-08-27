@@ -12,6 +12,7 @@ from ...service import product_category_service
 from ...service import video_service
 from ...service import consult_service
 from ...service import product_service
+from ...service import captcha_service
 from ...util.sms import send_sms
 
 @pcbp.route('/search', methods=['POST', ])
@@ -69,9 +70,7 @@ def captcha_mobile_check():
                 ret=-1,
                 msg='captcha code format error',
                 )
-    code = session.get('captcha_mobile_code', '')
-    expire = session.get('captcha_mobile_expire', 0)
-    correct = code == form.code.data and expire>get_now_timestamp()
+    correct = captcha_service.check_captcha(form.code.data)
     return response(ret=0, correct=correct)
 
 @pcbp.route('/set_locale/<string:lang>', methods=['GET', ])
