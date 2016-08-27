@@ -29,26 +29,28 @@ $(document).ready(function() {
 			},
 			success : function(result) {
 				if (result.correct) {
-					upload_work(valid_code);
+					upload_work();
 				} else {
 					// console.log('verify failed!');
-					upload_work(valid_code);
+					upload_work();
 				}
 			}
 		});
 	});
 
-	function upload_work(valid_code) {
+	function upload_work() {
 		var form_data = new FormData();
-		form_data.append("code", valid_code);
+		form_data.append("code", $('#valid-code').val());
+		form_data.append("mobile", $('#mobile').val());
+		console.log(form_data.get('code'));
+		console.log(form_data.get('mobile'));
 		if ($("form input[type=file]")[0].files[0]) {
 			form_data.append("img", $("form input[type=file]")[0].files[0]);
-			console.log($("form input[type=file]")[0].files[0]);
+			console.log(form_data.get('img'));
 		} else {
 			form_data.append("b64img", $('#creativity-sketch').get(0).toDataURL());
-			console.log($('#creativity-sketch').get(0).toDataURL());
+			console.log(form_data.get('b64img'));
 		}
-		console.log(form_data.get('img'));
 		$.ajax({
 			url : '/creativity/post?f=json',
 			type : 'POST',
