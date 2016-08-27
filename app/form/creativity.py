@@ -11,14 +11,16 @@ class PostCreativity(Form):
     b64img = StringField(validators=[Optional(), ])
     mobile = StringField(validators=[Required(), Regexp(mobile_s), ])
     # code = StringField(validators=[Required(), Regexp(captcha_s), ])
+    def validate(self):
+        self.b64img_data = None
+        self.b64img_fmt = None
+        return Form.validate(self)
 
     def validate_img(form, field):
         if not field.data and not form.b64img.data:
             raise ValidationError('no img for creativity/application post')
 
     def validate_b64img(form, field):
-        form.b64img_data = None
-        form.b64img_fmt = None
         if field.data:
             try:
                 mpos = field.data.find(':')
