@@ -21,7 +21,11 @@
 				<div class="product-content">
 					{% for product in product_list %}
 						<a href="/product/{{ product.id }}" class="product-item">
-							<img src="{{ url_for('static', filename='img/temp/product-item.png') }}" alt="product-item">
+							{% if product.get_pics() != [] %}
+								<img src="{{ url_for('static', filename=product.get_pics()[0]) }}" alt="product-item">
+							{% else %}
+								<img src="{{ url_for('static', filename='img/temp/product-item.png') }}" alt="product-item">
+							{% endif %}
 							<h3>{{ product.name }}</h3>
 						</a>
 					{% endfor %}

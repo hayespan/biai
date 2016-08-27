@@ -23,7 +23,7 @@
 			</div>
 			<nav class="product-nav">
 				{% for product in product_category_list %}
-					<a href="/product/category/{{ product.name }}/1" class="product-nav-item" style="background-image: url('static/{{ product.get_file_path() }}')">{{ product.name }}</a>
+					<a href="/product/category/{{ product.name }}" class="product-nav-item" style="background-image: url('static/{{ product.get_file_path() }}')">{{ product.name }}</a>
 				{% endfor %}		
 			</nav>
 		</div>
