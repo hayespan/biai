@@ -32,21 +32,21 @@ def post_creativity():
                 # )
     file_id, draw_file_id = '', ''
     if form.img.data:
-        succ, _ = save_form_file(form.img.data, Application.get_file_dir())
+        succ, fileid_tmp = save_form_file(form.img.data, Application.get_file_dir())
         if not succ:
             return response(
                     ret=-2,
                     msg='save file fail',
                     )
-        file_id = _
+        file_id = fileid_tmp
     if form.b64img_data:
-        succ, _ = save_form_file(form.b64img_data, Application.get_file_dir(), gen_random_filename(form.b64img_fmt))
+        succ, fileid_tmp = save_form_file(form.b64img_data, Application.get_file_dir(), gen_random_filename(form.b64img_fmt))
         if not succ:
             return response(
                     ret=-3,
                     msg='save draw file fail',
                     )
-        draw_file_id = _
+        draw_file_id = fileid_tmp
     application = Application(
             mobile=form.mobile.data,
             file_id=file_id,
