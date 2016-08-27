@@ -19,10 +19,19 @@ def via_mobile():
             return True
     return False
 
+def get_cur_nav_meta_name(nav_dict):
+    cur_path = request.path
+    for k, v in nav_dict.iteritems():
+        link = v.link
+        if link in cur_path:
+            return k
+    return None
+
 def get_common_data():
     common_data = {}
     common_data['nav_dict'] = nav_service.get_navs()
-    common_data['locale'] = locale_service.get_locale()
+    common_data['cur_nav_meta_name'] = get_cur_nav_meta_name(common_data['nav_dict'])
+    common_data['locale'] = locale_service.get_site_locale()
     return common_data
 
 def response(tmpl_path=None, **kwargs):

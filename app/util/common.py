@@ -2,6 +2,7 @@
 import time
 import os
 import math
+import ConfigParser
 import datetime 
 from flask import jsonify, request, redirect, current_app
 from functools import wraps
@@ -127,4 +128,38 @@ def page_limit(tot, per, cur):
     cur = min(maxpage, cur)
     idx = (cur-1)*per
     return (idx, per)
+
+def get_biai_conf(sec, key, type_=str):
+    try:
+        BIAI_CONF_PATH = current_app.config['BIAI_CONFIG_PATH']
+        cf = ConfigParser.ConfigParser()
+        cf.read(BIAI_CONF_PATH)
+        if type_ == str:
+            result = cf.get(sec, key)
+        elif type_ == int:
+            result = cf.getint(sec, key)
+        elif type_ == float:
+            result = cf.getfloat(sec, key)
+        elif type_ == bool:
+            result = cf.getboolean(sec, key)
+        else:
+            logger.error('invalid read type: ' + str(type_))
+            return False, None
+        return True, result
+    except Exception, e:
+        logger.error('get_biai_conf exception: ' + str(e))
+    return False, None
+
+def set_biai_conf(sec, key, val):
+    try:
+        BIAI_CONF_PATH = current_app.config['BIAI_CONFIG_PATH']
+        cf = ConfigParser.ConfigParser()
+        cf.read(BIAI_CONF_PATH)
+        cf.set(sec, key, val)
+        with open(BIAI_CONF_PATH, 'w') as f_:
+            cf.write(f_)
+        return True
+    except Exception, e:
+        logger.error('set_biai_conf exception: ' + str(e))
+    return False
 

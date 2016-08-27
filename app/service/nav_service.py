@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+from flask import request
 from ..model.nav import Nav
 
 def get_navs():
