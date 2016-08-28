@@ -3,10 +3,11 @@ from . import adminbp
 
 from flask import render_template, request, abort, url_for
 
-from ..base_func import *
-from ...util.common import logger, json_response
+from ..base_func import response
+from ...util.common import logger, json_response, save_form_file
 from ...service import news_category_service
 from ...service import news_service
+from ...model.news_category import NewsCategory
 
 @adminbp.route('/news_category')
 def l_news_category():
@@ -130,6 +131,6 @@ def r_news(id_):
     id_ = form.id.data
     n = news_service.read_news(id_)
     return response('news.html',
-            news=c,
+            news=n,
             )
 

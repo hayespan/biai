@@ -5,7 +5,7 @@ from . import pcbp
 
 from flask import render_template, request, abort, url_for, session, redirect
 
-from ..base_func import *
+from ..base_func import response
 from ...util.common import logger, json_response, get_now_timestamp
 from ...service import banner_service
 from ...service import product_category_service

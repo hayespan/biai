@@ -32,7 +32,7 @@ def create_news(title, content, news_category_id):
     db.session.commit()
     return 0, n.id
 
-def update_news(title, content, news_category_id):
+def update_news(id_, title, content, news_category_id):
     n = News.query.filter_by(id=id_).first()
     if not n:
         return -1
@@ -45,10 +45,10 @@ def update_news(title, content, news_category_id):
 
 def read_news(id_):
     n = News.query.filter_by(id=id_).first()
-    return nc
+    return n
 
 def delete_news(id_):
     n = News.query.filter_by(id=id_).first()
     if n:
-        db.session.delete(nc)
+        db.session.delete(n)
 

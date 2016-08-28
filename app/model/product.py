@@ -46,9 +46,9 @@ class Product(db.Model):
     	attrs = json.loads(self.attrs) if self.attrs else []
     	return attrs
 
-    def set_oth_attrs(self, attrs):
+    def set_oth_attrs(self, oth_attrs):
     	oth_attrs = oth_attrs or []
-    	self.oth_attrs = json.dumps(attrs)
+    	self.oth_attrs = json.dumps(oth_attrs)
 
     def get_oth_attrs(self):
     	oth_attrs = json.loads(self.oth_attrs) if self.oth_attrs else []

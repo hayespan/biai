@@ -3,7 +3,7 @@
 from flask import render_template, request, abort, url_for, session
 
 from . import pcbp 
-from ..base_func import *
+from ..base_func import response
 from ...util.common import logger, json_response, get_now_timestamp
 from ...service import nav_service
 

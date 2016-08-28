@@ -6,7 +6,7 @@ from . import pcbp
 from flask import render_template, request, abort, url_for
 
 from ... import db
-from ..base_func import *
+from ..base_func import response
 from ...util.common import logger, json_response, save_form_file, gen_random_filename
 from ...model.application import Application
 from ...service import captcha_service
