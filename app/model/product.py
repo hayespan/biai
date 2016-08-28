@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from __future__ import unicode_literals
 
 import json
 
@@ -20,8 +21,8 @@ class Product(db.Model):
     modify_time = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     name = db.Column(db.String(512), nullable=False)
     pics = db.Column(db.String(2048), nullable=True)
-    attrs = db.Column(db.String(2048), nullable=True)
-    attr_bits = db.Column(db.Integer, nullable=False, default=0)
+    attrs = db.Column(db.String(2048), nullable=False)
+    oth_attrs = db.Column(db.String(2048), nullable=False)
     buy_link = db.Column(db.String(1024), nullable=True)
     description = db.Column(db.Text, nullable=True) 
 
@@ -37,14 +38,22 @@ class Product(db.Model):
     def __repr__(self):
         return '<Product %d>' % (self.id, )
 
-    ATTR_BITS = AttrDict(
-            COLOR=1<<0,
-            PRICE=1<<1,
-            )
+    def set_attrs(self, attrs):
+        attrs = attrs or []
+        self.attrs = json.dumps(attrs)
 
-    def get_attr_by_bit(self, attr_bit):
-        return json.loads(self.attrs)[getattr(ATTR_BITS, attr_bit)] if attr_bit&self.attr_bits else None
+    def get_attrs(self):
+    	attrs = json.loads(self.attrs) if self.attrs else []
+    	return attrs
 
+    def set_oth_attrs(self, attrs):
+    	oth_attrs = oth_attrs or []
+    	self.oth_attrs = json.dumps(attrs)
+
+    def get_oth_attrs(self):
+    	oth_attrs = json.loads(self.oth_attrs) if self.oth_attrs else []
+    	return oth_attrs
+    	
     def get_pics(self):
         pics = json.loads(self.pics) if self.pics else []
         abs_path_pics = []
