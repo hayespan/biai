@@ -73,3 +73,63 @@ def r_news_category(id_):
             news_category=nc,
             )
 
+@adminbp.route('/news')
+def l_news():
+    page = request.args.get('page', 1)
+    n_list = news_service.get_news_list(None, page)
+    page_info = news_service.get_news_page_info(None, page)
+    return response('news_list.html',
+            news_list=n_list,
+            page_info=page_info,
+            )
+
+@adminbp.route('/news/create', methods=['POST', ])
+@adminbp.route('/news/update', methods=['POST', ])
+def cu_news():
+    from ...form.admin import CUNewsForm
+    form = CUNewsForm()
+    if not form.validate():
+        return response(
+                ret=-1,
+                msg='input error: ' + str(form.errors),
+                )
+    id_ = form.id.data
+    title = form.title.data or ''
+    content = form.content.data or ''
+    news_category_id = form.news_category_id.data or -1 
+    if id_:
+        ret = news_service.update_news(
+                id_, title, content, news_category_id,
+                )
+        return response(ret=ret)
+    else:
+        ret, new_id = news_service.create_news(
+                title, content, news_category_id, 
+                )
+        return response(ret=ret, id=new_id)
+
+@adminbp.route('/news/delete', methods=['POST', ])
+def d_news():
+    from ...form.admin import RDNewsForm
+    form = RDNewsForm()
+    if not form.validate():
+        return response(
+                id=-1,
+                msg='input error: ' + str(form.errors),
+                )
+    id_ = form.id.data
+    news_service.delete_news(id_)
+    return response(ret=0)
+
+@adminbp.route('/news/<int:id_>')
+def r_news(id_):
+    from ...form.admin import RDNewsForm
+    form = RDNewsForm()
+    if not form.validate():
+        abort(404)
+    id_ = form.id.data
+    n = news_service.read_news(id_)
+    return response('news.html',
+            news=c,
+            )
+

@@ -12,10 +12,19 @@ class LoginForm(Form):
 
 class CUNewsCategoryForm(Form):
     id = IntegerField(validators=[])
-    name = StringField(validators=[Length(1, 512), ])
+    name = StringField(validators=[Length(0, 512), ])
     img = FileField(validators=[])
     weight = IntegerField()
 
 class RDNewsCategoryForm(Form):
+    id = IntegerField(validators=[Required(), ])
+
+class CUNewsForm(Form):
+    id = IntegerField(validators=[])
+    title = StringField(validators=[Length(0, 1024), ])
+    content = StringField(validators=[])
+    news_category_id = IntegerField(validators=[])
+
+class RDNewsForm(Form):
     id = IntegerField(validators=[Required(), ])
 
