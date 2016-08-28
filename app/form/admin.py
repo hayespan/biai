@@ -9,3 +9,13 @@ class LoginForm(Form):
     username = StringField(validators=[Required(), Length(1, 64), ])
     password = PasswordField(validators=[Required(), ])
     remember_me = BooleanField()
+
+class CUNewsCategoryForm(Form):
+    id = IntegerField(validators=[])
+    name = StringField(validators=[Length(1, 512), ])
+    img = FileField(validators=[])
+    weight = IntegerField()
+
+class RDNewsCategoryForm(Form):
+    id = IntegerField(validators=[Required(), ])
+

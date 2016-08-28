@@ -34,16 +34,19 @@ def get_common_data():
     common_data['locale'] = locale_service.get_site_locale()
     return common_data
 
-def response(tmpl_path=None, **kwargs):
+def response(tmpl_path=None, admin=False, **kwargs):
     format_ = request.args.get('f', 'html')
     if format_ == 'html':
         if tmpl_path is None:
             abort(404)
         kwargs.update(get_common_data())
-        if not via_mobile():
-            tmpl_path = 'pc/' + tmpl_path
+        if not admin:
+            if not via_mobile():
+                tmpl_path = 'pc/' + tmpl_path
+            else:
+                tmpl_path = 'mb/' + tmpl_path
         else:
-            tmpl_path = 'mb/' + tmpl_path
+            tmpl_path = 'admin/' + tmpl_path
         return render_template(tmpl_path,
                 **kwargs
                 )
