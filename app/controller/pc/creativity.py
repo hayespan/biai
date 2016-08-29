@@ -6,7 +6,7 @@ from . import pcbp
 from flask import render_template, request, abort, url_for
 
 from ... import db
-from ..base_func import *
+from ..base_func import response
 from ...util.common import logger, json_response, save_form_file, gen_random_filename
 from ...model.application import Application
 from ...service import captcha_service
@@ -25,11 +25,11 @@ def post_creativity():
                 ret=-1,
                 msg='input error',
                 )
-    # if not captcha_service.check_captcha(form.code.data):
-        # return response(
-                # ret=-3,
-                # msg='captcha code error',
-                # )
+    if not captcha_service.check_captcha(form.code.data):
+        return response(
+                ret=-3,
+                msg='captcha code error',
+                )
     file_id, draw_file_id = '', ''
     if form.img.data:
         succ, fileid_tmp = save_form_file(form.img.data, Application.get_file_dir())

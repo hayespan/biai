@@ -3,7 +3,7 @@ from . import pcbp
 
 from flask import render_template, request, abort, url_for
 
-from ..base_func import *
+from ..base_func import response
 from ...util.common import logger, json_response
 from ...service import product_category_service
 from ...service import product_service

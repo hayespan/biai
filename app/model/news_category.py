@@ -12,8 +12,14 @@ class NewsCategory(db.Model):
     file_id = db.Column(db.String(512), nullable=True)
     weight = db.Column(db.Integer, nullable=False, default=0)
 
+    def get_file_dir(self):
+        return 'img/news_category/'
+
     def get_file_path(self):
-        return 'img/news_category/' + self.file_id
+        if self.file_id:
+            return self.get_file_dir() + self.file_id
+        else:
+            return None
 
     def __init__(self, *args, **kwargs): 
         super(NewsCategory, self).__init__(*args, **kwargs) 
