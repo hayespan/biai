@@ -10,7 +10,7 @@ class PostCreativity(Form):
     img = FileField(validators=[])
     b64img = StringField(validators=[Optional(), ])
     mobile = StringField(validators=[Required(), Regexp(mobile_s), ])
-    # code = StringField(validators=[Required(), Regexp(captcha_s), ])
+    code = StringField(validators=[Required(), Regexp(captcha_s), ])
     def validate(self):
         self.b64img_data = None
         self.b64img_fmt = None

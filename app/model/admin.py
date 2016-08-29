@@ -19,7 +19,7 @@ class Admin(UserMixin, db.Model):
     last_login = db.Column(db.DateTime, nullable=False, default=datetime.utcnow) 
 
     def __init__(self, *args, **kwargs): 
-        super(User, self).__init__(*args, **kwargs) 
+        super(Admin, self).__init__(*args, **kwargs) 
 
     @property 
     def password(self):

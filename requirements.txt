@@ -21,7 +21,6 @@ Jinja2==2.7.3
 Mako==1.0.1
 MarkupSafe==0.23
 MySQL-python==1.2.5
-PIL==1.1.7
 PyYAML==3.11
 SQLAlchemy==0.9.8
 WTForms==2.0.2

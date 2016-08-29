@@ -15,9 +15,11 @@ def get_product_page_info(category, cur, per=20):
     tot = query.count()
     return page_info(tot, per, cur)
 
-def get_product_list(category, page):
+def get_product_list(category, page, per=20):
     query = category.products if category else Product.query
-    products = query.order_by(db.desc('id')).all()
+    offset = (page-1)*per
+    offset = 0 if offset < 0 else offset
+    products = query.order_by(db.desc('id')).offset(offset).limit(per).all()
     return products
 
 def get_product(product_id):
