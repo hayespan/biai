@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin</title>
+    <script src="{{ url_for('static', filename='js/jquery-3.0.0.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/admin_home.js') }}"></script>
+</head>
+<style>
+    img {
+        width: 80px;
+        height: 80px;
+    }
+</style>
+<body>
+<h2>海报管理</h2>
+<table id="poster">
+    <tr>
+        <th>海报序号</th>
+        <th>名称</th>
+        <th>操作</th>
+    </tr>
+    {% for each in data['poster'] %}
+        <tr>
+            <td>{{ each.id }}</td>
+            <td>{{ each.name }}</td>
+            <td>
+                <button class="change_poster">更改</button>
+                <button class="delete_poster">删除</button>
+            </td>
+        </tr>
+    {% endfor %}
+</table>
+<form action="/admin/home/add_poster" method="post"
+      enctype="multipart/form-data">
+    <label>添加海报</label>
+    <input type="file" name="poster">
+    <button type="submit">提交</button>
+</form>
+
+<hr>
+<h2>视频管理</h2>
+<table id="video">
+    <tr>
+        <th>视频序号</th>
+        <th>名称</th>
+        <th>操作</th>
+    </tr>
+    {% for each in data['video'] %}
+        <tr>
+            <td>{{ each.id }}</td>
+            <td>{{ each.name }}</td>
+            <td>
+                <button class="change_video">更改</button>
+                <button class="delete_video">删除</button>
+            </td>
+        </tr>
+    {% endfor %}
+</table>
+<form action="/admin/home/add_video" method="post"
+      enctype="multipart/form-data">
+    <label>添加视频</label>
+    <input type="file" name="video">
+    <button type="submit">提交</button>
+</form>
+
+<hr>
+<h2>资讯管理</h2>
+<table id="news">
+    <tr>
+        <th>序号</th>
+        <th>咨询名称</th>
+        <th>操作</th>
+    </tr>
+    {% for each in data['news'] %}
+        <tr>
+            <td>{{ each.id }}</td>
+            <td>{{ each.name }}</td>
+            <td>
+                {% if each.hide %}
+                    <button class="hide_show">显示</button>
+                {% else %}
+                    <button class="hide_show">不显示</button>
+                {% endif %}
+                <button class="choose_new">选择新闻</button>
+            </td>
+        </tr>
+    {% endfor %}
+</table>
+<div id="new_input" style="display: none">
+    <label>咨询名称:</label>
+    <input type="text" name="name">
+    <button>修改</button>
+</div>
+<hr>
+<h2>分类管理</h2>
+<table id="classify">
+    <tr>
+        <th>分类序号</th>
+        <th>分类名称</th>
+        <th>图片</th>
+        <th>操作</th>
+    </tr>
+    {% for each in data['classify'] %}
+        <tr>
+            <td>{{ each.id }}</td>
+            <td>{{ each.name }}</td>
+            <td><img src="{{ url_for('static', filename='img/home/classify/' + each.img) }}" alt=""></td>
+            <td>
+                <button class="classify">编辑</button>
+            </td>
+        </tr>
+    {% endfor %}
+</table>
+<form action="/admin/home/change_classify" method="post" enctype="multipart/form-data" id="classify_form"
+      style="display: none; position: absolute; left: 20%; top: 100%">
+    <label>分类序号:</label>
+    <input type="text" name="id">
+    <label>分类名称:</label>
+    <input type="text" name="name">
+    <label>图片:</label>
+    <input type="file" name="classify">
+    <button id="classify_sub">提交</button>
+</form>
+</body>
+</html>

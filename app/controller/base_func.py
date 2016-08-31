@@ -9,6 +9,7 @@ from ..service import nav_service
 
 USER_AGENT = ('micromessenger', 'Mobile', 'iPhone', 'Windows Phone', 'UCWEB', 'Fennec', 'Opera Mobi', 'BlackBerry', )
 
+
 def via_mobile():
     s = request.headers.get('User-Agent')
     if s is None:
@@ -18,10 +19,12 @@ def via_mobile():
             return True
     return False
 
+
 def get_common_data():
     common_data = {}
     common_data['nav_dict'] = nav_service.get_navs()
     return common_data
+
 
 def response(tmpl_path=None, **kwargs):
     format_ = request.args.get('f', 'html')

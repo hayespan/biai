@@ -5,6 +5,7 @@ from wtforms.fields import TextAreaField, StringField, BooleanField, DateField, 
 from wtforms.validators import Required, Length, Optional, ValidationError, Regexp
 from ..util.regexp import mobile_s, captcha_s
 
+
 class LoginForm(Form):
     username = StringField(validators=[Required(), Length(1, 64), ])
     password = PasswordField(validators=[Required(), ])
