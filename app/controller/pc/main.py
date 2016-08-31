@@ -3,15 +3,16 @@ import random
 
 from . import pcbp 
 
-from flask import render_template, request, abort, url_for, session
+from flask import render_template, request, abort, url_for, session, redirect
 
-from ..base_func import *
+from ..base_func import response
 from ...util.common import logger, json_response, get_now_timestamp
 from ...service import banner_service
 from ...service import product_category_service
 from ...service import video_service
 from ...service import consult_service
 from ...service import product_service
+from ...service import captcha_service
 from ...util.sms import send_sms
 
 @pcbp.route('/search', methods=['POST', ])
@@ -72,9 +73,7 @@ def captcha_mobile_check():
                 ret=-1,
                 msg='captcha code format error',
                 )
-    code = session.get('captcha_mobile_code', '')
-    expire = session.get('captcha_mobile_expire', 0)
-    correct = code == form.code.data and expire>get_now_timestamp()
+    correct = captcha_service.check_captcha(form.code.data)
     return response(ret=0, correct=correct)
 
 
@@ -84,5 +83,5 @@ def set_locale(lang):
         session['locale'] = lang
     elif session.get('locale', None):
         del session['locale']
-    return response(ret=0)
+    return redirect(url_for('pc.index'))
 

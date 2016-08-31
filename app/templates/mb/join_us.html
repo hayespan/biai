@@ -1,0 +1,94 @@
+{% extends "mb/base.html" %}
+{% block title %}加入我们{% endblock %}
+{% block stylesheet %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/join_us_mb.css') }}">
+{% endblock %}
+{% block main %}
+	<div class="join-container">
+		<div class="join-type-nav">
+			<div class="nav-header">
+			</div>
+			<ul class="nav-list">
+				<li><a class="cooperate chosen" href="#">合作加盟</a></li>
+				<li><a class="recruit" href="#">人才招聘</a></li>
+			</ul>
+		</div>
+		<div class="join-page-container">
+			<div class="join-cooperate">
+				<form action="#">
+					<div class="form-item">
+						<label>姓名</label>
+						<input type="text" />
+					</div>
+					<div class="form-item">
+						<label>联系方式</label>
+						<input type="text" />
+					</div>
+					<div class="form-item">
+						<label>地区</label>
+						<input type="text" />
+					</div>
+					<div class="form-item">
+						<label>店铺主管</label>
+						<input type="text" />
+					</div>
+					<div class="form-item">
+						<label>发展规划</label>
+						<textarea></textarea>
+					</div>
+					<div class="form-item">
+						<label>合作意向</label>
+						<textarea></textarea>
+					</div>
+					<div class="form-split"></div>
+					<div class="form-item form-verify-phone">
+						<label>手机号</label>
+						<input type="text" placeholder="请输入手机号码" />
+					</div>
+					<div class="form-item form-verify-code">
+						<label>验证码</label>
+						<input type="text" placeholder="请输入验证码" />
+						<button>发送验证码</button>
+					</div>
+					<div class="form-item">
+						<input type="submit" />
+					</div>
+				</form>
+			</div>
+			<div class="join-recruit hidden">
+				<ul class="job-list">
+					<li class="job-item">
+						<img class="job-img" src="{{ url_for('static', filename='img/temp/about.png') }}" alt="job-img">
+						<div class="job-info">
+							<h3>
+								职位名称
+							</h3>
+							<p>
+								一点寒芒先到随后枪出如龙一点寒芒先到随后枪出如龙一点寒芒先到随后枪出如龙一点寒芒先到随后枪出如龙
+								一点寒芒先到随后枪出如龙
+								一点寒芒先到随后枪出如龙
+								一点寒芒先到随后枪出如龙一点寒芒先到随后枪出如龙一点寒芒先到随后枪出如龙一点寒芒先到随后枪出如龙一点寒芒先到随后枪出如龙
+							</p>
+						</div>
+					</li>
+					<li class="job-item">
+						<img class="job-img" src="{{ url_for('static', filename='img/temp/about.png') }}" alt="job-img">
+						<div class="job-info">
+							<h3>
+								职位名称
+							</h3>
+							<p>
+								一点寒芒先到随后枪出如龙
+							</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+{% block script %}
+{{ super() }}
+<script src="{{ url_for('static', filename='js/main_mb.js') }}"></script>
+{% endblock %}

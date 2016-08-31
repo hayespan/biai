@@ -1,0 +1,50 @@
+{% extends "mb/base.html" %}
+{% block title %}新闻动态{% endblock %}
+{% block stylesheet %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/news_list_mb.css') }}">
+{% endblock %}
+{% block main %}
+	<div class="news-list-container">
+		<div class="news-category-nav">
+			<div class="nav-header">
+			</div>
+			<ul class="nav-list">
+				{% for news_category in news_category_list %}
+					{% if news_category == current_category %}
+						<li><a class="chosen" href="/news/category/{{ news_category.name }}/1">{{ news_category.name }}</a></li>
+					{% else %}
+						<li><a href="/news/category/{{ news_category.name }}/1">{{ news_category.name }}</a></li>
+					{% endif %}
+				{% endfor %}
+			</ul>
+		</div>
+		<div class="news-list-page">
+			<div class="page-content">
+				<ul>
+					<li><a href="#">宝宝玩具的选择要点</a><span>2016-07-22</span></li>
+					<li><a href="#">给孩子立规矩的十九原则</a><span>2016-07-22</span></li>
+					<li><a href="#">一点寒芒先到，随后枪出如龙</a><span>2016-07-22</span></li>
+					<li><a href="#">我们心有灵犀，不是么</a><span>2016-07-22</span></li>
+					<li><a href="#">给孩子选玩具的原则</a><span>2016-07-22</span></li>
+					<li><a href="#">上班族妈妈们，不这样陪孩子，当心孩子就跟你们不亲了</a><span>2016-07-22</span></li>
+					<li><a href="#">正确帮宝宝洗澡的好方法</a><span>2016-07-22</span></li>
+				</ul>
+			</div>
+			<div class="page-nav">
+				<a id="last-page" href="#">上一页</a>
+				<a class="chosen" href="#">1</a>
+				<a href="#">2</a>
+				<a href="#">3</a>
+				<a href="#">4</a>
+				<a href="#">5</a>
+				<a href="#">6</a>
+				<a id="next-page" href="#">下一页</a>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+{% block script %}
+{{ super() }}
+<script src="{{ url_for('static', filename='js/main_mb.js') }}"></script>
+{% endblock %}

@@ -14,22 +14,22 @@
 		<p>都可以提交对婴幼儿玩具的创意。作品入选或是创意采用，将有丰厚奖励！</p>
 		<p>在下面画出你心中的创意，或者直接选择文件上传吧！</p>
 		<canvas id="creativity-sketch" width="980" height="440"></canvas>
-		<form action="">
+		<form name="work-form" action="/creativity/post" method="post">
 			<div class="form-item">
 				<label>选择文件</label>
 				<input type="file" name="work" />
 			</div>
 			<div class="form-item">
-				<h3>清验证手机号码后提交你的设计</h3>
+				<h3>请验证手机号码后提交你的设计</h3>
 			</div>
 			<div class="form-item form-verify-phone">
 				<label>手机号</label>
-				<input type="text" placeholder="请输入手机号码" />
+				<input type="text" id="mobile" placeholder="请输入手机号码" />
 				<button>发送验证码</button>
 			</div>
 			<div class="form-item form-verify-code">
 				<label>验证码</label>
-				<input type="text" placeholder="请输入验证码" />
+				<input type="text" id="verify-code" placeholder="请输入验证码" />
 			</div>
 			<div class="form-item">
 				<input type="submit" />

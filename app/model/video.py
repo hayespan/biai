@@ -10,10 +10,14 @@ class Video(db.Model):
     create_time = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     weight = db.Column(db.Integer, nullable=False, default=0)
     name = db.Column(db.String(512), nullable=False)
-    file_id = db.Column(db.String(32), nullable=False, index=True)
+    file_id = db.Column(db.String(512), nullable=False, index=True)
+    pic_id = db.Column(db.String(512), nullable=False)
 
     def get_file_path(self):
         return 'video/mainpage/' + self.file_id
+
+    def get_pic_path(self):
+        return 'video/pic/' + self.pic_id
 
     def __init__(self, *args, **kwargs): 
         super(Video, self).__init__(*args, **kwargs) 
