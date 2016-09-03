@@ -6,14 +6,6 @@ from ..model.news import News
 from ..util.common import page_info
 from .news_category_service import read_news_category
 
-<<<<<<< HEAD
-
-def get_news_list(category):
-    news = category.news if category else News.query.all()
-    news = sorted(news, lambda a,b:a.id>b.id)
-    return news
-
-=======
 def get_news_list(category, page, per=20):
     query = category.news if category else News.query
     offset = (page-1)*per
@@ -25,7 +17,6 @@ def get_news_page_info(category, cur, per=20):
     query = category.news if category else News.query
     tot = query.count()
     return page_info(tot, per, cur)
->>>>>>> 4b3b4470e40d8a8c7dd177302192a4718ae71d3d
 
 def get_news(news_id):
     return News.query.filter_by(id=news_id).first()
