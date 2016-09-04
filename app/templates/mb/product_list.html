@@ -21,69 +21,48 @@
 		</div>
 		<div class="product-list-page">
 			<div class="page-content">
-				<div class="product-item">
-					<img src="{{ url_for('static', filename='img/temp/product-item.png') }}" alt="product-item">
-					<h3>比爱音乐-宝宝益智手拍鼓乐器-音乐世家系列</h3>
-				</div>
-				<div class="product-item">
-					<img src="{{ url_for('static', filename='img/temp/product-item.png') }}" alt="product-item">
-					<h3>比爱音乐-宝宝益智手拍鼓乐器-音乐世家系列</h3>
-				</div>
-				<div class="product-item">
-					<img src="{{ url_for('static', filename='img/temp/product-item.png') }}" alt="product-item">
-					<h3>比爱音乐-宝宝益智手拍鼓乐器-音乐世家系列</h3>
-				</div>
-				<div class="product-item">
-					<img src="{{ url_for('static', filename='img/temp/product-item.png') }}" alt="product-item">
-					<h3>比爱音乐-宝宝益智手拍鼓乐器-音乐世家系列</h3>
-				</div>
-				<div class="product-item">
-					<img src="{{ url_for('static', filename='img/temp/product-item.png') }}" alt="product-item">
-					<h3>比爱音乐-宝宝益智手拍鼓乐器-音乐世家系列</h3>
-				</div>
-				<div class="product-item">
-					<img src="{{ url_for('static', filename='img/temp/product-item.png') }}" alt="product-item">
-					<h3>比爱音乐-宝宝益智手拍鼓乐器-音乐世家系列</h3>
-				</div>
-				<div class="product-item">
-					<img src="{{ url_for('static', filename='img/temp/product-item.png') }}" alt="product-item">
-					<h3>比爱音乐-宝宝益智手拍鼓乐器-音乐世家系列</h3>
-				</div>
-				<div class="product-item">
-					<img src="{{ url_for('static', filename='img/temp/product-item.png') }}" alt="product-item">
-					<h3>比爱音乐-宝宝益智手拍鼓乐器-音乐世家系列</h3>
-				</div>
-				<div class="product-item">
-					<img src="{{ url_for('static', filename='img/temp/product-item.png') }}" alt="product-item">
-					<h3>比爱音乐-宝宝益智手拍鼓乐器-音乐世家系列</h3>
-				</div>
-				<div class="product-item">
-					<img src="{{ url_for('static', filename='img/temp/product-item.png') }}" alt="product-item">
-					<h3>比爱音乐-宝宝益智手拍鼓乐器-音乐世家系列</h3>
-				</div>
-				<div class="product-item">
-					<img src="{{ url_for('static', filename='img/temp/product-item.png') }}" alt="product-item">
-					<h3>比爱音乐-宝宝益智手拍鼓乐器-音乐世家系列</h3>
-				</div>
-				<div class="product-item">
-					<img src="{{ url_for('static', filename='img/temp/product-item.png') }}" alt="product-item">
-					<h3>比爱音乐-宝宝益智手拍鼓乐器-音乐世家系列</h3>
-				</div>
+				{% for product in product_list %}
+					<a href="/product/{{ product.id }}" class="product-item">
+						{% if product.get_pics() != [] %}
+							<img src="{{ url_for('static', filename=product.get_pics()[0]) }}" alt="product-item">
+						{% else %}
+							<img src="{{ url_for('static', filename='img/temp/product-item.png') }}" alt="product-item">
+						{% endif %}
+						<h3>{{ product.name }}</h3>
+					</a>
+				{% endfor %}
 			</div>
 			<div class="page-nav">
-				<a id="last-page" href="#">上一页</a>
-				<a class="chosen" href="#">1</a>
-				<a href="#">2</a>
-				<a href="#">3</a>
-				<a href="#">4</a>
-				<a href="#">5</a>
-				<a href="#">6</a>
-				<a id="next-page" href="#">下一页</a>
+				<nav>
+					{% if page_info['cur'] == page_info['min'] %}
+						<a class="disabled" id="last-page" href="/product/category/{{ current_category.name }}/{{ page_info['cur']-1 }}">上一页</a>
+					{% else %}
+						<a id="last-page" href="/product/category/{{ current_category.name }}/{{ page_info['cur']-1 }}">上一页</a>
+					{% endif %}
+					{% if page_info['cur']-page_info['min'] > 2 %}
+						{% set min = page_info['cur'] - 2 %}
+					{% else %}
+						{% set min = page_info['min'] %}
+					{% endif %}
+					{% if page_info['max']-page_info['cur'] > 2 %}
+						{% set max = page_info['cur'] + 2 %}
+					{% else %}
+						{% set max = page_info['max'] %}
+					{% endif %}
+					{% for i in range(min, max+1) %}
+						{% if i == page_info['cur'] %}
+							<a class="chosen" href="/product/category/{{ current_category.name }}/{{ i }}">{{ i }}</a>
+						{% else %}
+							<a href="/product/category/{{ current_category.name }}/{{ i }}">{{ i }}</a>
+						{% endif %}
+					{% endfor %}
+					{% if page_info['cur'] == page_info['max'] %}
+						<a class="disabled" id="last-page" href="/product/category/{{ current_category.name }}/{{ page_info['cur']+1 }}">下一页</a>
+					{% else %}
+						<a id="next-page" href="/product/category/{{ current_category.name }}/{{ page_info['cur']+1 }}">上下一页</a>
+					{% endif %}
+				</nav>
 			</div>
 		</div>
 	</div>
-{% endblock %}
-{% block script %}
-{{ super() }}
-<script src="{{ url_for('static', filename='js/main_mb.js') }}"></script>
 {% endblock %}

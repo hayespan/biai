@@ -1,8 +1,37 @@
 $(document).ready(function() {
 	$('#creativity-sketch').sketch();
+
+	$('#choose-color').on('click', function(e) {
+		e.preventDefault();
+		$('.color-dropdown').removeClass('hidden');
+	});
+
+	$('.color-dropdown a').on('click', function(e) {
+		var color = this.dataset.color;
+		$('#choose-color').css("background-color", color);
+		$('.color-dropdown').addClass('hidden');
+	});
+
+	$('#choose-size').on('click', function(e) {
+		e.preventDefault();
+		$('.size-dropdown').removeClass('hidden');
+	});
+
+	$('.size-dropdown a').on('click', function(e) {
+		var size = this.dataset.size;
+		$('#choose-size').text(size);
+		$('.size-dropdown').addClass('hidden');
+	});
+
 	$('.form-verify-phone button').on('click', function(e) {
 		e.preventDefault();
 		var mobile_num = $('#mobile').val();
+		if (!mobile_num) {
+			$(this).siblings('.alert-hint').text('还没填手机号码呢亲');
+			$(this).siblings('.alert-hint').removeClass('hidden');
+			return false;
+		}
+		console.log(mobile_num);
 		$.ajax({
 			url : '/captcha/mobile_trigger?f=json',
 			type : 'POST',
@@ -10,15 +39,21 @@ $(document).ready(function() {
 				mobile : mobile_num
 			},
 			success : function(result) {
-				console.log(result);
+				if (result.msg == 'invalid mobile') {
+					$(this).siblings('.alert-hint').text('手机号码格式有误');
+					$(this).siblings('.alert-hint').removeClass('hidden');
+				} else if (result.msg == 'send fail') {
+					$(this).siblings('.alert-hint').text('发送失败请重试');
+					$(this).siblings('.alert-hint').removeClass('hidden');
+				} else {
+					$(this).siblings('.alert-hint').addClass('hidden');
+				}
 			}
 		});
 	});
 
 	$('form').on('submit', function(e) {
 		e.preventDefault();
-		// console.log($('#creativity-sketch').get(0).toDataURL());
-		// console.log($("form input[type=file]")[0].files[0]);
 		var valid_code = $('#valid-code').val();
 		$.ajax({
 			url : '/captcha/mobile_check?f=json',
@@ -30,12 +65,16 @@ $(document).ready(function() {
 				if (result.correct) {
 					upload_work();
 				} else {
-					// console.log('verify failed!');
-					upload_work();
+					$('#verify-code').siblings('.alert-hint').text('验证码有误请重试');
+					$('#verify-code').siblings('.alert-hint').removeClass('hidden');
 				}
 			}
 		});
 	});
+
+	$('.form-item input').on('click', function() {
+		$(this).siblings('.alert-hint').addClass('hidden');
+	})
 
 	function upload_work() {
 		var form_data = new FormData();
@@ -58,7 +97,12 @@ $(document).ready(function() {
 		    processData: false,
 		    contentType: false,
 			success : function(result) {
-				console.log(result);
+				if (result.msg == 'captcha code error') {
+					$('#verify-code').siblings('.alert-hint').text('验证码有误请重试');
+					$('#verify-code').siblings('.alert-hint').removeClass('hidden');
+				} else {
+					$('#verify-code').siblings('.alert-hint').addClass('hidden');
+				}
 			}
 		});
 	}

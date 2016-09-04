@@ -179,7 +179,7 @@ footer {
 		color: #000000;
 		text-align: center;
 		line-height: 35px;
-		font-size: 1.1rem;
+		font-size: 0.9rem;
 	}
 	& > a:last-child {
 		border: none;
@@ -187,7 +187,6 @@ footer {
 }
 
 .video-block {
-	height: 200px;
 	background-color: #ffffff;
 	margin-bottom: 10px;
 }
@@ -199,6 +198,12 @@ footer {
 	span {
 		color: #ac6de1;
 		font-size: 1.2rem;
+	}
+}
+
+.video-content {
+	video {
+		width: 100%;
 	}
 }
 

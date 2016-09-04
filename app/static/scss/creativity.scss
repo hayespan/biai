@@ -211,6 +211,81 @@ footer {
 	}
 }
 
+.sketch-setting {
+	position: relative;
+}
+
+.color-choice,
+.size-choice {
+	display: inline-block;
+	height: 40px;
+	width: 200px;
+	line-height: 40px;
+	overflow: hidden;
+	label {
+		float: left;
+		margin-right: 20px;
+	}
+	a {
+		float: left;
+		width: 50px;
+		height: 40px;
+	}
+}
+
+.color-choice {
+	a {
+		border: 1px solid #777777;
+		background-color: #000;
+	}
+}
+
+.color-dropdown {
+	position: absolute;
+	width: 50px;
+	left: 84px;
+	top: 40px;
+	a {
+		display: block;
+		width: 50px;
+		height: 40px;
+	}
+}
+
+#choose-size {
+	background-color: #ccc;
+}
+
+.size-dropdown {
+	position: absolute;
+	width: 50px;
+	left: 288px;
+	top: 40px;
+	box-sizing: border-box;
+	border: 1px solid #777777;
+	a {
+		background-color: #ccc;
+		color: #000000;
+		text-align: center;
+		line-height: 40px;
+		display: block;
+		width: auto;
+		height: 40px;
+		border-bottom: 1px solid #777777;
+	}
+	& > a:last-child {
+		border: none;
+	}
+}
+
+.size-choice {
+	a {
+		color: #000000;
+		text-align: center;
+		border: 1px solid #777777;
+	}
+}
+
 #creativity-sketch {
 	background-color: #d5d5f0;
 	margin-top: 10px;
@@ -218,9 +293,10 @@ footer {
 }
 
 .form-item {
-	margin: 0 auto 20px auto;
-	width: 420px;
+	margin-bottom: 20px;
+	padding: 0 280px;
 	overflow: hidden;
+	position: relative;
 	label {
 		float: left;
 		text-align: right;
@@ -266,4 +342,16 @@ footer {
 		width: 100px;
 		height: 35px;
 	}
+}
+
+.alert-hint {
+	position: absolute;
+	right: 100px;
+	top: 5px;
+	width: 150px;
+	color: #ff7676;
+}
+
+.hidden {
+	display: none;
 }

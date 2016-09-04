@@ -33,18 +33,30 @@
 		<div class="video-header">
 			<span class="title">产品视频</span>
 		</div>
+		<div class="video-content">
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+					{% if video_list == [] %}
+						<div class="swiper-slide" id="1"><video controls src="{{ url_for('static', filename='video/mainpage/1.mp4') }}"></video></div>
+						<div class="swiper-slide" id="2"><video controls src="{{ url_for('static', filename='video/mainpage/2.mp4') }}"></video></div>
+						<div class="swiper-slide" id="3"><video controls src="{{ url_for('static', filename='video/mainpage/3.mp4') }}"></video></div>
+					{% else %}
+						{% for video in video_list %}
+							<div class="swiper-slide" id="slide-{{ index }}"><video controls src="{{ url_for('static', filename=video.get_file_path()) }}"></video></div>
+						{% endfor %}
+					{% endif %}
+				</div>
+			</div>
+		</div>
 	</div>
 	<div class="consult-block">
 		<div class="consult-header">
 			<span class="title">公司资讯</span>
 		</div>
 		<ul class="consult-list">
-			<li><a href="#">标题1</a><span>2016-07-22</span></li>
-			<li><a href="#">标题1</a><span>2016-07-22</span></li>
-			<li><a href="#">标题1</a><span>2016-07-22</span></li>
-			<li><a href="#">标题1</a><span>2016-07-22</span></li>
-			<li><a href="#">标题1</a><span>2016-07-22</span></li>
-			<li><a href="#">标题1</a><span>2016-07-22</span></li>
+			{% for consult in consult_page_content %}
+				<li><a href="/news/{{ consult.id }}">{{ consult.title }}</a><span>2016-07-22</span></li>
+			{% endfor %}
 		</ul>
 	</div>
 {% endblock %}

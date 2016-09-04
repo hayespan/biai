@@ -210,9 +210,12 @@ footer {
 }
 
 .page-nav {
-	width: 80%;
 	margin: auto;
 	overflow: hidden;
+	text-align: center;
+	nav {
+		display: inline-block;
+	}
 	a {
 		float: left;
 		height: 27px;
@@ -230,6 +233,10 @@ footer {
 	.chosen {
 		border: none;
 		color: #5c5ec2;
+	}
+	.disabled {
+		color: #cfcfcf;
+		pointer-events: none;
 	}
 }
 

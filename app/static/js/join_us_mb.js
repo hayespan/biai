@@ -3,7 +3,6 @@ $(document).ready(function() {
 	var recruitPage = $('.join-recruit');
 	var cooperate = $('.cooperate');
 	var recruit = $('.recruit');
-
 	cooperate.on('click', function(e) {
 		e.preventDefault();
 		$(this).addClass('chosen')
@@ -152,4 +151,5 @@ $(document).ready(function() {
 		}
 		return true;
 	}
-});
+
+})

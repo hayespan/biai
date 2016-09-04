@@ -13,6 +13,34 @@
 		<p>我们诚挚欢迎心音的设计作品、设计概念、设计灵感。不论你是来自哪一行业，不论你是学生或已在职，</p>
 		<p>都可以提交对婴幼儿玩具的创意。作品入选或是创意采用，将有丰厚奖励！</p>
 		<p>在下面画出你心中的创意，或者直接选择文件上传吧！</p>
+		<div class="sketch-setting">
+			<div class="color-choice">
+				<label>画笔颜色</label>
+				<a href="#" id="choose-color"></a>
+			</div>
+			<div class="color-dropdown hidden">
+				<a href="#creativity-sketch" data-color="#f00" style="background-color: #f00"></a>
+				<a href="#creativity-sketch" data-color="#ff0" style="background-color: #ff0"></a>
+				<a href="#creativity-sketch" data-color="#0f0" style="background-color: #0f0"></a>
+				<a href="#creativity-sketch" data-color="#0ff" style="background-color: #0ff"></a>
+				<a href="#creativity-sketch" data-color="#00f" style="background-color: #00f"></a>
+				<a href="#creativity-sketch" data-color="#f0f" style="background-color: #f0f"></a>
+				<a href="#creativity-sketch" data-color="#000" style="background-color: #000"></a>
+				<a href="#creativity-sketch" data-color="#fff" style="background-color: #fff"></a>
+			</div>
+			<div class="size-choice">
+				<label>画笔大小</label>
+				<a href="#" id="choose-size">5</a>
+			</div>
+			<div class="size-dropdown hidden">
+				<a href="#creativity-sketch" data-size="3">3</a>
+				<a href="#creativity-sketch" data-size="5">5</a>
+				<a href="#creativity-sketch" data-size="8">8</a>
+				<a href="#creativity-sketch" data-size="10">10</a>
+				<a href="#creativity-sketch" data-size="12">12</a>
+				<a href="#creativity-sketch" data-size="15">15</a>
+			</div>
+		</div>
 		<canvas id="creativity-sketch" width="980" height="440"></canvas>
 		<form name="work-form" action="/creativity/post" method="post">
 			<div class="form-item">
@@ -26,10 +54,14 @@
 				<label>手机号</label>
 				<input type="text" id="mobile" placeholder="请输入手机号码" />
 				<button>发送验证码</button>
+				<div class="alert-hint hidden"></div>
 			</div>
 			<div class="form-item form-verify-code">
 				<label>验证码</label>
 				<input type="text" id="verify-code" placeholder="请输入验证码" />
+				<div class="alert-hint hidden">
+					验证码有误请重试
+				</div>
 			</div>
 			<div class="form-item">
 				<input type="submit" />
