@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>合作加盟</h2>
+    <form method="post" action="/admin/join/add/participate"
+        enctype="multipart/form-data">
+        <label>姓名:</label>
+        <input type="text" name="name">
+        <label>联系方式:</label>
+        <input type="text" name="contact">
+        <label>合作意向表:</label>
+        <input type="file" name="file">
+        <button>提交</button>
+    </form>
+    <table>
+        <tr>
+            <th>加盟序号-----</th>
+            <th>姓名------</th>
+            <th>联系方式------</th>
+            <th>合作意向表</th>
+        </tr>
+        {% for each in data['participate'] %}
+            <tr>
+                <th>{{ each.id }}</th>
+                <th>{{ each.name }}</th>
+                <th>{{ each.contact }}</th>
+                <th>
+                    <a href="/admin/join_us/participate/download/{{ each.table }}">下载</a>
+                </th>
+            </tr>
+        {% endfor %}
+    </table>
+    <hr>
+    <h2>人才招聘</h2>
+    <form method="post" action="/admin/join/add/hiring"
+        enctype="multipart/form-data">
+        <label>姓名:</label>
+        <input type="text" name="name">
+        <label>申请岗位:</label>
+        <input type="text" name="job">
+        <label>联系方式:</label>
+        <input type="text" name="contact">
+        <label>简历:</label>
+        <input type="file" name="file">
+        <button>提交</button>
+    </form>
+    <table>
+        <tr>
+            <th>招聘序号-----</th>
+            <th>姓名------</th>
+            <th>申请岗位------</th>
+            <th>联系方式------</th>
+            <th>简历</th>
+        </tr>
+        {% for each in data['hiring'] %}
+            <tr>
+                <th>{{ each.id }}</th>
+                <th>{{ each.name }}</th>
+                <th>{{ each.job }}</th>
+                <th>{{ each.contact }}</th>
+                <th>
+                    <a href="/admin/join_us/hiring/download/{{ each.resume }}">下载</a>
+                </th>
+            </tr>
+        {% endfor %}
+    </table>
+    <hr>
+</body>
+</html>

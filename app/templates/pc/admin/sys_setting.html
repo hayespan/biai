@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin</title>
+</head>
+<body>
+<form action="/admin/sys/change" method="post">
+    <label>网站名称:</label>
+    <input type="text" name="name" value="{{ data['website'][0].name }}">
+    <label>网站URL:</label>
+    <input type="text" name="url" value="{{ data['website'][0].url }}">
+    <label>网站备案号:</label>
+    <input type="text" name="num" value="{{ data['website'][0].num }}"> <br>
+    <button type="submit">提交</button>
+</form>
+<table>
+    <tr>
+        <th>排序----</th>
+        <th>用户名----</th>
+        <th>真实姓名----</th>
+        <th>----上次登录IP----</th>
+        <th>----上次登录时间----</th>
+        <th>----添加时间----</th>
+        <th>权限</th>
+    </tr>
+    {% for each in data['admin'] %}
+        <tr>
+            <th>{{ each.id }}</th>
+            <th>{{ each.username }}</th>
+            <th>{{ each.true_name }}</th>
+            <th>{{ each.ip }}</th>
+            <th>{{ each.login_time }}</th>
+            <th>{{ each.add_time }}</th>
+            <th>
+                <form action="/admin/sys/del/{{ each.id }}" method="post">
+                    <button type="submit">删除</button>
+                </form>
+            </th>
+        </tr>
+    {% endfor %}
+</table>
+<h2>添加管理员:</h2>
+<form method="post" action="/admin/sys/add"
+      enctype="multipart/form-data">
+    <label>用户名:</label>
+    <input type="text" name="username">
+    <label>密码:</label>
+    <input type="text" name="password">
+    <label>真实姓名:</label>
+    <input type="text" name="true_name">
+    <button>提交</button>
+</form>
+<hr>
+<h2>测试登录:</h2>
+<form method="post" action="/admin/sys/login"
+      enctype="multipart/form-data">
+    <label>用户名:</label>
+    <input type="text" name="username">
+    <label>密码:</label>
+    <input type="password" name="password">
+    <button>登录</button>
+</form>
+</body>
+</html>

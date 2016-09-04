@@ -28,6 +28,7 @@ def search():
             key=key,
             )
 
+
 @pcbp.route('/')
 def index():
     banner_list = banner_service.get_banners()
@@ -40,6 +41,7 @@ def index():
             video_list=video_list,
             consult_page_content=consult_page_content,
             )
+
 
 @pcbp.route('/captcha/mobile_trigger', methods=['POST', ])
 def captcha_mobile_trigger():
@@ -61,6 +63,7 @@ def captcha_mobile_trigger():
             msg='send fail' if not succ else 'send succ',
             )
 
+
 @pcbp.route('/captcha/mobile_check', methods=['POST', ])
 def captcha_mobile_check():
     from ...form.main import CaptchaForm
@@ -72,6 +75,7 @@ def captcha_mobile_check():
                 )
     correct = captcha_service.check_captcha(form.code.data)
     return response(ret=0, correct=correct)
+
 
 @pcbp.route('/set_locale/<string:lang>', methods=['GET', ])
 def set_locale(lang):

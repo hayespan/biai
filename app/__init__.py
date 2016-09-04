@@ -2,9 +2,12 @@
 from flask import Flask, request, session
 
 from flask.ext.sqlalchemy import SQLAlchemy
-db = SQLAlchemy()
-
+db = SQLAlchemy(use_native_unicode="utf8")
+import sys
+reload(sys)
+sys.setdefaultencoding('utf8')
 logger = None
+
 
 class App(object):
     def __init__(self, *args, **kwargs):

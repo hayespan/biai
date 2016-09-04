@@ -1,55 +1,1 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-from app import App, db
-app = App()
-
-def create_default_nav():
-    from app.model.nav import Nav
-    nav_meta_names = [
-            ('main','首页','/'),
-            ('about', '关于比爱', '/about'),
-            ('news','新闻动态','/news'),
-            ('product','产品中心','/product'),
-            ('creativity','创意中心','/creativity'),
-            ('join_us','加入我们','/join_us'),
-            ('shop', '官方商城', '/shop'), 
-            ('contact', '联系我们', '/contact')
-            ]
-    for i in nav_meta_names:
-        if Nav.query.filter_by(meta_name=i[0]).count() == 0:
-            about_nav = Nav(
-                    meta_name=i[0],
-                    title=i[1],
-                    link=i[2],
-                    )
-            from app.model.simple_nav_page import SimpleNavPage
-            page = SimpleNavPage(
-                    content='empty',
-                    )
-            about_nav.simple_nav_page = page
-            db.session.add(about_nav)
-        if i[0] == 'shop':
-            shop_nav = Nav.query.filter_by(meta_name=i[0]).first()
-            if shop_nav and not shop_nav.subnavs:
-                from app.model.subnav import SubNav
-                sn1 = SubNav(
-                        title='1688官网',
-                        nav=shop_nav,
-                        link='www.baidu.com',
-                        )
-                sn2 = SubNav(
-                        title='比爱企业店',
-                        nav=shop_nav,
-                        link='cn.bing.com',
-                        )
-                db.session.add(sn1)
-                db.session.add(sn2)
-
-
-    db.session.commit()
-
-with app.app.app_context():
-    db.create_all()
-
-    create_default_nav()
-
+#!/usr/bin/env python# -*- coding: utf-8 -*-from app import App, dbfrom app.service.home_service import homeManagerfrom app.service.join_us_service import joinUsManagerfrom app.service.sys_setting_service import sysSettingManagerapp = App()def create_default_nav():    from app.model.nav import Nav    nav_meta_names = [        ('main', '首页', '/'),        ('about', '关于比爱', '/about'),        ('news', '新闻动态', '/news'),        ('product', '产品中心', '/product'),        ('creativity', '创意中心', '/creativity'),        ('join_us', '加入我们', '/join_us'),        ('shop', '官方商城', '/shop'),        ('contact', '联系我们', '/contact')    ]    for i in nav_meta_names:        if Nav.query.filter_by(meta_name=i[0]).count() == 0:            about_nav = Nav(                meta_name=i[0],                title=i[1],                link=i[2],            )            from app.model.simple_nav_page import SimpleNavPage            page = SimpleNavPage(                content='empty',            )            about_nav.simple_nav_page = page            db.session.add(about_nav)        if i[0] == 'shop':            shop_nav = Nav.query.filter_by(meta_name=i[0]).first()            if shop_nav and not shop_nav.subnavs:                from app.model.subnav import SubNav                sn1 = SubNav(                    title='1688官网',                    nav=shop_nav,                    link='www.baidu.com',                )                sn2 = SubNav(                    title='比爱企业店',                    nav=shop_nav,                    link='cn.bing.com',                )                db.session.add(sn1)                db.session.add(sn2)    db.session.commit()def create_admin_home():    from app.model.admin_home import ClassifyAdmin, PosterAdmin, VideoAdmin, NewsAdmin    PosterAdmin.create()    VideoAdmin.create()    ClassifyAdmin.create()    NewsAdmin.create()    homeManager.init_data()def create_admin_join():    from app.model.admin_join_us import ParticipateAdmin, HiringAdmin    ParticipateAdmin.create()    HiringAdmin.create()    joinUsManager.init_data()def create_admin_sys():    from app.model.admin_system_setting import WebsiteSetting, AdminSetting    WebsiteSetting.create()    AdminSetting.create()    sysSettingManager.init_data()with app.app.app_context():    db.create_all()    create_default_nav()    create_admin_home()    create_admin_join()    create_admin_sys()
