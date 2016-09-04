@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import datetime
 from .. import db
 from ..model.news_category import NewsCategory 
 from ..model.news import News
@@ -36,6 +37,7 @@ def update_news(id_, title, content, news_category_id):
     n = News.query.filter_by(id=id_).first()
     if not n:
         return -1
+    n.modify_time = datetime.datetime.now()
     n.title = title
     n.content = content
     nc = read_news_category(news_category_id)

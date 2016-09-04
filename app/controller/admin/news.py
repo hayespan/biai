@@ -2,6 +2,7 @@
 from . import adminbp 
 
 from flask import render_template, request, abort, url_for
+from flask.ext.login import login_required, current_user
 
 from ..base_func import response
 from ...util.common import logger, json_response, save_form_file
@@ -10,6 +11,7 @@ from ...service import news_service
 from ...model.news_category import NewsCategory
 
 @adminbp.route('/news_category')
+@login_required
 def l_news_category():
     nc_list = news_category_service.get_categories()
     return response('news_category_list.html',
@@ -18,6 +20,7 @@ def l_news_category():
 
 @adminbp.route('/news_category/create', methods=['POST', ])
 @adminbp.route('/news_category/update', methods=['POST', ])
+@login_required
 def cu_news_category():
     from ...form.admin import CUNewsCategoryForm
     form = CUNewsCategoryForm()
@@ -50,6 +53,7 @@ def cu_news_category():
         return response(ret=ret, id=new_id)
 
 @adminbp.route('/news_category/delete', methods=['POST', ])
+@login_required
 def d_news_category():
     from ...form.admin import RDNewsCategoryForm
     form = RDNewsCategoryForm()
@@ -63,6 +67,7 @@ def d_news_category():
     return response(ret=0)
 
 @adminbp.route('/news_category/<int:id_>')
+@login_required
 def r_news_category(id_):
     from ...form.admin import RDNewsCategoryForm
     form = RDNewsCategoryForm()
@@ -75,6 +80,7 @@ def r_news_category(id_):
             )
 
 @adminbp.route('/news')
+@login_required
 def l_news():
     page = request.args.get('page', 1)
     n_list = news_service.get_news_list(None, page)
@@ -86,6 +92,7 @@ def l_news():
 
 @adminbp.route('/news/create', methods=['POST', ])
 @adminbp.route('/news/update', methods=['POST', ])
+@login_required
 def cu_news():
     from ...form.admin import CUNewsForm
     form = CUNewsForm()
@@ -110,6 +117,7 @@ def cu_news():
         return response(ret=ret, id=new_id)
 
 @adminbp.route('/news/delete', methods=['POST', ])
+@login_required
 def d_news():
     from ...form.admin import RDNewsForm
     form = RDNewsForm()
@@ -123,6 +131,7 @@ def d_news():
     return response(ret=0)
 
 @adminbp.route('/news/<int:id_>')
+@login_required
 def r_news(id_):
     from ...form.admin import RDNewsForm
     form = RDNewsForm()

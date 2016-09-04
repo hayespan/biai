@@ -25,8 +25,9 @@ def update_news_category(id_, name, file_id, weight):
     if not nc:
         return -1
     nc.name = name
-    nc.file_id = file_id
-    nc.weight = nc.weight
+    if file_id:
+        nc.file_id = file_id
+    nc.weight = weight
     db.session.add(nc)
     return 0
 

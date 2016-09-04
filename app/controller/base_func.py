@@ -40,8 +40,8 @@ def response(tmpl_path=None, admin=False, **kwargs):
     if format_ == 'html':
         if tmpl_path is None:
             abort(404)
-        kwargs.update(get_common_data())
         if not admin:
+            kwargs.update(get_common_data())
             if not via_mobile():
                 tmpl_path = 'pc/' + tmpl_path
             else:
