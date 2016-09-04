@@ -91,6 +91,8 @@ footer {
     float: left; }
     .header-nav .header-nav-item:hover {
       color: #ffffff; }
+  .header-nav .chosen {
+    color: #ffffff; }
   .header-nav input {
     padding-left: 35px;
     font-size: 14px;
@@ -297,7 +299,11 @@ footer {
     margin: 0; }
 
 .video-content {
-  float: left; }
+  float: left;
+  width: 500px;
+  text-align: center; }
+  .video-content video {
+    height: 270px; }
 
 .video-menu {
   overflow: hidden;
@@ -307,6 +313,8 @@ footer {
   float: right; }
   .video-menu .swiper-container {
     height: 229px; }
+  .video-menu input {
+    width: 120px; }
   .video-menu .swiper-button-prev {
     transform: rotate(90deg) scaleX(0.4);
     top: 0px;

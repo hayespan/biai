@@ -42,12 +42,12 @@
 				</div>
 			</div>
 			<a class="header-nav-item" href="/contact">联系我们</a> #}
-			<a class="header-nav-item" href="{{ nav_dict['main'].link }}">{{ nav_dict['main'].title }}</a>
-			<a class="header-nav-item" href="{{ nav_dict['about'].link }}">{{ nav_dict['about'].title }}</a>
-			<a class="header-nav-item" href="{{ nav_dict['news'].link }}">{{ nav_dict['news'].title }}</a>
-			<a class="header-nav-item" href="{{ nav_dict['product'].link }}">{{ nav_dict['product'].title }}</a>
-			<a class="header-nav-item" href="{{ nav_dict['creativity'].link }}">{{ nav_dict['creativity'].title }}</a>
-			<a class="header-nav-item" href="{{ nav_dict['join_us'].link }}">{{ nav_dict['join_us'].title }}</a>
+			<a class="header-nav-item {% if cur_nav_meta_name == 'main' %}chosen{% endif %}" href="{{ nav_dict['main'].link }}">{{ nav_dict['main'].title }}</a>
+			<a class="header-nav-item {% if cur_nav_meta_name == 'about' %}chosen{% endif %}" href="{{ nav_dict['about'].link }}">{{ nav_dict['about'].title }}</a>
+			<a class="header-nav-item {% if cur_nav_meta_name == 'news' %}chosen{% endif %}" href="{{ nav_dict['news'].link }}">{{ nav_dict['news'].title }}</a>
+			<a class="header-nav-item {% if cur_nav_meta_name == 'product' %}chosen{% endif %}" href="{{ nav_dict['product'].link }}">{{ nav_dict['product'].title }}</a>
+			<a class="header-nav-item {% if cur_nav_meta_name == 'creativity' %}chosen{% endif %}" href="{{ nav_dict['creativity'].link }}">{{ nav_dict['creativity'].title }}</a>
+			<a class="header-nav-item {% if cur_nav_meta_name == 'join_us' %}chosen{% endif %}" href="{{ nav_dict['join_us'].link }}">{{ nav_dict['join_us'].title }}</a>
 			<!-- <a id="nav-market" class="header-nav-item" href="#">官方商城</a> -->
 			<div id="nav-market" class="header-nav-item">
 				<a class="dropdown-btn" href="#">{{ nav_dict['shop'].title }}</a>
@@ -57,7 +57,7 @@
 					{% endfor %}
 				</div>
 			</div>
-			<a class="header-nav-item" href="{{ nav_dict['contact'].link }}">{{ nav_dict['contact'].title }}</a>
+			<a class="header-nav-item {% if cur_nav_meta_name == 'contact' %}chosen{% endif %}" href="{{ nav_dict['contact'].link }}">{{ nav_dict['contact'].title }}</a>
 			<input type="text" placeholder="请输入搜索内容">
 		</nav>
 		{% endblock %}

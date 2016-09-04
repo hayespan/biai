@@ -174,9 +174,11 @@ footer {
     color: #5c5ec2; }
 
 .page-nav {
-  width: 80%;
   margin: auto;
-  overflow: hidden; }
+  overflow: hidden;
+  text-align: center; }
+  .page-nav nav {
+    display: inline-block; }
   .page-nav a {
     float: left;
     height: 27px;
@@ -192,6 +194,9 @@ footer {
   .page-nav .chosen {
     border: none;
     color: #5c5ec2; }
+  .page-nav .disabled {
+    color: #cfcfcf;
+    pointer-events: none; }
 
 #last-page, #next-page {
   width: 50px; }

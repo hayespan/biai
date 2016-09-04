@@ -191,7 +191,7 @@ footer {
 	overflow: hidden;
 	label {
 		float: left;
-		width: 20%;
+		width: 25%;
 		text-align: right;
 		height: 40px;
 		line-height: 40px;
@@ -201,7 +201,7 @@ footer {
 	}
 	input {
 		float: left;
-		width: 75%;
+		width: 70%;
 		height: 40px;
 		font-size: 1rem;
 		border-radius: 5px;
@@ -209,7 +209,7 @@ footer {
 	textarea {
 		resize: none;
 		float: left;
-		width: 75%;
+		width: 70%;
 		height: 120px;
 		font-size: 1rem;
 		border-radius: 5px;
@@ -235,7 +235,7 @@ footer {
 
 .form-verify-code {
 	input[type="text"] {
-		width: 40%;
+		width: 35%;
 		margin-right: 10px;
 	}
 	button {
@@ -246,6 +246,13 @@ footer {
 		width: 30%;
 		height: 35px;
 	}
+}
+
+.alert-hint {
+	float: right;
+	width: 70%;
+	text-align: left;
+	color: #ff7676;
 }
 
 .join-recruit {

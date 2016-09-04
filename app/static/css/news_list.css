@@ -92,6 +92,8 @@ footer {
     float: left; }
     .header-nav .header-nav-item:hover {
       color: #ffffff; }
+  .header-nav .chosen {
+    color: #ffffff; }
   .header-nav input {
     padding-left: 35px;
     font-size: 14px;

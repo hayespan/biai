@@ -19,37 +19,45 @@
 				<form action="#">
 					<div class="form-item">
 						<label>姓名</label>
-						<input type="text" />
+						<input id="name" type="text" />
+						<div class="alert-hint hidden"></div>
 					</div>
 					<div class="form-item">
 						<label>联系方式</label>
-						<input type="text" />
+						<input id="phone" type="text" />
+						<div class="alert-hint hidden"></div>
 					</div>
 					<div class="form-item">
 						<label>地区</label>
-						<input type="text" />
+						<input id="zone" type="text" />
+						<div class="alert-hint hidden"></div>
 					</div>
 					<div class="form-item">
 						<label>店铺主管</label>
-						<input type="text" />
+						<input id="shop_range" type="text" />
+						<div class="alert-hint hidden"></div>
 					</div>
 					<div class="form-item">
 						<label>发展规划</label>
-						<textarea></textarea>
+						<textarea id="develop_plan"></textarea>
+						<div class="alert-hint hidden"></div>
 					</div>
 					<div class="form-item">
 						<label>合作意向</label>
-						<textarea></textarea>
+						<textarea id="cooperation_intention"></textarea>
+						<div class="alert-hint hidden"></div>
 					</div>
 					<div class="form-split"></div>
 					<div class="form-item form-verify-phone">
 						<label>手机号</label>
-						<input type="text" placeholder="请输入手机号码" />
+						<input id="mobile" type="text" placeholder="请输入手机号码" />
+						<div class="alert-hint hidden"></div>
 					</div>
 					<div class="form-item form-verify-code">
 						<label>验证码</label>
-						<input type="text" placeholder="请输入验证码" />
+						<input id="valid-code" type="text" placeholder="请输入验证码" />
 						<button>发送验证码</button>
+						<div class="alert-hint hidden"></div>
 					</div>
 					<div class="form-item">
 						<input type="submit" />
@@ -90,5 +98,5 @@
 {% endblock %}
 {% block script %}
 {{ super() }}
-<script src="{{ url_for('static', filename='js/main_mb.js') }}"></script>
+<script src="{{ url_for('static', filename='js/join_us_mb.js') }}"></script>
 {% endblock %}

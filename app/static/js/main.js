@@ -13,5 +13,9 @@ $(document).ready(function() {
         slidesPerView: 3,
         spaceBetween: 12
 	});
-})
+
+	$('.video-menu input').on('click', function() {
+		$('.video-content video').attr('src', '/static/video/mainpage/'+this.dataset.video);
+	});
+});
 

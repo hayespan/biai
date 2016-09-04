@@ -147,12 +147,11 @@ footer {
     color: #000000;
     text-align: center;
     line-height: 35px;
-    font-size: 1.1rem; }
+    font-size: 0.9rem; }
   .product-nav > a:last-child {
     border: none; }
 
 .video-block {
-  height: 200px;
   background-color: #ffffff;
   margin-bottom: 10px; }
 
@@ -163,6 +162,9 @@ footer {
   .video-header span {
     color: #ac6de1;
     font-size: 1.2rem; }
+
+.video-content video {
+  width: 100%; }
 
 .consult-block {
   height: 220px;

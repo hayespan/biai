@@ -157,7 +157,7 @@ footer {
   overflow: hidden; }
   .form-item label {
     float: left;
-    width: 20%;
+    width: 25%;
     text-align: right;
     height: 40px;
     line-height: 40px;
@@ -166,14 +166,14 @@ footer {
     margin-right: 10px; }
   .form-item input {
     float: left;
-    width: 75%;
+    width: 70%;
     height: 40px;
     font-size: 1rem;
     border-radius: 5px; }
   .form-item textarea {
     resize: none;
     float: left;
-    width: 75%;
+    width: 70%;
     height: 120px;
     font-size: 1rem;
     border-radius: 5px; }
@@ -194,7 +194,7 @@ footer {
   margin-bottom: 40px; }
 
 .form-verify-code input[type="text"] {
-  width: 40%;
+  width: 35%;
   margin-right: 10px; }
 
 .form-verify-code button {
@@ -204,6 +204,12 @@ footer {
   border-radius: 6px;
   width: 30%;
   height: 35px; }
+
+.alert-hint {
+  float: right;
+  width: 70%;
+  text-align: left;
+  color: #ff7676; }
 
 .join-recruit {
   width: 90%;

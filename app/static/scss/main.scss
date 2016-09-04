@@ -113,6 +113,9 @@ footer {
 			color: #ffffff;
 		}
 	}
+	.chosen {
+		color: #ffffff;
+	}
 	input {
 		padding-left: 35px;
 		font-size: 14px;
@@ -364,6 +367,11 @@ footer {
 
 .video-content {
 	float: left;
+	width: 500px;
+	text-align: center;
+	video {
+		height: 270px;
+	}
 }
 
 .video-menu {
@@ -374,6 +382,9 @@ footer {
 	float: right;
 	.swiper-container {
 		height: 229px;
+	}
+	input {
+		width: 120px;
 	}
 	.swiper-button-prev {
 		transform: rotate(90deg) scaleX(0.4);

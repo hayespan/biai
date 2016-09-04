@@ -91,6 +91,8 @@ footer {
     float: left; }
     .header-nav .header-nav-item:hover {
       color: #ffffff; }
+  .header-nav .chosen {
+    color: #ffffff; }
   .header-nav input {
     padding-left: 35px;
     font-size: 14px;
@@ -201,9 +203,10 @@ footer {
   border-radius: 6px; }
 
 .form-item {
-  margin: 0 auto 20px auto;
-  width: 420px;
-  overflow: hidden; }
+  margin-bottom: 20px;
+  padding: 0 205px;
+  overflow: hidden;
+  position: relative; }
   .form-item label {
     float: left;
     text-align: right;
@@ -249,6 +252,13 @@ footer {
 .form-split {
   border-bottom: 1px solid #bebebe;
   margin: 30px 10px; }
+
+.alert-hint {
+  position: absolute;
+  right: 40px;
+  top: 5px;
+  width: 150px;
+  color: #ff7676; }
 
 .join-recruit h1 {
   font-size: 20px;
