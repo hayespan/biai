@@ -20,7 +20,6 @@ def post_creativity():
     from ...form.creativity import PostCreativity
     form = PostCreativity()
     if not form.validate():
-        print form.errors['mobile'][0]
         return response(
                 ret=-1,
                 msg='input error',

@@ -58,6 +58,7 @@ def update_product(id_, name, attrs, oth_attrs,
     p.set_oth_attrs(oth_attrs)
     p.set_pics(file_id_list)
     reset_product_category(p, category_id_list)
+    db.session.add(p)
     return 0
 
 def reset_product_category(p, category_id_list):

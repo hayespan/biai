@@ -5,7 +5,7 @@ from wtforms.fields import TextAreaField, StringField, BooleanField, DateField, 
 from wtforms.validators import Required, Length, Optional, ValidationError, Regexp
 from ..util.regexp import mobile_s, captcha_s
 
-class AjaxPicForm(Form):
+class UploadProductPicForm(Form):
     pic = FileField(validators=[FileRequired(), ])
 
 class LoginForm(Form):
@@ -52,4 +52,11 @@ class CUProductForm(Form):
 
 class RDProductForm(Form):
     id = IntegerField(validators=[Required(), ])
+
+class RDCreativityForm(Form):
+    id = IntegerField(validators=[Required(), ])
+
+class USimpleNavPageForm(Form):
+    id = IntegerField(validators=[Required(), ])
+    content = TextAreaField()
 

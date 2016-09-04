@@ -63,3 +63,6 @@ def response(tmpl_path=None, admin=False, **kwargs):
     else:
         abort(404)
 
+def admin_response(tmpl_path=None, **kwargs):
+    return response(tmpl_path, True, **kwargs)
+
