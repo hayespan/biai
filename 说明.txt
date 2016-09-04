@@ -1,0 +1,5 @@
+写的三部分的功能分别在
+http://localhost:5000/admin/home(首页)
+http://localhost:5000/admin/join(加入我们）
+http://localhost:5000/admin/sys(网站管理)
+首页的数据数据提交部分有些使用的是ajax，提交后要刷新下浏览器才能看到效果

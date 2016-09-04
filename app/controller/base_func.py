@@ -10,6 +10,7 @@ from ..service import locale_service
 
 USER_AGENT = ('micromessenger', 'Mobile', 'iPhone', 'Windows Phone', 'UCWEB', 'Fennec', 'Opera Mobi', 'BlackBerry', )
 
+
 def via_mobile():
     s = request.headers.get('User-Agent')
     if s is None:

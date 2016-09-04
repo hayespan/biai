@@ -4,6 +4,7 @@ from .. import db
 from ..model.product import Product 
 from ..util.common import page_info
 
+
 def search_key(key):
     if not key:
         return []
