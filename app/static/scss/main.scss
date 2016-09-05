@@ -372,6 +372,13 @@ footer {
 	video {
 		height: 270px;
 	}
+	.vjs-big-play-button {
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin: auto;
+	}
 }
 
 .video-menu {

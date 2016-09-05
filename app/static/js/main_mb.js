@@ -5,8 +5,11 @@ $(document).ready(function() {
 	});
 
 	var videoSwiper = new Swiper('.video-content .swiper-container', {
-        slidesPerView: 1.1,
-        spaceBetween: 12
+		prevButton:'.swiper-controller .button-prev',
+		nextButton:'.swiper-controller .button-next',
+		// effect : 'fade',
+  //       slidesPerView: 1.1,
+  //       spaceBetween: 12
 	});
 
 	var productSwiper = new Swiper('.img-info .swiper-container', {

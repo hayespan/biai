@@ -163,8 +163,31 @@ footer {
     color: #ac6de1;
     font-size: 1.2rem; }
 
-.video-content video {
-  width: 100%; }
+.video-content {
+  position: relative; }
+  .video-content .video-js {
+    width: 100%; }
+  .video-content video {
+    width: 100%; }
+  .video-content .vjs-big-play-button {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto; }
+
+.swiper-controller {
+  overflow: hidden; }
+  .swiper-controller .swiper-button-disabled {
+    color: #cfcfcf; }
+
+.button-next,
+.button-prev {
+  float: left;
+  width: 50%;
+  height: 40px;
+  line-height: 40px;
+  text-align: center; }
 
 .consult-block {
   height: 220px;
