@@ -5,6 +5,8 @@ from wtforms.fields import TextAreaField, StringField, BooleanField, DateField, 
 from wtforms.validators import Required, Length, Optional, ValidationError, Regexp
 from ..util.regexp import mobile_s, captcha_s
 
+class UploadProductPicForm(Form):
+    pic = FileField(validators=[FileRequired(), ])
 
 class LoginForm(Form):
     username = StringField(validators=[Required(), Length(1, 64), ])
@@ -28,4 +30,33 @@ class CUNewsForm(Form):
 
 class RDNewsForm(Form):
     id = IntegerField(validators=[Required(), ])
+
+class CUProductCategoryForm(Form):
+    id = IntegerField()
+    name = StringField(validators=[Length(0, 512), ])
+    img = FileField()
+    weight = IntegerField()
+
+class RDProductCategoryForm(Form):
+    id = IntegerField(validators=[Required(), ])
+
+class CUProductForm(Form):
+    id = IntegerField()
+    name = StringField(validators=[Length(0, 512), ])
+    attrs = StringField()
+    oth_atts = StringField()
+    buy_link = StringField()
+    description = StringField()
+    category_ids = StringField()
+    file_ids = StringField()
+
+class RDProductForm(Form):
+    id = IntegerField(validators=[Required(), ])
+
+class RDCreativityForm(Form):
+    id = IntegerField(validators=[Required(), ])
+
+class USimpleNavPageForm(Form):
+    id = IntegerField(validators=[Required(), ])
+    content = TextAreaField()
 

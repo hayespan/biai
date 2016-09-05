@@ -58,6 +58,17 @@ class Product(db.Model):
         pics = json.loads(self.pics) if self.pics else []
         abs_path_pics = []
         for i in pics:
-            abs_path_pics.append('img/product/' + i)
+            abs_path_pics.append(self.get_file_dir() + i)
         return abs_path_pics
+    
+    def set_pics(self, file_id_list):
+        file_id_list = file_id_list or []
+        file_id_list_ = []
+        for i in file_id_list:
+            file_id = i.rsplit('/')
+            file_id_list_.append(file_id)
+        self.file_id_list = file_id_list_
+
+    def get_file_dir(self):
+        return 'img/product/'
 

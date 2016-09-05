@@ -40,8 +40,8 @@ def response(tmpl_path=None, admin=False, **kwargs):
     if format_ == 'html':
         if tmpl_path is None:
             abort(404)
-        kwargs.update(get_common_data())
         if not admin:
+            kwargs.update(get_common_data())
             if not via_mobile():
                 tmpl_path = 'pc/' + tmpl_path
             else:
@@ -62,4 +62,7 @@ def response(tmpl_path=None, admin=False, **kwargs):
             return json_error((ret, msg))
     else:
         abort(404)
+
+def admin_response(tmpl_path=None, **kwargs):
+    return response(tmpl_path, True, **kwargs)
 
