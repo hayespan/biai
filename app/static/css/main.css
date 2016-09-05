@@ -304,6 +304,12 @@ footer {
   text-align: center; }
   .video-content video {
     height: 270px; }
+  .video-content .vjs-big-play-button {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto; }
 
 .video-menu {
   overflow: hidden;

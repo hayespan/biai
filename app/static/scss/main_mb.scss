@@ -202,9 +202,36 @@ footer {
 }
 
 .video-content {
+	position: relative;
+	.video-js {
+		width: 100%;
+	}
 	video {
 		width: 100%;
 	}
+	.vjs-big-play-button {
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin: auto;
+	}
+}
+
+.swiper-controller {
+	overflow: hidden;
+	.swiper-button-disabled {
+		color: #cfcfcf;
+	}
+}
+
+.button-next,
+.button-prev {
+	float: left;
+	width: 50%;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
 }
 
 .consult-block {
