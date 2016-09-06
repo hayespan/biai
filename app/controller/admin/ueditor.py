@@ -10,7 +10,7 @@ from flask.ext.login import login_required, current_user
 from . import adminbp 
 from ..base_func import response
 from ...util.common import logger, json_response, get_now_timestamp
-from uploader import Uploader
+from ..pc.uploader import Uploader
 
 @adminbp.route('/ueditor_test')
 @login_required
