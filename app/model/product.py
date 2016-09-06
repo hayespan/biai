@@ -69,6 +69,7 @@ class Product(db.Model):
             file_id_list_.append(file_id)
         self.file_id_list = file_id_list_
 
-    def get_file_dir(self):
+    @classmethod
+    def get_file_dir(cls):
         return 'img/product/'
 

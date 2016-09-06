@@ -12,11 +12,16 @@ class ProductCategory(db.Model):
     file_id = db.Column(db.String(512), nullable=True)
     weight = db.Column(db.Integer, nullable=False, default=0)
 
-    def get_file_dir(self):
+    @classmethod
+    def get_file_dir(cls):
         return 'img/product_category/'
 
     def get_file_path(self):
-        return self.get_file_dir() + self.file_id
+        if self.file_id:
+            path = self.get_file_dir() + self.file_id 
+        else:
+            path = None
+        return path
 
     def __init__(self, *args, **kwargs): 
         super(ProductCategory, self).__init__(*args, **kwargs) 

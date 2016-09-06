@@ -60,3 +60,20 @@ class USimpleNavPageForm(Form):
     id = IntegerField(validators=[Required(), ])
     content = TextAreaField()
 
+class CBannerForm(Form):
+    weight = IntegerField(validators=[])
+    name = StringField(validators=[Required(), Length(0, 512), ])
+    pic = FileField(validators=[FileRequired(), ])
+
+class DBannerForm(Form):
+    id = IntegerField(validators=[Required(), ])
+
+class CVideoForm(Form):
+    weight = IntegerField(validators=[])
+    name = StringField(validators=[Required(), Length(0, 512), ])
+    pic = FileField(validators=[FileRequired(), ])
+    video = FileField(validators=[FileRequired(), ])
+
+class DVideoForm(Form):
+    id = IntegerField(validators=[Required(), ])
+

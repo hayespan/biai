@@ -12,7 +12,8 @@ class NewsCategory(db.Model):
     file_id = db.Column(db.String(512), nullable=True)
     weight = db.Column(db.Integer, nullable=False, default=0)
 
-    def get_file_dir(self):
+    @classmethod
+    def get_file_dir(cls):
         return 'img/news_category/'
 
     def get_file_path(self):
