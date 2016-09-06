@@ -1,0 +1,37 @@
+{% extends "admin/base.html" %}
+{% block title %}新闻列表{% endblock %}
+{% block stylesheet %}
+{{ super() }}
+{% endblock %}
+{% block main %}
+	<div class="news-category-container">
+		<div class="news-category-display">
+			<h1>新闻分类</h1>
+			<button class="add-btn button-simple" type="button">添加分类</button>
+			<ul class="category-list">
+				{% if news_category_list == [] %}
+					<li class="category-item">
+						<a class="category-name" href="/admin/news_category/1">新闻分类1</a>
+						<div class="item-controller">
+							<a class="modify-btn" href="#">修改</a>
+							<a class="delete-btn" href="#">删除</a>
+						</div>
+					</li>
+				{% else %}
+					{% for news_category in news_category_list %}
+						<li class="category-item">
+							<a class="category-name" href="/admin/news_category/{{ news_category.id }}">{{ news_category.name }}</a>
+							<div class="item-controller">
+								<a class="modify-btn button-simple" href="#">修改</a>
+								<a class="delete-btn button-simple" href="#">删除</a>
+							</div>
+						</li>
+					{% endfor %}
+				{% endif %}
+			</ul>
+		</div>
+		<div class="news-category-add hidden">
+			<h1>添加新闻分类</h1>
+		</div>
+	</div>
+{% endblock %}

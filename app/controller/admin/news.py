@@ -11,7 +11,7 @@ from ...service import news_service
 from ...model.news_category import NewsCategory
 
 @adminbp.route('/news_category')
-@login_required
+# @login_required
 def l_news_category():
     nc_list = news_category_service.get_categories()
     return admin_response('news_category_list.html',
