@@ -26,10 +26,10 @@ $(document).ready(function() {
 		    processData: false,
 		    contentType: false,
 			success : function(result) {
-				if (result.file_id) {
-					console.log(result.file_id);
-					$('#file_id').val(result.file_id);
-					$("input[type='image']").attr('src', result.file_id);
+				if (result.data.file_id) {
+					console.log(result.data.file_id);
+					// $('#file_id').val(result.file_id);
+					// $("input[type='image']").attr('src', result.file_id);
 				} else {
 					console.log(result);
 				}
