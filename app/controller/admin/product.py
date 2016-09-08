@@ -13,7 +13,7 @@ from ...model.product_category import ProductCategory
 from ...model.product import Product
 
 @adminbp.route('/product_category')
-@login_required
+# @login_required
 def l_product_category():
     pc_list = product_category_service.get_categories()
     return admin_response('product_category_list.html',
@@ -22,7 +22,7 @@ def l_product_category():
 
 @adminbp.route('/product_category/create', methods=['POST', ])
 @adminbp.route('/product_category/update', methods=['POST', ])
-@login_required
+# @login_required
 def cu_product_category():
     from ...form.admin import CUProductCategoryForm
     form = CUProductCategoryForm()
@@ -55,7 +55,7 @@ def cu_product_category():
         return admin_response(ret=ret, id=new_id)
 
 @adminbp.route('/product_category/delete', methods=['POST', ])
-@login_required
+# @login_required
 def d_product_category():
     from ...form.admin import RDProductCategoryForm
     form = RDProductCategoryForm()
@@ -69,7 +69,7 @@ def d_product_category():
     return admin_response(ret=0)
 
 @adminbp.route('/product_category/<int:id_>')
-@login_required
+# @login_required
 def r_product_category(id_):
     pc = product_category_service.read_product_category(id_)
     return admin_response('product_category.html',
@@ -77,7 +77,7 @@ def r_product_category(id_):
             )
 
 @adminbp.route('/product')
-@login_required
+# @login_required
 def l_product():
     page = request.args.get('page', 1)
     p_list = product_service.get_product_list(None, page)
@@ -89,7 +89,7 @@ def l_product():
 
 @adminbp.route('/product/create', methods=['POST', ])
 @adminbp.route('/product/update', methods=['POST', ])
-@login_required
+# @login_required
 def cu_product():
     from ...form.admin import CUProductForm
     form = CUProductForm()
@@ -128,7 +128,7 @@ def cu_product():
         return admin_response(ret=ret, id=new_id)
 
 @adminbp.route('/product/delete', methods=['POST', ])
-@login_required
+# @login_required
 def d_product():
     from ...form.admin import RDProductForm
     form = RDProductForm()
@@ -142,7 +142,7 @@ def d_product():
     return admin_response(ret=0)
 
 @adminbp.route('/product/<int:id_>')
-@login_required
+# @login_required
 def r_product(id_):
     p = product_service.read_product(id_)
     pcl = product_category_service.get_categories()
@@ -152,7 +152,7 @@ def r_product(id_):
             )
 
 @adminbp.route('/product/upload', methods=['POST', ])
-@login_required
+# @login_required
 def upload_product_pic():
     from ...form.admin import UploadProductPicForm
     form = UploadProductPicForm()

@@ -1,37 +1,37 @@
 {% extends "admin/base.html" %}
-{% block title %}新闻分类管理{% endblock %}
+{% block title %}产品分类管理{% endblock %}
 {% block stylesheet %}
 {{ super() }}
-<link rel="stylesheet" href="{{ url_for('static', filename='css/news_category_list_admin.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/product_category_list_admin.css') }}">
 {% endblock %}
 {% block main %}
-	<div class="news-category-container">
-		<div class="news-category-display">
-			<h1>新闻分类管理</h1>
+	<div class="product-category-container">
+		<div class="product-category-display">
+			<h1>产品分类管理</h1>
 			<button class="add-btn button-simple" type="button">添加分类</button>
 			<ul class="category-list">
-				{% if news_category_list == [] %}
+				{% if product_category_list == [] %}
 					<li class="category-item">
-						<a class="category-name" href="/admin/news_category/1">新闻分类1</a>
+						<a class="category-name" href="/admin/product_category/1">产品分类1</a>
 						<div class="item-controller">
 							<a class="delete-btn" href="#">删除</a>
 						</div>
 					</li>
 				{% else %}
-					{% for news_category in news_category_list %}
+					{% for product_category in product_category_list %}
 						<li class="category-item">
-							<a class="category-name" href="/admin/news_category/{{ news_category.id }}">{{ news_category.name }}</a>
+							<a class="category-name" href="/admin/product_category/{{ product_category.id }}">{{ product_category.name }}</a>
 							<div class="item-controller">
-								<a data-id="{{ news_category.id }}" class="delete-btn button-simple" href="#">删除</a>
+								<a data-id="{{ product_category.id }}" class="delete-btn button-simple" href="#">删除</a>
 							</div>
 						</li>
 					{% endfor %}
 				{% endif %}
 			</ul>
 		</div>
-		<div class="news-category-add hidden">
-			<h1>添加新闻分类</h1>
-			<form class="news-category-form" action="/admin/news_category/create">
+		<div class="product-category-add hidden">
+			<h1>添加产品分类</h1>
+			<form class="product-category-form" action="/admin/product_category/create">
 				<div class="form-item">
 					<label>分类名</label>
 					<input id="name" type="text" placeholder="请输入产品分类名" />
@@ -52,5 +52,5 @@
 {% endblock %}
 {% block script %}
 {{ super() }}
-<script src="{{ url_for('static', filename='js/news_category_list_admin.js') }}"></script>
+<script src="{{ url_for('static', filename='js/product_category_list_admin.js') }}"></script>
 {% endblock %}

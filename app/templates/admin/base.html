@@ -7,7 +7,6 @@
 	<title>{% block title %}{% endblock %}</title>
 	{% block stylesheet %}
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css') }}">
-	<link rel="stylesheet" href="{{ url_for('static', filename='css/base_admin.css') }}">
 	{% endblock %}
 	{% endblock %}
 </head>
@@ -27,8 +26,10 @@
 	</header>
 	<nav class="sidebar">
 		<ul>
-			<li><a class="active" href="#">新闻管理</a></li>
-			<li><a href="#">产品管理</a></li>
+			<li><a href="/admin/news_category">新闻分类</a></li>
+			<li><a href="/admin/news">新闻条目</a></li>
+			<li><a href="/admin/product_category">产品分类</a></li>
+			<li><a href="/admin/product">产品条目</a></li>
 			<li><a href="#">首页管理</a></li>
 			<li><a href="#">人才招聘</a></li>
 		</ul>
@@ -39,7 +40,7 @@
 	</main>
 	{% block script %}
 	<script src="{{ url_for('static', filename='js/jquery-3.0.0.min.js') }}"></script>
-	<script src="{{ url_for('static', filename='js/admin_base.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/base_admin.js') }}"></script>
 	{% endblock %}
 </body>
 </html>

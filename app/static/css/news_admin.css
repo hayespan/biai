@@ -128,37 +128,24 @@ main {
     box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); }
 
 /******************************news category******************************/
-.news-category-container {
+.news-container {
   position: relative;
   padding: 30px 50px; }
-  .news-category-container h1 {
+  .news-container h1 {
+    padding-bottom: 20px; }
+  .news-container h2 {
+    font-size: 17px;
     padding-bottom: 20px;
     margin-bottom: 20px;
     border-bottom: 1px solid #eee; }
 
-.category-item {
-  height: 50px;
-  padding: 15px 10px;
-  border-bottom: 1px solid #ddd; }
-
-.item-controller {
-  float: right; }
-
-.add-btn {
-  padding: 10px;
+.modify-btn {
+  padding: 10px 20px;
   position: absolute;
   right: 60px;
   top: 40px; }
 
-.category-name {
-  color: #333; }
-
-.modify-btn,
-.delete-btn {
-  font-size: 14px;
-  padding: 5px 20px; }
-
-.news-category-form {
+.news-form {
   width: 900px; }
 
 .form-item {
@@ -168,7 +155,7 @@ main {
   padding-right: 200px; }
   .form-item label {
     float: left;
-    width: 20%;
+    width: 140px;
     height: 34px;
     line-height: 34px;
     text-align: right;
@@ -176,7 +163,7 @@ main {
   .form-item input {
     outline: 0;
     float: left;
-    width: 80%;
+    width: 560px;
     height: 34px;
     padding: 6px 12px;
     border-radius: 4px;
@@ -188,6 +175,14 @@ main {
     padding: 5px 20px; }
   .form-item .cancel-btn {
     margin-left: 20px; }
+
+.form-editor,
+.form-btns {
+  padding-right: 0; }
+
+.editor-container {
+  float: left;
+  width: 80%; }
 
 .alert-hint {
   position: absolute;
