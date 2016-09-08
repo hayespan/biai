@@ -1,0 +1,61 @@
+{% extends "admin/base.html" %}
+{% block title %}产品分类管理{% endblock %}
+{% block stylesheet %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/product_category_admin.css') }}">
+{% endblock %}
+{% block main %}
+	<div class="product-category-container">
+		<div class="product-category-display">
+			<h1>{{ product_category.name }}</h1>
+			<ul>
+				<li>
+					<label>分类名:</label>
+					<span>{{ product_category.name }}</span>
+				</li>
+				<li>
+					<label>分类权重:</label>
+					<span>{{ product_category.weight }}</span>
+				</li>
+				<li>
+					<label>分类图片:</label>
+					<img src="{{ url_for('static', filename=product_category.get_file_path()) }}" alt="img">
+					<!-- product_category.get_file_path() -->
+				</li>
+				<li>
+					<button class="modify-btn button-simple" type="button">修改</button>
+				</li>
+			</ul>
+		</div>
+		<div class="product-category-modify hidden">
+			<h1>修改分类</h1>
+			<form data-id="{{ product_category.id }}" class="product-category-form" action="/admin/product_category/update">
+				<div class="form-item">
+					<label>分类名</label>
+					<input id="name" type="text" value="{{ product_category.name }}" placeholder="请输入产品分类名" />
+					<div class="alert-hint hidden"></div>
+				</div>
+				<div class="form-item">
+					<label>分类权重</label>
+					<input id="weight" type="text" value="{{ product_category.weight }}" placeholder="请输入产品权重" />
+					<div class="alert-hint hidden"></div>
+				</div>
+				<div class="form-item">
+					<label>分类图片</label>
+					<input id="file_id" class="hidden" type="text" value="{{ product_category.file_id }}" />
+					<input id="file_select" type="file" class="hidden" value="{{ product_category.file_id }}" />
+					<input type="image" src="{{ url_for('static', filename=product_category.get_file_path()) }}" ></button>
+					<div class="alert-hint hidden"></div>
+				</div>
+				<div class="form-item">
+					<button class="cancel-btn button-simple" type="button">返回</button>
+					<button class="submit-btn button-simple" type="submit">提交</button>
+				</div>
+			</form>
+		</div>
+	</div>
+{% endblock %}
+{% block script %}
+{{ super() }}
+<script src="{{ url_for('static', filename='js/product_category_admin.js') }}"></script>
+{% endblock %}

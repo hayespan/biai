@@ -1,0 +1,69 @@
+{% extends "admin/base.html" %}
+{% block title %}产品条目管理{% endblock %}
+{% block head %}
+{{ super() }}
+<script type="text/javascript" charset="utf-8" src="{{ url_for('static', filename='ueditor/ueditor.config.js') }}"></script>
+<script type="text/javascript" charset="utf-8" src="{{ url_for('static', filename='ueditor/ueditor.all.min.js') }}"> </script>
+<script type="text/javascript" charset="utf-8" src="{{ url_for('static', filename='ueditor/lang/zh-cn/zh-cn.js') }}"></script>
+{% endblock %}
+{% block stylesheet %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/product_list_admin.css') }}">
+{% endblock %}
+{% block main %}
+	<div class="product-list-container">
+		<div class="product-list-display">
+			<h1>产品条目管理</h1>
+			<button class="add-btn button-simple" type="button">添加产品</button>
+			<ul class="product-list">
+				{% if product_list == [] %}
+					<li class="product-item">
+						<a class="product-title" href="/admin/product/1">产品1</a>
+						<div class="item-controller">
+							<a class="delete-btn button-simple" href="#">删除</a>
+						</div>
+					</li>
+				{% else %}
+					{% for product in product_list %}
+						<li class="product-item">
+							<a class="product-title" href="/admin/product/{{ product.id }}">{{ product.title }}</a>
+							<div class="item-controller">
+								<a data-id="{{ product.id }}" class="delete-btn button-simple" href="#">删除</a>
+							</div>
+						</li>
+					{% endfor %}
+				{% endif %}
+			</ul>
+		</div>
+		<div class="product-add hidden">
+			<h1>添加产品</h1>
+			<form class="product-form" action="/admin/product/create">
+				<div class="form-item">
+					<label>新闻标题</label>
+					<input id="title" type="text" placeholder="请输入新闻标题" />
+					<div class="alert-hint hidden"></div>
+				</div>
+				<div class="form-item">
+					<label>新闻分类</label>
+					<input id="category" type="text" placeholder="请输入新闻分类" />
+					<div class="alert-hint hidden"></div>
+				</div>
+				<div class="form-item form-editor">
+					<label>新闻内容</label>
+					<div class="editor-container">
+						<script id="editor" type="text/plain"></script>
+					</div>
+					<div class="alert-hint hidden"></div>
+				</div>
+				<div class="form-item form-btns">
+					<button class="cancel-btn button-simple" type="button">返回</button>
+					<button class="submit-btn button-simple" type="submit">提交</button>
+				</div>
+			</form>
+		</div>
+	</div>
+{% endblock %}
+{% block script %}
+{{ super() }}
+<script src="{{ url_for('static', filename='js/product_list_admin.js') }}"></script>
+{% endblock %}

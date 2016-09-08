@@ -1,0 +1,49 @@
+{% extends "admin/base.html" %}
+{% block title %}新闻分类管理{% endblock %}
+{% block stylesheet %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/news_category_admin.css') }}">
+{% endblock %}
+{% block main %}
+	<div class="news-category-container">
+		<div class="news-category-display">
+			<h1>{{ news_category.name }}</h1>
+			<ul>
+				<li>
+					<label>分类名:</label>
+					<span>{{ news_category.name }}</span>
+				</li>
+				<li>
+					<label>分类权重:</label>
+					<span>{{ news_category.weight }}</span>
+				</li>
+				<li>
+					<button class="modify-btn button-simple" type="button">修改</button>
+				</li>
+			</ul>
+		</div>
+		<div class="news-category-modify hidden">
+			<h1>修改分类</h1>
+			<form data-id="{{ news_category.id }}" class="news-category-form" action="/admin/news_category/update">
+				<div class="form-item">
+					<label>分类名</label>
+					<input id="name" type="text" value="{{ news_category.name }}" placeholder="请输入产品分类名" />
+					<div class="alert-hint hidden"></div>
+				</div>
+				<div class="form-item">
+					<label>分类权重</label>
+					<input id="weight" type="text" value="{{ news_category.weight }}" placeholder="请输入产品权重" />
+					<div class="alert-hint hidden"></div>
+				</div>
+				<div class="form-item">
+					<button class="cancel-btn button-simple" type="button">返回</button>
+					<button class="submit-btn button-simple" type="submit">提交</button>
+				</div>
+			</form>
+		</div>
+	</div>
+{% endblock %}
+{% block script %}
+{{ super() }}
+<script src="{{ url_for('static', filename='js/news_category_admin.js') }}"></script>
+{% endblock %}
