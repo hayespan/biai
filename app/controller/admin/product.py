@@ -172,5 +172,6 @@ def upload_product_pic():
     return admin_response(
             ret=0,
             file_id=file_id,
+            file_path=Product.get_file_dir()+file_id,
             )
 
