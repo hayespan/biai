@@ -42,9 +42,7 @@ $(document).ready(function() {
 		$.ajax({
 			url : '/admin/news/update?f=json',
 			type : 'POST',
-			data : {
-				data : form_data
-			},
+			data : form_data,
 		    processData: false,
 		    contentType: false,
 			success : function(result) {

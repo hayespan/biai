@@ -19,7 +19,7 @@ $(document).ready(function() {
 			url : '/admin/product_category/delete?f=json',
 			type : 'POST',
 			data : {
-				'id' : target_id
+				id : target_id
 			},
 			success : function(result) {
 				console.log(result);
@@ -37,9 +37,7 @@ $(document).ready(function() {
 		$.ajax({
 			url : '/admin/product_category/create?f=json',
 			type : 'POST',
-			data : {
-				data : form_data
-			},
+			data : form_data,
 		    processData: false,
 		    contentType: false,
 			success : function(result) {

@@ -17,12 +17,11 @@ $(document).ready(function() {
 			return false;
 		}
 		form_data.append('id', this.dataset.id);
+		console.log(form_data);
 		$.ajax({
 			url : '/admin/news_category/update?f=json',
 			type : 'POST',
-			data : {
-				data : form_data
-			},
+			data : form_data,
 		    processData: false,
 		    contentType: false,
 			success : function(result) {
