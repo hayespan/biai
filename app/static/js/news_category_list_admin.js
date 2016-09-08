@@ -21,8 +21,6 @@ $(document).ready(function() {
 			data : {
 				id : target_id
 			},
-		    processData: false,
-		    contentType: false,
 			success : function(result) {
 				console.log(result);
 				target_item.fadeOut();
@@ -39,9 +37,7 @@ $(document).ready(function() {
 		$.ajax({
 			url : '/admin/news_category/create?f=json',
 			type : 'POST',
-			data : {
-				data : form_data
-			},
+			data : form_data,
 		    processData: false,
 		    contentType: false,
 			success : function(result) {
