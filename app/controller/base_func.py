@@ -3,6 +3,7 @@
 import os
 
 from flask import render_template, request, abort
+from flask.ext.login import current_user
 
 from ..util.common import logger, json_response, json_error
 from ..service import nav_service
@@ -28,20 +29,23 @@ def get_cur_nav_meta_name(nav_dict):
             return k
     return None
 
-def get_common_data():
+def get_common_data(is_admin):
     common_data = {}
-    common_data['nav_dict'] = nav_service.get_navs()
-    common_data['cur_nav_meta_name'] = get_cur_nav_meta_name(common_data['nav_dict'])
-    common_data['locale'] = locale_service.get_site_locale()
+    if not is_admin:
+        common_data['nav_dict'] = nav_service.get_navs()
+        common_data['cur_nav_meta_name'] = get_cur_nav_meta_name(common_data['nav_dict'])
+        common_data['locale'] = locale_service.get_site_locale()
+    else:
+        common_data['current_user'] = current_user
     return common_data
 
-def response(tmpl_path=None, admin=False, **kwargs):
+def response(tmpl_path=None, is_admin=False, **kwargs):
     format_ = request.args.get('f', 'html')
     if format_ == 'html':
         if tmpl_path is None:
             abort(404)
-        if not admin:
-            kwargs.update(get_common_data())
+        kwargs.update(get_common_data(), is_admin)
+        if not is_admin:
             if not via_mobile():
                 tmpl_path = 'pc/' + tmpl_path
             else:

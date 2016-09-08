@@ -21,7 +21,7 @@ def login():
             login_user(admin, form.remember_me.data)
             return redirect(request.args.get('next') or url_for('admin.login'))
         flash('Invalid username or password')
-    return render_template('pc/admin/login.html')
+    return render_template('login.html')
 
 @adminbp.route('/logout')
 @login_required
