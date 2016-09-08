@@ -12,8 +12,12 @@ class Banner(db.Model):
     name = db.Column(db.String(512), nullable=False)
     file_id = db.Column(db.String(512), nullable=False, index=True)
 
+    @classmethod
+    def get_file_dir(cls):
+        return 'img/banner/'
+
     def get_file_path(self):
-        return 'img/banner/' + self.file_id
+        return self.get_file_dir() + self.file_id
 
     def __init__(self, *args, **kwargs): 
         super(Banner, self).__init__(*args, **kwargs) 
