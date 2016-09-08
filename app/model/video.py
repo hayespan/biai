@@ -13,11 +13,19 @@ class Video(db.Model):
     file_id = db.Column(db.String(512), nullable=False, index=True)
     pic_id = db.Column(db.String(512), nullable=False)
 
+    @classmethod
+    def get_file_dir(cls):
+        return 'video/mainpage/'
+
     def get_file_path(self):
-        return 'video/mainpage/' + self.file_id
+        return self.get_file_dir() + self.file_id
+
+    @classmethod
+    def get_pic_dir(cls):
+        return 'video/pic/'
 
     def get_pic_path(self):
-        return 'video/pic/' + self.pic_id
+        return self.get_pic_dir() + self.pic_id
 
     def __init__(self, *args, **kwargs): 
         super(Video, self).__init__(*args, **kwargs) 
