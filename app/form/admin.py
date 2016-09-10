@@ -77,3 +77,11 @@ class CVideoForm(Form):
 class DVideoForm(Form):
     id = IntegerField(validators=[Required(), ])
 
+class CInformationForm(Form):
+    title = StringField(validators=[Required(), ])
+    weight = IntegerField()
+    news_id = IntegerField(validators=[Required(), ])
+
+class DInformationForm(Form):
+    id = IntegerField(validators=[Required(), ])
+

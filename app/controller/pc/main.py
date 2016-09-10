@@ -13,6 +13,7 @@ from ...service import video_service
 from ...service import consult_service
 from ...service import product_service
 from ...service import captcha_service
+from ...service import information_service
 from ...util.sms import send_sms
 
 @pcbp.route('/search', methods=['POST', ])
@@ -35,6 +36,7 @@ def index():
     product_category_list = product_category_service.get_categories()
     video_list = video_service.get_videos()
     consult_page_content = consult_service.get_page_content()
+    information_list = information_service.get_information_list()
     return response('main_page.html', 
             banner_list=banner_list,
             product_category_list=product_category_list,

@@ -7,6 +7,9 @@ from ..model.news import News
 from ..util.common import page_info
 from .news_category_service import read_news_category
 
+def get_all_news():
+    return News.query.order_by(db.asc('id')).all()
+
 def get_news_list(category, page, per=20):
     query = category.news if category else News.query
     offset = (page-1)*per
