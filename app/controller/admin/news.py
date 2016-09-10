@@ -18,6 +18,21 @@ def l_news_category():
             news_category_list=nc_list,
             )
 
+@adminbp.route('/news_category_json')
+# @login_required
+def l_news_category_json():
+    nc_list = news_category_service.get_categories()
+    ncl = []
+    for i in nc_list:
+        ncl.append({
+            'id': i.id,
+            'name': i.name,
+            })
+    return admin_response(
+            ret=0,
+            news_category_list=ncl,
+            )
+
 @adminbp.route('/news_category/create', methods=['POST', ])
 @adminbp.route('/news_category/update', methods=['POST', ])
 # @login_required
@@ -83,6 +98,21 @@ def l_news():
     return admin_response('news_list.html',
             news_list=n_list,
             page_info=page_info,
+            )
+
+@adminbp.route('/news_json')
+# @login_required
+def l_news_json():
+    news_list = news_service.get_all_news()
+    nl = []
+    for i in news_list:
+        nl.append({
+            'id': i.id,
+            'title': i.title,
+            })
+    return admin_response(
+            ret=0,
+            news_list=nl,
             )
 
 @adminbp.route('/news/create', methods=['POST', ])

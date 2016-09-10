@@ -20,6 +20,21 @@ def l_product_category():
             product_category_list=pc_list,
             )
 
+@adminbp.route('/product_category_json')
+#@login_required
+def l_product_category_json():
+    pc_list = product_category_service.get_categories()
+    pcl = []
+    for i in pc_list:
+        pcl.append({
+            'id': i.id,
+            'name': i.name,
+            })
+    return admin_response(
+            ret=0,
+            product_category_list=pcl,
+            )
+
 @adminbp.route('/product_category/create', methods=['POST', ])
 @adminbp.route('/product_category/update', methods=['POST', ])
 # @login_required
