@@ -85,3 +85,10 @@ class CInformationForm(Form):
 class DInformationForm(Form):
     id = IntegerField(validators=[Required(), ])
 
+class DCooperationForm(Form):
+    id = IntegerField(validators=[Required(), ])
+
+class UNavForm(Form):
+    id = IntegerField(validators=[Required(), ])
+    title = StringField(validators=[Required(), ])
+    link = StringField(validators=[Required(), ])

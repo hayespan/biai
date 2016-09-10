@@ -8,7 +8,7 @@ from ..base_func import admin_response
 from ...util.common import logger, json_response, save_form_file
 from ...service import nav_service 
 from ...service import simple_nav_page_service
-from ...import db
+from ... import db
 from ...model.simple_nav_page import SimpleNavPage
 
 @adminbp.route('/about/modify', methods=['GET', 'POST', ])
