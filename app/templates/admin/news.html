@@ -30,7 +30,7 @@
 				</div>
 				<div class="form-item">
 					<label>新闻分类</label>
-					<input id="category" type="text" value="{{ news.news_category.name }}" placeholder="请输入新闻分类" />
+					<input id="news_category_id" type="text" value="{{ news.news_category.id }}" placeholder="请输入新闻分类" />
 					<div class="alert-hint hidden"></div>
 				</div>
 				<div class="form-item form-editor">
@@ -48,7 +48,7 @@
 		</div>
 	</div>
 	<iframe class="news-content-hidden hidden">
-		{{ news.content }}
+		{{ news.content|e }}
 	</iframe>
 {% endblock %}
 {% block script %}

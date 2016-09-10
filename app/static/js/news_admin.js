@@ -39,6 +39,8 @@ $(document).ready(function() {
 		if (!checkForm(form_data)) {
 			return false;
 		}
+		form_data.append('id', this.dataset.id);
+		console.log(form_data);
 		$.ajax({
 			url : '/admin/news/update?f=json',
 			type : 'POST',
@@ -46,7 +48,9 @@ $(document).ready(function() {
 		    processData: false,
 		    contentType: false,
 			success : function(result) {
-				console.log(result);
+				$('.news-display h1').text($('#title').val());
+				$('.news-display h2').text('分类'+$('#news_category_id').val());
+				$('.news-content').html(ue.getContent());
 				$('.news-form')[0].reset();
 				$('.news-modify').addClass('hidden');
 				$('.news-display').removeClass('hidden');
@@ -62,12 +66,12 @@ $(document).ready(function() {
 		} else {
 			form_data.append('title', $('#title').val());
 		}
-		if ($('#cat').val() == '') {
-			$('#name').siblings('.alert-hint').text('新闻分类不能为空噢');
-			$('#name').siblings('.alert-hint').removeClass('hidden');
+		if ($('#news_category_id').val() == '') {
+			$('#news_category_id').siblings('.alert-hint').text('新闻分类不能为空噢');
+			$('#news_category_id').siblings('.alert-hint').removeClass('hidden');
 			return false;
 		} else {
-			form_data.append('name', $('#name').val());
+			form_data.append('news_category_id', $('#news_category_id').val());
 		}
 		var content = ue.getContent();
 		if (content == '') {

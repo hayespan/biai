@@ -33,18 +33,13 @@ $(document).ready(function() {
 	$('.delete-btn').on('click', function() {
 		var target_item = $(this).parent().parent();
 		var target_id = this.dataset.id;
-		// var target_id = parseInt(this.dataset.id);
-		console.log(target_id);
 		$.ajax({
 			url : '/admin/news/delete?f=json',
 			type : 'POST',
 			data : {
 				id : target_id
 			},
-		    processData: false,
-		    contentType: false,
 			success : function(result) {
-				console.log(result);
 				target_item.fadeOut();
 			}
 		});
@@ -63,10 +58,10 @@ $(document).ready(function() {
 		    processData: false,
 		    contentType: false,
 			success : function(result) {
-				console.log(result);
-				$('.news-category-form')[0].reset();
-				$('.news-category-add').addClass('hidden');
-				$('.news-category-display').removeClass('hidden');
+				refreshCategory(result.data.id, $('#title').val());
+				$('.news-form')[0].reset();
+				$('.news-add').addClass('hidden');
+				$('.news-list-display').removeClass('hidden');
 			}
 		});
 	});
@@ -79,12 +74,12 @@ $(document).ready(function() {
 		} else {
 			form_data.append('title', $('#title').val());
 		}
-		if ($('#cat').val() == '') {
-			$('#name').siblings('.alert-hint').text('新闻分类不能为空噢');
-			$('#name').siblings('.alert-hint').removeClass('hidden');
+		if ($('#news_category_id').val() == '') {
+			$('#news_category_id').siblings('.alert-hint').text('新闻分类不能为空噢');
+			$('#news_category_id').siblings('.alert-hint').removeClass('hidden');
 			return false;
 		} else {
-			form_data.append('name', $('#name').val());
+			form_data.append('news_category_id', $('#news_category_id').val());
 		}
 		var content = ue.getContent();
 		if (content == '') {
@@ -93,5 +88,13 @@ $(document).ready(function() {
 			form_data.append('content', content);
 		}
 		return true;
+	}
+
+	function refreshCategory(id, title) {
+		var new_item = $('.news-list').children().first().clone(true);
+		new_item.children().first().attr('href', '/admin/news/'+id);
+		new_item.children().first().text(title);
+		new_item.find('.delete-btn').attr('data-id', id);
+		$('.news-list').append(new_item);
 	}
 });

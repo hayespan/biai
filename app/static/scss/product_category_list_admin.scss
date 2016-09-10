@@ -224,6 +224,10 @@ main {
 		float: right;
 		padding: 5px 20px;
 	}
+	img {
+		float: left;
+		width: 200px;
+	}
 	.cancel-btn {
 		margin-left: 20px;
 	}
@@ -231,7 +235,7 @@ main {
 
 .alert-hint {
 	position: absolute;
-	right: 60px;
+	right: 50px;
 	top: 0;
 	height: 34px;
 	line-height: 34px;

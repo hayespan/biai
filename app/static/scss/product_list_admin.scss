@@ -229,6 +229,52 @@ main {
 	}
 }
 
+.attr-block {
+	width: 560px;
+	float: left;
+	overflow: hidden;
+	margin-bottom: 10px;
+	.attr-item {
+		overflow: hidden;
+		margin-bottom: 10px;
+	}
+	input {
+		width: 270px;
+	}
+	.attr-name {
+		margin-right: 20px;
+	}
+}
+
+.add-img {
+	margin-top: 20px;
+}
+
+.img-block {
+	float: left;
+	width: 420px;
+	margin-right: 20px;
+	overflow: hidden;
+	& > .img-item:nth-child(2n+2) {
+		margin-right: 20px;
+	}
+}
+
+.img-item {
+	float: left;
+	width: 200px;
+	img {
+		width: 200px;
+	}
+	button {
+		font-size: 12px;
+		padding: 5px 10px;
+	}
+	.change-img {
+		margin-right: 10px;
+	}
+}
+
 .form-editor,
 .form-btns {
 	padding-right: 0;
