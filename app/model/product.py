@@ -65,7 +65,7 @@ class Product(db.Model):
         file_id_list = file_id_list or []
         file_id_list_ = []
         for i in file_id_list:
-            file_id = i.rsplit('/')
+            file_id = i.rsplit('/')[-1]
             file_id_list_.append(file_id)
         self.pics = json.dumps(file_id_list_)
 
