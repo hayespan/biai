@@ -7,6 +7,7 @@ from ..base_func import response
 from ...util.common import logger, json_response, get_now_timestamp
 from ...service import captcha_service
 from ...service import nav_service
+from ...service import cooperation_service 
 from ...model.cooperation import Cooperation
 
 @pcbp.route('/join_us', methods=['GET', ])
@@ -33,16 +34,16 @@ def cooperation_post():
                 ret=-3,
                 msg='captcha code error',
                 )
-    cp = Cooperation(
-            name=form.name.data,
-            mobile=form.mobile.data,
-            zone=form.zone.data,
-            shop_range=form.shop_range.data,
-            develop_plan=form.develop_plan.data,
-            cooperation_intention=form.cooperation_intention.data,
+    ret, new_id = cooperation_service.create_cooperation(
+            form.name.data,
+            form.mobile.data,
+            form.zone.data,
+            form.shop_range.data,
+            form.develop_plan.data,
+            form.cooperation_intention.data,
             )
-    db.session.add(db)
     return response(
-            ret=0,
+            ret=ret,
+            new_id=new_id,
             )
 

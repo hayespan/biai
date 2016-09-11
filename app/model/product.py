@@ -67,7 +67,7 @@ class Product(db.Model):
         for i in file_id_list:
             file_id = i.rsplit('/')
             file_id_list_.append(file_id)
-        self.file_id_list = file_id_list_
+        self.pics = json.dumps(file_id_list_)
 
     @classmethod
     def get_file_dir(cls):
