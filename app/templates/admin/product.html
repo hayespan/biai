@@ -53,7 +53,11 @@
 				</li>
 				<li>
 					<label>产品描述:</label>
-					<span class="product-description">{{ product.description }}</span>
+					<span class="product-description">
+					{% autoescape false %}
+						{{ product.description }}
+					{% endautoescape %}
+					</span>
 				</li>
 				<li>
 					<button class="modify-btn button-simple" type="button">修改</button>
@@ -126,11 +130,6 @@
 			</form>
 		</div>
 	</div>
-	<iframe class="product-content-hidden hidden">
-		{% autoescape false %}
-			{{ product.content }}
-		{% endautoescape %}
-	</iframe>
 {% endblock %}
 {% block script %}
 {{ super() }}
