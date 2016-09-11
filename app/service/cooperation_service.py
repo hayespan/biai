@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from .. import db
-from ..model.Cooperation import Cooperation 
+from ..model.cooperation import Cooperation 
 
 def get_cooperations():
     return Cooperation.query.order_by(db.desc('id')).all()

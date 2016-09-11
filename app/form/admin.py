@@ -92,3 +92,26 @@ class UNavForm(Form):
     id = IntegerField(validators=[Required(), ])
     title = StringField(validators=[Required(), ])
     link = StringField(validators=[Required(), ])
+
+class CSubnavForm(Form):
+    nav_id = IntegerField(validators=[Required(), ])
+    title = StringField(validators=[Required(), ])
+    link = StringField(validators=[Required(), ])
+
+class DSubNavForm(Form):
+    id = IntegerField(validators=[Required(), ])
+
+class CAdminForm(Form):
+    username = StringField(validators=[Required(), Length(1, 32), ])
+    password = PasswordField(validators=[Required(), ])
+    real_name = StringField(validators=[Required(), ])
+
+class DAdminForm(Form):
+    id = IntegerField(validators=[Required(), ])
+
+class USettingForm(Form):
+    site_name = StringField()
+    site_domain = StringField()
+    site_filing_num = StringField()
+    site_locale = StringField()
+
