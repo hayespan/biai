@@ -22,4 +22,7 @@ from . import join_us
 from . import ueditor
 from . import banner
 from . import video
+from . import setting
+from . import information
+from . import admin
 

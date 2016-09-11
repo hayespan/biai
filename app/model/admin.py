@@ -13,10 +13,12 @@ class Admin(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True) 
     username = db.Column(db.String(32), nullable=False, index=True) 
     password_hash = db.Column(db.String(128), nullable=False) 
+    real_name = db.Column(db.String(128), nullable=False)
     is_admin = db.Column(db.Boolean, nullable=False, default=False) 
     is_active = db.Column(db.Boolean, nullable=False, default=True) 
     date_joined = db.Column(db.DateTime, nullable=False, default=datetime.utcnow) 
-    last_login = db.Column(db.DateTime, nullable=False, default=datetime.utcnow) 
+    last_login = db.Column(db.DateTime, nullable=False) 
+    last_login_ip = db.Column(db.String(32), nullable=True)
 
     def __init__(self, *args, **kwargs): 
         super(Admin, self).__init__(*args, **kwargs) 

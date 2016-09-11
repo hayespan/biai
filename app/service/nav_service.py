@@ -26,3 +26,4 @@ def update_nav(id_, title, link):
     nav.link = link
     db.session.add(nav)
     return 0
+
