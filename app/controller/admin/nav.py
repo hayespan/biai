@@ -50,7 +50,7 @@ def u_nav():
             ret=0,
             )
 
-@adminbp.route('/nav/<int:nav_id>/subnav', method=['GET'])
+@adminbp.route('/nav/<int:nav_id>/subnav', methods=['GET'])
 @login_required
 def l_subnav(nav_id):
     nav = nav_service.read_nav(nav_id)
