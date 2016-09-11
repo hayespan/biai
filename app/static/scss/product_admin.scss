@@ -210,6 +210,19 @@ main {
 	}
 }
 
+.product-imgs {
+	float: left;
+	width: 560px;
+	overflow: hidden;
+}
+
+.pic-item {
+	width: 200px;
+	float: left;
+	margin-right: 20px;
+	margin-bottom: 10px;
+}
+
 .product-form {
 	width: 900px;
 }

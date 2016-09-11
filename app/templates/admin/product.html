@@ -52,7 +52,7 @@
 					<div class="product-imgs">
 						{% for pic in product.get_pics() %}
 						<div class="pic-item">
-							<img src="{{ pic }}" alt="">
+							<img src="/static/{{ pic }}" alt="">
 						</div>
 						{% endfor %}
 					</div>
@@ -80,7 +80,6 @@
 				</div>
 				<div class="form-item">
 					<label>产品分类</label>
-					<!-- <input id="product_category_id" type="text" placeholder="请输入产品分类" /> -->
 					<div class="category-block">
 						<select name="product_category_id" class="product_category_id"></select>
 					</div>
