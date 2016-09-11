@@ -30,7 +30,12 @@ def c_admin():
     username = form.username.data
     password = form.password.data
     real_name = form.real_name.data
-
+    ad = admin_service.read_admin_by_username(username)
+    if ad:
+        return admin_response(
+                ret=-2,
+                msg='username exists.',
+                )
     ret, new_id = admin_service.create_admin(
             username, password, real_name,
             )

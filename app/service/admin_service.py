@@ -30,3 +30,6 @@ def fresh_login_info(admin):
     admin.last_login_ip = request.remote_addr
     db.session.add(admin)
 
+def read_admin_by_username(username):
+    return Admin.query.filter_by(username=username).first()
+
