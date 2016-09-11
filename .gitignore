@@ -10,3 +10,4 @@ app/static/img/application/*
 node_modules/
 app/static/img/product/*
 app/static/img/product_category/*
+app/static/ueditor/php/upload/image/

@@ -17,7 +17,9 @@
 			<h2>{{ news.news_category.name }}</h2>
 			<button class="modify-btn button-simple" type="button">修改</button>
 			<div class="news-content">
-				{{ news.content }}
+				{% autoescape false %}
+					{{ news.content }}
+				{% endautoescape %}
 			</div>
 		</div>
 		<div class="news-modify hidden">
@@ -48,11 +50,6 @@
 			</form>
 		</div>
 	</div>
-	<iframe class="news-content-hidden hidden">
-		{% autoescape false %}
-			{{ news.content }}
-		{% endautoescape %}
-	</iframe>
 {% endblock %}
 {% block script %}
 {{ super() }}

@@ -25,15 +25,35 @@
 				</li>
 				<li>
 					<label>产品分类:</label>
-					<span class="product-category">{{ product.category.name }}</span>
+					<span class="product-category">
+					{% for category in product.product_categories.all() %}
+						{{ category.name }}
+					{% endfor %}
+					</span>
 				</li>
 				<li>
 					<label>商品属性:</label>
-					<span class="product-attr">{{ product.attr }}</span>
+					<div class="product-attr">
+					{% for key, value in product.get_attrs().iteritems() %}
+						<span>{{ key }}:{{ value }}</span>
+					{% endfor %}
+					</div>
 				</li>
 				<li>
 					<label>产品属性:</label>
-					<span class="product-oth-attr">{{ product.oth_attr }}</span>
+					<div class="product-oth-attr">
+					{% for key, value in product.get_oth_attrs().iteritems() %}
+						<span>{{ key }}:{{ value }}</span>
+					{% endfor %}
+					</div>
+				</li>
+				<li>
+					<label>产品图片:</label>
+					<span class="product-imgs">{{ product.pics }}</span>
+				</li>
+				<li>
+					<label>产品描述:</label>
+					<span class="product-description">{{ product.description }}</span>
 				</li>
 				<li>
 					<button class="modify-btn button-simple" type="button">修改</button>
