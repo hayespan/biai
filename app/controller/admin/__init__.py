@@ -16,7 +16,6 @@ from . import news
 from . import about
 from . import creativity
 from . import product
-from . import shop
 from . import contact
 from . import join_us
 from . import ueditor
@@ -25,4 +24,6 @@ from . import video
 from . import setting
 from . import information
 from . import admin
+from . import contact
+from . import nav
 

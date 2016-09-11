@@ -17,7 +17,7 @@ class Admin(UserMixin, db.Model):
     is_admin = db.Column(db.Boolean, nullable=False, default=False) 
     is_active = db.Column(db.Boolean, nullable=False, default=True) 
     date_joined = db.Column(db.DateTime, nullable=False, default=datetime.utcnow) 
-    last_login = db.Column(db.DateTime, nullable=False) 
+    last_login = db.Column(db.DateTime, nullable=True) 
     last_login_ip = db.Column(db.String(32), nullable=True)
 
     def __init__(self, *args, **kwargs): 

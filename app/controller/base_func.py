@@ -5,7 +5,7 @@ import os
 from flask import render_template, request, abort
 from flask.ext.login import current_user
 
-from ..util.common import logger, json_response, json_error
+from ..util.common import logger, json_response, json_error, get_biai_conf
 from ..service import nav_service
 from ..service import locale_service
 
@@ -35,6 +35,9 @@ def get_common_data(is_admin):
         common_data['nav_dict'] = nav_service.get_navs()
         common_data['cur_nav_meta_name'] = get_cur_nav_meta_name(common_data['nav_dict'])
         common_data['locale'] = locale_service.get_site_locale()
+        common_data['site_name'] = get_biai_conf('site_info', 'site_name')
+        common_data['site_domain'] = get_biai_conf('site_info', 'site_domain')
+        common_data['site_filing_num'] = get_biai_conf('site_info', 'site_filing_num')
     else:
         common_data['current_user'] = current_user
     return common_data
