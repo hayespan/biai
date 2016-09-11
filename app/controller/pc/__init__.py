@@ -20,4 +20,3 @@ from . import shop
 from . import contact
 from . import join_us
 from . import ueditor
-from . import admin
