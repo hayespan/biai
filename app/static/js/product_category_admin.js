@@ -1,4 +1,10 @@
 $(document).ready(function() {
+	var img_reader = new FileReader();
+
+	img_reader.onload = function (e) {
+		$(".img-block img").attr('src', e.target.result);
+	};
+
 	$('.modify-btn').on('click', function() {
 		$('.product-category-display').addClass('hidden');
 		$('.product-category-modify').removeClass('hidden');
@@ -10,31 +16,32 @@ $(document).ready(function() {
 		$('.product-category-display').removeClass('hidden');
 	});
 
-	$("input[type='image']").on('click', function(e) {
+	$(".img-block button").on('click', function(e) {
 		e.preventDefault();
-		$(this).siblings('#file_select').click();
+		$(this).siblings('#img').click();
 	});
 
-	$('#file_select').on('change', function() {
-		var form_data = new FormData();
-		form_data.append('pic', $(this)[0].files[0]);
-		console.log(form_data.get('pic'));
-		$.ajax({
-			url : '/admin/product/upload?f=json',
-			type : 'POST',
-			data : form_data,
-		    processData: false,
-		    contentType: false,
-			success : function(result) {
-				if (result.data.file_id) {
-					console.log(result.data.file_id);
-					// $('#file_id').val(result.file_id);
-					// $("input[type='image']").attr('src', result.file_id);
-				} else {
-					console.log(result);
-				}
-			}
-		});
+	$('#img').on('change', function() {
+		img_reader.readAsDataURL($(this)[0].files[0]);
+		// var form_data = new FormData();
+		// form_data.append('pic', $(this)[0].files[0]);
+		// console.log(form_data.get('pic'));
+		// $.ajax({
+		// 	url : '/admin/product/upload?f=json',
+		// 	type : 'POST',
+		// 	data : form_data,
+		//     processData: false,
+		//     contentType: false,
+		// 	success : function(result) {
+		// 		if (result.data.file_id) {
+		// 			console.log(result.data.file_id);
+		// 			$('#file_id').attr('value', result.data.file_id);
+		// 			$(".img-block img").attr('src', '/static/'+result.data.file_path);
+		// 		} else {
+		// 			console.log(result);
+		// 		}
+		// 	}
+		// });
 	});
 
 	$('.product-category-modify form').on('submit', function(e) {
@@ -44,6 +51,7 @@ $(document).ready(function() {
 			return false;
 		}
 		form_data.append('id', this.dataset.id);
+		console.log(form_data);
 		$.ajax({
 			url : '/admin/product_category/update?f=json',
 			type : 'POST',
@@ -52,6 +60,10 @@ $(document).ready(function() {
 		    contentType: false,
 			success : function(result) {
 				console.log(result);
+				$('.category-name').text($('#name').val());
+				$('.category-weight').text($('#weight').val());
+				$('.category-img').attr('src', $(".img-block img").attr('src'));
+				$('.product-category-display h1').text($('#name').val());
 				$('.product-category-form')[0].reset();
 				$('.product-category-modify').addClass('hidden');
 				$('.product-category-display').removeClass('hidden');
@@ -73,6 +85,13 @@ $(document).ready(function() {
 			return false;
 		} else {
 			form_data.append('weight', $('#weight').val());
+		}
+		if ($('#img').val() == '') {
+			$('#img').siblings('.alert-hint').text('请选择分类图片');
+			$('#img').siblings('.alert-hint').removeClass('hidden');
+			return false;
+		} else {
+			form_data.append('img', $('#img')[0].files[0]);
 		}
 		return true;
 	}

@@ -11,15 +11,15 @@
 			<ul>
 				<li>
 					<label>分类名:</label>
-					<span>{{ product_category.name }}</span>
+					<span class="category-name">{{ product_category.name }}</span>
 				</li>
 				<li>
 					<label>分类权重:</label>
-					<span>{{ product_category.weight }}</span>
+					<span class="category-weight">{{ product_category.weight }}</span>
 				</li>
 				<li>
 					<label>分类图片:</label>
-					<img src="{{ url_for('static', filename=product_category.get_file_path()) }}" alt="img">
+					<img class="category-img" src="{{ url_for('static', filename=product_category.get_file_path()) }}" alt="img">
 					<!-- product_category.get_file_path() -->
 				</li>
 				<li>
@@ -42,10 +42,14 @@
 				</div>
 				<div class="form-item">
 					<label>分类图片</label>
-					<input id="file_id" class="hidden" type="text" value="{{ product_category.file_id }}" />
-					<input id="file_select" type="file" class="hidden" value="{{ product_category.file_id }}" />
-					<input type="image" src="{{ url_for('static', filename=product_category.get_file_path()) }}" ></button>
-					<div class="alert-hint hidden"></div>
+					<div class="img-block">
+						<img src="{{ url_for('static', filename=product_category.get_file_path()) }}" alt="{{ product_category }}">
+						<button class="button-simple">更换图片</button>
+						<input type="file" id="img" class="hidden">
+<!-- 						<input id="file_id" class="hidden" type="text" value="" />
+						<input id="file_select" type="file" class="hidden" value="" /> -->
+						<div class="alert-hint hidden"></div>
+					</div>
 				</div>
 				<div class="form-item">
 					<button class="cancel-btn button-simple" type="button">返回</button>

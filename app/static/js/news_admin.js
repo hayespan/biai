@@ -19,7 +19,8 @@ $(document).ready(function() {
 		autoHeightEnabled: false
 	});
 
-	var news_content = $('.news-content-hidden').html();
+	initForm();
+	var news_content = $('.news-content').html();
 
 	$('.modify-btn').on('click', function() {
 		ue.setContent(news_content);
@@ -39,6 +40,8 @@ $(document).ready(function() {
 		if (!checkForm(form_data)) {
 			return false;
 		}
+		form_data.append('id', this.dataset.id);
+		console.log(form_data);
 		$.ajax({
 			url : '/admin/news/update?f=json',
 			type : 'POST',
@@ -46,13 +49,32 @@ $(document).ready(function() {
 		    processData: false,
 		    contentType: false,
 			success : function(result) {
-				console.log(result);
+				$('.news-display h1').text($('#title').val());
+				$('.news-display h2').text($('#news_category_id').find("option:selected").text());
+				$('.news-content').html(ue.getContent());
 				$('.news-form')[0].reset();
 				$('.news-modify').addClass('hidden');
 				$('.news-display').removeClass('hidden');
 			}
 		});
 	});
+
+	function initForm() {
+		$.ajax({
+			url : '/admin/news_category_json?f=json',
+			type : 'GET',
+			success : function(result) {
+				var category_list = result.data.news_category_list;
+				for (var i = 0; i < category_list.length; i++) {
+					var new_option = document.createElement("option");
+					$(new_option).attr('value', category_list[i].id);
+					$(new_option).text(category_list[i].name);
+					$('#news_category_id').append(new_option);
+				}
+				$('#news_category_id').val($('#news_category_id')[0].dataset.choice);
+			}
+		});
+	}
 
 	function checkForm(form_data) {
 		if ($('#title').val() == '') {
@@ -62,12 +84,12 @@ $(document).ready(function() {
 		} else {
 			form_data.append('title', $('#title').val());
 		}
-		if ($('#cat').val() == '') {
-			$('#name').siblings('.alert-hint').text('新闻分类不能为空噢');
-			$('#name').siblings('.alert-hint').removeClass('hidden');
+		if ($('#news_category_id').val() == '') {
+			$('#news_category_id').siblings('.alert-hint').text('新闻分类不能为空噢');
+			$('#news_category_id').siblings('.alert-hint').removeClass('hidden');
 			return false;
 		} else {
-			form_data.append('name', $('#name').val());
+			form_data.append('news_category_id', $('#news_category_id').val());
 		}
 		var content = ue.getContent();
 		if (content == '') {

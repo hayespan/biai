@@ -187,8 +187,8 @@ main {
     border: 1px solid #ccc; }
     .form-item input[type="text"]:focus {
       border-color: #66afe9; }
-  .form-item input[type="image"] {
-    outline: 0;
+  .form-item img {
+    float: left;
     width: 200px; }
   .form-item button {
     float: right;

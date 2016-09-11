@@ -20,69 +20,58 @@ $(document).ready(function() {
 	});
 
 	initForm();
+	var product_content = $('.product-content').html();
 
-	$('.add-btn').on('click', function() {
-		$('.news-list-display').addClass('hidden');
-		$('.news-add').removeClass('hidden');
+	$('.modify-btn').on('click', function() {
+		ue.setContent(product_content);
+		$('.product-display').addClass('hidden');
+		$('.product-modify').removeClass('hidden');
 	});
 
 	$('.cancel-btn').on('click', function() {
-		$('.news-form')[0].reset();
-		$('.news-add').addClass('hidden');
-		$('.news-list-display').removeClass('hidden');
+		$('.product-form')[0].reset();
+		$('.product-modify').addClass('hidden');
+		$('.product-display').removeClass('hidden');
 	});
 
-	$('.delete-btn').on('click', function() {
-		var target_item = $(this).parent().parent();
-		var target_id = this.dataset.id;
-		$.ajax({
-			url : '/admin/news/delete?f=json',
-			type : 'POST',
-			data : {
-				id : target_id
-			},
-			success : function(result) {
-				target_item.fadeOut('slow', function() {
-					this.remove();
-				});
-			}
-		});
-	});
-
-	$('.news-add form').on('submit', function(e) {
+	$('.product-modify form').on('submit', function(e) {
 		e.preventDefault();
 		var form_data = new FormData();
 		if (!checkForm(form_data)) {
 			return false;
 		}
+		form_data.append('id', this.dataset.id);
 		console.log(form_data);
 		$.ajax({
-			url : '/admin/news/create?f=json',
+			url : '/admin/product/update?f=json',
 			type : 'POST',
 			data : form_data,
 		    processData: false,
 		    contentType: false,
 			success : function(result) {
-				refreshCategory(result.data.id, $('#title').val());
-				$('.news-form')[0].reset();
-				$('.news-add').addClass('hidden');
-				$('.news-list-display').removeClass('hidden');
+				$('.product-display h1').text($('#title').val());
+				$('.product-display h2').text($('#product_category_id').find("option:selected").text());
+				$('.product-content').html(ue.getContent());
+				$('.product-form')[0].reset();
+				$('.product-modify').addClass('hidden');
+				$('.product-display').removeClass('hidden');
 			}
 		});
 	});
 
 	function initForm() {
 		$.ajax({
-			url : '/admin/news_category_json?f=json',
+			url : '/admin/product_category_json?f=json',
 			type : 'GET',
 			success : function(result) {
-				var category_list = result.data.news_category_list;
+				var category_list = result.data.product_category_list;
 				for (var i = 0; i < category_list.length; i++) {
 					var new_option = document.createElement("option");
 					$(new_option).attr('value', category_list[i].id);
 					$(new_option).text(category_list[i].name);
-					$('#news_category_id').append(new_option);
+					$('#product_category_id').append(new_option);
 				}
+				$('#product_category_id').val($('#product_category_id')[0].dataset.choice);
 			}
 		});
 	}
@@ -95,12 +84,12 @@ $(document).ready(function() {
 		} else {
 			form_data.append('title', $('#title').val());
 		}
-		if ($('#news_category_id').val() == '') {
-			$('#news_category_id').siblings('.alert-hint').text('新闻分类不能为空噢');
-			$('#news_category_id').siblings('.alert-hint').removeClass('hidden');
+		if ($('#product_category_id').val() == '') {
+			$('#product_category_id').siblings('.alert-hint').text('新闻分类不能为空噢');
+			$('#product_category_id').siblings('.alert-hint').removeClass('hidden');
 			return false;
 		} else {
-			form_data.append('news_category_id', $('#news_category_id').val());
+			form_data.append('product_category_id', $('#product_category_id').val());
 		}
 		var content = ue.getContent();
 		if (content == '') {
@@ -109,13 +98,5 @@ $(document).ready(function() {
 			form_data.append('content', content);
 		}
 		return true;
-	}
-
-	function refreshCategory(id, title) {
-		var new_item = $('.news-list').children().first().clone(true);
-		new_item.children().first().attr('href', '/admin/news/'+id);
-		new_item.children().first().text(title);
-		new_item.find('.delete-btn').attr('data-id', id);
-		$('.news-list').append(new_item);
 	}
 });

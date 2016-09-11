@@ -17,7 +17,9 @@
 			<h2>{{ news.news_category.name }}</h2>
 			<button class="modify-btn button-simple" type="button">修改</button>
 			<div class="news-content">
-				{{ news.content }}
+				{% autoescape false %}
+					{{ news.content }}
+				{% endautoescape %}
 			</div>
 		</div>
 		<div class="news-modify hidden">
@@ -30,7 +32,8 @@
 				</div>
 				<div class="form-item">
 					<label>新闻分类</label>
-					<input id="category" type="text" value="{{ news.news_category.name }}" placeholder="请输入新闻分类" />
+					<!-- <input id="news_category_id" type="text" value="{{ news.news_category.id }}" placeholder="请输入新闻分类" /> -->
+					<select name="news_category_id" id="news_category_id" data-choice="{{ news.news_category.id }}"></select>
 					<div class="alert-hint hidden"></div>
 				</div>
 				<div class="form-item form-editor">
@@ -47,9 +50,6 @@
 			</form>
 		</div>
 	</div>
-	<iframe class="news-content-hidden hidden">
-		{{ news.content }}
-	</iframe>
 {% endblock %}
 {% block script %}
 {{ super() }}

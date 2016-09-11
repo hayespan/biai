@@ -17,7 +17,11 @@
 		</h2>
 		<div class="user-info">
 			<a class="user-button" href="#">
-				饭团先森
+				{% if current_user.username %}
+					{{ current_user.username }}
+				{% else %}
+				    饭团先森
+				{% endif %}
 			</a>
 			<ul class="user-controller hidden">
 				<li><a href="/admin/logout">退出登录</a></li>
@@ -26,10 +30,10 @@
 	</header>
 	<nav class="sidebar">
 		<ul>
-			<li><a href="/admin/news_category">新闻分类</a></li>
-			<li><a href="/admin/news">新闻条目</a></li>
-			<li><a href="/admin/product_category">产品分类</a></li>
-			<li><a href="/admin/product">产品条目</a></li>
+			<li><a class="news-category" href="/admin/news_category">新闻分类</a></li>
+			<li><a class="news" href="/admin/news">新闻条目</a></li>
+			<li><a class="product-category" href="/admin/product_category">产品分类</a></li>
+			<li><a class="product" href="/admin/product">产品条目</a></li>
 			<li><a href="#">首页管理</a></li>
 			<li><a href="#">人才招聘</a></li>
 		</ul>
