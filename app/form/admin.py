@@ -44,7 +44,7 @@ class CUProductForm(Form):
     id = IntegerField()
     name = StringField(validators=[Length(0, 512), ])
     attrs = StringField()
-    oth_atts = StringField()
+    oth_attrs = StringField()
     buy_link = StringField()
     description = StringField()
     category_ids = StringField()
