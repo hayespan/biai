@@ -49,15 +49,21 @@
 				</li>
 				<li>
 					<label>产品图片:</label>
-					<span class="product-imgs">{{ product.pics }}</span>
+					<div class="product-imgs">
+						{% for pic in product.get_pics() %}
+						<div class="pic-item">
+							<img src="{{ pic }}" alt="">
+						</div>
+						{% endfor %}
+					</div>
 				</li>
 				<li>
 					<label>产品描述:</label>
-					<span class="product-description">
+					<div class="product-description">
 					{% autoescape false %}
 						{{ product.description }}
 					{% endautoescape %}
-					</span>
+					</div>
 				</li>
 				<li>
 					<button class="modify-btn button-simple" type="button">修改</button>
