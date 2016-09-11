@@ -25,12 +25,13 @@ $(document).ready(function() {
 		    processData: false,
 		    contentType: false,
 			success : function(result) {
-				$('.category-name').text($('#name').val());
-				$('.category-weight').text($('#weight').val());
-				$('.news-category-display h1').text($('#name').val());
-				$('.news-category-form')[0].reset();
-				$('.news-category-modify').addClass('hidden');
-				$('.news-category-display').removeClass('hidden');
+				location.reload();
+				// $('.category-name').text($('#name').val());
+				// $('.category-weight').text($('#weight').val());
+				// $('.news-category-display h1').text($('#name').val());
+				// $('.news-category-form')[0].reset();
+				// $('.news-category-modify').addClass('hidden');
+				// $('.news-category-display').removeClass('hidden');
 			}
 		});
 	});

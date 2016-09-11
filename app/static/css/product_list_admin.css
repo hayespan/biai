@@ -214,6 +214,10 @@ main {
   .attr-block .attr-name {
     margin-right: 20px; }
 
+.add-category,
+.add-attr {
+  margin-right: 10px; }
+
 .add-img {
   margin-top: 20px; }
 
@@ -227,7 +231,11 @@ main {
 
 .img-item {
   float: left;
-  width: 200px; }
+  margin-bottom: 10px; }
+  .img-item .img-container {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 10px; }
   .img-item img {
     width: 200px; }
   .img-item button {

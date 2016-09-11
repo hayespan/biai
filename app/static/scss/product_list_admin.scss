@@ -261,6 +261,11 @@ main {
 	}
 }
 
+.add-category,
+.add-attr {
+	margin-right: 10px;
+}
+
 .add-img {
 	margin-top: 20px;
 }
@@ -277,7 +282,13 @@ main {
 
 .img-item {
 	float: left;
-	width: 200px;
+	margin-bottom: 10px;
+	// width: 200px;
+	.img-container {
+		width: 200px;
+		height: 200px;
+		margin-bottom: 10px;
+	}
 	img {
 		width: 200px;
 	}

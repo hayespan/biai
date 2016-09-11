@@ -59,14 +59,15 @@ $(document).ready(function() {
 		    processData: false,
 		    contentType: false,
 			success : function(result) {
-				console.log(result);
-				$('.category-name').text($('#name').val());
-				$('.category-weight').text($('#weight').val());
-				$('.category-img').attr('src', $(".img-block img").attr('src'));
-				$('.product-category-display h1').text($('#name').val());
-				$('.product-category-form')[0].reset();
-				$('.product-category-modify').addClass('hidden');
-				$('.product-category-display').removeClass('hidden');
+				location.reload();
+				// console.log(result);
+				// $('.category-name').text($('#name').val());
+				// $('.category-weight').text($('#weight').val());
+				// $('.category-img').attr('src', $(".img-block img").attr('src'));
+				// $('.product-category-display h1').text($('#name').val());
+				// $('.product-category-form')[0].reset();
+				// $('.product-category-modify').addClass('hidden');
+				// $('.product-category-display').removeClass('hidden');
 			}
 		});
 	});

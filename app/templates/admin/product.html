@@ -49,11 +49,21 @@
 				</li>
 				<li>
 					<label>产品图片:</label>
-					<span class="product-imgs">{{ product.pics }}</span>
+					<div class="product-imgs">
+						{% for pic in product.get_pics() %}
+							<div class="pic-item">
+								<img src="/static/{{ pic }}" alt="">
+							</div>
+						{% endfor %}
+					</div>
 				</li>
 				<li>
 					<label>产品描述:</label>
-					<span class="product-description">{{ product.description }}</span>
+					<div class="product-description">
+					{% autoescape false %}
+						{{ product.description }}
+					{% endautoescape %}
+					</div>
 				</li>
 				<li>
 					<button class="modify-btn button-simple" type="button">修改</button>
@@ -65,48 +75,74 @@
 			<form data-id="{{ product.id }}" class="product-form" action="/admin/product/create">
 				<div class="form-item">
 					<label>产品名字</label>
-					<input id="name" type="text" placeholder="请输入产品名字" />
+					<input id="name" type="text" value="{{ product.name }}" placeholder="请输入产品名字" />
+					<div class="alert-hint hidden"></div>
+				</div>
+				<div class="form-item">
+					<label>购买链接</label>
+					<input id="buy_link" type="text" value="{{ product.buy_link }}" placeholder="请输入购买链接" />
 					<div class="alert-hint hidden"></div>
 				</div>
 				<div class="form-item">
 					<label>产品分类</label>
-					<!-- <input id="product_category_id" type="text" placeholder="请输入产品分类" /> -->
 					<div class="category-block">
-						<select name="product_category_id" class="product_category_id"></select>
+						{% for category in product.product_categories.all() %}
+							<select data-choice="{{ category.id }}" name="product_category_id" class="product_category_id"></select>
+						{% endfor %}
 					</div>
+					<button class="button-simple delete-category">删除分类</button>
 					<button class="button-simple add-category">添加分类</button>
 					<div class="alert-hint hidden"></div>
 				</div>
 				<div class="form-item form-attr">
 					<label>商品属性</label>
 					<div id="attrs_" class="attr-block">
-						<div class="attr-item">
-							<input class="attr-name" type="text" placeholder="例如:主要材料" />
-							<input class="attr-value" type="text" placeholder="塑料、橡胶、纸" />
-						</div>
+						{% for key, value in product.get_attrs().iteritems() %}
+							<div class="attr-item">
+								<input class="attr-name" type="text" placeholder="例如:主要材料" value="{{ key }}" />
+								<input class="attr-value" type="text" placeholder="塑料、橡胶、纸" value="{{ value }}" />
+							</div>
+						{% endfor %}
 					</div>
+					<button class="button-simple delete-attr">删除属性</button>
 					<button class="button-simple add-attr">添加属性</button>
 				</div>
 				<div class="form-item form-attr">
 					<label>产品属性</label>
 					<div id="oth_attrs_" class="attr-block">
+						{% for key, value in product.get_oth_attrs().iteritems() %}
 						<div class="attr-item">
-							<input class="attr-name" type="text" placeholder="例如:产品货号" />
-							<input class="attr-value" type="text" placeholder="BG687983" />
+							<input class="attr-name" type="text" placeholder="例如:产品货号" value="{{ key }}" />
+							<input class="attr-value" type="text" placeholder="BG687983" value="{{ value }}" />
 						</div>
+						{% endfor %}
 					</div>
+					<button class="button-simple delete-attr">删除属性</button>
 					<button class="button-simple add-attr">添加属性</button>
 				</div>
 				<div class="form-item form-img">
 					<label>产品图片</label>
 					<div id="product_img" class="img-block">
 						<div class="img-item" style="display: none">
-							<img src="" alt="">
+							<div class="img-container">
+								<img src="" alt="">
+							</div>
 							<input class="hidden file_id" type="text" value="" />
 							<input class="hidden file_change" type="file" value="" />
 							<button class="delete-img button-simple">删除</button>
 							<button class="change-img button-simple">修改</button>
 						</div>
+						{% for pic in product.get_pics() %}
+							<div class="img-item">
+								<div class="img-container">
+									<img src="/static/{{ pic }}" alt="">
+								</div>
+								<input class="hidden file_id" type="text" value="" />
+								<input class="hidden file_change" type="file" value="" />
+								<button class="delete-img button-simple">删除</button>
+								<button class="change-img button-simple">修改</button>
+							</div>
+						{% endfor %}
 					</div>
 					<input class="hidden file-select" type="file" value="" />
 					<button class="button-simple add-img">添加图片</button>
@@ -126,11 +162,6 @@
 			</form>
 		</div>
 	</div>
-	<iframe class="product-content-hidden hidden">
-		{% autoescape false %}
-			{{ product.content }}
-		{% endautoescape %}
-	</iframe>
 {% endblock %}
 {% block script %}
 {{ super() }}

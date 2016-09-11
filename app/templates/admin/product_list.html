@@ -54,6 +54,7 @@
 					<div class="category-block">
 						<select name="product_category_id" class="product_category_id"></select>
 					</div>
+					<button class="button-simple delete-category">删除分类</button>
 					<button class="button-simple add-category">添加分类</button>
 					<div class="alert-hint hidden"></div>
 				</div>
@@ -65,6 +66,7 @@
 							<input class="attr-value" type="text" placeholder="塑料、橡胶、纸" />
 						</div>
 					</div>
+					<button class="button-simple delete-attr">删除属性</button>
 					<button class="button-simple add-attr">添加属性</button>
 				</div>
 				<div class="form-item form-attr">
@@ -75,13 +77,16 @@
 							<input class="attr-value" type="text" placeholder="BG687983" />
 						</div>
 					</div>
+					<button class="button-simple delete-attr">删除属性</button>
 					<button class="button-simple add-attr">添加属性</button>
 				</div>
 				<div class="form-item form-img">
 					<label>产品图片</label>
 					<div id="product_img" class="img-block">
 						<div class="img-item" style="display: none">
-							<img src="" alt="">
+							<div class="img-container">
+								<img src="" alt="">
+							</div>
 							<input class="hidden file_id" type="text" value="" />
 							<input class="hidden file_change" type="file" value="" />
 							<button class="delete-img button-simple">删除</button>
