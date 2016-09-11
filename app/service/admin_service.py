@@ -15,7 +15,7 @@ def create_admin(username, password, real_name):
             real_name=real_name,
             is_admin=True,
             )
-    ad.set_password(password)
+    ad.password = password
     db.session.add(ad)
     db.session.commit()
     return 0, ad.id
