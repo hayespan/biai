@@ -30,7 +30,8 @@
 				</div>
 				<div class="form-item">
 					<label>新闻分类</label>
-					<input id="news_category_id" type="text" value="{{ news.news_category.id }}" placeholder="请输入新闻分类" />
+					<!-- <input id="news_category_id" type="text" value="{{ news.news_category.id }}" placeholder="请输入新闻分类" /> -->
+					<select name="news_category_id" id="news_category_id" data-choice="{{ news.news_category.id }}"></select>
 					<div class="alert-hint hidden"></div>
 				</div>
 				<div class="form-item form-editor">
@@ -48,7 +49,9 @@
 		</div>
 	</div>
 	<iframe class="news-content-hidden hidden">
-		{{ news.content|e }}
+		{% autoescape false %}
+			{{ news.content }}
+		{% endautoescape %}
 	</iframe>
 {% endblock %}
 {% block script %}

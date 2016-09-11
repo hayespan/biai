@@ -1,5 +1,5 @@
 {% extends "admin/base.html" %}
-{% block title %}产品条目管理{% endblock %}
+{% block title %}新闻条目管理{% endblock %}
 {% block head %}
 {{ super() }}
 <script type="text/javascript" charset="utf-8" src="{{ url_for('static', filename='ueditor/ueditor.config.js') }}"></script>
@@ -8,44 +8,44 @@
 {% endblock %}
 {% block stylesheet %}
 {{ super() }}
-<link rel="stylesheet" href="{{ url_for('static', filename='css/product_list_admin.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/product_admin.css') }}">
 {% endblock %}
 {% block main %}
-	<div class="product-list-container">
-		<div class="product-list-display">
-			<h1>产品条目管理</h1>
-			<button class="add-btn button-simple" type="button">添加产品</button>
-			<ul class="product-list">
-				{% if product_list == [] %}
-					<li class="product-item">
-						<a class="product-title" href="/admin/product/1">产品1</a>
-						<div class="item-controller">
-							<a class="delete-btn button-simple" href="#">删除</a>
-						</div>
-					</li>
-				{% else %}
-					{% for product in product_list %}
-						<li class="product-item">
-							<a class="product-title" href="/admin/product/{{ product.id }}">{{ product.name }}</a>
-							<div class="item-controller">
-								<a data-id="{{ product.id }}" class="delete-btn button-simple" href="#">删除</a>
-							</div>
-						</li>
-					{% endfor %}
-				{% endif %}
+	<div class="product-container">
+		<div class="product-display">
+			<h1>{{ product.name }}</h1>
+			<ul>
+				<li>
+					<label>产品名字:</label>
+					<span class="product-name">{{ product.name }}</span>
+				</li>
+				<li>
+					<label>购买链接:</label>
+					<span class="product-buy-link">{{ product.buy_link }}</span>
+				</li>
+				<li>
+					<label>产品分类:</label>
+					<span class="product-category">{{ product.category.name }}</span>
+				</li>
+				<li>
+					<label>商品属性:</label>
+					<span class="product-attr">{{ product.attr }}</span>
+				</li>
+				<li>
+					<label>产品属性:</label>
+					<span class="product-oth-attr">{{ product.oth_attr }}</span>
+				</li>
+				<li>
+					<button class="modify-btn button-simple" type="button">修改</button>
+				</li>
 			</ul>
 		</div>
-		<div class="product-add hidden">
-			<h1>添加产品</h1>
-			<form class="product-form" action="/admin/product/create">
+		<div class="product-modify hidden">
+			<h1>修改产品</h1>
+			<form data-id="{{ product.id }}" class="product-form" action="/admin/product/create">
 				<div class="form-item">
 					<label>产品名字</label>
 					<input id="name" type="text" placeholder="请输入产品名字" />
-					<div class="alert-hint hidden"></div>
-				</div>
-				<div class="form-item">
-					<label>购买链接</label>
-					<input id="buy_link" type="text" placeholder="请输入购买链接" />
 					<div class="alert-hint hidden"></div>
 				</div>
 				<div class="form-item">
@@ -106,8 +106,13 @@
 			</form>
 		</div>
 	</div>
+	<iframe class="product-content-hidden hidden">
+		{% autoescape false %}
+			{{ product.content }}
+		{% endautoescape %}
+	</iframe>
 {% endblock %}
 {% block script %}
 {{ super() }}
-<script src="{{ url_for('static', filename='js/product_list_admin.js') }}"></script>
+<script src="{{ url_for('static', filename='js/product_admin.js') }}"></script>
 {% endblock %}

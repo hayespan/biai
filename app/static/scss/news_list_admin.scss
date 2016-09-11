@@ -220,6 +220,15 @@ main {
 			border-color: #66afe9;
 		}
 	}
+	select {
+		outline: 0;
+		float: left;
+		width: 560px;
+		height: 34px;
+		padding: 6px 12px;
+		border-radius: 4px;
+		border: 1px solid #ccc;
+	}
 	button {
 		float: right;
 		padding: 5px 20px;
@@ -241,7 +250,7 @@ main {
 
 .alert-hint {
 	position: absolute;
-	right: 60px;
+	right: 50px;
 	top: 0;
 	height: 34px;
 	line-height: 34px;
