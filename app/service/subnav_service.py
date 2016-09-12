@@ -19,6 +19,7 @@ def create_subnav(nav_id_, title, link):
             nav_id=nav.id,
             )
     db.session.add(subnav)
+    db.session.commit()
     return 0, subnav.id
 
 def delete_subnav(id_):
