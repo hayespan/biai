@@ -136,6 +136,18 @@ main {
     margin-bottom: 20px;
     border-bottom: 1px solid #eee; }
 
+.list-title {
+  height: 40px;
+  overflow: hidden;
+  border-bottom: 1px solid #eee; }
+  .list-title div {
+    float: left; }
+
+.title-name,
+.title-link {
+  padding-left: 20px;
+  width: 360px; }
+
 .nav-item {
   overflow: hidden;
   height: 50px;

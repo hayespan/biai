@@ -1,0 +1,90 @@
+{% extends "admin/base.html" %}
+{% block title %}视频管理{% endblock %}
+{% block stylesheet %}
+{{ super() }}
+<link href="http://vjs.zencdn.net/5.11.6/video-js.css" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/video_list_admin.css') }}">
+{% endblock %}
+{% block main %}
+	<div class="video-list-container">
+		<div class="video-list-display">
+			<h1>视频管理</h1>
+			<button class="add-btn button-simple" type="button">添加视频</button>
+			<div class="list-title">
+				<div class="title-name">视频名</div>
+				<div class="title-weight">视频权重</div>
+				<div class="title-img">视频图片</div>
+				<div class="title-video">视频内容</div>
+			</div>
+			<ul class="video-list">
+				<li class="video-item" style="display: none;">
+					<div class="video-name">
+						<span class="item-display hidden"></span>
+						<input class="name item-input" type="text" placeholder="请输入视频名">
+					</div>
+					<div class="video-weight">
+						<span class="item-display hidden"></span>
+						<input class="weight item-input" type="text" placeholder="请输入视频权重">
+					</div>
+					<div class="video-img">
+						<img src="" class="item-display hidden"></img>
+						<input class="pic item-input" type="file">
+					</div>
+					<div class="video-content">
+						<video class="hidden video-js" controls preload="auto" width="360" height="200"
+						  poster="" data-setup="{}">
+						    <source src="{{ url_for('static', filename=video_list[0].get_file_path()) }}" type='video/mp4'>
+						    <p class="vjs-no-js">
+						      To view this video please enable JavaScript, and consider upgrading to a web browser that
+						      <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+						    </p>
+						</video>
+						<input class="video item-input" type="file">
+					</div>
+					<div class="item-controller">
+						<a data-id="" class="hidden delete-btn button-simple" href="#">删除</a>
+						<a class="submit-btn button-simple" href="#">提交</a>
+						<a class="cancel-btn button-simple" href="#">取消</a>
+					</div>
+				</li>
+				{% for video in video_list %}
+					<li class="video-item">
+						<div class="video-name">
+							<span class="item-display">{{ video.name }}</span>
+							<input class="name item-input hidden" type="text" value="">
+						</div>
+						<div class="video-weight">
+							<span class="item-display">{{ video.weight }}</span>
+							<input class="weight item-input hidden" type="text" value="">
+						</div>
+						<div class="video-img">
+							<img src="/static/{{ video.get_pic_path() }}" alt="">
+							<input class="pic item-input hidden" type="text" value="">
+						</div>
+						<div class="video-content">
+							<video class="video-js" controls preload="auto" width="360" height="200"
+							  poster="" data-setup="{}">
+							    <source src="{{ url_for('static', filename=video.get_file_path()) }}" type='video/mp4'>
+							    <p class="vjs-no-js">
+							      To view this video please enable JavaScript, and consider upgrading to a web browser that
+							      <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+							    </p>
+							</video>
+							<input class="video item-input hidden" type="text" value="">
+						</div>
+						<div class="item-controller">
+							<a data-id="{{ video.id }}" class="delete-btn button-simple" href="#">删除</a>
+							<a class="hidden submit-btn button-simple" href="#">提交</a>
+							<a class="hidden cancel-btn button-simple" href="#">取消</a>
+						</div>
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+{% endblock %}
+{% block script %}
+{{ super() }}
+<script src="http://vjs.zencdn.net/5.11.6/video.js"></script>
+<script src="{{ url_for('static', filename='js/video_list_admin.js') }}"></script>
+{% endblock %}

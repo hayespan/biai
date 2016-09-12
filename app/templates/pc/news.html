@@ -8,16 +8,24 @@
 		<div class="news-container">
 			<div class="news-type-nav">
 				<ul>
-					<li><a class="chosen" href="#">比爱早教</a></li>
-					<li><a href="#">企业新闻</a></li>
+					{% for news_category in news_category_list %}
+						{% if news_category == current_category %}
+							<li><a class="chosen" href="/news/category/{{ news_category.name }}/1">{{ news_category.name }}</a></li>
+						{% else %}
+							<li><a href="/news/category/{{ news_category.name }}/1">{{ news_category.name }}</a></li>
+						{% endif %}
+					{% endfor %}
 				</ul>
 			</div>
 			<div class="news-page-container">
 				<div class="news-page">
 					<div class="news-page-path">
-						<a href="#">新闻动态</a>><a href="#">比爱早教</a>><a href="">宝宝玩具的选择要点</a>
+						<a href="/news/category/{{ news_category_list[0].name }}/1">新闻动态</a>><a href="/news/category/{{ current_category.name }}/1">{{ current_category.name }}</a>><a href="/news/{{ news.id }}">{{ news.title }}</a>
 					</div>
 					<div class="news-page-content">
+						{% autoescape false %}
+							{{ news.content }}
+						{% endautoescape %}
 					</div>
 				</div>
 			</div>

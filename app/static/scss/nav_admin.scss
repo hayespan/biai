@@ -165,6 +165,21 @@ main {
 	}
 }
 
+.list-title {
+	height: 40px;
+	overflow: hidden;
+	border-bottom: 1px solid #eee;
+	div {
+		float: left;
+	}
+}
+
+.title-name,
+.title-link {
+	padding-left: 20px;
+	width: 360px;
+}
+
 .nav-item {
 	overflow: hidden;
 	height: 50px;

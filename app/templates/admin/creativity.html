@@ -1,0 +1,31 @@
+{% extends "admin/base.html" %}
+{% block title %}创意中心管理{% endblock %}
+{% block stylesheet %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/creativity_admin.css') }}">
+{% endblock %}
+{% block main %}
+	<div class="creativity-container">
+		<div class="creativity-display">
+			<h1>创意中心管理</h1>
+			<a class="return-btn button-simple" href="/admin/creativity">返回</a>
+			<ul>
+				<li>
+					<label>联系方式:</label>
+					<span class="creativity-phone">{{ creativity.mobile }}</span>
+				</li>
+				<li>
+					<label>创意作品:</label>
+					<div class="creativity-file">
+						{% for file in creativity.get_file_path_list() %}	
+							<img src="/static/{{ file }}" alt="">	
+						{% endfor %}
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+{% endblock %}
+{% block script %}
+{{ super() }}
+{% endblock %}

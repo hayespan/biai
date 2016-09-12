@@ -1,0 +1,65 @@
+{% extends "admin/base.html" %}
+{% block title %}首页轮播管理{% endblock %}
+{% block stylesheet %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/banner_list_admin.css') }}">
+{% endblock %}
+{% block main %}
+	<div class="banner-list-container">
+		<div class="banner-list-display">
+			<h1>首页轮播管理</h1>
+			<button class="add-btn button-simple" type="button">添加图片</button>
+			<div class="list-title">
+				<div class="title-name">图片名</div>
+				<div class="title-weight">图片权重</div>
+				<div class="title-img">图片内容</div>
+			</div>
+			<ul class="banner-list">
+				<li class="banner-item" style="display: none;">
+					<div class="banner-name">
+						<span class="item-display hidden"></span>
+						<input class="name item-input" type="text" placeholder="请输入图片名">
+					</div>
+					<div class="banner-weight">
+						<span class="item-display hidden"></span>
+						<input class="weight item-input" type="text" placeholder="请输入图片权重">
+					</div>
+					<div class="banner-img">
+						<img src="" class="item-display hidden"></img>
+						<input class="pic item-input" type="file">
+					</div>
+					<div class="item-controller">
+						<a data-id="" class="hidden delete-btn button-simple" href="#">删除</a>
+						<a class="submit-btn button-simple" href="#">提交</a>
+						<a class="cancel-btn button-simple" href="#">取消</a>
+					</div>
+				</li>
+				{% for banner in banner_list %}
+					<li class="banner-item">
+						<div class="banner-name">
+							<span class="item-display">{{ banner.name }}</span>
+							<input class="name item-input hidden" type="text" value="">
+						</div>
+						<div class="banner-weight">
+							<span class="item-display">{{ banner.weight }}</span>
+							<input class="weight item-input hidden" type="text" value="">
+						</div>
+						<div class="banner-img">
+							<img src="/static/{{ banner.get_file_path() }}" alt="">
+							<input class="pic item-input hidden" type="text" value="">
+						</div>
+						<div class="item-controller">
+							<a data-id="{{ banner.id }}" class="delete-btn button-simple" href="#">删除</a>
+							<a class="hidden submit-btn button-simple" href="#">提交</a>
+							<a class="hidden cancel-btn button-simple" href="#">取消</a>
+						</div>
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+{% endblock %}
+{% block script %}
+{{ super() }}
+<script src="{{ url_for('static', filename='js/banner_list_admin.js') }}"></script>
+{% endblock %}

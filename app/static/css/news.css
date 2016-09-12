@@ -153,7 +153,7 @@ footer {
     .dropdown a:hover {
       background-color: #7d7fc9; }
 
-/******************************product page******************************/
+/******************************news page******************************/
 .news-container {
   margin: 40px 169px 100px 169px;
   overflow: hidden; }
@@ -186,7 +186,7 @@ footer {
       .news-type-nav ul li .chosen {
         position: relative;
         color: #b4b3dd;
-        font-size: 16px; }
+        font-size: 15px; }
         .news-type-nav ul li .chosen:after {
           font-family: FontAwesome;
           content: "\f0da";

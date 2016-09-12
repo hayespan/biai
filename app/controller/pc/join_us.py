@@ -27,7 +27,7 @@ def cooperation_post():
     if not form.validate():
         return response(
                 ret=-1,
-                msg='invalid input',
+                msg=str(form.errors),
                 )
     if not captcha_service.check_captcha(form.code.data):
         return response(

@@ -23,16 +23,6 @@ $(document).ready(function() {
 		});
 	});
 
-
-	$('.submit-btn').on('click', function() {
-		$(this).parents('.subnav-item').find('.item-display').addClass('hidden');
-		$(this).parents('.subnav-item').find('.item-input').removeClass('hidden');
-		$(this).siblings('.delete-btn').addClass('hidden');
-		$(this).addClass('hidden');
-		$(this).siblings('.submit-btn').removeClass('hidden');
-		$(this).siblings('.cancel-btn').removeClass('hidden');
-	});
-
 	$('.cancel-btn').on('click', function() {
 		$(this).parents('.subnav-item').fadeOut('slow', function() {
 			this.remove();

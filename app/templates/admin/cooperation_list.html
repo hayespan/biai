@@ -1,0 +1,37 @@
+{% extends "admin/base.html" %}
+{% block title %}合作加盟管理{% endblock %}
+{% block stylesheet %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/cooperation_list_admin.css') }}">
+{% endblock %}
+{% block main %}
+	<div class="cooperation-list-container">
+		<div class="cooperation-list-display">
+			<h1>合作加盟管理</h1>
+			<div class="list-title">
+				<div class="title-name">姓名</div>
+				<div class="title-phone">联系方式</div>
+			</div>
+			<ul class="cooperation-list">
+				{% for cooperation in cooperation_list %}
+					<li class="cooperation-item">
+						<div class="cooperation-name">
+							<span class="item-display">{{ cooperation.name }}</span>
+						</div>
+						<div class="cooperation-phone">
+							<span class="item-display">{{ cooperation.phone }}</span>
+						</div>
+						<div class="item-controller">
+							<a class="detail-btn button-simple" href="/admin/cooperation/{{ cooperation.id }}">查看</a>
+							<a data-id="{{ cooperation.id }}" class="delete-btn button-simple" href="#">删除</a>
+						</div>
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+{% endblock %}
+{% block script %}
+{{ super() }}
+<script src="{{ url_for('static', filename='js/cooperation_list_admin.js') }}"></script>
+{% endblock %}

@@ -213,9 +213,6 @@ main {
     border: 1px solid #ccc; }
     .form-item input:focus {
       border-color: #66afe9; }
-  .form-item img {
-    float: left;
-    width: 200px; }
   .form-item button {
     float: right;
     padding: 5px 20px; }
