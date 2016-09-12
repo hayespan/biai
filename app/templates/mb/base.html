@@ -29,7 +29,9 @@
 					<a id="nav-market" class="header-nav-item" href="#">官方商城</a>
 					<a class="header-nav-item" href="{{ nav_dict['contact'].link }}">{{ nav_dict['contact'].title }}</a>
 				</div>
-				<input class="search-bar" type="text" placeholder="输入搜索内容">
+				<form action="/search" method="POST">
+					<input class="search-bar" name="key" type="text" placeholder="请输入搜索内容">
+				</form>
 				<a class="language" href="#">En</a>
 			</div>
 		{% endblock %}

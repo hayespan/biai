@@ -1,0 +1,46 @@
+{% extends "admin/base.html" %}
+{% block title %}合作加盟管理{% endblock %}
+{% block stylesheet %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/cooperation_admin.css') }}">
+{% endblock %}
+{% block main %}
+	<div class="cooperation-container">
+		<div class="cooperation-display">
+			<h1>合作加盟</h1>
+			<a class="return-btn button-simple" href="/admin/cooperation">返回</a>
+			<ul>
+				<li>
+					<label>姓名:</label>
+					<span class="cooperation-name">{{ cooperation.name }}</span>
+					<!-- <span class="cooperation-name">我是一饭君biubiubiu</span> -->
+				</li>
+				<li>
+					<label>联系方式:</label>
+					<span class="cooperation-mobile">{{ cooperation.mobile }}</span>
+					<!-- <span class="cooperation-mobile">8008208820</span> -->
+				</li>
+				<li>
+					<label>地区:</label>
+					<span class="cooperation-zone">{{ cooperation.zone }}</span>
+					<!-- <span class="cooperation-zone">大学城至二路口</span> -->
+				</li>
+				<li>
+					<label>店铺主管:</label>
+					<span class="cooperation-shop-range">{{ cooperation.shop_range }}</span>
+					<!-- <span class="cooperation-shop-range">熬夜狂魔一饭君</span> -->
+				</li>
+				<li>
+					<label>发展规划:</label>
+					<span class="cooperation-develop-plan">{{ cooperation.develope_plan }}</span>
+					<!-- <p class="cooperation-develop-plan">先订一个小目标，赚他一个亿，嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿</p> -->
+				</li>
+				<li>
+					<label>合作意向:</label>
+					<span class="cooperation-intention">{{ cooperation.cooperation_intention }}</span>
+					<!-- <p class="cooperation-intention">随便合作想怎么来就怎么来，你说了算数，不服来战，嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿</p> -->
+				</li>
+			</ul>
+		</div>
+	</div>
+{% endblock %}
