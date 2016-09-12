@@ -72,7 +72,7 @@ def c_subnav():
                 ret=-1,
                 msg='input error: ' + str(form.errors),
                 )
-    nav_id = form.nav_id_.data
+    nav_id = form.nav_id.data
     title = form.title.data
     link = form.link.data
     ret, new_id = subnav_service.create_subnav(

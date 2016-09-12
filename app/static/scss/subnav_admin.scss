@@ -201,6 +201,13 @@ main {
 	}
 }
 
+.add-btn {
+	padding: 10px;
+	position: absolute;
+	right: 60px;
+	top: 40px;
+}
+
 .item-controller {
 	height: 50px;
 	line-height: 50px;
@@ -212,10 +219,8 @@ main {
 }
 
 .delete-btn,
-.modify-btn,
 .cancel-btn,
-.submit-btn,
-.subnav-btn {
+.submit-btn {
 	font-size: 14px;
 	padding: 5px 20px;
 }
