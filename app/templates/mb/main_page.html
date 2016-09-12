@@ -36,14 +36,9 @@
 		<div class="video-content">
 			<div class="swiper-container">
 				<div class="swiper-wrapper">
-					{% if video_list == [] %}
-						<div class="swiper-slide" id="1"><video controls src="{{ url_for('static', filename='video/mainpage/1.mp4') }}"></video></div>
-						<div class="swiper-slide" id="2"><video controls src="{{ url_for('static', filename='video/mainpage/2.mp4') }}"></video></div>
-						<div class="swiper-slide" id="3"><video controls src="{{ url_for('static', filename='video/mainpage/3.mp4') }}"></video></div>
-					{% else %}
+					{% if video_list != [] %}
 						{% for video in video_list %}
 							<div class="swiper-slide" id="slide-{{ index }}">
-								<!-- <video controls src="{{ url_for('static', filename=video.get_file_path()) }}"></video> -->
 								<video id="my-video" class="video-js" controls preload="auto"
 								  poster="{{ url_for('static', filename=video.get_pic_path()) }}" data-setup="{}">
 								    <source src="{{ url_for('static', filename=video.get_file_path()) }}" type='video/mp4'>

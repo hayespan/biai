@@ -44,28 +44,21 @@
 					<h3>产品视频</h3>
 				</div>
 				<div class="video-content">
-{# 					{% if video_list == [] %}
-						<video controls src="{{ url_for('static', filename='video/mainpage/1.mp4') }}"></video>
-					{% else %}
-						<video controls src="{{ url_for('static', filename=video_list[0].get_file_path()) }}"></video>
-					{% endif %} #}
-					<video id="my-video" class="video-js" controls preload="auto" width="500" height="274"
-					  poster="" data-setup="{}">
-					    <source src="{{ url_for('static', filename=video_list[0].get_file_path()) }}" type='video/mp4'>
-					    <p class="vjs-no-js">
-					      To view this video please enable JavaScript, and consider upgrading to a web browser that
-					      <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
-					    </p>
-					</video>
+					{% if video_list != [] %}
+						<video id="my-video" class="video-js" controls preload="auto" width="500" height="274"
+						  poster="" data-setup="{}">
+						    <source src="{{ url_for('static', filename=video_list[0].get_file_path()) }}" type='video/mp4'>
+						    <p class="vjs-no-js">
+						      To view this video please enable JavaScript, and consider upgrading to a web browser that
+						      <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+						    </p>
+						</video>
+					{% endif %}
 				</div>
 				<div class="video-menu">
 					<div class="swiper-container">
 						<div class="swiper-wrapper">
-							{% if video_list == [] %}
-								<div class="swiper-slide" id="1"><input type="image" data-video="1.mp4" src="{{ url_for('static', filename='video/pic/1.jpg') }}" alt="1"></div>
-								<div class="swiper-slide" id="2"><input type="image" data-video="2.mp4" src="{{ url_for('static', filename='video/pic/2.jpg') }}" alt="2"></div>
-								<div class="swiper-slide" id="3"><input type="image" data-video="3.mp4" src="{{ url_for('static', filename='video/pic/3.jpg') }}" alt="3"></div>
-							{% else %}
+							{% if video_list != [] %}
 								{% for video in video_list %}
 									<div class="swiper-slide" id="slide-{{ index }}"><input type="image" data-video="{{ video.file_id }}" src="{{ url_for('static', filename=video.get_pic_path()) }}" alt="{{ index }}"></div>
 								{% endfor %}
