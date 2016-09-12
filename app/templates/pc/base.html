@@ -14,53 +14,61 @@
 </head>
 <body>
 	<header>
-		{% block header %}
-		<div class="header-block">
-			<a id="logo" href="http://weibo.com/u/2584433424/home"><img src="{{ url_for('static', filename='img/icon/slogan.png') }}" alt="logo"></a>
-			<div class="header-link">
-				<div class="link-item" id="wechat-link">微信公众号</div>
-				<div class="link-item" id="tmall-link">官方商场</div>
-				{% if locale == "zh_CN" %}
-					<a class="link-item" href="/set_locale/en_US">English</a>
-				{% else %}
-					<a class="link-item" href="/set_locale/zh_CN">中文</a>
-				{% endif %}
-			</div>
-		</div>
-		<nav class="header-nav">
-			<a class="header-nav-item {% if cur_nav_meta_name == 'main' %}chosen{% endif %}" href="{{ nav_dict['main'].link }}">{{ nav_dict['main'].title }}</a>
-			<a class="header-nav-item {% if cur_nav_meta_name == 'about' %}chosen{% endif %}" href="{{ nav_dict['about'].link }}">{{ nav_dict['about'].title }}</a>
-			<a class="header-nav-item {% if cur_nav_meta_name == 'news' %}chosen{% endif %}" href="{{ nav_dict['news'].link }}">{{ nav_dict['news'].title }}</a>
-			<a class="header-nav-item {% if cur_nav_meta_name == 'product' %}chosen{% endif %}" href="{{ nav_dict['product'].link }}">{{ nav_dict['product'].title }}</a>
-			<a class="header-nav-item {% if cur_nav_meta_name == 'creativity' %}chosen{% endif %}" href="{{ nav_dict['creativity'].link }}">{{ nav_dict['creativity'].title }}</a>
-			<a class="header-nav-item {% if cur_nav_meta_name == 'join_us' %}chosen{% endif %}" href="{{ nav_dict['join_us'].link }}">{{ nav_dict['join_us'].title }}</a>
-			<div id="nav-market" class="header-nav-item">
-				<a class="dropdown-btn" href="#">{{ nav_dict['shop'].title }}</a>
-				<div class="dropdown">
-					{% for subnavs in nav_dict['shop'].subnavs %}
-						<a href="{{ subnavs.link }}">{{ subnavs.title }}</a>
-					{% endfor %}
+		<div class="header-container">
+			{% block header %}
+			<div class="header-block">
+				<a id="logo" href="http://weibo.com/u/2584433424/home"><img src="{{ url_for('static', filename='img/icon/slogan.png') }}" alt="logo"></a>
+				<div class="header-link">
+					<div class="link-item" id="wechat-link">微信公众号</div>
+					<div class="link-item" id="tmall-link">官方商场</div>
+					{% if locale == "zh_CN" %}
+						<a class="link-item" href="/set_locale/en_US">English</a>
+					{% else %}
+						<a class="link-item" href="/set_locale/zh_CN">中文</a>
+					{% endif %}
 				</div>
 			</div>
-			<a class="header-nav-item {% if cur_nav_meta_name == 'contact' %}chosen{% endif %}" href="{{ nav_dict['contact'].link }}">{{ nav_dict['contact'].title }}</a>
-			<input type="text" placeholder="请输入搜索内容">
-		</nav>
-		{% endblock %}
+			<nav class="header-nav">
+				<a class="header-nav-item {% if cur_nav_meta_name == 'main' %}chosen{% endif %}" href="{{ nav_dict['main'].link }}">{{ nav_dict['main'].title }}</a>
+				<a class="header-nav-item {% if cur_nav_meta_name == 'about' %}chosen{% endif %}" href="{{ nav_dict['about'].link }}">{{ nav_dict['about'].title }}</a>
+				<a class="header-nav-item {% if cur_nav_meta_name == 'news' %}chosen{% endif %}" href="{{ nav_dict['news'].link }}">{{ nav_dict['news'].title }}</a>
+				<a class="header-nav-item {% if cur_nav_meta_name == 'product' %}chosen{% endif %}" href="{{ nav_dict['product'].link }}">{{ nav_dict['product'].title }}</a>
+				<a class="header-nav-item {% if cur_nav_meta_name == 'creativity' %}chosen{% endif %}" href="{{ nav_dict['creativity'].link }}">{{ nav_dict['creativity'].title }}</a>
+				<a class="header-nav-item {% if cur_nav_meta_name == 'join_us' %}chosen{% endif %}" href="{{ nav_dict['join_us'].link }}">{{ nav_dict['join_us'].title }}</a>
+				<div id="nav-market" class="header-nav-item">
+					<a class="dropdown-btn" href="#">{{ nav_dict['shop'].title }}</a>
+					<div class="dropdown">
+						{% for subnavs in nav_dict['shop'].subnavs %}
+							<a href="{{ subnavs.link }}">{{ subnavs.title }}</a>
+						{% endfor %}
+					</div>
+				</div>
+				<a class="header-nav-item {% if cur_nav_meta_name == 'contact' %}chosen{% endif %}" href="{{ nav_dict['contact'].link }}">{{ nav_dict['contact'].title }}</a>
+				<form action="/search" method="POST">
+					<input name="key" type="text" placeholder="请输入搜索内容">
+				</form>
+			</nav>
+			{% endblock %}	
+		</div>
 	</header>
 	<main>
-		{% block main %}
-		{% endblock %}
+		<div class="main-container">
+			{% block main %}
+			{% endblock %}
+		</div>
 	</main>
 	<footer>
-		{% block footer %}
-		<div class="footer-info">
-			<p>广东省汕头市澄海区岫泓玩具</p>
-			<p>服务热线：0754-86986938</p>
-			<p>地址：汕头市澄海区莱美工业区海升路2号</p>
-			<p>备案编号：ISD900876544</p>
+		<div class="footer-container">
+			{% block footer %}
+			<div class="footer-info">
+				<p>广东省汕头市澄海区岫泓玩具</p>
+				<p>服务热线：0754-86986938</p>
+				<p>地址：汕头市澄海区莱美工业区海升路2号</p>
+				<p>备案编号：ISD900876544</p>
+			</div>
+			<img id="qr-code" src="{{ url_for('static', filename='img/icon/qr-code.png') }}" alt="qr-code">
+			{% endblock %}	
 		</div>
-		<img id="qr-code" src="{{ url_for('static', filename='img/icon/qr-code.png') }}" alt="qr-code">
-		{% endblock %}
 	</footer>
 	{% block script %}
 	<script src="{{ url_for('static', filename='js/jquery-3.0.0.min.js') }}"></script>

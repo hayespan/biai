@@ -21,13 +21,75 @@
 		</div>
 		<div class="product-list-page">
 			<div class="page-content">
+<!-- 				<a href="#" class="product-item">
+					<div class="img-container">
+						<img src="{{ url_for('static', filename='img/temp/product-item.png') }}" alt="product-item">
+					</div>
+					<h3>超级无敌酷炫比爱新玩具嘿嘿嘿</h3>
+				</a>
+				<a href="#" class="product-item">
+					<div class="img-container">
+						<img src="{{ url_for('static', filename='img/temp/product-item.png') }}" alt="product-item">
+					</div>
+					<h3>超级无敌酷炫比爱新玩具嘿嘿嘿</h3>
+				</a>
+				<a href="#" class="product-item">
+					<div class="img-container">
+						<img src="{{ url_for('static', filename='img/temp/product-item.png') }}" alt="product-item">
+					</div>
+					<h3>超级无敌酷炫比爱新玩具嘿嘿嘿</h3>
+				</a>
+				<a href="#" class="product-item">
+					<div class="img-container">
+						<img src="{{ url_for('static', filename='img/temp/product-item.png') }}" alt="product-item">
+					</div>
+					<h3>超级无敌酷炫比爱新玩具嘿嘿嘿</h3>
+				</a>
+				<a href="#" class="product-item">
+					<div class="img-container">
+						<img src="{{ url_for('static', filename='img/temp/product-item.png') }}" alt="product-item">
+					</div>
+					<h3>超级无敌酷炫比爱新玩具嘿嘿嘿</h3>
+				</a>
+				<a href="#" class="product-item">
+					<div class="img-container">
+						<img src="{{ url_for('static', filename='img/temp/product-item.png') }}" alt="product-item">
+					</div>
+					<h3>超级无敌酷炫比爱新玩具嘿嘿嘿</h3>
+				</a>
+				<a href="#" class="product-item">
+					<div class="img-container">
+						<img src="{{ url_for('static', filename='img/temp/product-item.png') }}" alt="product-item">
+					</div>
+					<h3>超级无敌酷炫比爱新玩具嘿嘿嘿</h3>
+				</a>
+				<a href="#" class="product-item">
+					<div class="img-container">
+						<img src="{{ url_for('static', filename='img/temp/product-item.png') }}" alt="product-item">
+					</div>
+					<h3>超级无敌酷炫比爱新玩具嘿嘿嘿</h3>
+				</a>
+				<a href="#" class="product-item">
+					<div class="img-container">
+						<img src="{{ url_for('static', filename='img/temp/product-item.png') }}" alt="product-item">
+					</div>
+					<h3>超级无敌酷炫比爱新玩具嘿嘿嘿</h3>
+				</a>
+				<a href="#" class="product-item">
+					<div class="img-container">
+						<img src="{{ url_for('static', filename='img/temp/product-item.png') }}" alt="product-item">
+					</div>
+					<h3>超级无敌酷炫比爱新玩具嘿嘿嘿</h3>
+				</a> -->
 				{% for product in product_list %}
 					<a href="/product/{{ product.id }}" class="product-item">
-						{% if product.get_pics() != [] %}
-							<img src="{{ url_for('static', filename=product.get_pics()[0]) }}" alt="product-item">
-						{% else %}
-							<img src="{{ url_for('static', filename='img/temp/product-item.png') }}" alt="product-item">
-						{% endif %}
+						<div class="img-container">
+							{% if product.get_pics() != [] %}
+								<img src="{{ url_for('static', filename=product.get_pics()[0]) }}" alt="product-item">
+							{% else %}
+								<img src="{{ url_for('static', filename='img/temp/product-item.png') }}" alt="product-item">
+							{% endif %}			
+						</div>
 						<h3>{{ product.name }}</h3>
 					</a>
 				{% endfor %}

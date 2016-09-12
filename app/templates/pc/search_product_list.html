@@ -1,0 +1,91 @@
+{% extends "pc/base.html" %}
+{% block title %}搜索结果{% endblock %}
+{% block stylesheet %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/search_product_list.css') }}">
+{% endblock %}
+{% block main %}
+		<div class="product-list-container">
+			<div class="search-info">搜索结果: {{ key }}</div>
+			<div class="product-container">
+{# 				<a href="#" class="product-item">
+					<div class="img-container">
+						<img src="{{ url_for('static', filename='img/temp/product-item.png') }}" alt="product-item">
+					</div>
+					<h3>比爱音乐-宝宝益智手拍鼓乐器-音乐世家系列</h3>
+				</a>
+				<a href="#" class="product-item">
+					<div class="img-container">
+						<img src="{{ url_for('static', filename='img/temp/product-item.png') }}" alt="product-item">
+					</div>
+					<h3>比爱音乐-宝宝益智手拍鼓乐器-音乐世家系列</h3>
+				</a>
+				<a href="#" class="product-item">
+					<div class="img-container">
+						<img src="{{ url_for('static', filename='img/temp/product-item.png') }}" alt="product-item">
+					</div>
+					<h3>比爱音乐-宝宝益智手拍鼓乐器-音乐世家系列</h3>
+				</a>
+				<a href="#" class="product-item">
+					<div class="img-container">
+						<img src="{{ url_for('static', filename='img/temp/product-item.png') }}" alt="product-item">
+					</div>
+					<h3>比爱音乐-宝宝益智手拍鼓乐器-音乐世家系列</h3>
+				</a>
+				<a href="#" class="product-item">
+					<div class="img-container">
+						<img src="{{ url_for('static', filename='img/temp/product-item.png') }}" alt="product-item">
+					</div>
+					<h3>比爱音乐-宝宝益智手拍鼓乐器-音乐世家系列</h3>
+				</a>
+				<a href="#" class="product-item">
+					<div class="img-container">
+						<img src="{{ url_for('static', filename='img/temp/product-item.png') }}" alt="product-item">
+					</div>
+					<h3>比爱音乐-宝宝益智手拍鼓乐器-音乐世家系列</h3>
+				</a>
+				<a href="#" class="product-item">
+					<div class="img-container">
+						<img src="{{ url_for('static', filename='img/temp/product-item.png') }}" alt="product-item">
+					</div>
+					<h3>比爱音乐-宝宝益智手拍鼓乐器-音乐世家系列</h3>
+				</a>
+				<a href="#" class="product-item">
+					<div class="img-container">
+						<img src="{{ url_for('static', filename='img/temp/product-item.png') }}" alt="product-item">
+					</div>
+					<h3>比爱音乐-宝宝益智手拍鼓乐器-音乐世家系列</h3>
+				</a>
+				<a href="#" class="product-item">
+					<div class="img-container">
+						<img src="{{ url_for('static', filename='img/temp/product-item.png') }}" alt="product-item">
+					</div>
+					<h3>比爱音乐-宝宝益智手拍鼓乐器-音乐世家系列</h3>
+				</a>
+				<a href="#" class="product-item">
+					<div class="img-container">
+						<img src="{{ url_for('static', filename='img/temp/product-item.png') }}" alt="product-item">
+					</div>
+					<h3>比爱音乐-宝宝益智手拍鼓乐器-音乐世家系列</h3>
+				</a>
+				<a href="#" class="product-item">
+					<div class="img-container">
+						<img src="{{ url_for('static', filename='img/temp/product-item.png') }}" alt="product-item">
+					</div>
+					<h3>比爱音乐-宝宝益智手拍鼓乐器-音乐世家系列</h3>
+				</a> #}
+				{% for product in product_list %}
+					<a href="/product/{{ product.id }}" class="product-item">
+						<div class="img-container">
+							{% if product.get_pics() != [] %}
+								<img src="{{ url_for('static', filename=product.get_pics()[0]) }}" alt="product-item">
+							{% else %}
+								<img src="{{ url_for('static', filename='img/temp/product-item.png') }}" alt="product-item">
+							{% endif %}
+						</div>
+						<h3>{{ product.name }}</h3>
+					</a>
+				{% endfor %}
+			</div>
+		</div>
+{% endblock %}
