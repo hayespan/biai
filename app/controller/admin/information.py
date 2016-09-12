@@ -11,7 +11,7 @@ from ...service import news_service
 from ...model.information import Information 
 
 @adminbp.route('/information')
-@login_required
+# @login_required
 def l_information():
     information_list= information_service.get_information_list()
     return admin_response('information_list.html',
@@ -19,7 +19,7 @@ def l_information():
             )
 
 @adminbp.route('/information/create', methods=['POST', ])
-@login_required
+# @login_required
 def cu_information():
     from ...form.admin import CInformationForm 
     form = CInformationForm()
@@ -38,12 +38,12 @@ def cu_information():
                 msg='news_id invalid',
                 )
     ret, new_id = information_service.create_information(
-            title, weight, news_id,
+            title, weight, n,
             )
     return admin_response(ret=ret, id=new_id)
 
 @adminbp.route('/information/delete', methods=['POST', ])
-@login_required
+# @login_required
 def d_information():
     from ...form.admin import DInformationForm 
     form = DInformationForm()

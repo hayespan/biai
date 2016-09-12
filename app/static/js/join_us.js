@@ -78,20 +78,19 @@ $(document).ready(function() {
 	});
 
 	function submit_info() {
-		console.log($('form input'));
 		var form_data = new FormData();
 		if (!checkForm(form_data)) {
 			return false;
 		}
+		console.log(form_data);
 		$.ajax({
 			url : '/join_us/cooperation/post?f=json',
 			type : 'POST',
-			data : {
-				data : form_data
-			},
+			data : form_data,
 		    processData: false,
 		    contentType: false,
 			success : function(result) {
+				console.log(result);
 				if (result.msg== "captcha code error") {
 					$('#valid-code').siblings('.alert-hint').text('验证码错误');
 					$('#valid-code').siblings('.alert-hint').removeClass('hidden');
@@ -113,35 +112,35 @@ $(document).ready(function() {
 			$('#phone').siblings('.alert-hint').removeClass('hidden');
 			return false;
 		} else {
-			form_data.append('name', $('#name').val());
+			form_data.append('phone', $('#phone').val());
 		}
 		if ($('#zone').val() == '') {
 			$('#zone').siblings('.alert-hint').text('地区不能为空噢');
 			$('#zone').siblings('.alert-hint').removeClass('hidden');
 			return false;
 		} else {
-			form_data.append('name', $('#name').val());
+			form_data.append('zone', $('#zone').val());
 		}
 		if ($('#shop_range').val() == '') {
 			$('#shop_range').siblings('.alert-hint').text('店铺主管不能为空噢');
 			$('#shop_range').siblings('.alert-hint').removeClass('hidden');
 			return false;
 		} else {
-			form_data.append('name', $('#name').val());
+			form_data.append('shop_range', $('#shop_range').val());
 		}
 		if ($('#develop_plan').val() == '') {
 			$('#develop_plan').siblings('.alert-hint').text('发展规划不能为空噢');
 			$('#develop_plan').siblings('.alert-hint').removeClass('hidden');
 			return false;
 		} else {
-			form_data.append('name', $('#name').val());
+			form_data.append('develop_plan', $('#develop_plan').val());
 		}
 		if ($('#cooperation_intention').val() == '') {
 			$('#cooperation_intention').siblings('.alert-hint').text('合作意向不能为空噢');
 			$('#cooperation_intention').siblings('.alert-hint').removeClass('hidden');
 			return false;
 		} else {
-			form_data.append('name', $('#name').val());
+			form_data.append('cooperation_intention', $('#cooperation_intention').val());
 		}
 		if ($('#valid-code').val() == '') {
 			$('#valid-code').siblings('.alert-hint').text('请输入验证码');

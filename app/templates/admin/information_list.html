@@ -1,0 +1,60 @@
+{% extends "admin/base.html" %}
+{% block title %}首页资讯管理{% endblock %}
+{% block stylesheet %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/information_list_admin.css') }}">
+{% endblock %}
+{% block main %}
+	<div class="information-list-container">
+		<div class="information-list-display">
+			<h1>首页资讯管理</h1>
+			<button class="add-btn button-simple" type="button">添加资讯</button>
+			<div class="list-title">
+				<div class="title-name">资讯标题</div>
+				<div class="title-weight">资讯权重</div>
+				<div class="title-news">资讯内容</div>
+			</div>
+			<ul class="information-list">
+				<li class="information-item" style="display: none;">
+					<div class="information-title">
+						<span class="item-display hidden"></span>
+						<input class="title item-input" type="text" placeholder="请输入资讯标题">
+					</div>
+					<div class="information-weight">
+						<span class="item-display hidden"></span>
+						<input class="weight item-input" type="text" placeholder="请输入资讯权重">
+					</div>
+					<div class="information-news">
+						<span class="item-display hidden"></span>
+						<select class="news_id item-input"></select>
+					</div>
+					<div class="item-controller">
+						<a data-id="" class="hidden delete-btn button-simple" href="#">删除</a>
+						<a class="submit-btn button-simple" href="#">提交</a>
+						<a class="cancel-btn button-simple" href="#">取消</a>
+					</div>
+				</li>
+				{% for information in information_list %}
+					<li class="information-item">
+						<div class="information-title">
+							<span class="item-display">{{ information.title }}</span>
+						</div>
+						<div class="information-weight">
+							<span class="item-display">{{ information.weight }}</span>
+						</div>
+						<div class="information-news">
+							<span class="item-display">{{ information.news_id }}</span>
+						</div>
+						<div class="item-controller">
+							<a data-id="" class="hidden delete-btn button-simple" href="#">删除</a>
+						</div>
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+{% endblock %}
+{% block script %}
+{{ super() }}
+<script src="{{ url_for('static', filename='js/information_list_admin.js') }}"></script>
+{% endblock %}

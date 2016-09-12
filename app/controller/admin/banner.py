@@ -10,7 +10,7 @@ from ...service import banner_service
 from ...model.banner import Banner
 
 @adminbp.route('/banner')
-@login_required
+# @login_required
 def l_banner():
     banner_list= banner_service.get_banners()
     return admin_response('banner_list.html',
@@ -18,7 +18,7 @@ def l_banner():
             )
 
 @adminbp.route('/banner/create', methods=['POST', ])
-@login_required
+# @login_required
 def cu_banner():
     from ...form.admin import CBannerForm
     form = CBannerForm()
@@ -43,7 +43,7 @@ def cu_banner():
 
 
 @adminbp.route('/banner/delete', methods=['POST', ])
-@login_required
+# @login_required
 def d_banner():
     from ...form.admin import DBannerForm 
     form = DBannerForm()

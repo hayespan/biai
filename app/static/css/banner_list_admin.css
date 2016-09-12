@@ -1,0 +1,231 @@
+/******************************base style******************************/
+* {
+  box-sizing: inherit; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: "Microsoft YaHei", Helvetica, Arial, sans-serif; }
+
+body {
+  padding-top: 60px; }
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+h1, h2, h3 {
+  margin: 0; }
+
+a {
+  text-decoration: none; }
+
+header {
+  background-color: #222;
+  width: 100%;
+  height: 60px;
+  position: absolute;
+  top: 0; }
+
+.brand-name {
+  font-size: 19px;
+  height: 60px;
+  line-height: 60px;
+  padding-left: 17px;
+  color: #9d9d9d;
+  float: left; }
+
+.user-info {
+  float: right;
+  position: relative;
+  margin-right: 50px;
+  width: 100px; }
+  .user-info .user-button {
+    display: block;
+    width: 100%;
+    height: 60px;
+    color: #9d9d9d;
+    line-height: 60px;
+    text-align: center; }
+    .user-info .user-button:hover {
+      color: #b3b3b3; }
+    .user-info .user-button:after {
+      font-family: FontAwesome;
+      content: "\f0dd";
+      position: relative;
+      bottom: 3px;
+      left: 4px; }
+
+.user-controller {
+  position: absolute;
+  top: 60px;
+  left: -30px;
+  width: 130px;
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  padding: 5px 0; }
+  .user-controller a {
+    font-size: 15px;
+    line-height: 25px;
+    padding: 0 20px;
+    color: #333;
+    height: 25px;
+    display: block;
+    width: 100%; }
+    .user-controller a:hover {
+      background-color: #f5f5f5; }
+
+.sidebar {
+  padding-top: 20px;
+  float: left;
+  position: absolute;
+  top: 60px;
+  bottom: 0;
+  width: 300px;
+  background-color: #f5f5f5;
+  border-right: 1px solid #eee; }
+  .sidebar a {
+    font-size: 17px;
+    padding: 0 30px;
+    color: #428bca;
+    height: 40px;
+    line-height: 40px;
+    display: block;
+    width: 100%; }
+    .sidebar a:hover {
+      color: #2a6496;
+      background-color: #eee; }
+  .sidebar .active {
+    color: #ffffff;
+    background-color: #428bca; }
+    .sidebar .active:hover {
+      color: #ffffff;
+      background-color: #428bca; }
+
+main {
+  float: right;
+  width: 100%;
+  padding-left: 300px; }
+
+.hidden {
+  display: none; }
+
+.button-simple {
+  cursor: pointer;
+  color: #333;
+  border: 1px solid #cccccc;
+  background-color: #ffffff;
+  border-radius: 5px;
+  outline: none; }
+  .button-simple:hover {
+    background-color: #e6e6e6;
+    border-color: #adadad; }
+  .button-simple:active {
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); }
+
+/******************************subnav******************************/
+.banner-list-container {
+  position: relative;
+  padding: 30px 50px; }
+  .banner-list-container h1 {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee; }
+
+.list-title {
+  height: 40px;
+  overflow: hidden;
+  border-bottom: 1px solid #eee; }
+  .list-title div {
+    float: left; }
+
+.title-name,
+.title-weight {
+  padding-left: 20px;
+  width: 360px; }
+
+.title-img {
+  padding-left: 20px;
+  width: 420px; }
+
+.banner-item {
+  overflow: hidden;
+  padding-right: 10px;
+  border-bottom: 1px solid #ddd; }
+
+.banner-name,
+.banner-weight {
+  padding-left: 20px;
+  width: 360px;
+  float: left;
+  overflow: hidden; }
+  .banner-name span,
+  .banner-weight span {
+    box-sizing: border-box;
+    border-right: 1px solid #ddd;
+    margin: 15px 0;
+    height: 20px;
+    width: 340px;
+    float: left; }
+  .banner-name input,
+  .banner-weight input {
+    margin: 8px 0;
+    outline: 0;
+    float: left;
+    width: 80%;
+    height: 34px;
+    padding: 6px 12px;
+    border-radius: 4px;
+    border: 1px solid #ccc; }
+    .banner-name input:focus,
+    .banner-weight input:focus {
+      border-color: #66afe9; }
+
+.banner-img {
+  padding-left: 20px;
+  width: 420px;
+  float: left;
+  overflow: hidden; }
+  .banner-img img {
+    max-width: 400px;
+    max-height: 200px;
+    margin: 15px 0; }
+  .banner-img input {
+    margin: 8px 0;
+    outline: 0;
+    float: left;
+    width: 80%;
+    height: 34px;
+    padding: 6px 12px;
+    border-radius: 4px;
+    border: 1px solid #ccc; }
+    .banner-img input:focus {
+      border-color: #66afe9; }
+
+.add-btn {
+  padding: 10px;
+  position: absolute;
+  right: 60px;
+  top: 40px; }
+
+.item-controller {
+  height: 50px;
+  line-height: 50px;
+  float: right; }
+
+.nav-name {
+  color: #333; }
+
+.delete-btn,
+.cancel-btn,
+.submit-btn {
+  font-size: 14px;
+  padding: 5px 20px; }
+
+.submit-btn,
+.subnav-btn {
+  margin-right: 10px; }

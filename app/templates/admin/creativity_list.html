@@ -1,0 +1,40 @@
+{% extends "admin/base.html" %}
+{% block title %}创意中心管理{% endblock %}
+{% block stylesheet %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/creativity_list_admin.css') }}">
+{% endblock %}
+{% block main %}
+	<div class="creativity-list-container">
+		<div class="creativity-list-display">
+			<h1>创意中心管理</h1>
+			<div class="list-title">
+				<div class="title-phone">联系方式</div>
+				<div class="title-content-1">创意1</div>
+				<div class="title-content-2">创意2</div>
+			</div>
+			<ul class="creativity-list">
+				{% for creativity in creativity_list %}
+					<li class="creativity-item">
+						<div class="creativity-phone">
+							<a class="item-display">{{ creativity.mobile }}</a>
+						</div>
+						{% for file in creativity.get_file_path_list() %}
+							<div class="creativity-file">
+								<img src="/static/{{ file }}" alt="">
+							</div>
+						{% endfor %}
+						<div class="item-controller">
+							<a class="detail-btn button-simple" href="/admin/creativity/{{ creativity.id }}">查看</a>
+							<a data-id="{{ creativity.id }}" class="delete-btn button-simple" href="#">删除</a>
+						</div>
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+{% endblock %}
+{% block script %}
+{{ super() }}
+<script src="{{ url_for('static', filename='js/creativity_list_admin.js') }}"></script>
+{% endblock %}
