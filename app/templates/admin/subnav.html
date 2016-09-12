@@ -1,0 +1,36 @@
+{% extends "admin/base.html" %}
+{% block title %}导航栏管理{% endblock %}
+{% block stylesheet %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/subnav_admin.css') }}">
+{% endblock %}
+{% block main %}
+	<div class="subnav-list-container">
+		<div class="subnav-list-display">
+			<h1>{{ nav.title }}</h1>
+			<ul class="subnav-list">
+				{% for subnav in subnav_list %}
+					<li class="subnav-item">
+						<div class="subnav-title">
+							<span class="item-display">{{ subnav.title }}</span>
+							<input class="title item-input hidden" type="text" value="{{ subnav.title }}">
+						</div>
+						<div class="subnav-link">
+							<span class="item-display">{{ subnav.link }}</span>
+							<input class="link item-input hidden" type="text" value="{{ subnav.link }}">
+						</div>
+						<div class="item-controller">
+							<a class="modify-btn button-simple" href="#">修改</a>
+							<a data-id="{{ subnav.id }}" class="hidden submit-btn button-simple" href="#">提交</a>
+							<a class="hidden cancel-btn button-simple" href="#">取消</a>
+						</div>
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+{% endblock %}
+{% block script %}
+{{ super() }}
+<script src="{{ url_for('static', filename='js/subnav_admin.js') }}"></script>
+{% endblock %}

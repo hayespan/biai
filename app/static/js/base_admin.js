@@ -12,6 +12,9 @@ $(document).ready(function() {
 		case '产品条目管理':
 			$('.sidebar .product').addClass('active');
 			break;
+		case '导航栏管理':
+			$('.sidebar .nav').addClass('active');
+			break;
 	}
 	$('.user-button').on('click', function(e) {
 		e.preventDefault();
