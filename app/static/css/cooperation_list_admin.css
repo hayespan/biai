@@ -146,12 +146,27 @@ main {
 .title-name,
 .title-phone {
   padding-left: 20px;
-  width: 400px; }
+  width: 420px; }
 
-.creativity-item {
+.cooperation-item {
   overflow: hidden;
   padding-right: 10px;
   border-bottom: 1px solid #ddd; }
+
+.cooperation-name,
+.cooperation-mobile {
+  padding-left: 20px;
+  width: 420px;
+  float: left;
+  overflow: hidden; }
+  .cooperation-name span,
+  .cooperation-mobile span {
+    box-sizing: border-box;
+    border-right: 1px solid #ddd;
+    margin: 15px 0;
+    height: 20px;
+    width: 400px;
+    float: left; }
 
 .item-controller {
   height: 50px;

@@ -134,7 +134,8 @@ footer {
 .img-info {
   border-bottom: 1px solid #eeeef8; }
   .img-info img {
-    width: 100%; }
+    width: 100%;
+    height: 300px; }
   .img-info .swiper-pagination-bullet {
     background: #f3f3fb; }
   .img-info .swiper-pagination-bullet-active {
@@ -143,16 +144,19 @@ footer {
 .text-info {
   width: 92%;
   margin: auto; }
-  .text-info button {
-    display: block;
-    margin: auto;
-    font-size: 1.4rem;
-    color: #ffffff;
-    background-color: #f18e43;
-    border: none;
-    border-radius: 5px;
-    width: 92%;
-    height: 48px; }
+
+.buy-link {
+  display: block;
+  margin: auto;
+  font-size: 1.4rem;
+  color: #ffffff;
+  background-color: #f18e43;
+  border: none;
+  border-radius: 5px;
+  width: 92%;
+  text-align: center;
+  line-height: 48px;
+  height: 48px; }
 
 .info-first {
   padding: 10px 0;
@@ -165,14 +169,14 @@ footer {
   .info-first li {
     float: left;
     width: 50%;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     color: #777777;
     margin-bottom: 5px; }
 
 .info-second {
   padding: 10px 0; }
   .info-second li {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     color: #777777;
     margin-bottom: 5px; }
 
