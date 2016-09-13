@@ -8,11 +8,14 @@
 	<div class="contact-container">
 		<h1>联系我们</h1>
 		<div class="split"></div>
-		<ul class="contact-list">
+			{% autoescape false %}
+				{{ page.content }}
+			{% endautoescape %}
+<!-- 		<ul class="contact-list">
 			<li>地址：汕头市澄海区莱美工业区海升路2号岫泓玩具厂</li>
 			<li>电话：0754-86986868</li>
 			<li>传真：0754-86986938</li>
 			<a href="#">比爱企业店</a>
-		</ul>
+		</ul> -->
 	</div>
 {% endblock %}

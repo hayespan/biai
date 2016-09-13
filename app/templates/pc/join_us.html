@@ -22,7 +22,7 @@
 						</div>
 						<div class="form-item">
 							<label>联系方式</label>
-							<input id="phone" type="text" />
+							<input id="contact" type="text" />
 							<div class="alert-hint hidden"></div>
 						</div>
 						<div class="form-item">
@@ -65,7 +65,10 @@
 				<div class="join-recruit hidden">
 					<h1>职位信息</h1>
 					<div class="split"></div>
-					<ul class="job-list">
+						{% autoescape false %}
+							{{ page.content }}
+						{% endautoescape %}
+<!-- 					<ul class="job-list">
 						<li class="job-item">
 							<img class="job-img" src="{{ url_for('static', filename='img/temp/about.png') }}" alt="job-img">
 							<div class="job-info">
@@ -91,7 +94,7 @@
 								</p>
 							</div>
 						</li>
-					</ul>
+					</ul> -->
 				</div>
 			</div>
 		</div>

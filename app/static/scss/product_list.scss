@@ -169,7 +169,6 @@ footer {
 
 .dropdown {
 	width: 100px;
-	height: 112px;
 	position: absolute;
 	left: 990px;
 	top: 163px;
@@ -258,7 +257,7 @@ footer {
 	float: left;
 	margin-right: 24px;
 	margin-bottom: 24px;
-	padding: 5px;
+	padding: 10px 5px;
 	width: 200px;
 	height: 254px;
 	border: 1px solid #d5d5f0;
@@ -275,6 +274,7 @@ footer {
 }
 
 .img-container {
+	margin: auto;
 	width: 180px;
 	height: 180px;
 }

@@ -32,7 +32,12 @@
 				<form action="/search" method="POST">
 					<input class="search-bar" name="key" type="text" placeholder="请输入搜索内容">
 				</form>
-				<a class="language" href="#">En</a>
+				{% if locale[1] == "zh_CN" %}
+					<a class="language" href="/set_locale/en_US">En</a>
+				{% else %}
+					<a class="language" href="/set_locale/zh_CN">中</a>
+				{% endif %}
+				<!-- <a class="language" href="#">En</a> -->
 			</div>
 		{% endblock %}
 	</header>

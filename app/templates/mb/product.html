@@ -7,42 +7,51 @@
 {% block main %}
 	<div class="product-container">
 		<div class="product-path">
-			<a href="#">产品中心</a>><a href="#">摇铃</a>><a href="">宝宝益智小水枪</a>
+			<a href="/product">产品中心</a>><a href="/product/category/{{ current_category.name }}/1">{{ current_category.name }}</a>><a href="/product/{{ product.id }}">{{ product.name }}</a>
 		</div>
 		<div class="info-block">
 			<div class="img-info">
 				<div class="swiper-container">
 					<div class="swiper-wrapper">
-						<div class="swiper-slide" id="slide-{{ index }}"><img src="{{ url_for('static', filename='img/product/1.png') }}" alt="1"></div>
+						{% for pic in product.get_pics() %}
+							<div class="swiper-slide" id="slide-{{ index }}"><img src="{{ url_for('static', filename=pic) }}" alt="{{ index }}"></div>
+						{% endfor %}
+<!-- 						<div class="swiper-slide" id="slide-{{ index }}"><img src="{{ url_for('static', filename='img/product/1.png') }}" alt="1"></div>
 						<div class="swiper-slide" id="slide-{{ index }}"><img src="{{ url_for('static', filename='img/product/2.png') }}" alt="2"></div>
 						<div class="swiper-slide" id="slide-{{ index }}"><img src="{{ url_for('static', filename='img/product/3.png') }}" alt="3"></div>
 						<div class="swiper-slide" id="slide-{{ index }}"><img src="{{ url_for('static', filename='img/product/4.png') }}" alt="4"></div>
-						<div class="swiper-slide" id="slide-{{ index }}"><img src="{{ url_for('static', filename='img/product/5.png') }}" alt="5"></div>
+						<div class="swiper-slide" id="slide-{{ index }}"><img src="{{ url_for('static', filename='img/product/5.png') }}" alt="5"></div> -->
 					</div>
 					<div class="swiper-pagination"></div>
 				</div>
 			</div>
 			<div class="text-info">
 				<div class="info-first">
-					<h2>宝宝益智小水枪</h2>
+					<h2>{{ product.name }}</h2>
 					<ul>
-						<li>主要材料 : <span>塑料、橡胶、纸</span></li>
+						{% for key, value in product.get_attrs().iteritems() %}
+							<li>{{ key }} : <span>{{ value }}</span></li>
+						{% endfor %}
+<!-- 						<li>主要材料 : <span>塑料、橡胶、纸</span></li>
 						<li>适合年龄 : <span>5-8岁</span></li>
 						<li>颜色 : <span>蓝/红/黄/白</span></li>
-						<li>零售价 : <span>28.00元</span></li>
+						<li>零售价 : <span>28.00元</span></li> -->
 					</ul>
 				</div>
 				<div class="info-second">
 					<ul>
-						<li>产品货号 : <span>BG687983</span></li>
+						{% for key, value in product.get_oth_attrs().iteritems() %}
+							<li>{{ key }} : <span>{{ value }}</span></li>
+						{% endfor %}
+<!-- 						<li>产品货号 : <span>BG687983</span></li>
 						<li>毛净重 : <span>BG687983</span></li>
 						<li>外箱规格 : <span>120cm*120cm*90cm</span></li>
 						<li>彩盒规格 : <span>12cm*10cm*8cm</span></li>
 						<li>装箱量 : <span>20个/箱</span></li>
-						<li>包装方式 : <span>纸盒装</span></li>
+						<li>包装方式 : <span>纸盒装</span></li> -->
 					</ul>
 				</div>
-				<button>去企业店购买</button>
+				<a class="buy-link" href="{{ product.buy_link }}">去企业店购买</a>
 			</div>
 		</div>
 		<div class="detail-block">
@@ -50,8 +59,11 @@
 				<img src="{{ url_for('static', filename='img/icon/monkey3.png') }}" alt="monkey3">
 			</div>
 			<div class="detail-content">
-				<img src="{{ url_for('static', filename='img/temp/video.png') }}" alt="video">
-				<img src="{{ url_for('static', filename='img/temp/license.png') }}" alt="license">
+				{% autoescape false %}
+					{{ product.description }}
+				{% endautoescape %}
+<!-- 				<img src="{{ url_for('static', filename='img/temp/video.png') }}" alt="video">
+				<img src="{{ url_for('static', filename='img/temp/license.png') }}" alt="license"> -->
 			</div>
 		</div>
 	</div>

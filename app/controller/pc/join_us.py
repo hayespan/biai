@@ -36,7 +36,7 @@ def cooperation_post():
                 )
     ret, new_id = cooperation_service.create_cooperation(
             form.name.data,
-            form.mobile.data,
+            form.contact.data,
             form.zone.data,
             form.shop_range.data,
             form.develop_plan.data,

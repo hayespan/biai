@@ -135,7 +135,6 @@ footer {
 
 .dropdown {
   width: 100px;
-  height: 112px;
   position: absolute;
   left: 990px;
   top: 163px;
@@ -182,19 +181,29 @@ footer {
   float: left;
   margin-right: 30px; }
   .img-info img {
+    width: 86px;
+    height: 86px;
     border: 1px solid #e6e6e6; }
+  .img-info > img:first-child {
+    width: 362px;
+    height: 362px;
+    float: right; }
 
 .text-info {
   height: 400px;
   float: left; }
-  .text-info button {
-    font-size: 18px;
-    color: #ffffff;
-    background-color: #f18e43;
-    border: none;
-    border-radius: 10px;
-    width: 200px;
-    height: 50px; }
+
+.buy-link {
+  display: block;
+  line-height: 50px;
+  text-align: center;
+  font-size: 18px;
+  color: #ffffff;
+  background-color: #f18e43;
+  border: none;
+  border-radius: 10px;
+  width: 200px;
+  height: 50px; }
 
 .big {
   float: right; }

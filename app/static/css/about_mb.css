@@ -126,7 +126,8 @@ footer {
   width: 100%; }
 
 .about-content {
-  padding: 10px 8px; }
+  padding: 30px 15px;
+  overflow: hidden; }
 
 .split {
   width: 50px;

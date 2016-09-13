@@ -69,9 +69,9 @@ $(document).ready(function() {
 				if (result.correct) {
 					submit_info();
 				} else {
-					submit_info();
-					// $('#verify-code').siblings('.alert-hint').text('验证码有误请重试');
-					// $('#verify-code').siblings('.alert-hint').removeClass('hidden');
+					// submit_info();
+					$('#verify-code').siblings('.alert-hint').text('验证码有误请重试');
+					$('#verify-code').siblings('.alert-hint').removeClass('hidden');
 				}
 			}
 		});
@@ -94,6 +94,8 @@ $(document).ready(function() {
 				if (result.msg== "captcha code error") {
 					$('#valid-code').siblings('.alert-hint').text('验证码错误');
 					$('#valid-code').siblings('.alert-hint').removeClass('hidden');
+				} else {
+					location.reload();
 				}
 			}
 		});
@@ -107,12 +109,12 @@ $(document).ready(function() {
 		} else {
 			form_data.append('name', $('#name').val());
 		}
-		if ($('#phone').val() == '') {
-			$('#phone').siblings('.alert-hint').text('联系方式不能为空噢');
-			$('#phone').siblings('.alert-hint').removeClass('hidden');
+		if ($('#contact').val() == '') {
+			$('#contact').siblings('.alert-hint').text('联系方式不能为空噢');
+			$('#contact').siblings('.alert-hint').removeClass('hidden');
 			return false;
 		} else {
-			form_data.append('phone', $('#phone').val());
+			form_data.append('contact', $('#contact').val());
 		}
 		if ($('#zone').val() == '') {
 			$('#zone').siblings('.alert-hint').text('地区不能为空噢');
@@ -141,6 +143,13 @@ $(document).ready(function() {
 			return false;
 		} else {
 			form_data.append('cooperation_intention', $('#cooperation_intention').val());
+		}
+		if ($('#mobile').val() == '') {
+			$('#mobile').siblings('.alert-hint').text('手机号码不能为空噢');
+			$('#mobile').siblings('.alert-hint').removeClass('hidden');
+			return false;
+		} else {
+			form_data.append('mobile', $('#mobile').val());
 		}
 		if ($('#valid-code').val() == '') {
 			$('#valid-code').siblings('.alert-hint').text('请输入验证码');

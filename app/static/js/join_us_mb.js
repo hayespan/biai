@@ -68,32 +68,33 @@ $(document).ready(function() {
 				if (result.correct) {
 					submit_info();
 				} else {
-					submit_info();
-					// $('#verify-code').siblings('.alert-hint').text('验证码有误请重试');
-					// $('#verify-code').siblings('.alert-hint').removeClass('hidden');
+					// submit_info();
+					$('#verify-code').siblings('.alert-hint').text('验证码有误请重试');
+					$('#verify-code').siblings('.alert-hint').removeClass('hidden');
 				}
 			}
 		});
 	});
 
 	function submit_info() {
-		console.log($('form input'));
 		var form_data = new FormData();
 		if (!checkForm(form_data)) {
 			return false;
 		}
+		console.log(form_data);
 		$.ajax({
 			url : '/join_us/cooperation/post?f=json',
 			type : 'POST',
-			data : {
-				data : form_data
-			},
+			data : form_data,
 		    processData: false,
 		    contentType: false,
 			success : function(result) {
+				console.log(result);
 				if (result.msg== "captcha code error") {
 					$('#valid-code').siblings('.alert-hint').text('验证码错误');
 					$('#valid-code').siblings('.alert-hint').removeClass('hidden');
+				} else {
+					location.reload();
 				}
 			}
 		});
@@ -107,40 +108,47 @@ $(document).ready(function() {
 		} else {
 			form_data.append('name', $('#name').val());
 		}
-		if ($('#phone').val() == '') {
-			$('#phone').siblings('.alert-hint').text('联系方式不能为空噢');
-			$('#phone').siblings('.alert-hint').removeClass('hidden');
+		if ($('#contact').val() == '') {
+			$('#contact').siblings('.alert-hint').text('联系方式不能为空噢');
+			$('#contact').siblings('.alert-hint').removeClass('hidden');
 			return false;
 		} else {
-			form_data.append('name', $('#name').val());
+			form_data.append('contact', $('#contact').val());
 		}
 		if ($('#zone').val() == '') {
 			$('#zone').siblings('.alert-hint').text('地区不能为空噢');
 			$('#zone').siblings('.alert-hint').removeClass('hidden');
 			return false;
 		} else {
-			form_data.append('name', $('#name').val());
+			form_data.append('zone', $('#zone').val());
 		}
 		if ($('#shop_range').val() == '') {
 			$('#shop_range').siblings('.alert-hint').text('店铺主管不能为空噢');
 			$('#shop_range').siblings('.alert-hint').removeClass('hidden');
 			return false;
 		} else {
-			form_data.append('name', $('#name').val());
+			form_data.append('shop_range', $('#shop_range').val());
 		}
 		if ($('#develop_plan').val() == '') {
 			$('#develop_plan').siblings('.alert-hint').text('发展规划不能为空噢');
 			$('#develop_plan').siblings('.alert-hint').removeClass('hidden');
 			return false;
 		} else {
-			form_data.append('name', $('#name').val());
+			form_data.append('develop_plan', $('#develop_plan').val());
 		}
 		if ($('#cooperation_intention').val() == '') {
 			$('#cooperation_intention').siblings('.alert-hint').text('合作意向不能为空噢');
 			$('#cooperation_intention').siblings('.alert-hint').removeClass('hidden');
 			return false;
 		} else {
-			form_data.append('name', $('#name').val());
+			form_data.append('cooperation_intention', $('#cooperation_intention').val());
+		}
+		if ($('#mobile').val() == '') {
+			$('#mobile').siblings('.alert-hint').text('手机号码不能为空噢');
+			$('#mobile').siblings('.alert-hint').removeClass('hidden');
+			return false;
+		} else {
+			form_data.append('mobile', $('#mobile').val());
 		}
 		if ($('#valid-code').val() == '') {
 			$('#valid-code').siblings('.alert-hint').text('请输入验证码');
@@ -151,5 +159,4 @@ $(document).ready(function() {
 		}
 		return true;
 	}
-
 })
