@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 support_langs = [
-        'zh',
-        'en',
+        'zh_CN',
+        'en_US',
         ]
 

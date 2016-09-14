@@ -5,6 +5,7 @@ import re
 import json
 
 from flask import render_template, request, abort, url_for, session, make_response, current_app
+from flask.ext.babel import gettext as __
 
 from . import pcbp 
 from ..base_func import response

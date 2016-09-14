@@ -1,0 +1,132 @@
+extracting messages from __init__.py
+extracting messages from controller/__init__.py
+extracting messages from controller/base_func.py
+extracting messages from controller/admin/__init__.py
+extracting messages from controller/admin/about.py
+extracting messages from controller/admin/admin.py
+extracting messages from controller/admin/banner.py
+extracting messages from controller/admin/contact.py
+extracting messages from controller/admin/creativity.py
+extracting messages from controller/admin/information.py
+extracting messages from controller/admin/join_us.py
+extracting messages from controller/admin/main.py
+extracting messages from controller/admin/nav.py
+extracting messages from controller/admin/news.py
+extracting messages from controller/admin/product.py
+extracting messages from controller/admin/setting.py
+extracting messages from controller/admin/ueditor.py
+extracting messages from controller/admin/uploader.py
+extracting messages from controller/admin/video.py
+extracting messages from controller/mb/__init__.py
+extracting messages from controller/mb/main.py
+extracting messages from controller/pc/__init__.py
+extracting messages from controller/pc/about.py
+extracting messages from controller/pc/admin.py
+extracting messages from controller/pc/contact.py
+extracting messages from controller/pc/creativity.py
+extracting messages from controller/pc/join_us.py
+extracting messages from controller/pc/main.py
+extracting messages from controller/pc/news.py
+extracting messages from controller/pc/product.py
+extracting messages from controller/pc/shop.py
+extracting messages from controller/pc/ueditor.py
+extracting messages from controller/pc/uploader.py
+extracting messages from form/__init__.py
+extracting messages from form/admin.py
+extracting messages from form/creativity.py
+extracting messages from form/join_us.py
+extracting messages from form/main.py
+extracting messages from language/__init__.py
+extracting messages from model/__init__.py
+extracting messages from model/admin.py
+extracting messages from model/admin_home.py
+extracting messages from model/admin_join_us.py
+extracting messages from model/admin_system_setting.py
+extracting messages from model/application.py
+extracting messages from model/banner.py
+extracting messages from model/cooperation.py
+extracting messages from model/information.py
+extracting messages from model/nav.py
+extracting messages from model/news.py
+extracting messages from model/news_category.py
+extracting messages from model/product.py
+extracting messages from model/product_category.py
+extracting messages from model/simple_nav_page.py
+extracting messages from model/subnav.py
+extracting messages from model/system_manager.py
+extracting messages from model/video.py
+extracting messages from service/__init__.py
+extracting messages from service/admin_service.py
+extracting messages from service/banner_service.py
+extracting messages from service/captcha_service.py
+extracting messages from service/consult_service.py
+extracting messages from service/cooperation_service.py
+extracting messages from service/creativity_service.py
+extracting messages from service/files_service.py
+extracting messages from service/home_service.py
+extracting messages from service/information_service.py
+extracting messages from service/join_us_service.py
+extracting messages from service/locale_service.py
+extracting messages from service/nav_service.py
+extracting messages from service/news_category_service.py
+extracting messages from service/news_service.py
+extracting messages from service/product_category_service.py
+extracting messages from service/product_service.py
+extracting messages from service/simple_nav_page_service.py
+extracting messages from service/subnav_service.py
+extracting messages from service/sys_setting_service.py
+extracting messages from service/video_service.py
+extracting messages from templates/admin/about.html (extensions="jinja2.ext.with_")
+extracting messages from templates/admin/banner_list.html (extensions="jinja2.ext.with_")
+extracting messages from templates/admin/base.html (extensions="jinja2.ext.with_")
+extracting messages from templates/admin/contact.html (extensions="jinja2.ext.with_")
+extracting messages from templates/admin/cooperation.html (extensions="jinja2.ext.with_")
+extracting messages from templates/admin/cooperation_list.html (extensions="jinja2.ext.with_")
+extracting messages from templates/admin/creativity.html (extensions="jinja2.ext.with_")
+extracting messages from templates/admin/creativity_list.html (extensions="jinja2.ext.with_")
+extracting messages from templates/admin/information_list.html (extensions="jinja2.ext.with_")
+extracting messages from templates/admin/join_us.html (extensions="jinja2.ext.with_")
+extracting messages from templates/admin/nav.html (extensions="jinja2.ext.with_")
+extracting messages from templates/admin/news.html (extensions="jinja2.ext.with_")
+extracting messages from templates/admin/news_category.html (extensions="jinja2.ext.with_")
+extracting messages from templates/admin/news_category_list.html (extensions="jinja2.ext.with_")
+extracting messages from templates/admin/news_list.html (extensions="jinja2.ext.with_")
+extracting messages from templates/admin/product.html (extensions="jinja2.ext.with_")
+extracting messages from templates/admin/product_category.html (extensions="jinja2.ext.with_")
+extracting messages from templates/admin/product_category_list.html (extensions="jinja2.ext.with_")
+extracting messages from templates/admin/product_list.html (extensions="jinja2.ext.with_")
+extracting messages from templates/admin/subnav.html (extensions="jinja2.ext.with_")
+extracting messages from templates/admin/video_list.html (extensions="jinja2.ext.with_")
+extracting messages from templates/mb/about.html (extensions="jinja2.ext.with_")
+extracting messages from templates/mb/base.html (extensions="jinja2.ext.with_")
+extracting messages from templates/mb/contact.html (extensions="jinja2.ext.with_")
+extracting messages from templates/mb/join_us.html (extensions="jinja2.ext.with_")
+extracting messages from templates/mb/main_page.html (extensions="jinja2.ext.with_")
+extracting messages from templates/mb/news.html (extensions="jinja2.ext.with_")
+extracting messages from templates/mb/news_list.html (extensions="jinja2.ext.with_")
+extracting messages from templates/mb/product.html (extensions="jinja2.ext.with_")
+extracting messages from templates/mb/product_list.html (extensions="jinja2.ext.with_")
+extracting messages from templates/mb/search_product_list.html (extensions="jinja2.ext.with_")
+extracting messages from templates/pc/about.html (extensions="jinja2.ext.with_")
+extracting messages from templates/pc/base.html (extensions="jinja2.ext.with_")
+extracting messages from templates/pc/contact.html (extensions="jinja2.ext.with_")
+extracting messages from templates/pc/creativity.html (extensions="jinja2.ext.with_")
+extracting messages from templates/pc/join_us.html (extensions="jinja2.ext.with_")
+extracting messages from templates/pc/main_page.html (extensions="jinja2.ext.with_")
+extracting messages from templates/pc/news.html (extensions="jinja2.ext.with_")
+extracting messages from templates/pc/news_list.html (extensions="jinja2.ext.with_")
+extracting messages from templates/pc/product.html (extensions="jinja2.ext.with_")
+extracting messages from templates/pc/product_list.html (extensions="jinja2.ext.with_")
+extracting messages from templates/pc/search_product_list.html (extensions="jinja2.ext.with_")
+extracting messages from templates/pc/ueditor.html (extensions="jinja2.ext.with_")
+extracting messages from templates/pc/admin/home.html (extensions="jinja2.ext.with_")
+extracting messages from templates/pc/admin/join_us.html (extensions="jinja2.ext.with_")
+extracting messages from templates/pc/admin/sys_setting.html (extensions="jinja2.ext.with_")
+extracting messages from util/__init__.py
+extracting messages from util/common.py
+extracting messages from util/csrf.py
+extracting messages from util/errno.py
+extracting messages from util/exportxls.py
+extracting messages from util/regexp.py
+extracting messages from util/sms.py
+writing PO template file to ./language/messages.pot

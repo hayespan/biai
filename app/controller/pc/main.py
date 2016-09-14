@@ -4,6 +4,7 @@ import random
 from . import pcbp 
 
 from flask import render_template, request, abort, url_for, session, redirect
+from flask.ext.babel import gettext
 
 from ..base_func import response
 from ...util.common import logger, json_response, get_now_timestamp
@@ -59,7 +60,13 @@ def captcha_mobile_trigger():
     code = '%04d' % randi
     session['captcha_mobile_code'] = randi
     session['captcha_mobile_expire'] = get_now_timestamp() + valid_delta*60
-    succ = send_sms(form.mobile.data, '您的验证码是：%s，有效期为%d分钟' % (code, valid_delta, ))
+    s = __('hayes')
+    succ = send_sms(form.mobile.data,
+            gettext('您的验证码是：%(code)，有效期为%(valid_delta)分钟', 
+                code=code,
+                valid_delta=valid_delta, 
+                )
+            )
     return response(
             ret=1-succ,
             msg='send fail' if not succ else 'send succ',
