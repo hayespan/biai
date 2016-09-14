@@ -83,13 +83,13 @@ footer {
 
 .header-nav {
   padding: 0 169px;
-  background-color: #9193d5;
-  overflow: hidden; }
+  background-color: #9193d5; }
   .header-nav .header-nav-item {
     font-size: 18px;
     margin: 16px 33px 16px 0;
     color: #d5d5f0;
-    float: left; }
+    float: left;
+    position: relative; }
     .header-nav .header-nav-item:hover {
       color: #ffffff; }
   .header-nav .chosen {
@@ -137,8 +137,8 @@ footer {
 .dropdown {
   width: 100px;
   position: absolute;
-  left: 990px;
-  top: 163px;
+  left: 0;
+  top: 56px;
   background-color: #9391d5;
   z-index: 999;
   display: none; }
