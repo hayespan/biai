@@ -37,12 +37,13 @@ def index():
     product_category_list = product_category_service.get_categories()[:5]
     video_list = video_service.get_videos()
     consult_page_content = consult_service.get_page_content()
-    information_list = information_service.get_information_list()
+    information_list = information_service.get_information_list()[:9]
     return response('main_page.html', 
             banner_list=banner_list,
             product_category_list=product_category_list,
             video_list=video_list,
             consult_page_content=consult_page_content,
+            information_list=information_list,
             )
 
 
