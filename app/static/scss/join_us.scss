@@ -21,9 +21,18 @@ html, body {
 	font-family: "Microsoft YaHei", Helvetica, Arial, sans-serif;
 }
 
-header, main, footer {
+.header-container-white,
+.header-nav-container,
+.main-container,
+.footer-container {
 	width: 1440px;
 	margin: 0 auto;
+	overflow: hidden;
+}
+
+.header-container-purple {
+	width: 100%;
+	background-color: #9193d5;
 }
 
 main {
@@ -46,8 +55,11 @@ a {
 }
 
 footer {
-	font-family: fzzyjt, "Microsoft YaHei", Helvetica, Arial, sans-serif;
 	background-color: #9193d5;
+}
+
+.footer-container {
+	font-family: fzzyjt, "Microsoft YaHei", Helvetica, Arial, sans-serif;
 	height: 206px;
 	padding: 0 169px 0 169px;
 	background-image: url('../img/icon/monkey2.png');
@@ -110,7 +122,6 @@ footer {
 
 .header-nav {
 	padding: 0 169px;
-	background-color: #9193d5;
 	.header-nav-item {
 		font-size: 18px;
 		// margin: 16px 33px 16px 0;
@@ -315,6 +326,9 @@ footer {
 		border-radius: 6px;
 		width: 100px;
 		height: 35px;
+	}
+	.disabled {
+		background-color: #ccbfb5;
 	}
 }
 

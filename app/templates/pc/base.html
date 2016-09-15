@@ -14,8 +14,8 @@
 </head>
 <body>
 	<header>
-		<div class="header-container">
-			{% block header %}
+		{% block header %}
+		<div class="header-container-white">
 			<div class="header-block">
 				<a id="logo" href="/"><img src="{{ url_for('static', filename='img/icon/slogan.png') }}" alt="logo"></a>
 				<div class="header-link">
@@ -28,97 +28,16 @@
 					{% endif %}
 				</div>
 			</div>
-			<nav class="header-nav">
-<!-- 				<a class="header-nav-item {% if cur_nav_meta_name == 'main' %}chosen{% endif %}" href="{{ nav_dict['main'].link }}">{{ nav_dict['main'].title }}</a>
-				<a class="header-nav-item {% if cur_nav_meta_name == 'about' %}chosen{% endif %}" href="{{ nav_dict['about'].link }}">{{ nav_dict['about'].title }}</a>
-				<a class="header-nav-item {% if cur_nav_meta_name == 'news' %}chosen{% endif %}" href="{{ nav_dict['news'].link }}">{{ nav_dict['news'].title }}</a>
-				<a class="header-nav-item {% if cur_nav_meta_name == 'product' %}chosen{% endif %}" href="{{ nav_dict['product'].link }}">{{ nav_dict['product'].title }}</a>
-				<a class="header-nav-item {% if cur_nav_meta_name == 'creativity' %}chosen{% endif %}" href="{{ nav_dict['creativity'].link }}">{{ nav_dict['creativity'].title }}</a>
-				<a class="header-nav-item {% if cur_nav_meta_name == 'join_us' %}chosen{% endif %}" href="{{ nav_dict['join_us'].link }}">{{ nav_dict['join_us'].title }}</a>
-				<div class="header-nav-item nav-dropdown">
-					<a class="dropdown-btn" href="#">{{ nav_dict['shop'].title }}</a>
-					<div class="dropdown">
-						{% for subnavs in nav_dict['shop'].subnavs %}
-							<a href="{{ subnavs.link }}">{{ subnavs.title }}</a>
-						{% endfor %}
-					</div>
-				</div>
-				<a class="header-nav-item {% if cur_nav_meta_name == 'contact' %}chosen{% endif %}" href="{{ nav_dict['contact'].link }}">{{ nav_dict['contact'].title }}</a> -->
-				{% if nav_dict['main'].subnavs == [] %}
-					<a class="header-nav-item {% if cur_nav_meta_name == 'main' %}chosen{% endif %}" href="{{ nav_dict['main'].link }}">{{ nav_dict['main'].title }}</a>
-				{% else %}
-					<div class="header-nav-item nav-dropdown">
-						<a class="dropdown-btn" href="#">{{ nav_dict['main'].title }}</a>
-						<div class="dropdown">
-							{% for subnavs in nav_dict['main'].subnavs %}
-								<a href="{{ subnavs.link }}">{{ subnavs.title }}</a>
-							{% endfor %}
-						</div>
-					</div>
-				{% endif %}
-				{% if nav_dict['about'].subnavs == [] %}
+		</div>
+		<div class="header-container-purple">
+			<div class="header-nav-container">
+				<nav class="header-nav">
+	<!-- 				<a class="header-nav-item {% if cur_nav_meta_name == 'main' %}chosen{% endif %}" href="{{ nav_dict['main'].link }}">{{ nav_dict['main'].title }}</a>
 					<a class="header-nav-item {% if cur_nav_meta_name == 'about' %}chosen{% endif %}" href="{{ nav_dict['about'].link }}">{{ nav_dict['about'].title }}</a>
-				{% else %}
-					<div class="header-nav-item nav-dropdown">
-						<a class="dropdown-btn" href="#">{{ nav_dict['about'].title }}</a>
-						<div class="dropdown">
-							{% for subnavs in nav_dict['about'].subnavs %}
-								<a href="{{ subnavs.link }}">{{ subnavs.title }}</a>
-							{% endfor %}
-						</div>
-					</div>
-				{% endif %}
-				{% if nav_dict['news'].subnavs == [] %}
 					<a class="header-nav-item {% if cur_nav_meta_name == 'news' %}chosen{% endif %}" href="{{ nav_dict['news'].link }}">{{ nav_dict['news'].title }}</a>
-				{% else %}
-					<div class="header-nav-item nav-dropdown">
-						<a class="dropdown-btn" href="#">{{ nav_dict['news'].title }}</a>
-						<div class="dropdown">
-							{% for subnavs in nav_dict['news'].subnavs %}
-								<a href="{{ subnavs.link }}">{{ subnavs.title }}</a>
-							{% endfor %}
-						</div>
-					</div>
-				{% endif %}
-				{% if nav_dict['product'].subnavs == [] %}
 					<a class="header-nav-item {% if cur_nav_meta_name == 'product' %}chosen{% endif %}" href="{{ nav_dict['product'].link }}">{{ nav_dict['product'].title }}</a>
-				{% else %}
-					<div class="header-nav-item nav-dropdown">
-						<a class="dropdown-btn" href="#">{{ nav_dict['product'].title }}</a>
-						<div class="dropdown">
-							{% for subnavs in nav_dict['product'].subnavs %}
-								<a href="{{ subnavs.link }}">{{ subnavs.title }}</a>
-							{% endfor %}
-						</div>
-					</div>
-				{% endif %}
-				{% if nav_dict['creativity'].subnavs == [] %}
 					<a class="header-nav-item {% if cur_nav_meta_name == 'creativity' %}chosen{% endif %}" href="{{ nav_dict['creativity'].link }}">{{ nav_dict['creativity'].title }}</a>
-				{% else %}
-					<div class="header-nav-item nav-dropdown">
-						<a class="dropdown-btn" href="#">{{ nav_dict['creativity'].title }}</a>
-						<div class="dropdown">
-							{% for subnavs in nav_dict['creativity'].subnavs %}
-								<a href="{{ subnavs.link }}">{{ subnavs.title }}</a>
-							{% endfor %}
-						</div>
-					</div>
-				{% endif %}
-				{% if nav_dict['join_us'].subnavs == [] %}
 					<a class="header-nav-item {% if cur_nav_meta_name == 'join_us' %}chosen{% endif %}" href="{{ nav_dict['join_us'].link }}">{{ nav_dict['join_us'].title }}</a>
-				{% else %}
-					<div class="header-nav-item nav-dropdown">
-						<a class="dropdown-btn" href="#">{{ nav_dict['join_us'].title }}</a>
-						<div class="dropdown">
-							{% for subnavs in nav_dict['join_us'].subnavs %}
-								<a href="{{ subnavs.link }}">{{ subnavs.title }}</a>
-							{% endfor %}
-						</div>
-					</div>
-				{% endif %}
-				{% if nav_dict['shop'].subnavs == [] %}
-					<a class="header-nav-item {% if cur_nav_meta_name == 'shop' %}chosen{% endif %}" href="{{ nav_dict['shop'].link }}">{{ nav_dict['shop'].title }}</a>
-				{% else %}
 					<div class="header-nav-item nav-dropdown">
 						<a class="dropdown-btn" href="#">{{ nav_dict['shop'].title }}</a>
 						<div class="dropdown">
@@ -127,25 +46,110 @@
 							{% endfor %}
 						</div>
 					</div>
-				{% endif %}
-				{% if nav_dict['contact'].subnavs == [] %}
-					<a class="header-nav-item {% if cur_nav_meta_name == 'contact' %}chosen{% endif %}" href="{{ nav_dict['contact'].link }}">{{ nav_dict['contact'].title }}</a>
-				{% else %}
-					<div class="header-nav-item nav-dropdown">
-						<a class="dropdown-btn" href="#">{{ nav_dict['contact'].title }}</a>
-						<div class="dropdown">
-							{% for subnavs in nav_dict['contact'].subnavs %}
-								<a href="{{ subnavs.link }}">{{ subnavs.title }}</a>
-							{% endfor %}
+					<a class="header-nav-item {% if cur_nav_meta_name == 'contact' %}chosen{% endif %}" href="{{ nav_dict['contact'].link }}">{{ nav_dict['contact'].title }}</a> -->
+					{% if nav_dict['main'].subnavs == [] %}
+						<a class="header-nav-item {% if cur_nav_meta_name == 'main' %}chosen{% endif %}" href="{{ nav_dict['main'].link }}">{{ nav_dict['main'].title }}</a>
+					{% else %}
+						<div class="header-nav-item nav-dropdown">
+							<a class="dropdown-btn" href="#">{{ nav_dict['main'].title }}</a>
+							<div class="dropdown">
+								{% for subnavs in nav_dict['main'].subnavs %}
+									<a href="{{ subnavs.link }}">{{ subnavs.title }}</a>
+								{% endfor %}
+							</div>
 						</div>
-					</div>
-				{% endif %}
-				<form action="/search" method="POST">
-					<input name="key" type="text" placeholder="请输入搜索内容">
-				</form>
-			</nav>
-			{% endblock %}	
+					{% endif %}
+					{% if nav_dict['about'].subnavs == [] %}
+						<a class="header-nav-item {% if cur_nav_meta_name == 'about' %}chosen{% endif %}" href="{{ nav_dict['about'].link }}">{{ nav_dict['about'].title }}</a>
+					{% else %}
+						<div class="header-nav-item nav-dropdown">
+							<a class="dropdown-btn" href="#">{{ nav_dict['about'].title }}</a>
+							<div class="dropdown">
+								{% for subnavs in nav_dict['about'].subnavs %}
+									<a href="{{ subnavs.link }}">{{ subnavs.title }}</a>
+								{% endfor %}
+							</div>
+						</div>
+					{% endif %}
+					{% if nav_dict['news'].subnavs == [] %}
+						<a class="header-nav-item {% if cur_nav_meta_name == 'news' %}chosen{% endif %}" href="{{ nav_dict['news'].link }}">{{ nav_dict['news'].title }}</a>
+					{% else %}
+						<div class="header-nav-item nav-dropdown">
+							<a class="dropdown-btn" href="#">{{ nav_dict['news'].title }}</a>
+							<div class="dropdown">
+								{% for subnavs in nav_dict['news'].subnavs %}
+									<a href="{{ subnavs.link }}">{{ subnavs.title }}</a>
+								{% endfor %}
+							</div>
+						</div>
+					{% endif %}
+					{% if nav_dict['product'].subnavs == [] %}
+						<a class="header-nav-item {% if cur_nav_meta_name == 'product' %}chosen{% endif %}" href="{{ nav_dict['product'].link }}">{{ nav_dict['product'].title }}</a>
+					{% else %}
+						<div class="header-nav-item nav-dropdown">
+							<a class="dropdown-btn" href="#">{{ nav_dict['product'].title }}</a>
+							<div class="dropdown">
+								{% for subnavs in nav_dict['product'].subnavs %}
+									<a href="{{ subnavs.link }}">{{ subnavs.title }}</a>
+								{% endfor %}
+							</div>
+						</div>
+					{% endif %}
+					{% if nav_dict['creativity'].subnavs == [] %}
+						<a class="header-nav-item {% if cur_nav_meta_name == 'creativity' %}chosen{% endif %}" href="{{ nav_dict['creativity'].link }}">{{ nav_dict['creativity'].title }}</a>
+					{% else %}
+						<div class="header-nav-item nav-dropdown">
+							<a class="dropdown-btn" href="#">{{ nav_dict['creativity'].title }}</a>
+							<div class="dropdown">
+								{% for subnavs in nav_dict['creativity'].subnavs %}
+									<a href="{{ subnavs.link }}">{{ subnavs.title }}</a>
+								{% endfor %}
+							</div>
+						</div>
+					{% endif %}
+					{% if nav_dict['join_us'].subnavs == [] %}
+						<a class="header-nav-item {% if cur_nav_meta_name == 'join_us' %}chosen{% endif %}" href="{{ nav_dict['join_us'].link }}">{{ nav_dict['join_us'].title }}</a>
+					{% else %}
+						<div class="header-nav-item nav-dropdown">
+							<a class="dropdown-btn" href="#">{{ nav_dict['join_us'].title }}</a>
+							<div class="dropdown">
+								{% for subnavs in nav_dict['join_us'].subnavs %}
+									<a href="{{ subnavs.link }}">{{ subnavs.title }}</a>
+								{% endfor %}
+							</div>
+						</div>
+					{% endif %}
+					{% if nav_dict['shop'].subnavs == [] %}
+						<a class="header-nav-item {% if cur_nav_meta_name == 'shop' %}chosen{% endif %}" href="{{ nav_dict['shop'].link }}">{{ nav_dict['shop'].title }}</a>
+					{% else %}
+						<div class="header-nav-item nav-dropdown">
+							<a class="dropdown-btn" href="#">{{ nav_dict['shop'].title }}</a>
+							<div class="dropdown">
+								{% for subnavs in nav_dict['shop'].subnavs %}
+									<a href="{{ subnavs.link }}">{{ subnavs.title }}</a>
+								{% endfor %}
+							</div>
+						</div>
+					{% endif %}
+					{% if nav_dict['contact'].subnavs == [] %}
+						<a class="header-nav-item {% if cur_nav_meta_name == 'contact' %}chosen{% endif %}" href="{{ nav_dict['contact'].link }}">{{ nav_dict['contact'].title }}</a>
+					{% else %}
+						<div class="header-nav-item nav-dropdown">
+							<a class="dropdown-btn" href="#">{{ nav_dict['contact'].title }}</a>
+							<div class="dropdown">
+								{% for subnavs in nav_dict['contact'].subnavs %}
+									<a href="{{ subnavs.link }}">{{ subnavs.title }}</a>
+								{% endfor %}
+							</div>
+						</div>
+					{% endif %}
+					<form action="/search" method="POST">
+						<input name="key" type="text" placeholder="请输入搜索内容">
+					</form>
+				</nav>
+			</div>
 		</div>
+		{% endblock %}
 	</header>
 	<main>
 		<div class="main-container">

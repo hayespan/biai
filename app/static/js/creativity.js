@@ -25,13 +25,13 @@ $(document).ready(function() {
 
 	$('.form-verify-phone button').on('click', function(e) {
 		e.preventDefault();
+		var that = $(this);
 		var mobile_num = $('#mobile').val();
 		if (!mobile_num) {
 			$(this).siblings('.alert-hint').text('还没填手机号码呢亲');
 			$(this).siblings('.alert-hint').removeClass('hidden');
 			return false;
 		}
-		console.log(mobile_num);
 		$.ajax({
 			url : '/captcha/mobile_trigger?f=json',
 			type : 'POST',
@@ -39,14 +39,28 @@ $(document).ready(function() {
 				mobile : mobile_num
 			},
 			success : function(result) {
-				if (result.msg == 'invalid mobile') {
-					$(this).siblings('.alert-hint').text('手机号码格式有误');
-					$(this).siblings('.alert-hint').removeClass('hidden');
-				} else if (result.msg == 'send fail') {
-					$(this).siblings('.alert-hint').text('发送失败请重试');
-					$(this).siblings('.alert-hint').removeClass('hidden');
+				if (result.data.msg == 'invalid mobile') {
+					that.siblings('.alert-hint').text('手机号码格式有误');
+					that.siblings('.alert-hint').removeClass('hidden');
+				} else if (result.data.msg == 'send fail') {
+					that.siblings('.alert-hint').text('发送失败请重试');
+					that.siblings('.alert-hint').removeClass('hidden');
 				} else {
-					$(this).siblings('.alert-hint').addClass('hidden');
+					that.siblings('.alert-hint').addClass('hidden');
+					that.attr('disabled', 'disabled');
+					that.addClass('disabled');
+					that.text('已发送(60)');
+					var count = 59;
+					var clock = setInterval(function() {
+						that.text('已发送('+count+')');
+						if (count == 0) {
+							clearInterval(clock);
+							that.removeClass('disabled');
+							that.removeAttr('disabled');
+							that.text('发送验证码');
+						}
+						count--;
+					}, 1000);
 				}
 			}
 		});
@@ -62,7 +76,7 @@ $(document).ready(function() {
 				code : valid_code
 			},
 			success : function(result) {
-				if (result.correct) {
+				if (result.data.correct) {
 					upload_work();
 				} else {
 					// upload_work();
