@@ -1,4 +1,12 @@
 /******************************base style******************************/
+@font-face {
+  font-family: fzzyjt;
+  src: url("../fonts/fzzyjt.ttf"); }
+
+@font-face {
+  font-family: fzcyjt;
+  src: url("../fonts/fzcyjt.TTF"); }
+
 * {
   box-sizing: inherit; }
 
@@ -29,6 +37,7 @@ a {
   text-decoration: none; }
 
 footer {
+  font-family: fzzyjt, "Microsoft YaHei", Helvetica, Arial, sans-serif;
   background-color: #9193d5;
   height: 206px;
   padding: 0 169px 0 169px;
@@ -97,6 +106,7 @@ footer {
   .header-nav .chosen {
     color: #ffffff; }
   .header-nav input {
+    font-family: fzzyjt, "Microsoft YaHei", Helvetica, Arial, sans-serif;
     padding-left: 35px;
     font-size: 14px;
     height: 36px;
@@ -159,6 +169,7 @@ footer {
   overflow: hidden; }
 
 .product-type-nav {
+  font-family: fzzyjt, "Microsoft YaHei", Helvetica, Arial, sans-serif;
   float: left;
   width: 160px;
   padding-top: 62px;
@@ -196,6 +207,7 @@ footer {
       border-bottom: none; }
 
 .product-content-container {
+  font-family: fzzyjt, "Microsoft YaHei", Helvetica, Arial, sans-serif;
   width: 920px;
   float: right; }
 
