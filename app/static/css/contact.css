@@ -1,4 +1,12 @@
 /******************************base style******************************/
+@font-face {
+  font-family: fzzyjt;
+  src: url("../fonts/fzzyjt.ttf"); }
+
+@font-face {
+  font-family: fzcyjt;
+  src: url("../fonts/fzcyjt.TTF"); }
+
 * {
   box-sizing: inherit; }
 
@@ -29,6 +37,7 @@ a {
   text-decoration: none; }
 
 footer {
+  font-family: fzzyjt, "Microsoft YaHei", Helvetica, Arial, sans-serif;
   background-color: #9193d5;
   height: 206px;
   padding: 0 169px 0 169px;
@@ -97,6 +106,7 @@ footer {
   .header-nav .chosen {
     color: #ffffff; }
   .header-nav input {
+    font-family: fzzyjt, "Microsoft YaHei", Helvetica, Arial, sans-serif;
     padding-left: 35px;
     font-size: 14px;
     height: 36px;
@@ -163,6 +173,7 @@ footer {
   border-radius: 9px;
   position: relative; }
   .contact-container h1 {
+    font-family: fzzyjt, "Microsoft YaHei", Helvetica, Arial, sans-serif;
     color: #9193d5;
     margin: 0; }
   .contact-container li {
