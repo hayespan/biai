@@ -13,7 +13,7 @@ $(document).ready(function() {
 		            'horizontal', 'date', 'time', '|',
 		            'inserttable', 'deletetable', 'insertparagraphbeforetable', 'insertrow', 'deleterow', 'insertcol', 'deletecol', 'mergecells', 'mergeright', 'mergedown', 'splittocells', 'splittorows', 'splittocols', 'charts'
 		]],
-		initialFrameWidth: 1000,
+		initialFrameWidth: 1010,
 		initialFrameHeight: 500,
 		minFrameHeight: 300,
 		autoHeightEnabled: false

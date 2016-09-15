@@ -137,7 +137,7 @@ main {
     border-bottom: 1px solid #eee; }
 
 .product-display ul {
-  width: 1142px; }
+  width: 1120px; }
 
 .product-display li {
   position: relative;
@@ -177,7 +177,7 @@ main {
 
 .product-description {
   float: left;
-  width: 1000px;
+  width: 980px;
   overflow: hidden; }
 
 .pic-item {

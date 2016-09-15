@@ -85,7 +85,10 @@ footer {
   background-color: #9193d5; }
   .header-nav .header-nav-item {
     font-size: 18px;
-    margin: 16px 33px 16px 0;
+    height: 56px;
+    line-height: 56px;
+    width: 107px;
+    text-align: center;
     color: #d5d5f0;
     float: left;
     position: relative; }
@@ -97,8 +100,8 @@ footer {
     padding-left: 35px;
     font-size: 14px;
     height: 36px;
-    margin: 10px 0 10px 17px;
-    width: 270px;
+    margin: 10px 0;
+    width: 240px;
     border-radius: 6px;
     background-image: url("../img/icon/search-icon.png");
     background-repeat: no-repeat;
@@ -108,16 +111,14 @@ footer {
 .nav-active {
   background-color: rgba(160, 145, 145, 0.2); }
 
-#nav-market {
-  margin: 0;
-  width: 115px;
+.nav-dropdown {
   height: 56px;
   line-height: 56px; }
-  #nav-market a {
+  .nav-dropdown a {
     color: #d5d5f0; }
-  #nav-market:hover .dropdown-btn {
+  .nav-dropdown:hover .dropdown-btn {
     color: #ffffff; }
-  #nav-market:hover .dropdown {
+  .nav-dropdown:hover .dropdown {
     display: block; }
 
 .nav-dropdown {
@@ -134,7 +135,7 @@ footer {
   color: #ffffff; }
 
 .dropdown {
-  width: 100px;
+  width: 107px;
   position: absolute;
   left: 0;
   top: 56px;
@@ -144,10 +145,10 @@ footer {
   .dropdown a {
     font-size: 15px;
     display: block;
-    width: 100px;
+    width: 100%;
     height: 56px;
     color: white;
-    text-indent: 7px;
+    text-align: center;
     line-height: 56px; }
     .dropdown a:hover {
       background-color: #7d7fc9; }

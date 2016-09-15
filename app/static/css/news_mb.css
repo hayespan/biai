@@ -129,4 +129,14 @@ footer {
     font-size: 0.9rem; }
 
 .news-page-content {
-  padding-bottom: 20px; }
+  padding: 0 10px; }
+
+.news-title {
+  color: #9193d5;
+  font-size: 1.3rem;
+  margin-top: 30px;
+  margin-bottom: 10px; }
+
+.news-content {
+  width: 100%;
+  padding-bottom: 10px; }

@@ -10,9 +10,16 @@
 			<a href="/news">新闻动态</a>><a href="/news/category/{{ current_category.name }}/1">{{ current_category.name }}</a>><a href="/news/{{ news.id }}">{{ news.title }}</a>
 		</div>
 		<div class="news-page-content">
-			{% autoescape false %}
-				{{ news.content }}
-			{% endautoescape %}
+			<h3 class="news-title">{{ news.title }}</h3>
+			<div class="news-content">
+				{% autoescape false %}
+					{{ news.content }}
+				{% endautoescape %}
+			</div>	
 		</div>
 	</div>
+{% endblock %}
+{% block script %}
+{{ super() }}
+<script src="{{ url_for('static', filename='js/news_mb.js') }}"></script>
 {% endblock %}

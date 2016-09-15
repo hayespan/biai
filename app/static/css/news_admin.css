@@ -139,6 +139,9 @@ main {
     margin-bottom: 20px;
     border-bottom: 1px solid #eee; }
 
+.news-content {
+  width: 800px; }
+
 .modify-btn {
   padding: 10px 20px;
   position: absolute;
@@ -146,7 +149,7 @@ main {
   top: 40px; }
 
 .news-form {
-  width: 900px; }
+  width: 962px; }
 
 .form-item {
   position: relative;
