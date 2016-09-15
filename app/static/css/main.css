@@ -197,6 +197,8 @@ footer {
     line-height: 30px;
     text-indent: 45px;
     border-radius: 4px; }
+  .product-header .title-en {
+    width: 208px; }
   .product-header img {
     position: absolute;
     z-index: 999; }
@@ -276,6 +278,7 @@ footer {
       width: 200px; }
     .consult-list li span {
       font-size: 12px;
+      height: 30px;
       color: #ffffff;
       float: right;
       width: 80px;

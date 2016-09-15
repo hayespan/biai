@@ -156,7 +156,6 @@ footer {
 /******************************creativity page******************************/
 .creativity-container {
   margin: 40px 169px 60px 169px;
-  height: 1035px;
   background-color: #ffffff;
   border-radius: 10px;
   padding: 60px; }
@@ -238,14 +237,14 @@ footer {
 
 .form-item {
   margin-bottom: 20px;
-  padding: 0 280px;
+  padding: 0 270px;
   overflow: hidden;
   position: relative; }
   .form-item label {
     float: left;
     text-align: right;
     height: 35px;
-    width: 70px;
+    width: 90px;
     line-height: 35px;
     margin-right: 10px; }
   .form-item input[type="text"] {

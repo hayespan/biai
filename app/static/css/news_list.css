@@ -207,7 +207,7 @@ footer {
   padding: 24px; }
 
 .news-list-content {
-  height: 495px;
+  min-height: 495px;
   border: 2px solid #d5d5f0;
   border-radius: 10px;
   padding: 56px 50px; }

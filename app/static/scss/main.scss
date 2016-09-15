@@ -240,6 +240,9 @@ footer {
 		text-indent: 45px;
 		border-radius: 4px;
 	}
+	.title-en {
+		width: 208px;
+	}
 	img {
 		position: absolute;
 		z-index: 999;
@@ -319,7 +322,6 @@ footer {
 
 .consult-list {
 	overflow: hidden;
-
 	li {
 		height: 30px;
 		line-height: 30px;
@@ -336,6 +338,7 @@ footer {
 		}
 		span {
 			font-size: 12px;
+			height: 30px;
 			color: #ffffff;
 			float: right;
 			width: 80px;

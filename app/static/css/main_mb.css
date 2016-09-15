@@ -202,7 +202,7 @@ footer {
   text-align: center; }
 
 .consult-block {
-  height: 220px;
+  min-height: 220px;
   background-color: #ffffff; }
 
 .consult-header {
@@ -225,10 +225,10 @@ footer {
       font-size: 1.1rem;
       color: #000000;
       float: left;
-      width: 65%; }
+      width: 67%; }
     .consult-list li span {
+      text-indent: 0;
       font-size: 1rem;
       color: #cecece;
       float: left;
-      width: 30%;
       text-align: right; }

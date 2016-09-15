@@ -69,16 +69,33 @@ header {
 	position: absolute;
 	top: 49px;
 	width: 100%;
-	padding-bottom: 5px;
 	a {
-		height: 35px;
-		line-height: 35px;
+		height: 38px;
+		line-height: 38px;
 		text-align: center;
 		color: #ffffff;
 		font-size: 1rem;
 		display: block;
 		width: 100%;
 	}
+}
+
+.header-nav-item {
+	border-bottom: 1px solid #a8a9c1;
+}
+
+.dropdown-btn {
+	&:after {
+		font-family: FontAwesome;
+		content: "\f0dd";
+		position: relative;
+		bottom: 3px;
+		left: 4px;
+	}
+}
+
+.dropdown {
+	background-color: #afb0d2;
 }
 
 .search-bar {
@@ -166,7 +183,7 @@ footer {
 		height: 100%;
 		width: 100%;
 		box-sizing: border-box;
-		font-size: 1rem;
+		font-size: 0.9rem;
 		border-bottom: 1px solid #9193d5;
 	}
 	.chosen {

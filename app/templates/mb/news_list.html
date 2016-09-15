@@ -23,7 +23,7 @@
 			<div class="page-content">
 				<ul>
 					{% for news in news_list %}
-						<li><a href="/news/{{ news.id }}">{{ news.title }}</a><span>2016-07-22</span></li>
+						<li><a href="/news/{{ news.id }}">{{ news.title }}</a><span>{{ news.create_time.date() }}</span></li>
 					{% endfor %}
 {# 					<li><a href="#">宝宝玩具的选择要点</a><span>2016-07-22</span></li>
 					<li><a href="#">给孩子立规矩的十九原则</a><span>2016-07-22</span></li>
@@ -37,9 +37,9 @@
 			<div class="page-nav">
 				<nav>
 					{% if page_info['cur'] == page_info['min'] %}
-						<a class="disabled" id="last-page" href="/news/category/{{ current_category.name }}/{{ page_info['cur']-1 }}">上一页</a>
+						<a class="disabled" id="last-page">{{ _("Prev") }}</a>
 					{% else %}
-						<a id="last-page" href="/news/category/{{ current_category.name }}/{{ page_info['cur']-1 }}">上一页</a>
+						<a id="last-page" href="/news/category/{{ current_category.name }}/{{ page_info['cur']-1 }}">{{ _("Prev") }}</a>
 					{% endif %}
 					{% if page_info['cur']-page_info['min'] > 2 %}
 						{% set min = page_info['cur'] - 2 %}
@@ -59,9 +59,9 @@
 						{% endif %}
 					{% endfor %}
 					{% if page_info['cur'] == page_info['max'] %}
-						<a class="disabled" id="last-page" href="/news/category/{{ current_category.name }}/{{ page_info['cur']+1 }}">下一页</a>
+						<a class="disabled" id="last-page">{{ _("Next") }}</a>
 					{% else %}
-						<a id="next-page" href="/news/category/{{ current_category.name }}/{{ page_info['cur']+1 }}">上下一页</a>
+						<a id="next-page" href="/news/category/{{ current_category.name }}/{{ page_info['cur']+1 }}">{{ _("Next") }}</a>
 					{% endif %}
 				</nav>
 			</div>

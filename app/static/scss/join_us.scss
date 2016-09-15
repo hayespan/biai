@@ -250,14 +250,14 @@ footer {
 
 .form-item {
 	margin-bottom: 20px;
-	padding: 0 205px;
+	padding: 0 185px;
 	overflow: hidden;
 	position: relative;
 	label {
 		float: left;
 		text-align: right;
 		height: 35px;
-		width: 70px;
+		width: 90px;
 		line-height: 35px;
 		margin-right: 10px;
 	}
@@ -271,7 +271,7 @@ footer {
 	textarea {
 		resize: none;
 		border-radius: 6px;
-		float: right;
+		float: left;
 		width: 340px;
 		height: 100px;
 	}

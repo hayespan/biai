@@ -43,6 +43,7 @@ def index():
             product_category_list=product_category_list,
             video_list=video_list,
             consult_page_content=consult_page_content,
+            information_list=information_list,
             )
 
 
