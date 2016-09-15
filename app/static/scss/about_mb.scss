@@ -142,6 +142,8 @@ footer {
 /******************************main page******************************/
 
 .about-container {
+	padding: 30px 15px;
+	overflow: hidden;
 	background-color: #ffffff;
 	h1 {
 		font-size: 1.5rem;
@@ -157,8 +159,7 @@ footer {
 }
 
 .about-content {
-	padding: 30px 15px;
-	overflow: hidden;
+	width: 100%;
 }
 
 .split {

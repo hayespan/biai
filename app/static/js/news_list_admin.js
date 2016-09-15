@@ -13,8 +13,8 @@ $(document).ready(function() {
 		            'horizontal', 'date', 'time', '|',
 		            'inserttable', 'deletetable', 'insertparagraphbeforetable', 'insertrow', 'deleterow', 'insertcol', 'deletecol', 'mergecells', 'mergeright', 'mergedown', 'splittocells', 'splittorows', 'splittocols', 'charts'
 		]],
-		initialFrameWidth: 760,
-		initialFrameHeight: 300,
+		initialFrameWidth: 982,
+		initialFrameHeight: 500,
 		minFrameHeight: 300,
 		autoHeightEnabled: false
 	});

@@ -200,7 +200,4 @@ footer {
     top: -35px; }
 
 .detail-content {
-  text-align: center; }
-  .detail-content img {
-    width: 92%;
-    margin-bottom: 10px; }
+  padding-bottom: 20px; }

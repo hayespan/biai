@@ -155,32 +155,20 @@ footer {
 /******************************about page******************************/
 .about-container {
   width: 1102px;
-  height: 720px;
   background-color: #ffffff;
   padding: 60px 60px;
+  padding-bottom: 130px;
   margin: 40px auto 60px auto;
   border-radius: 9px;
-  background-image: url("../img/temp/background-cut.png");
-  background-repeat: no-repeat;
-  background-position: 666px 591px; }
+  position: relative; }
   .about-container h1 {
     color: #9193d5;
     margin: 0; }
 
-.about-text {
-  width: 430px;
-  float: left;
-  margin-right: 20px; }
-  .about-text p {
-    font-size: 16px;
-    color: #1e1e1e;
-    margin-top: 0;
-    margin-bottom: 24px; }
-
-.about-img {
-  float: right; }
-  .about-img img {
-    width: 530px; }
+.bg-img {
+  position: absolute;
+  right: 0;
+  bottom: -4px; }
 
 .split {
   width: 44px;

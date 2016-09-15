@@ -193,14 +193,15 @@ footer {
 
 .contact-container {
 	padding: 60px;
+	padding-bottom: 130px;
 	width: 1102px;
-	height: 630px;
 	margin: 40px auto 52px auto;
 	background-color: #ffffff;
 	border-radius: 9px;
-	background-image: url('../img/temp/background-cut.png');
-	background-repeat: no-repeat;
-	background-position: 666px 501px;
+	position: relative;
+	// background-image: url('../img/temp/background-cut.png');
+	// background-repeat: no-repeat;
+	// background-position: 666px 501px;
 	h1 {
 		color: #9193d5;
 		margin: 0;
@@ -221,4 +222,10 @@ footer {
 	border-bottom: 3px solid #9193d5;
 	margin-top: 28px;
 	margin-bottom: 45px;
+}
+
+.bg-img {
+	position: absolute;
+	right: 0;
+	bottom: -4px;
 }
