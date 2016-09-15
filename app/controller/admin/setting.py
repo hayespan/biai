@@ -12,14 +12,14 @@ from ...util.common import logger, json_response, save_form_file, get_biai_conf,
 def setting():
     if request.method == 'GET':
 
-        site_name = get_biai_conf('site_info', 'site_name')
-        site_domain = get_biai_conf('site_info', 'site_domain')
-        site_filing_num = get_biai_conf('site_info', 'site_filing_num')
-        site_locale = get_biai_conf('site_info', 'site_locale')
+        succ, site_name = get_biai_conf('site_info', 'site_name')
+        succ, site_domain = get_biai_conf('site_info', 'site_domain')
+        succ, site_filing_num = get_biai_conf('site_info', 'site_filing_num')
+        succ, site_locale = get_biai_conf('site_info', 'site_locale')
 
-        company_name = get_biai_conf('site_content', 'company_name')
-        service_phone = get_biai_conf('site_content', 'service_phone')
-        company_location = get_biai_conf('site_content', 'company_location')
+        succ, company_name = get_biai_conf('site_content', 'company_name')
+        succ, service_phone = get_biai_conf('site_content', 'service_phone')
+        succ, company_location = get_biai_conf('site_content', 'company_location')
 
         return admin_response('setting.html',
 

@@ -29,16 +29,15 @@ class App(object):
     def __init_babel(self):
         # i18n
         from flask.ext.babel import Babel
-        from language import support_langs
         self.babel = Babel(self.app)
-        self.app.config['BABEL_DEFAULT_LOCALE'] = 'en_US'
+        self.app.config['BABEL_DEFAULT_LOCALE'] = 'zh_CN'
         @self.babel.localeselector
         def get_locale():
             from util.common import get_biai_conf
             succ, lc = get_biai_conf('site_info', 'site_locale')
             if succ:
                 return lc
-            return request.accept_languages.best_match(support_langs)
+            return request.accept_languages.best_match(['en_US', 'zh_CN', ])
 
     def __init_db(self):
         db.init_app(self.app)
