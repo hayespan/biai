@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2016-09-16 01:28+0800\n"
+"POT-Creation-Date: 2016-09-16 02:09+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.3.4\n"
 
-#: controller/pc/main.py:65
+#: controller/pc/main.py:64
 msgid "Your captcha is %(code), valid for %(valid_delta) minutes"
 msgstr ""
 
 #: templates/pc/base.html:22
-msgid "微信公众号"
+msgid "Wechat"
 msgstr ""
 
