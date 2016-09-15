@@ -55,16 +55,28 @@ header {
   background-color: #9799d7;
   position: absolute;
   top: 49px;
-  width: 100%;
-  padding-bottom: 5px; }
+  width: 100%; }
   .header-nav a {
-    height: 35px;
-    line-height: 35px;
+    height: 38px;
+    line-height: 38px;
     text-align: center;
     color: #ffffff;
     font-size: 1rem;
     display: block;
     width: 100%; }
+
+.header-nav-item {
+  border-bottom: 1px solid #a8a9c1; }
+
+.dropdown-btn:after {
+  font-family: FontAwesome;
+  content: "\f0dd";
+  position: relative;
+  bottom: 3px;
+  left: 4px; }
+
+.dropdown {
+  background-color: #afb0d2; }
 
 .search-bar {
   float: left;
@@ -212,14 +224,10 @@ footer {
   color: #ff7676; }
 
 .join-recruit {
-  width: 90%;
-  margin: auto; }
+  padding: 0 15px; }
 
-.job-item img {
+.job-content {
   width: 100%; }
-
-.job-item p {
-  color: #777777; }
 
 .hidden {
   display: none; }

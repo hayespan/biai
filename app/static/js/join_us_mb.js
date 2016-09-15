@@ -15,6 +15,7 @@ $(document).ready(function() {
 		$(this).addClass('chosen')
 		cooperate.removeClass('chosen');
 		recruitPage.removeClass('hidden');
+		show_job_page();
 		cooperatePage.addClass('hidden');
 	});
 
@@ -158,5 +159,18 @@ $(document).ready(function() {
 			form_data.append('code', $('#valid-code').val());
 		}
 		return true;
+	}
+
+	function show_job_page() {
+		var img = $('.job-content img');
+		var ratio = 3/10;
+		for (var i = 0; i < img.length; i++) {
+			var width = img[i].offsetWidth;
+			var height = img[i].offsetHeight;
+			var maxWidth = $('.job-content')[0].offsetWidth;
+			var img_ratio = height/width;
+			img[i].style.maxWidth = maxWidth+'px';
+			img[i].style.height = Math.floor(img[i].offsetWidth*img_ratio)+'px';
+		}
 	}
 })

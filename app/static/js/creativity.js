@@ -65,9 +65,9 @@ $(document).ready(function() {
 				if (result.correct) {
 					upload_work();
 				} else {
-					upload_work();
-					// $('#verify-code').siblings('.alert-hint').text('验证码有误请重试');
-					// $('#verify-code').siblings('.alert-hint').removeClass('hidden');
+					// upload_work();
+					$('#verify-code').siblings('.alert-hint').text('验证码有误请重试');
+					$('#verify-code').siblings('.alert-hint').removeClass('hidden');
 				}
 			}
 		});

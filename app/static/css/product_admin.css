@@ -137,7 +137,7 @@ main {
     border-bottom: 1px solid #eee; }
 
 .product-display ul {
-  width: 700px; }
+  width: 1120px; }
 
 .product-display li {
   position: relative;
@@ -155,9 +155,6 @@ main {
     width: 560px;
     height: 34px;
     padding: 6px 12px; }
-  .product-display li img {
-    float: left;
-    max-width: 200px; }
   .product-display li button {
     float: right;
     padding: 5px 20px; }
@@ -178,6 +175,11 @@ main {
   width: 560px;
   overflow: hidden; }
 
+.product-description {
+  float: left;
+  width: 980px;
+  overflow: hidden; }
+
 .pic-item {
   width: 200px;
   height: 200px;
@@ -189,7 +191,7 @@ main {
     max-height: 200px; }
 
 .product-form {
-  width: 900px; }
+  width: 1142px; }
 
 .form-item {
   position: relative;

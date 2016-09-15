@@ -167,7 +167,7 @@ main {
 
 .product-display {
 	ul {
-		width: 700px;
+		width: 1120px;
 	}
 	li {
 		position: relative;
@@ -186,10 +186,6 @@ main {
 			width: 560px;
 			height: 34px;
 			padding: 6px 12px;
-		}
-		img {
-			float: left;
-			max-width: 200px;
 		}
 		button {
 			float: right;
@@ -216,6 +212,12 @@ main {
 	overflow: hidden;
 }
 
+.product-description {
+	float: left;
+	width: 980px;
+	overflow: hidden;
+}
+
 .pic-item {
 	width: 200px;
 	height: 200px;
@@ -229,7 +231,7 @@ main {
 }
 
 .product-form {
-	width: 900px;
+	width: 1142px;
 }
 
 .form-item {

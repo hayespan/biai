@@ -6,7 +6,7 @@
 {% endblock %}
 {% block main %}
 		<div class="about-container">
-			<h1>关于比爱</h1>
+			<h1>{{ nav_dict['about'].title }}</h1>
 			<div class="split"></div>
 			<div class="about-content">
 				{% autoescape false %}
@@ -21,6 +21,9 @@
 				<div class="about-img">
 					<img src="{{ url_for('static', filename='img/temp/about.png') }}">
 				</div> -->
+			</div>
+			<div class="bg-img">
+				<img src="{{ url_for('static', filename='img/temp/background-cut.png') }}">
 			</div>
 		</div>
 {% endblock %}

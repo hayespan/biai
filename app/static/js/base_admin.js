@@ -39,6 +39,9 @@ $(document).ready(function() {
 		case '关于我们管理':
 			$('.sidebar .about').addClass('active');
 			break;
+		case '网站信息管理':
+			$('.sidebar .setting').addClass('active');
+			break;
 	}
 	$('.user-button').on('click', function(e) {
 		e.preventDefault();

@@ -114,4 +114,6 @@ class USettingForm(Form):
     site_domain = StringField()
     site_filing_num = StringField()
     site_locale = StringField()
-
+    company_name = StringField()
+    service_phone = StringField()
+    company_location = StringField()

@@ -1,0 +1,94 @@
+{% extends "admin/base.html" %}
+{% block title %}网站信息管理{% endblock %}
+{% block stylesheet %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/setting_admin.css') }}">
+{% endblock %}
+{% block main %}
+	<div class="setting-container">
+		<div class="setting-display">
+			<h1>网站信息</h1>
+			<ul>
+				<li>
+					<label>网站名字:</label>
+					<span>{{ site_name }}</span>
+				</li>
+				<li>
+					<label>网站域名:</label>
+					<span>{{ site_domain }}</span>
+				</li>
+				<li>
+					<label>网站备案号:</label>
+					<span>{{ site_filing_num }}</span>
+				</li>
+				<li>
+					<label>网站站点:</label>
+					<span>{{ site_locale }}</span>
+				</li>
+				<li>
+					<label>公司全称:</label>
+					<span>{{ company_name }}</span>
+				</li>
+				<li>
+					<label>服务热线:</label>
+					<span>{{ service_phone }}</span>
+				</li>
+				<li>
+					<label>公司地址:</label>
+					<span>{{ company_location }}</span>
+				</li>
+				<li>
+					<button class="modify-btn button-simple" type="button">修改</button>
+				</li>
+			</ul>
+		</div>
+		<div class="setting-modify hidden">
+			<h1>修改网站信息</h1>
+			<form class="setting-form" action="/admin/setting">
+				<div class="form-item">
+					<label>网站名字</label>
+					<input id="site_name" type="text" value="{{ site_name }}" placeholder="请输入网站名字" />
+					<div class="alert-hint hidden"></div>
+				</div>
+				<div class="form-item">
+					<label>网站域名</label>
+					<input id="site_domain" type="text" value="{{ site_domain }}" placeholder="请输入网站域名" />
+					<div class="alert-hint hidden"></div>
+				</div>
+				<div class="form-item">
+					<label>网站备案号</label>
+					<input id="site_filing_num" type="text" value="{{ site_filing_num }}" placeholder="请输入网站备案号" />
+					<div class="alert-hint hidden"></div>
+				</div>
+				<div class="form-item">
+					<label>网站站点</label>
+					<input id="site_locale" type="text" value="{{ site_locale }}" placeholder="请输入网站站点" />
+					<div class="alert-hint hidden"></div>
+				</div>
+				<div class="form-item">
+					<label>公司全称</label>
+					<input id="company_name" type="text" value="{{ company_name }}" placeholder="请输入公司全称" />
+					<div class="alert-hint hidden"></div>
+				</div>
+				<div class="form-item">
+					<label>服务热线</label>
+					<input id="service_phone" type="text" value="{{ service_phone }}" placeholder="请输入服务热心" />
+					<div class="alert-hint hidden"></div>
+				</div>
+				<div class="form-item">
+					<label>公司地址</label>
+					<input id="company_location" type="text" value="{{ company_location }}" placeholder="请输入公司地址" />
+					<div class="alert-hint hidden"></div>
+				</div>
+				<div class="form-item form-btns">
+					<button class="cancel-btn button-simple" type="button">返回</button>
+					<button class="submit-btn button-simple" type="submit">提交</button>
+				</div>
+			</form>
+		</div>
+	</div>
+{% endblock %}
+{% block script %}
+{{ super() }}
+<script src="{{ url_for('static', filename='js/setting_admin.js') }}"></script>
+{% endblock %}

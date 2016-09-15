@@ -10,88 +10,66 @@
 			<div class="nav-header">
 			</div>
 			<ul class="nav-list">
-				<li><a class="cooperate chosen" href="#">合作加盟</a></li>
-				<li><a class="recruit" href="#">人才招聘</a></li>
+				<li><a class="cooperate chosen" href="#">{{ _("Cooperation") }}</a></li>
+				<li><a class="recruit" href="#">{{ _("Recruitment") }}</a></li>
 			</ul>
 		</div>
 		<div class="join-page-container">
 			<div class="join-cooperate">
 				<form action="#">
 					<div class="form-item">
-						<label>姓名</label>
+						<label>{{ _("name") }}</label>
 						<input id="name" type="text" />
 						<div class="alert-hint hidden"></div>
 					</div>
 					<div class="form-item">
-						<label>联系方式</label>
+						<label>{{ _("contact") }}</label>
 						<input id="contact" type="text" />
 						<div class="alert-hint hidden"></div>
 					</div>
 					<div class="form-item">
-						<label>地区</label>
+						<label>{{ _("region") }}</label>
 						<input id="zone" type="text" />
 						<div class="alert-hint hidden"></div>
 					</div>
 					<div class="form-item">
-						<label>店铺主管</label>
+						<label>{{ _("supervisor") }}</label>
 						<input id="shop_range" type="text" />
 						<div class="alert-hint hidden"></div>
 					</div>
 					<div class="form-item">
-						<label>发展规划</label>
+						<label>{{ _("plan") }}</label>
 						<textarea id="develop_plan"></textarea>
 						<div class="alert-hint hidden"></div>
 					</div>
 					<div class="form-item">
-						<label>合作意向</label>
+						<label>{{ _("intention") }}</label>
 						<textarea id="cooperation_intention"></textarea>
 						<div class="alert-hint hidden"></div>
 					</div>
 					<div class="form-split"></div>
 					<div class="form-item form-verify-phone">
-						<label>手机号</label>
-						<input id="mobile" type="text" placeholder="请输入手机号码" />
+						<label>{{ _("phone") }}</label>
+						<input id="mobile" type="text"/>
 						<div class="alert-hint hidden"></div>
 					</div>
 					<div class="form-item form-verify-code">
-						<label>验证码</label>
-						<input id="valid-code" type="text" placeholder="请输入验证码" />
-						<button>发送验证码</button>
+						<label>{{ _("verify") }}</label>
+						<input id="valid-code" type="text"/>
+						<button>{{ _("send code") }}</button>
 						<div class="alert-hint hidden"></div>
 					</div>
 					<div class="form-item">
-						<input type="submit" />
+						<input type="submit" value='{{ _("submit") }}'/>
 					</div>
 				</form>
 			</div>
 			<div class="join-recruit hidden">
-				<ul class="job-list">
-					<li class="job-item">
-						<img class="job-img" src="{{ url_for('static', filename='img/temp/about.png') }}" alt="job-img">
-						<div class="job-info">
-							<h3>
-								职位名称
-							</h3>
-							<p>
-								一点寒芒先到随后枪出如龙一点寒芒先到随后枪出如龙一点寒芒先到随后枪出如龙一点寒芒先到随后枪出如龙
-								一点寒芒先到随后枪出如龙
-								一点寒芒先到随后枪出如龙
-								一点寒芒先到随后枪出如龙一点寒芒先到随后枪出如龙一点寒芒先到随后枪出如龙一点寒芒先到随后枪出如龙一点寒芒先到随后枪出如龙
-							</p>
-						</div>
-					</li>
-					<li class="job-item">
-						<img class="job-img" src="{{ url_for('static', filename='img/temp/about.png') }}" alt="job-img">
-						<div class="job-info">
-							<h3>
-								职位名称
-							</h3>
-							<p>
-								一点寒芒先到随后枪出如龙
-							</p>
-						</div>
-					</li>
-				</ul>
+				<div class="job-content">
+					{% autoescape false %}
+						{{ page.content }}
+					{% endautoescape %}
+				</div>
 			</div>
 		</div>
 	</div>

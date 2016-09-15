@@ -82,13 +82,16 @@ footer {
 
 .header-nav {
   padding: 0 169px;
-  background-color: #9193d5;
-  overflow: hidden; }
+  background-color: #9193d5; }
   .header-nav .header-nav-item {
     font-size: 18px;
-    margin: 16px 33px 16px 0;
+    height: 56px;
+    line-height: 56px;
+    width: 107px;
+    text-align: center;
     color: #d5d5f0;
-    float: left; }
+    float: left;
+    position: relative; }
     .header-nav .header-nav-item:hover {
       color: #ffffff; }
   .header-nav .chosen {
@@ -97,8 +100,8 @@ footer {
     padding-left: 35px;
     font-size: 14px;
     height: 36px;
-    margin: 10px 0 10px 17px;
-    width: 270px;
+    margin: 10px 0;
+    width: 240px;
     border-radius: 6px;
     background-image: url("../img/icon/search-icon.png");
     background-repeat: no-repeat;
@@ -108,16 +111,14 @@ footer {
 .nav-active {
   background-color: rgba(160, 145, 145, 0.2); }
 
-#nav-market {
-  margin: 0;
-  width: 115px;
+.nav-dropdown {
   height: 56px;
   line-height: 56px; }
-  #nav-market a {
+  .nav-dropdown a {
     color: #d5d5f0; }
-  #nav-market:hover .dropdown-btn {
+  .nav-dropdown:hover .dropdown-btn {
     color: #ffffff; }
-  #nav-market:hover .dropdown {
+  .nav-dropdown:hover .dropdown {
     display: block; }
 
 .nav-dropdown {
@@ -134,20 +135,20 @@ footer {
   color: #ffffff; }
 
 .dropdown {
-  width: 100px;
+  width: 107px;
   position: absolute;
-  left: 990px;
-  top: 163px;
+  left: 0;
+  top: 56px;
   background-color: #9391d5;
   z-index: 999;
   display: none; }
   .dropdown a {
     font-size: 15px;
     display: block;
-    width: 100px;
+    width: 100%;
     height: 56px;
     color: white;
-    text-indent: 7px;
+    text-align: center;
     line-height: 56px; }
     .dropdown a:hover {
       background-color: #7d7fc9; }
@@ -196,6 +197,8 @@ footer {
     line-height: 30px;
     text-indent: 45px;
     border-radius: 4px; }
+  .product-header .title-en {
+    width: 208px; }
   .product-header img {
     position: absolute;
     z-index: 999; }
@@ -275,6 +278,7 @@ footer {
       width: 200px; }
     .consult-list li span {
       font-size: 12px;
+      height: 30px;
       color: #ffffff;
       float: right;
       width: 80px;

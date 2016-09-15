@@ -127,35 +127,45 @@ main {
   .button-simple:active {
     box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); }
 
-/******************************news category******************************/
-.news-container {
+/******************************product category******************************/
+.setting-container {
   position: relative;
   padding: 30px 50px; }
-  .news-container h1 {
-    padding-bottom: 20px; }
-  .news-container h2 {
-    font-size: 17px;
+  .setting-container h1 {
     padding-bottom: 20px;
     margin-bottom: 20px;
     border-bottom: 1px solid #eee; }
 
-.news-content {
-  width: 800px; }
+.setting-display ul {
+  width: 700px; }
 
-.modify-btn {
-  padding: 10px 20px;
-  position: absolute;
-  right: 60px;
-  top: 40px; }
+.setting-display li {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 20px; }
+  .setting-display li label {
+    float: left;
+    width: 140px;
+    height: 34px;
+    line-height: 34px;
+    text-align: right;
+    padding-right: 20px; }
+  .setting-display li span {
+    float: left;
+    width: 560px;
+    height: 34px;
+    padding: 6px 12px; }
+  .setting-display li button {
+    float: right;
+    padding: 5px 20px; }
 
-.news-form {
-  width: 962px; }
+.setting-form {
+  width: 700px; }
 
 .form-item {
   position: relative;
   overflow: hidden;
-  margin-bottom: 20px;
-  padding-right: 200px; }
+  margin-bottom: 20px; }
   .form-item label {
     float: left;
     width: 140px;
@@ -173,27 +183,11 @@ main {
     border: 1px solid #ccc; }
     .form-item input:focus {
       border-color: #66afe9; }
-  .form-item select {
-    outline: 0;
-    float: left;
-    width: 560px;
-    height: 34px;
-    padding: 6px 12px;
-    border-radius: 4px;
-    border: 1px solid #ccc; }
   .form-item button {
     float: right;
     padding: 5px 20px; }
   .form-item .cancel-btn {
     margin-left: 20px; }
-
-.form-editor,
-.form-btns {
-  padding-right: 0; }
-
-.editor-container {
-  float: left;
-  width: 80%; }
 
 .alert-hint {
   position: absolute;

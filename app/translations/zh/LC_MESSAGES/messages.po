@@ -23,6 +23,107 @@ msgid "Your captcha is %(code), valid for %(valid_delta) minutes"
 msgstr "你的验证码是%(code)，有效期是%(valid_delta)分钟"
 
 #: templates/pc/base.html:22
-msgid "Wechat"
-msgstr "微信公众号"
 
+#~ msgid "Wechat Official Account"
+#~ msgstr "微信公众号"
+
+msgid "information"
+msgstr "公司资讯"
+
+msgid "more"
+msgstr "查看更多"
+msgid "product category"
+msgstr "产品目录"
+
+msgid "product video"
+msgstr "产品视频"
+
+msgid "prev"
+msgstr "上一个"
+
+msgid "next"
+msgstr "下一个"
+
+msgid "Prev"
+msgstr "上一页"
+
+msgid "Next"
+msgstr "下一页"
+
+msgid "Design it yourself"
+msgstr "你来当设计师"
+
+msgid "color"
+msgstr "画笔颜色"
+
+msgid "size"
+msgstr "画笔大小"
+
+msgid "Your design work, design concept and design inspiration are welcomed."
+msgstr "我们诚挚欢迎新颖的设计作品、设计概念、设计灵感。"
+
+msgid "Regardless of your job, you can show your originality about baby toys."
+msgstr "不论你是来自哪一行业，不论你是学生或已在职，都可以提交对婴幼儿玩具的创意。"
+
+msgid "If your work or originality are adopted, there will be huge rewards for you!"
+msgstr "作品入选或是创意采用，将有丰厚奖励！"
+
+msgid "Draw down your originality or just upload file directly!"
+msgstr "在下面画出你心中的创意，或者直接选择文件上传吧！"
+
+msgid "choose file"
+msgstr "选择文件"
+
+msgid "phone"
+msgstr "手机号"
+
+msgid "please input phone number"
+msgstr "请输入手机号"
+
+msgid "please input verify code"
+msgstr "请输入验证码"
+
+msgid "send code"
+msgstr "发送验证码"
+
+msgid "verify code"
+msgstr "验证码"
+
+msgid "verify"
+msgstr "验证码"
+
+msgid "verify your mobile phone before upload"
+msgstr "请验证手机号码后提交你的设计"
+
+msgid "submit"
+msgstr "提交"
+
+msgid "verify your mobile phone before upload"
+msgstr "请验证手机号码后提交你的设计"
+
+msgid "Cooperation"
+msgstr "合作加盟"
+
+msgid "Recruitment"
+msgstr "人才招聘"
+
+msgid "Job information"
+msgstr "职位信息"
+
+msgid "name"
+msgstr "姓名"
+
+msgid "contact"
+msgstr "联系方式"
+
+msgid "region"
+msgstr "地区"
+
+msgid "supervisor"
+msgstr "店铺主管"
+
+msgid "plan"
+msgstr "发展计划"
+
+msgid "intention"
+msgstr "合作意向"

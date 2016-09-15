@@ -55,16 +55,28 @@ header {
   background-color: #9799d7;
   position: absolute;
   top: 49px;
-  width: 100%;
-  padding-bottom: 5px; }
+  width: 100%; }
   .header-nav a {
-    height: 35px;
-    line-height: 35px;
+    height: 38px;
+    line-height: 38px;
     text-align: center;
     color: #ffffff;
     font-size: 1rem;
     display: block;
     width: 100%; }
+
+.header-nav-item {
+  border-bottom: 1px solid #a8a9c1; }
+
+.dropdown-btn:after {
+  font-family: FontAwesome;
+  content: "\f0dd";
+  position: relative;
+  bottom: 3px;
+  left: 4px; }
+
+.dropdown {
+  background-color: #afb0d2; }
 
 .search-bar {
   float: left;
@@ -129,4 +141,14 @@ footer {
     font-size: 0.9rem; }
 
 .news-page-content {
-  padding-bottom: 20px; }
+  padding: 0 10px; }
+
+.news-title {
+  color: #9193d5;
+  font-size: 1.3rem;
+  margin-top: 30px;
+  margin-bottom: 10px; }
+
+.news-content {
+  width: 100%;
+  padding-bottom: 10px; }

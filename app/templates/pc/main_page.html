@@ -19,29 +19,29 @@
 		<div class="product-block">
 			<div class="product-header">
 				<img src="{{ url_for('static', filename='img/icon/monkey.png') }}" alt="monkey">
-				<span class="title">产品分类</span>
+				<span class="title {% if locale == 'en_US' %}title-en{% endif %}">{{ _("product category") }}</span>
 			</div>
 			<nav class="product-nav">
 				{% for product in product_category_list %}
 					<a href="/product/category/{{ product.name }}/1" class="product-nav-item" style="background-image: url('static/{{ product.get_file_path() }}')">{{ product.name }}</a>
-				{% endfor %}		
+				{% endfor %}
 			</nav>
 		</div>
 		<div class="consult-video-block">
 			<div class="consult-block">
 				<div class="consult-header">
-					<h3>公司资讯</h3>
-					<a href="#">查看更多>></a>
+					<h3>{{ _("information") }}</h3>
+					<a href="#">{{ _("more") }}>></a>
 				</div>
 				<ul class="consult-list">
-					{% for consult in consult_page_content %}
-						<li><a href="/news/{{ consult.id }}">{{ consult.title }}</a><span>2016-07-22</span></li>
+					{% for information in information_list %}
+						<li><a href="/news/{{ information.news_id }}">{{ information.title }}</a><span>{{ information.create_time.date() }}</span></li>
 					{% endfor %}
 				</ul>
 			</div>
 			<div class="video-block">
 				<div class="video-header">
-					<h3>产品视频</h3>
+					<h3>{{ _("product video") }}</h3>
 				</div>
 				<div class="video-content">
 					{% if video_list != [] %}

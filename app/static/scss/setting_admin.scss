@@ -153,39 +153,91 @@ main {
 	}
 }
 
-/******************************news category******************************/
+/******************************product category******************************/
 
-.contact-container {
+.setting-container {
 	position: relative;
 	padding: 30px 50px;
 	h1 {
 		padding-bottom: 20px;
 		margin-bottom: 20px;
-		padding-bottom: 20px;
 		border-bottom: 1px solid #eee;
 	}
 }
 
-.contact-content {
-	width: 980px;
+.setting-display {
+	ul {
+		width: 700px;
+	}
+	li {
+		position: relative;
+		overflow: hidden;
+		margin-bottom: 20px;
+		label {
+			float: left;
+			width: 140px;
+			height: 34px;
+			line-height: 34px;
+			text-align: right;
+			padding-right: 20px;
+		}
+		span {
+			float: left;
+			width: 560px;
+			height: 34px;
+			padding: 6px 12px;
+		}
+		button {
+			float: right;
+			padding: 5px 20px;
+		}
+	}
+}
+
+.setting-form {
+	width: 700px;
 }
 
 .form-item {
-	width: 1000px;
-	margin-top: 10px;
+	position: relative;
+	overflow: hidden;
+	margin-bottom: 20px;
+	label {
+		float: left;
+		width: 140px;
+		height: 34px;
+		line-height: 34px;
+		text-align: right;
+		padding-right: 20px;
+	}
+	input {
+		outline: 0;
+		float: left;
+		width: 560px;
+		height: 34px;
+		padding: 6px 12px;
+		border-radius: 4px;
+		border: 1px solid #ccc;
+		&:focus {
+			border-color: #66afe9;
+		}
+	}
 	button {
 		float: right;
 		padding: 5px 20px;
 	}
+	.cancel-btn {
+		margin-left: 20px;
+	}
 }
 
-.submit-btn {
-	margin-right: 10px;
-}
-
-.modify-btn {
-	padding: 10px 20px;
+.alert-hint {
 	position: absolute;
 	right: 60px;
-	top: 40px;
+	top: 0;
+	height: 34px;
+	line-height: 34px;
+	color: #ff7676;
 }
+
+
