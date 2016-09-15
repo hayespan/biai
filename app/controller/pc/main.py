@@ -34,7 +34,7 @@ def search():
 @pcbp.route('/')
 def index():
     banner_list = banner_service.get_banners()
-    product_category_list = product_category_service.get_categories()
+    product_category_list = product_category_service.get_categories()[:5]
     video_list = video_service.get_videos()
     consult_page_content = consult_service.get_page_content()
     information_list = information_service.get_information_list()
