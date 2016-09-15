@@ -62,7 +62,7 @@ def captcha_mobile_trigger():
     session['captcha_mobile_expire'] = get_now_timestamp() + valid_delta*60
     s = __('hayes')
     succ = send_sms(form.mobile.data,
-            gettext('您的验证码是：%(code)，有效期为%(valid_delta)分钟', 
+            gettext('Your captcha is %(code), valid for %(valid_delta) minutes', 
                 code=code,
                 valid_delta=valid_delta, 
                 )

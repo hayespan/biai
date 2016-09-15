@@ -8,5 +8,6 @@ def get_locale():
 
 def get_site_locale():
     from ..util.common import get_biai_conf
-    return get_biai_conf('site_info', 'site_locale')
+    succ, locale = get_biai_conf('site_info', 'site_locale')
+    return locale
 
