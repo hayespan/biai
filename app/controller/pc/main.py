@@ -60,7 +60,6 @@ def captcha_mobile_trigger():
     code = '%04d' % randi
     session['captcha_mobile_code'] = randi
     session['captcha_mobile_expire'] = get_now_timestamp() + valid_delta*60
-    s = __('hayes')
     succ = send_sms(form.mobile.data,
             gettext('Your captcha is %(code), valid for %(valid_delta) minutes', 
                 code=code,
