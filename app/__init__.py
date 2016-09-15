@@ -31,11 +31,12 @@ class App(object):
         from flask.ext.babel import Babel
         from language import support_langs
         self.babel = Babel(self.app)
-        self.app.config['BABEL_DEFAULT_LOCALE'] = 'zh_CN'
+        self.app.config['BABEL_DEFAULT_LOCALE'] = 'en_US'
         @self.babel.localeselector
         def get_locale():
-            lc = session.get('locale', 'zh_CN')
-            if lc:
+            from util.common import get_biai_conf
+            succ, lc = get_biai_conf('site_info', 'site_locale')
+            if succ:
                 return lc
             return request.accept_languages.best_match(support_langs)
 
