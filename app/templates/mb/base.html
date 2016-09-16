@@ -116,10 +116,10 @@
 				<form action="/search" method="POST">
 					<input class="search-bar" name="key" type="text" placeholder="{{ _('Please input search content') }}">
 				</form>
-				{% if locale[1] == "zh_CN" %}
-					<a class="language" href="/set_locale/en_US">En</a>
+				{% if locale == "zh_CN" %}
+					<a class="language" href="http://{{ site_domain }}">En</a>
 				{% else %}
-					<a class="language" href="/set_locale/zh_CN">中</a>
+					<a class="language" href="http://{{ site_domain }}">中</a>
 				{% endif %}
 				<!-- <a class="language" href="#">En</a> -->
 			</div>
