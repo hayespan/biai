@@ -60,6 +60,7 @@ header {
       left: 4px; }
 
 .user-controller {
+  z-index: 999;
   position: absolute;
   top: 60px;
   left: -30px;
