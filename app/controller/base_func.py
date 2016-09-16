@@ -38,6 +38,9 @@ def get_common_data(is_admin):
         succ, common_data['site_name'] = get_biai_conf('site_info', 'site_name')
         succ, common_data['site_domain'] = get_biai_conf('site_info', 'site_domain')
         succ, common_data['site_filing_num'] = get_biai_conf('site_info', 'site_filing_num')
+        succ, common_data['company_name'] = get_biai_conf('site_content', 'company_name')
+        succ, common_data['service_phone'] = get_biai_conf('site_content', 'service_phone')
+        succ, common_data['company_location'] = get_biai_conf('site_content', 'company_location')
     else:
         common_data['current_user'] = current_user
     return common_data
