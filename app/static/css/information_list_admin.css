@@ -28,7 +28,8 @@ header {
   width: 100%;
   height: 60px;
   position: absolute;
-  top: 0; }
+  top: 0;
+  min-width: 1350px; }
 
 .brand-name {
   font-size: 19px;
@@ -108,9 +109,10 @@ header {
       background-color: #428bca; }
 
 main {
-  float: right;
+  float: left;
   width: 100%;
-  padding-left: 300px; }
+  padding-left: 300px;
+  min-width: 1350px; }
 
 .hidden {
   display: none; }
@@ -148,7 +150,7 @@ main {
 .title-weight,
 .title-news {
   padding-left: 20px;
-  width: 360px; }
+  width: 280px; }
 
 .information-item {
   overflow: hidden;
@@ -159,7 +161,7 @@ main {
 .information-weight,
 .information-news {
   padding-left: 20px;
-  width: 360px;
+  width: 280px;
   float: left;
   overflow: hidden; }
   .information-title span,
