@@ -1,14 +1,4 @@
 /******************************base style******************************/
-@font-face { 
-	font-family: fzzyjt;
-	src: url('../fonts/fzzyjt.ttf');
-}
-
-@font-face { 
-	font-family: fzcyjt;
-	src: url('../fonts/fzcyjt.TTF');
-}
-
 * {
 	box-sizing: inherit;
 }
@@ -19,6 +9,10 @@ html, body {
 	width: 100%;
 	box-sizing: border-box;
 	font-family: "Microsoft YaHei", Helvetica, Arial, sans-serif;
+}
+
+header, main, footer {
+	min-width: 1440px;
 }
 
 .header-container-white,
@@ -58,7 +52,6 @@ footer {
 }
 
 .footer-container {
-	font-family: fzzyjt, "Microsoft YaHei", Helvetica, Arial, sans-serif;
 	height: 206px;
 	padding: 0 169px 0 169px;
 	background-image: url('../img/icon/monkey2.png');
@@ -139,7 +132,6 @@ footer {
 		color: #ffffff;
 	}
 	input {
-		font-family: fzzyjt, "Microsoft YaHei", Helvetica, Arial, sans-serif;
 		padding-left: 35px;
 		font-size: 14px;
 		height: 36px;
@@ -218,7 +210,6 @@ footer {
 }
 
 .news-type-nav {
-	font-family: fzzyjt, "Microsoft YaHei", Helvetica, Arial, sans-serif;
 	float: left;
 	width: 160px;
 	padding-top: 62px;
@@ -287,7 +278,6 @@ footer {
 }
 
 .news-title {
-	font-family: fzzyjt, "Microsoft YaHei", Helvetica, Arial, sans-serif;
 	font-size: 22px;
 	text-align: center;
 	margin: 30px 0;

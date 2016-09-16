@@ -10,23 +10,20 @@
 			<h1>新闻分类管理</h1>
 			<button class="add-btn button-simple" type="button">添加分类</button>
 			<ul class="category-list">
-				{% if news_category_list == [] %}
+				<li class="category-item" style="display: none">
+					<a class="category-name" href=""></a>
+					<div class="item-controller">
+						<a data-id="" class="delete-btn button-simple" href="#">删除</a>
+					</div>
+				</li>
+				{% for news_category in news_category_list %}
 					<li class="category-item">
-						<a class="category-name" href="/admin/news_category/1">新闻分类1</a>
+						<a class="category-name" href="/admin/news_category/{{ news_category.id }}">{{ news_category.name }}</a>
 						<div class="item-controller">
-							<a class="delete-btn" href="#">删除</a>
+							<a data-id="{{ news_category.id }}" class="delete-btn button-simple" href="#">删除</a>
 						</div>
 					</li>
-				{% else %}
-					{% for news_category in news_category_list %}
-						<li class="category-item">
-							<a class="category-name" href="/admin/news_category/{{ news_category.id }}">{{ news_category.name }}</a>
-							<div class="item-controller">
-								<a data-id="{{ news_category.id }}" class="delete-btn button-simple" href="#">删除</a>
-							</div>
-						</li>
-					{% endfor %}
-				{% endif %}
+				{% endfor %}
 			</ul>
 		</div>
 		<div class="news-category-add hidden">

@@ -1,8 +1,4 @@
 /******************************base style******************************/
-@font-face {
-  font-family: fzzyjt;
-  src: url("../fonts/fzzyjt.ttf"); }
-
 * {
   box-sizing: inherit; }
 
@@ -194,7 +190,6 @@ footer {
     font-size: 1rem;
     border-radius: 5px; }
   .form-item input[type="submit"] {
-    font-family: fzzyjt, "Microsoft YaHei", Helvetica, Arial, sans-serif;
     color: #ffffff;
     background-color: #f18e43;
     border: none;
@@ -215,7 +210,6 @@ footer {
   margin-right: 10px; }
 
 .form-verify-code button {
-  font-family: fzzyjt, "Microsoft YaHei", Helvetica, Arial, sans-serif;
   color: #ffffff;
   background-color: #f18e43;
   border: none;

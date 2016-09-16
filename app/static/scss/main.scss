@@ -1,14 +1,4 @@
 /******************************base style******************************/
-@font-face { 
-	font-family: fzzyjt;
-	src: url('../fonts/fzzyjt.ttf');
-}
-
-@font-face { 
-	font-family: fzcyjt;
-	src: url('../fonts/fzcyjt.TTF');
-}
-
 * {
 	box-sizing: inherit;
 }
@@ -19,6 +9,10 @@ html, body {
 	width: 100%;
 	box-sizing: border-box;
 	font-family: "Microsoft YaHei", Helvetica, Arial, sans-serif;
+}
+
+header, main, footer {
+	min-width: 1440px;
 }
 
 .header-container-white,
@@ -58,7 +52,6 @@ footer {
 }
 
 .footer-container {
-	font-family: fzzyjt, "Microsoft YaHei", Helvetica, Arial, sans-serif;
 	height: 206px;
 	padding: 0 169px 0 169px;
 	background-image: url('../img/icon/monkey2.png');
@@ -139,7 +132,6 @@ footer {
 		color: #ffffff;
 	}
 	input {
-		font-family: fzzyjt, "Microsoft YaHei", Helvetica, Arial, sans-serif;
 		padding-left: 35px;
 		font-size: 14px;
 		height: 36px;
@@ -245,7 +237,6 @@ footer {
 }
 
 .product-header {
-	font-family: fzcyjt, "Microsoft YaHei", Helvetica, Arial, sans-serif;
 	position: absolute;
 	left: -6px;
 	top: -65px;
@@ -326,7 +317,6 @@ footer {
 }
 
 .consult-header {
-	font-family: fzzyjt, "Microsoft YaHei", Helvetica, Arial, sans-serif;
 	position: relative;
 	margin-bottom: 20px;
 	h3 {
@@ -381,7 +371,6 @@ footer {
 }
 
 .video-header {
-	font-family: fzzyjt, "Microsoft YaHei", Helvetica, Arial, sans-serif;
 	position: relative;
 	margin-bottom: 20px;
 	h3 {
