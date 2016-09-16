@@ -11,6 +11,7 @@ from flask.ext.login import login_required, login_user, logout_user, current_use
 from . import adminbp 
 from ...model.admin import Admin
 from ...service import admin_service
+from ..base_func import admin_response
 
 @adminbp.route('/login', methods=['GET','POST'])
 def login():
@@ -23,7 +24,7 @@ def login():
             login_user(admin, form.remember_me.data)
             return redirect(request.args.get('next') or url_for('banner.l_banner'))
         flash('Invalid username or password')
-    return render_template('login.html')
+    return admin_response('login.html')
 
 @adminbp.route('/logout')
 @login_required
