@@ -10,7 +10,7 @@ from ...service import admin_service
 from ...service.admin_service import Admin 
 
 @adminbp.route('/admin')
-@login_required
+# @login_required
 def l_admin():
     admin_list= admin_service.get_admins()
     return admin_response('admin_list.html',
@@ -18,7 +18,7 @@ def l_admin():
             )
 
 @adminbp.route('/admin/create', methods=['POST', ])
-@login_required
+# @login_required
 def c_admin():
     from ...form.admin import CAdminForm 
     form = CAdminForm()
@@ -43,7 +43,7 @@ def c_admin():
 
 
 @adminbp.route('/admin/delete', methods=['POST', ])
-@login_required
+# @login_required
 def d_admin():
     from ...form.admin import DAdminForm 
     form = DAdminForm()
