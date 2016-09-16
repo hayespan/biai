@@ -25,7 +25,7 @@ $(document).ready(function() {
 		    processData: false,
 		    contentType: false,
 			success : function(result) {
-				location.reload();
+				console.log(result);
 			}
 		});
 	});
