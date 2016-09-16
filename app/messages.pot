@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2016-09-16 02:09+0800\n"
+"POT-Creation-Date: 2016-09-17 00:51+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,127 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.3.4\n"
 
-#: controller/pc/main.py:64
+#: controller/pc/main.py:65
 msgid "Your captcha is %(code), valid for %(valid_delta) minutes"
 msgstr ""
 
+#: templates/mb/base.html:117 templates/pc/base.html:147
+msgid "Please input search content"
+msgstr ""
+
+#: templates/mb/base.html:141 templates/pc/base.html:166
+msgid "Service Hotline: "
+msgstr ""
+
+#: templates/mb/base.html:142 templates/pc/base.html:167
+msgid "Address: "
+msgstr ""
+
+#: templates/mb/base.html:143 templates/pc/base.html:168
+msgid "ICP Licensing: "
+msgstr ""
+
+#: templates/mb/main_page.html:19 templates/pc/main_page.html:22
+msgid "product category"
+msgstr ""
+
+#: templates/mb/main_page.html:34 templates/pc/main_page.html:44
+msgid "product video"
+msgstr ""
+
+#: templates/mb/main_page.html:56
+msgid "prev"
+msgstr ""
+
+#: templates/mb/main_page.html:57
+msgid "next"
+msgstr ""
+
+#: templates/mb/main_page.html:63 templates/pc/main_page.html:33
+msgid "information"
+msgstr ""
+
+#: templates/mb/news_list.html:40 templates/mb/news_list.html:42
+#: templates/mb/product_list.html:100 templates/mb/product_list.html:102
+#: templates/pc/news_list.html:53 templates/pc/news_list.html:55
+#: templates/pc/product_list.html:112 templates/pc/product_list.html:114
+msgid "Prev"
+msgstr ""
+
+#: templates/mb/news_list.html:62 templates/mb/news_list.html:64
+#: templates/mb/product_list.html:122 templates/mb/product_list.html:124
+#: templates/pc/news_list.html:75 templates/pc/news_list.html:77
+#: templates/pc/product_list.html:134 templates/pc/product_list.html:136
+msgid "Next"
+msgstr ""
+
 #: templates/pc/base.html:22
-msgid "Wechat"
+msgid "微信公众号"
+msgstr ""
+
+#: templates/pc/creativity.html:12
+msgid "Design it yourself"
+msgstr ""
+
+#: templates/pc/creativity.html:13
+msgid "Your design work, design concept and design inspiration are welcomed."
+msgstr ""
+
+#: templates/pc/creativity.html:14
+msgid "Regardless of your job, you can show your originality about baby toys."
+msgstr ""
+
+#: templates/pc/creativity.html:15
+msgid ""
+"If your work or originality are adopted, there will be huge rewards for "
+"you!"
+msgstr ""
+
+#: templates/pc/creativity.html:16
+msgid "Draw down your originality or just upload file directly!"
+msgstr ""
+
+#: templates/pc/creativity.html:19
+msgid "color"
+msgstr ""
+
+#: templates/pc/creativity.html:33
+msgid "size"
+msgstr ""
+
+#: templates/pc/creativity.html:48
+msgid "choose file"
+msgstr ""
+
+#: templates/pc/creativity.html:52
+msgid "verify your mobile phone before upload"
+msgstr ""
+
+#: templates/pc/creativity.html:55
+msgid "phone"
+msgstr ""
+
+#: templates/pc/creativity.html:56
+msgid "please input phone number"
+msgstr ""
+
+#: templates/pc/creativity.html:57
+msgid "send code"
+msgstr ""
+
+#: templates/pc/creativity.html:61
+msgid "verify code"
+msgstr ""
+
+#: templates/pc/creativity.html:62
+msgid "please input verify code"
+msgstr ""
+
+#: templates/pc/creativity.html:68
+msgid "submit"
+msgstr ""
+
+#: templates/pc/main_page.html:34
+msgid "more"
 msgstr ""
 
