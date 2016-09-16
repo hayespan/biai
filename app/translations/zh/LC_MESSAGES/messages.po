@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2016-09-17 00:47+0800\n"
+"POT-Creation-Date: 2016-09-17 00:51+0800\n"
 "PO-Revision-Date: 2016-09-15 21:53+0800\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh\n"
@@ -22,19 +22,19 @@ msgstr ""
 msgid "Your captcha is %(code), valid for %(valid_delta) minutes"
 msgstr "你的验证码是%(code)，有效期是%(valid_delta)分钟"
 
-#: templates/mb/base.html:117
+#: templates/mb/base.html:117 templates/pc/base.html:147
 msgid "Please input search content"
 msgstr "请输入搜索内容"
 
-#: templates/mb/base.html:141
+#: templates/mb/base.html:141 templates/pc/base.html:166
 msgid "Service Hotline: "
 msgstr "服务热线："
 
-#: templates/mb/base.html:142
+#: templates/mb/base.html:142 templates/pc/base.html:167
 msgid "Address: "
 msgstr "地址："
 
-#: templates/mb/base.html:143
+#: templates/mb/base.html:143 templates/pc/base.html:168
 msgid "ICP Licensing: "
 msgstr "备案编号："
 

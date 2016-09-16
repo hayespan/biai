@@ -144,7 +144,7 @@
 						</div>
 					{% endif %}
 					<form action="/search" method="POST">
-						<input name="key" type="text" placeholder="请输入搜索内容">
+						<input name="key" type="text" placeholder="{{ _('Please input search content') }}">
 					</form>
 				</nav>
 			</div>
@@ -163,9 +163,9 @@
 			<div class="footer-info">
 			<ul>
 				<p>{{ company_name }}</p>
-				<p>服务热线：{{ service_phone }}</p>
-				<p>地址：{{ company_location }}</p>
-				<p>备案编号{{ site_filing_num }}</p>
+				<p>{{ _('Service Hotline: ') }}{{ service_phone }}</p>
+				<p>{{ _('Address: ') }}{{ company_location }}</p>
+				<p>{{ _('ICP Licensing: ') }}{{ site_filing_num }}</p>
 <!-- 				<p>广东省汕头市澄海区岫泓玩具</p>
 				<p>服务热线：0754-86986938</p>
 				<p>地址：汕头市澄海区莱美工业区海升路2号</p>
