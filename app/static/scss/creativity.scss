@@ -21,6 +21,10 @@ html, body {
 	font-family: "Microsoft YaHei", Helvetica, Arial, sans-serif;
 }
 
+header, main, footer {
+	min-width: 1440px;
+}
+
 .header-container-white,
 .header-nav-container,
 .main-container,
