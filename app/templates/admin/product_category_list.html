@@ -10,23 +10,20 @@
 			<h1>产品分类管理</h1>
 			<button class="add-btn button-simple" type="button">添加分类</button>
 			<ul class="category-list">
-				{% if product_category_list == [] %}
+				<li class="category-item" style="display: none">
+					<a class="category-name" href=""></a>
+					<div class="item-controller">
+						<a data-id="" class="delete-btn button-simple" href="#">删除</a>
+					</div>
+				</li>
+				{% for product_category in product_category_list %}
 					<li class="category-item">
-						<a class="category-name" href="/admin/product_category/1">产品分类1</a>
+						<a class="category-name" href="/admin/product_category/{{ product_category.id }}">{{ product_category.name }}</a>
 						<div class="item-controller">
-							<a class="delete-btn" href="#">删除</a>
+							<a data-id="{{ product_category.id }}" class="delete-btn button-simple" href="#">删除</a>
 						</div>
 					</li>
-				{% else %}
-					{% for product_category in product_category_list %}
-						<li class="category-item">
-							<a class="category-name" href="/admin/product_category/{{ product_category.id }}">{{ product_category.name }}</a>
-							<div class="item-controller">
-								<a data-id="{{ product_category.id }}" class="delete-btn button-simple" href="#">删除</a>
-							</div>
-						</li>
-					{% endfor %}
-				{% endif %}
+				{% endfor %}
 			</ul>
 		</div>
 		<div class="product-category-add hidden">

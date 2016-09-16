@@ -1,8 +1,4 @@
 /******************************base style******************************/
-@font-face {
-  font-family: fzzyjt;
-  src: url("../fonts/fzzyjt.ttf"); }
-
 * {
   box-sizing: inherit; }
 
@@ -135,7 +131,6 @@ footer {
   background-color: #ffffff;
   padding: 30px 15px 50px 15px; }
   .contact-container h1 {
-    font-family: fzzyjt, "Microsoft YaHei", Helvetica, Arial, sans-serif;
     font-size: 1.5rem;
     color: #9193d5;
     margin-bottom: 15px; }

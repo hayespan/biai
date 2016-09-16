@@ -16,23 +16,20 @@
 			<h1>产品条目管理</h1>
 			<button class="add-btn button-simple" type="button">添加产品</button>
 			<ul class="product-list">
-				{% if product_list == [] %}
+				<li class="product-item" style="display: none">
+					<a class="product-title" href=""></a>
+					<div class="item-controller">
+						<a data-id="" class="delete-btn button-simple" href="#">删除</a>
+					</div>
+				</li>
+				{% for product in product_list %}
 					<li class="product-item">
-						<a class="product-title" href="/admin/product/1">产品1</a>
+						<a class="product-title" href="/admin/product/{{ product.id }}">{{ product.name }}</a>
 						<div class="item-controller">
-							<a class="delete-btn button-simple" href="#">删除</a>
+							<a data-id="{{ product.id }}" class="delete-btn button-simple" href="#">删除</a>
 						</div>
 					</li>
-				{% else %}
-					{% for product in product_list %}
-						<li class="product-item">
-							<a class="product-title" href="/admin/product/{{ product.id }}">{{ product.name }}</a>
-							<div class="item-controller">
-								<a data-id="{{ product.id }}" class="delete-btn button-simple" href="#">删除</a>
-							</div>
-						</li>
-					{% endfor %}
-				{% endif %}
+				{% endfor %}
 			</ul>
 		</div>
 		<div class="product-add hidden">

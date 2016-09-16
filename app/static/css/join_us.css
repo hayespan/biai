@@ -1,12 +1,4 @@
 /******************************base style******************************/
-@font-face {
-  font-family: fzzyjt;
-  src: url("../fonts/fzzyjt.ttf"); }
-
-@font-face {
-  font-family: fzcyjt;
-  src: url("../fonts/fzcyjt.TTF"); }
-
 * {
   box-sizing: inherit; }
 
@@ -50,7 +42,6 @@ footer {
   background-color: #9193d5; }
 
 .footer-container {
-  font-family: fzzyjt, "Microsoft YaHei", Helvetica, Arial, sans-serif;
   height: 206px;
   padding: 0 169px 0 169px;
   background-image: url("../img/icon/monkey2.png");
@@ -117,7 +108,6 @@ footer {
   .header-nav .chosen {
     color: #ffffff; }
   .header-nav input {
-    font-family: fzzyjt, "Microsoft YaHei", Helvetica, Arial, sans-serif;
     padding-left: 35px;
     font-size: 14px;
     height: 36px;
@@ -180,7 +170,6 @@ footer {
   overflow: hidden; }
 
 .join-type-nav {
-  font-family: fzzyjt, "Microsoft YaHei", Helvetica, Arial, sans-serif;
   float: left;
   width: 160px;
   padding-top: 62px;
@@ -250,7 +239,6 @@ footer {
     width: 340px;
     height: 100px; }
   .form-item input[type="submit"] {
-    font-family: fzzyjt, "Microsoft YaHei", Helvetica, Arial, sans-serif;
     color: #ffffff;
     background-color: #f18e43;
     border: none;
@@ -266,7 +254,6 @@ footer {
   margin-right: 10px; }
 
 .form-verify-phone button {
-  font-family: fzzyjt, "Microsoft YaHei", Helvetica, Arial, sans-serif;
   color: #ffffff;
   background-color: #f18e43;
   border: none;

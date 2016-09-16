@@ -16,23 +16,20 @@
 			<h1>新闻条目管理</h1>
 			<button class="add-btn button-simple" type="button">添加新闻</button>
 			<ul class="news-list">
-				{% if news_list == [] %}
+				<li class="news-item" style="display: none">
+					<a class="news-title" href=""></a>
+					<div class="item-controller">
+						<a data-id="" class="delete-btn button-simple" href="#">删除</a>
+					</div>
+				</li>
+				{% for news in news_list %}
 					<li class="news-item">
-						<a class="news-title" href="/admin/news/1">新闻1</a>
+						<a class="news-title" href="/admin/news/{{ news.id }}">{{ news.title }}</a>
 						<div class="item-controller">
-							<a class="delete-btn button-simple" href="#">删除</a>
+							<a data-id="{{ news.id }}" class="delete-btn button-simple" href="#">删除</a>
 						</div>
 					</li>
-				{% else %}
-					{% for news in news_list %}
-						<li class="news-item">
-							<a class="news-title" href="/admin/news/{{ news.id }}">{{ news.title }}</a>
-							<div class="item-controller">
-								<a data-id="{{ news.id }}" class="delete-btn button-simple" href="#">删除</a>
-							</div>
-						</li>
-					{% endfor %}
-				{% endif %}
+				{% endfor %}
 			</ul>
 		</div>
 		<div class="news-add hidden">

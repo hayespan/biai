@@ -1,13 +1,5 @@
 @charset "UTF-8";
 /******************************base style******************************/
-@font-face {
-  font-family: fzzyjt;
-  src: url("../fonts/fzzyjt.ttf"); }
-
-@font-face {
-  font-family: fzcyjt;
-  src: url("../fonts/fzcyjt.TTF"); }
-
 * {
   box-sizing: inherit; }
 
@@ -51,7 +43,6 @@ footer {
   background-color: #9193d5; }
 
 .footer-container {
-  font-family: fzzyjt, "Microsoft YaHei", Helvetica, Arial, sans-serif;
   height: 206px;
   padding: 0 169px 0 169px;
   background-image: url("../img/icon/monkey2.png");
@@ -118,7 +109,6 @@ footer {
   .header-nav .chosen {
     color: #ffffff; }
   .header-nav input {
-    font-family: fzzyjt, "Microsoft YaHei", Helvetica, Arial, sans-serif;
     padding-left: 35px;
     font-size: 14px;
     height: 36px;
@@ -181,7 +171,6 @@ footer {
   overflow: hidden; }
 
 .news-type-nav {
-  font-family: fzzyjt, "Microsoft YaHei", Helvetica, Arial, sans-serif;
   float: left;
   width: 160px;
   padding-top: 62px;
@@ -234,7 +223,6 @@ footer {
   border-radius: 10px;
   padding: 56px 50px; }
   .news-list-content h3 {
-    font-family: fzzyjt, "Microsoft YaHei", Helvetica, Arial, sans-serif;
     font-size: 16px;
     padding-left: 17px;
     position: relative; }
@@ -243,8 +231,8 @@ footer {
       content: "·";
       color: #7d7fc9;
       position: absolute;
-      left: -9px;
-      top: -11px; }
+      left: -2px;
+      top: -15px; }
   .news-list-content ul {
     margin-top: 30px; }
     .news-list-content ul li {

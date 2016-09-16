@@ -117,5 +117,6 @@ $(document).ready(function() {
 		new_item.children().first().text(title);
 		new_item.find('.delete-btn').attr('data-id', id);
 		$('.news-list').append(new_item);
+		new_item.show();
 	}
 });
