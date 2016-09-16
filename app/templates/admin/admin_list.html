@@ -1,0 +1,65 @@
+{% extends "admin/base.html" %}
+{% block title %}管理员列表{% endblock %}
+{% block stylesheet %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/admin_list_admin.css') }}">
+{% endblock %}
+{% block main %}
+	<div class="admin-list-container">
+		<div class="admin-list-display">
+			<h1>管理员列表</h1>
+			<button class="add-btn button-simple" type="button">添加管理员</button>
+			<div class="list-title">
+				<div class="title-username">账号</div>
+				<div class="title-realname">姓名</div>
+				<div class="title-password">密码</div>
+			</div>
+			<ul class="admin-list">
+				<li class="admin-item" style="display: none">
+					<div class="admin-username">
+						<span class="item-display hidden">账号</span>
+						<input class="username item-input" type="text" value="">
+					</div>
+					<div class="admin-realname">
+						<span class="item-display hidden">姓名</span>
+						<input class="realname item-input" type="text" value="">
+					</div>
+					<div class="admin-password">
+						<span class="hidden">密码</span>
+						<input class="password item-input" type="text" value="">
+					</div>
+					<div class="item-controller">
+						<a class="hidden delete-btn button-simple" href="#">删除</a>
+						<a data-id="" class="submit-btn button-simple" href="#">提交</a>
+						<a class="cancel-btn button-simple" href="#">取消</a>
+					</div>
+				</li>
+				{% for admin in admin_list %}
+					<li class="admin-item">
+						<div class="admin-username">
+							<span class="item-display">{{ admin.username }}</span>
+							<input class="username item-input hidden" type="text" value="">
+						</div>
+						<div class="admin-realname">
+							<span class="item-display">{{ admin.real_name }}</span>
+							<input class="realname item-input hidden" type="text" value="">
+						</div>
+<!-- 						<div class="admin-password">
+							<span class="item-display">{{ admin.password }}</span>
+							<input class="password item-input hidden" type="text" value="">
+						</div> -->
+						<div class="item-controller">
+							<a data-id="{{ admin.id }}" class="delete-btn button-simple" href="#">删除</a>
+							<a class="hidden submit-btn button-simple" href="#">提交</a>
+							<a class="hidden cancel-btn button-simple" href="#">取消</a>
+						</div>
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+{% endblock %}
+{% block script %}
+{{ super() }}
+<script src="{{ url_for('static', filename='js/admin_list_admin.js') }}"></script>
+{% endblock %}

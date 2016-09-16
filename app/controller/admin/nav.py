@@ -11,7 +11,7 @@ from ...service import nav_service
 from ...model.nav import Nav 
 
 @adminbp.route('/nav')
-# @login_required
+@login_required
 def l_nav():
     main_nav = nav_service.get_nav_by_meta_name('main')
     about_nav = nav_service.get_nav_by_meta_name('about')
@@ -33,7 +33,7 @@ def l_nav():
             )
 
 @adminbp.route('/nav/modify', methods=['POST', ])
-# @login_required
+@login_required
 def u_nav():
     from ...form.admin import UNavForm
     form = UNavForm()
@@ -51,7 +51,7 @@ def u_nav():
             )
 
 @adminbp.route('/nav/<int:nav_id>/subnav', methods=['GET'])
-# @login_required
+@login_required
 def l_subnav(nav_id):
     nav = nav_service.read_nav(nav_id)
     if not nav:
@@ -63,7 +63,7 @@ def l_subnav(nav_id):
             )
 
 @adminbp.route('/nav/subnav/create', methods=['POST', ])
-# @login_required
+@login_required
 def c_subnav():
     from ...form.admin import CSubnavForm
     form = CSubnavForm()
@@ -84,7 +84,7 @@ def c_subnav():
             )
 
 @adminbp.route('/nav/subnav/delete', methods=['POST', ])
-# @login_required
+@login_required
 def d_subnav():
     from ...form.admin import DSubNavForm
     form = DSubNavForm()

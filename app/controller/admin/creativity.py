@@ -10,7 +10,7 @@ from ...util.common import logger, json_response, save_form_file
 from ...service import creativity_service 
 
 @adminbp.route('/creativity')
-# @login_required
+@login_required
 def l_creativity():
     ct_list = creativity_service.get_creativity_list()
     return admin_response('creativity_list.html',
@@ -18,7 +18,7 @@ def l_creativity():
             )
 
 @adminbp.route('/creativity/<int:id_>')
-# @login_required
+@login_required
 def r_creativity(id_):
     cr = creativity_service.read_creativity(id_)
     return admin_response('creativity.html',
@@ -26,7 +26,7 @@ def r_creativity(id_):
             )
 
 @adminbp.route('/creativity/delete', methods=['POST', ])
-# @login_required
+@login_required
 def d_creativity():
     from ...form.admin import RDCreativityForm
     form = RDCreativityForm()

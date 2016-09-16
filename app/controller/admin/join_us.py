@@ -13,7 +13,7 @@ from ...model.simple_nav_page import SimpleNavPage
 from ... import db
 
 @adminbp.route('/cooperation')
-# @login_required
+@login_required
 def l_cooperation():
     cpl= cooperation_service.get_cooperations()
     return admin_response('cooperation_list.html',
@@ -21,7 +21,7 @@ def l_cooperation():
             )
 
 @adminbp.route('/cooperation/<int:cooperation_id>')
-# @login_required
+@login_required
 def r_cooperation(cooperation_id):
     cp = cooperation_service.read_cooperation(cooperation_id)
     return admin_response('cooperation.html',
@@ -29,7 +29,7 @@ def r_cooperation(cooperation_id):
             )
 
 @adminbp.route('/cooperation/delete', methods=['POST', ])
-# @login_required
+@login_required
 def d_cooperation():
     from ...form.admin import DCooperationForm 
     form = DCooperationForm()
@@ -43,7 +43,7 @@ def d_cooperation():
     return admin_response(ret=0)
 
 @adminbp.route('/join_us/modify', methods=['GET', 'POST', ])
-# @login_required
+@login_required
 def modify_join_us_page():
     if request.method == 'GET':
         nav = nav_service.get_nav_by_meta_name('join_us')

@@ -10,7 +10,7 @@ from ...service import video_service
 from ...model.video import Video 
 
 @adminbp.route('/video')
-# @login_required
+@login_required
 def l_video():
     video_list= video_service.get_videos()
     return admin_response('video_list.html',
@@ -18,7 +18,7 @@ def l_video():
             )
 
 @adminbp.route('/video/create', methods=['POST', ])
-# @login_required
+@login_required
 def cu_video():
     from ...form.admin import CVideoForm 
     form = CVideoForm()
@@ -50,7 +50,7 @@ def cu_video():
 
 
 @adminbp.route('/video/delete', methods=['POST', ])
-# @login_required
+@login_required
 def d_video():
     from ...form.admin import DVideoForm 
     form = DVideoForm()

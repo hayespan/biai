@@ -22,8 +22,7 @@ html, body {
 .main-container,
 .footer-container {
   width: 1440px;
-  margin: 0 auto;
-  overflow: hidden; }
+  margin: 0 auto; }
 
 .header-container-purple {
   width: 100%;

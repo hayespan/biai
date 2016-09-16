@@ -11,7 +11,7 @@ from ...service import news_service
 from ...model.news_category import NewsCategory
 
 @adminbp.route('/news_category')
-# @login_required
+@login_required
 def l_news_category():
     nc_list = news_category_service.get_categories()
     return admin_response('news_category_list.html',
@@ -19,7 +19,7 @@ def l_news_category():
             )
 
 @adminbp.route('/news_category_json')
-# @login_required
+@login_required
 def l_news_category_json():
     nc_list = news_category_service.get_categories()
     ncl = []
@@ -35,7 +35,7 @@ def l_news_category_json():
 
 @adminbp.route('/news_category/create', methods=['POST', ])
 @adminbp.route('/news_category/update', methods=['POST', ])
-# @login_required
+@login_required
 def cu_news_category():
     from ...form.admin import CUNewsCategoryForm
     form = CUNewsCategoryForm()
@@ -68,7 +68,7 @@ def cu_news_category():
         return admin_response(ret=ret, id=new_id)
 
 @adminbp.route('/news_category/delete', methods=['POST', ])
-# @login_required
+@login_required
 def d_news_category():
     from ...form.admin import RDNewsCategoryForm
     form = RDNewsCategoryForm()
@@ -82,7 +82,7 @@ def d_news_category():
     return admin_response(ret=0)
 
 @adminbp.route('/news_category/<int:id_>')
-# @login_required
+@login_required
 def r_news_category(id_):
     nc = news_category_service.read_news_category(id_)
     return admin_response('news_category.html',
@@ -90,7 +90,7 @@ def r_news_category(id_):
             )
 
 @adminbp.route('/news')
-# @login_required
+@login_required
 def l_news():
     page = request.args.get('page', 1)
     n_list = news_service.get_news_list(None, page)
@@ -101,7 +101,7 @@ def l_news():
             )
 
 @adminbp.route('/news_json')
-# @login_required
+@login_required
 def l_news_json():
     news_list = news_service.get_all_news()
     nl = []
@@ -117,7 +117,7 @@ def l_news_json():
 
 @adminbp.route('/news/create', methods=['POST', ])
 @adminbp.route('/news/update', methods=['POST', ])
-# @login_required
+@login_required
 def cu_news():
     from ...form.admin import CUNewsForm
     form = CUNewsForm()
@@ -142,7 +142,7 @@ def cu_news():
         return admin_response(ret=ret, id=new_id)
 
 @adminbp.route('/news/delete', methods=['POST', ])
-# @login_required
+@login_required
 def d_news():
     from ...form.admin import RDNewsForm
     form = RDNewsForm()
@@ -156,7 +156,7 @@ def d_news():
     return admin_response(ret=0)
 
 @adminbp.route('/news/<int:id_>')
-# @login_required
+@login_required
 def r_news(id_):
     n = news_service.read_news(id_)
     return admin_response('news.html',

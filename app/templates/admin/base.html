@@ -20,7 +20,7 @@
 				{% if current_user.username %}
 					{{ current_user.username }}
 				{% else %}
-				    饭团先森
+				    登录异常
 				{% endif %}
 			</a>
 			<ul class="user-controller hidden">
@@ -30,6 +30,7 @@
 	</header>
 	<nav class="sidebar">
 		<ul>
+			<li><a class="admin" href="/admin/admin">管理员列表</a></li>
 			<li><a class="setting" href="/admin/setting">网站信息</a></li>
 			<li><a class="nav" href="/admin/nav">导航栏</a></li>
 			<li><a class="banner" href="/admin/banner">首页轮播</a></li>

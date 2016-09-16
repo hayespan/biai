@@ -128,31 +128,87 @@ main {
   .button-simple:active {
     box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); }
 
-/******************************news category******************************/
-.about-container {
+/******************************admin category******************************/
+.admin-list-container {
   position: relative;
   padding: 30px 50px; }
-  .about-container h1 {
+  .admin-list-container h1 {
     padding-bottom: 20px;
     margin-bottom: 20px;
-    padding-bottom: 20px;
     border-bottom: 1px solid #eee; }
 
-.about-content {
-  width: 980px; }
+.list-title {
+  height: 40px;
+  overflow: hidden;
+  border-bottom: 1px solid #eee; }
+  .list-title div {
+    float: left; }
 
-.form-item {
-  width: 1000px;
-  margin-top: 10px; }
-  .form-item button {
-    float: right;
-    padding: 5px 20px; }
+.title-username,
+.title-password,
+.title-realname {
+  padding-left: 20px;
+  width: 360px; }
 
-.submit-btn {
-  margin-right: 10px; }
+.admin-item {
+  overflow: hidden;
+  height: 50px;
+  padding-right: 10px;
+  border-bottom: 1px solid #ddd; }
 
-.modify-btn {
-  padding: 10px 20px;
+.admin-username,
+.admin-password,
+.admin-realname {
+  padding-left: 20px;
+  width: 360px;
+  float: left;
+  overflow: hidden; }
+  .admin-username span,
+  .admin-password span,
+  .admin-realname span {
+    box-sizing: border-box;
+    border-right: 1px solid #ddd;
+    margin: 15px 0;
+    height: 20px;
+    width: 340px;
+    float: left; }
+  .admin-username input,
+  .admin-password input,
+  .admin-realname input {
+    margin: 8px 0;
+    outline: 0;
+    float: left;
+    width: 80%;
+    height: 34px;
+    padding: 6px 12px;
+    border-radius: 4px;
+    border: 1px solid #ccc; }
+    .admin-username input:focus,
+    .admin-password input:focus,
+    .admin-realname input:focus {
+      border-color: #66afe9; }
+
+.item-controller {
+  height: 50px;
+  line-height: 50px;
+  float: right; }
+
+.admin-name {
+  color: #333; }
+
+.add-btn {
+  padding: 10px;
   position: absolute;
   right: 60px;
   top: 40px; }
+
+.delete-btn,
+.modify-btn,
+.cancel-btn,
+.submit-btn {
+  font-size: 14px;
+  padding: 5px 20px; }
+
+.submit-btn,
+.modify-btn {
+  margin-right: 10px; }

@@ -1,5 +1,8 @@
 $(document).ready(function() {
 	switch ($('title').text()) {
+		case '管理员列表':
+			$('.sidebar .admin').addClass('active');
+			break;
 		case '新闻分类管理':
 			$('.sidebar .news-category').addClass('active');
 			break;

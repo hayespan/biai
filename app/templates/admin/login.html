@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>登录</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/login_admin.css') }}">
+</head>
+<body>
+	<header>
+		<h2 class="brand-name">
+			比爱后台管理系统
+		</h2>
+	</header>
+	<main>
+		<div class="login-container">
+			<form method="POST" action="/admin/login" class="login-form">
+				<div class="form-item">
+					<label>账号</label>
+					<input name="username" id="username" type="text">
+				</div>
+				<div class="form-item">
+					<label>密码</label>
+					<input name="password" id="password" type="password">
+				</div>
+				<div class="form-item">
+					<input class="button-simple" type="submit" value="登录">
+				</div>
+			</form>
+		</div>
+	</main>
+	<script src="{{ url_for('static', filename='js/jquery-3.0.0.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/login_admin.js') }}"></script>
+</body>
+</html>

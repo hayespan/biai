@@ -8,7 +8,7 @@ from ..base_func import admin_response
 from ...util.common import logger, json_response, save_form_file, get_biai_conf, set_biai_conf
 
 @adminbp.route('/setting', methods=['GET', 'POST', ])
-# @login_required
+@login_required
 def setting():
     if request.method == 'GET':
 
