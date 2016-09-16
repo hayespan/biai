@@ -114,7 +114,7 @@
 					{% endif %}
 				</div>
 				<form action="/search" method="POST">
-					<input class="search-bar" name="key" type="text" placeholder="请输入搜索内容">
+					<input class="search-bar" name="key" type="text" placeholder="{{ _('Please input search content') }}">
 				</form>
 				{% if locale[1] == "zh_CN" %}
 					<a class="language" href="/set_locale/en_US">En</a>
@@ -138,9 +138,9 @@
 		<div class="footer-info">
 			<ul>
 				<li>{{ company_name }}</li>
-				<li>服务热线：{{ service_phone }}</li>
-				<li>地址：{{ company_location }}</li>
-				<li>备案编号{{ site_filing_num }}</li>
+				<li>{{ _('Service Hotline: ') }}{{ service_phone }}</li>
+				<li>{{ _('Address: ') }}{{ company_location }}</li>
+				<li>{{ _('ICP Licensing: ') }}{{ site_filing_num }}</li>
 <!-- 				<li>广东省汕头市澄海区岫泓玩具</li>
 				<li>服务热线：0754-86986938</li>
 				<li>地址：汕头市澄海区莱美工业区海升路2号</li>
