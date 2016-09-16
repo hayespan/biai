@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2016-09-17 00:51+0800\n"
+"POT-Creation-Date: 2016-09-17 01:30+0800\n"
 "PO-Revision-Date: 2016-09-15 21:53+0800\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh\n"
@@ -142,6 +142,12 @@ msgstr "提交"
 msgid "more"
 msgstr "查看更多"
 
+msgid "news"
+msgstr "新闻动态"
+
+msgid "product"
+msgstr "产品中心"
+
 #~ msgid "Wechat Official Account"
 #~ msgstr "微信公众号"
 
@@ -174,4 +180,10 @@ msgstr "查看更多"
 
 #~ msgid "intention"
 #~ msgstr "合作意向"
+
+#~ msgid "news"
+#~ msgstr "新闻动态"
+
+#~ msgid "product"
+#~ msgstr "产品中心"
 

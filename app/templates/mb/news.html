@@ -7,7 +7,7 @@
 {% block main %}
 	<div class="news-container">
 		<div class="news-path">
-			<a href="/news">新闻动态</a>><a href="/news/category/{{ current_category.name }}/1">{{ current_category.name }}</a>><a href="/news/{{ news.id }}">{{ news.title }}</a>
+			<a href="/news">{{ _("news") }}</a>><a href="/news/category/{{ current_category.name }}/1">{{ current_category.name }}</a>><a href="/news/{{ news.id }}">{{ news.title }}</a>
 		</div>
 		<div class="news-page-content">
 			<h3 class="news-title">{{ news.title }}</h3>
