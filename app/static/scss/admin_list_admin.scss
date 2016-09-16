@@ -36,6 +36,7 @@ header {
 	height: 60px;
 	position: absolute;
 	top: 0;
+	min-width: 1350px;
 }
 
 .brand-name {
@@ -129,9 +130,10 @@ header {
 }
 
 main {
-	float: right;
+	float: left;
 	width: 100%;
 	padding-left: 300px;
+	min-width: 1350px;
 }
 
 .hidden {
@@ -179,7 +181,7 @@ main {
 .title-password,
 .title-realname {
 	padding-left: 20px;
-	width: 360px;
+	width: 300px;
 }
 
 .admin-item {
@@ -193,7 +195,7 @@ main {
 .admin-password,
 .admin-realname {
 	padding-left: 20px;
-	width: 360px;
+	width: 300px;
 	float: left;
 	overflow: hidden;
 	span {

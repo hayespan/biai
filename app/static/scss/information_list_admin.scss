@@ -36,6 +36,7 @@ header {
 	height: 60px;
 	position: absolute;
 	top: 0;
+	min-width: 1350px;
 }
 
 .brand-name {
@@ -129,9 +130,10 @@ header {
 }
 
 main {
-	float: right;
+	float: left;
 	width: 100%;
 	padding-left: 300px;
+	min-width: 1350px;
 }
 
 .hidden {
@@ -153,6 +155,7 @@ main {
 		box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
 	}
 }
+
 
 /******************************information******************************/
 
@@ -179,7 +182,7 @@ main {
 .title-weight,
 .title-news {
 	padding-left: 20px;
-	width: 360px;
+	width: 280px;
 }
 
 .information-item {
@@ -192,7 +195,7 @@ main {
 .information-weight,
 .information-news {
 	padding-left: 20px;
-	width: 360px;
+	width: 280px;
 	float: left;
 	overflow: hidden;
 	span {
