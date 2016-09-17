@@ -1,5 +1,5 @@
 {% extends "mb/base.html" %}
-{% block title %}新闻动态{% endblock %}
+{% block title %}{{ nav_dict['news'].title }}{% endblock %}
 {% block stylesheet %}
 {{ super() }}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/news_list_mb.css') }}">

@@ -1,5 +1,5 @@
 {% extends "mb/base.html" %}
-{% block title %}加入我们{% endblock %}
+{% block title %}{{ nav_dict['join_us'].title }}{% endblock %}
 {% block stylesheet %}
 {{ super() }}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/join_us_mb.css') }}">
