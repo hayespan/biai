@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2016-09-17 11:48+0800\n"
+"POT-Creation-Date: 2016-09-17 11:53+0800\n"
 "PO-Revision-Date: 2016-09-15 21:53+0800\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh\n"
@@ -71,6 +71,16 @@ msgstr "上一页"
 #: templates/pc/product_list.html:134 templates/pc/product_list.html:136
 msgid "Next"
 msgstr "下一页"
+
+#: templates/mb/search_product_list.html:2
+#: templates/pc/search_product_list.html:2
+msgid "search results"
+msgstr "搜索结果"
+
+#: templates/mb/search_product_list.html:9
+#: templates/pc/search_product_list.html:9
+msgid "search keyword: "
+msgstr "搜索关键词："
 
 #: templates/pc/base.html:22
 msgid "微信公众号"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2016-09-17 11:48+0800\n"
+"POT-Creation-Date: 2016-09-17 11:53+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -69,6 +69,16 @@ msgstr ""
 #: templates/pc/news_list.html:75 templates/pc/news_list.html:77
 #: templates/pc/product_list.html:134 templates/pc/product_list.html:136
 msgid "Next"
+msgstr ""
+
+#: templates/mb/search_product_list.html:2
+#: templates/pc/search_product_list.html:2
+msgid "search results"
+msgstr ""
+
+#: templates/mb/search_product_list.html:9
+#: templates/pc/search_product_list.html:9
+msgid "search keyword: "
 msgstr ""
 
 #: templates/pc/base.html:22
