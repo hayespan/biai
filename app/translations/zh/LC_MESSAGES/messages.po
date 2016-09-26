@@ -19,8 +19,8 @@ msgstr ""
 "Generated-By: Babel 2.3.4\n"
 
 #: controller/pc/main.py:65
-msgid "Your captcha is %(code), valid for %(valid_delta) minutes"
-msgstr "你的验证码是%(code)，有效期是%(valid_delta)分钟"
+msgid "Your captcha is %(code)s, valid for %(valid_delta)s minutes"
+msgstr "你的验证码是%(code)s，有效期是%(valid_delta)s分钟"
 
 #: templates/mb/base.html:117 templates/pc/base.html:147
 msgid "search products"
