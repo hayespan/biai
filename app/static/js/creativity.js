@@ -111,7 +111,11 @@ $(document).ready(function() {
 		    contentType: false,
 			success : function(result) {
 				console.log(result);
-				location.reload();
+				$('#upload-hint').fadeIn(500, function() {
+					setTimeout(function() {
+						location.reload();
+					}, 1500);
+				});
 			}
 		});
 	}

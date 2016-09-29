@@ -194,3 +194,5 @@ msgstr "产品中心"
 msgid "Please input search content"
 msgstr "请输入搜索内容"
 
+msgid "upload succeed"
+msgstr "提交成功"
