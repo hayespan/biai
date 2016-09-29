@@ -68,7 +68,7 @@ $(document).ready(function() {
 
 	$('form').on('submit', function(e) {
 		e.preventDefault();
-		var valid_code = $('#valid-code').val();
+		var valid_code = $('#verify-code').val();
 		$.ajax({
 			url : '/captcha/mobile_check?f=json',
 			type : 'POST',
