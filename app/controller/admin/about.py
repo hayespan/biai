@@ -12,7 +12,7 @@ from ... import db
 from ...model.simple_nav_page import SimpleNavPage
 
 @adminbp.route('/about/modify', methods=['GET', 'POST', ])
-# @login_required
+@login_required
 def modify_about_page():
     if request.method == 'GET':
         nav = nav_service.get_nav_by_meta_name('about')
