@@ -11,8 +11,11 @@
 			</div>
 			<div class="info-block">
 				<div class="img-info">
+					{% if product.get_pics() %}
+						<img class="big" src="{{ url_for('static', filename=product.get_pics()[0]) }}" alt="big">
+					{% endif %}
 					{% for pic in product.get_pics() %}
-						<img src="{{ url_for('static', filename=pic) }}" alt="{{ index }}">
+						<img class="small" src="{{ url_for('static', filename=pic) }}" alt="{{ index }}">
 					{% endfor %}
 <!-- 					<img class="big" src="{{ url_for('static', filename='img/product/1.png') }}" alt="1">
 					<img class="small" src="{{ url_for('static', filename='img/product/2.png') }}" alt="2">
@@ -63,4 +66,8 @@
 				</div>
 			</div>
 		</div>
+{% endblock %}
+{% block script %}
+{{ super() }}
+<script src="{{ url_for('static', filename='js/product.js') }}"></script>
 {% endblock %}

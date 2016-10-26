@@ -236,14 +236,25 @@ footer {
 	height: 364px;
 	float: left;
 	margin-right: 30px;
-	img {
-		width: 86px;
-		height: 86px;
+	overflow: hidden;
+	.small {
+		width: 87px;
+		height: 87px;
 		border: 1px solid #e6e6e6;
+		cursor:pointer;
+		&:hover {
+			border-color: #a0a0a0;
+		}
 	}
-	& > img:first-child {
+	// & > img:first-child {
+	// 	width: 362px;
+	// 	height: 362px;
+	// 	float: right;
+	// }
+	.big {
 		width: 362px;
 		height: 362px;
+		border: 1px solid #e6e6e6;
 		float: right;
 	}
 }
