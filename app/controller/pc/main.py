@@ -58,13 +58,13 @@ def captcha_mobile_trigger():
                 )
     valid_delta = 5
     randi = random.randint(0, 9999)
-    code = '%04d' % randi
-    session['captcha_mobile_code'] = randi
+    code = u'%04d' % randi
+    session['captcha_mobile_code'] = code
     session['captcha_mobile_expire'] = get_now_timestamp() + valid_delta*60
     succ = send_sms(form.mobile.data,
-            gettext('Your captcha is %(code), valid for %(valid_delta) minutes', 
+            gettext(u'Your captcha is %(code)s, valid for %(valid_delta)s minutes', 
                 code=code,
-                valid_delta=valid_delta, 
+                valid_delta=str(valid_delta), 
                 )
             )
     return response(

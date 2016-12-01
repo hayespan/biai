@@ -1,5 +1,5 @@
 {% extends "mb/base.html" %}
-{% block title %}关于比爱{% endblock %}
+{% block title %}{{ nav_dict['product'].title }}{% endblock %}
 {% block stylesheet %}
 {{ super() }}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/product_mb.css') }}">
@@ -7,7 +7,7 @@
 {% block main %}
 	<div class="product-container">
 		<div class="product-path">
-			<a href="/product">产品中心</a>><a href="/product/category/{{ current_category.name }}/1">{{ current_category.name }}</a>><a href="/product/{{ product.id }}">{{ product.name }}</a>
+			<a href="/product">{{ _("product") }}</a>><a href="/product/category/{{ current_category.name }}/1">{{ current_category.name }}</a>><a href="/product/{{ product.id }}">{{ product.name }}</a>
 		</div>
 		<div class="info-block">
 			<div class="img-info">

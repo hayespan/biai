@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2016-09-17 00:51+0800\n"
+"POT-Creation-Date: 2016-09-22 02:56+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,7 +22,7 @@ msgid "Your captcha is %(code), valid for %(valid_delta) minutes"
 msgstr ""
 
 #: templates/mb/base.html:117 templates/pc/base.html:147
-msgid "Please input search content"
+msgid "search products"
 msgstr ""
 
 #: templates/mb/base.html:141 templates/pc/base.html:166
@@ -69,6 +69,16 @@ msgstr ""
 #: templates/pc/news_list.html:75 templates/pc/news_list.html:77
 #: templates/pc/product_list.html:134 templates/pc/product_list.html:136
 msgid "Next"
+msgstr ""
+
+#: templates/mb/search_product_list.html:2
+#: templates/pc/search_product_list.html:2
+msgid "search results"
+msgstr ""
+
+#: templates/mb/search_product_list.html:9
+#: templates/pc/search_product_list.html:9
+msgid "search keyword: "
 msgstr ""
 
 #: templates/pc/base.html:22

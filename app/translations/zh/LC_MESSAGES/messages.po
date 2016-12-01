@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2016-09-17 00:51+0800\n"
+"POT-Creation-Date: 2016-09-22 02:54+0800\n"
 "PO-Revision-Date: 2016-09-15 21:53+0800\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh\n"
@@ -19,12 +19,12 @@ msgstr ""
 "Generated-By: Babel 2.3.4\n"
 
 #: controller/pc/main.py:65
-msgid "Your captcha is %(code), valid for %(valid_delta) minutes"
-msgstr "你的验证码是%(code)，有效期是%(valid_delta)分钟"
+msgid "Your captcha is %(code)s, valid for %(valid_delta)s minutes"
+msgstr "你的验证码是%(code)s，有效期是%(valid_delta)s分钟"
 
 #: templates/mb/base.html:117 templates/pc/base.html:147
-msgid "Please input search content"
-msgstr "请输入搜索内容"
+msgid "search products"
+msgstr "搜索产品"
 
 #: templates/mb/base.html:141 templates/pc/base.html:166
 msgid "Service Hotline: "
@@ -71,6 +71,16 @@ msgstr "上一页"
 #: templates/pc/product_list.html:134 templates/pc/product_list.html:136
 msgid "Next"
 msgstr "下一页"
+
+#: templates/mb/search_product_list.html:2
+#: templates/pc/search_product_list.html:2
+msgid "search results"
+msgstr "搜索结果"
+
+#: templates/mb/search_product_list.html:9
+#: templates/pc/search_product_list.html:9
+msgid "search keyword: "
+msgstr "搜索关键词："
 
 #: templates/pc/base.html:22
 msgid "微信公众号"
@@ -142,36 +152,47 @@ msgstr "提交"
 msgid "more"
 msgstr "查看更多"
 
-#~ msgid "Wechat Official Account"
-#~ msgstr "微信公众号"
+msgid "Wechat Official Account"
+msgstr "微信公众号"
 
-#~ msgid "verify"
-#~ msgstr "验证码"
+msgid "verify"
+msgstr "验证码"
 
-#~ msgid "Cooperation"
-#~ msgstr "合作加盟"
+msgid "Cooperation"
+msgstr "合作加盟"
 
-#~ msgid "Recruitment"
-#~ msgstr "人才招聘"
+msgid "Recruitment"
+msgstr "人才招聘"
 
-#~ msgid "Job information"
-#~ msgstr "职位信息"
+msgid "Job information"
+msgstr "职位信息"
 
-#~ msgid "name"
-#~ msgstr "姓名"
+msgid "name"
+msgstr "姓名"
 
-#~ msgid "contact"
-#~ msgstr "联系方式"
+msgid "contact"
+msgstr "联系方式"
 
-#~ msgid "region"
-#~ msgstr "地区"
+msgid "region"
+msgstr "地区"
 
-#~ msgid "supervisor"
-#~ msgstr "店铺主管"
+msgid "supervisor"
+msgstr "店铺主管"
 
-#~ msgid "plan"
-#~ msgstr "发展计划"
+msgid "plan"
+msgstr "发展计划"
 
-#~ msgid "intention"
-#~ msgstr "合作意向"
+msgid "intention"
+msgstr "合作意向"
 
+msgid "news"
+msgstr "新闻动态"
+
+msgid "product"
+msgstr "产品中心"
+
+msgid "Please input search content"
+msgstr "请输入搜索内容"
+
+msgid "upload succeed"
+msgstr "提交成功"

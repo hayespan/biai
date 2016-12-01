@@ -1,12 +1,12 @@
 {% extends "mb/base.html" %}
-{% block title %}搜索结果{% endblock %}
+{% block title %}{{ _('search results') }}{% endblock %}
 {% block stylesheet %}
 {{ super() }}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/search_product_list_mb.css') }}">
 {% endblock %}
 {% block main %}
 	<div class="product-list-container">
-		<div class="search-info">搜索结果:{{ key }}</div>
+		<div class="search-info">{{ _('search keyword: ') }}{{ key }}</div>
 		<div class="product-list-page">
 			<div class="page-content">
 				{% for product in product_list %}

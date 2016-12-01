@@ -68,7 +68,7 @@ $(document).ready(function() {
 
 	$('form').on('submit', function(e) {
 		e.preventDefault();
-		var valid_code = $('#valid-code').val();
+		var valid_code = $('#verify-code').val();
 		$.ajax({
 			url : '/captcha/mobile_check?f=json',
 			type : 'POST',
@@ -111,7 +111,11 @@ $(document).ready(function() {
 		    contentType: false,
 			success : function(result) {
 				console.log(result);
-				location.reload();
+				$('#upload-hint').fadeIn(500, function() {
+					setTimeout(function() {
+						location.reload();
+					}, 1500);
+				});
 			}
 		});
 	}

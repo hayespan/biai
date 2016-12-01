@@ -1,5 +1,5 @@
 {% extends "mb/base.html" %}
-{% block title %}产品中心{% endblock %}
+{% block title %}{{ nav_dict['product'].title }}{% endblock %}
 {% block stylesheet %}
 {{ super() }}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/product_list_mb.css') }}">

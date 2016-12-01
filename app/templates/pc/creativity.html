@@ -2,7 +2,7 @@
 {% block head %}
 {{ super() }}
 {% endblock %}
-{% block title %}创意中心{% endblock %}
+{% block title %}{{ nav_dict['creativity'].title }}{% endblock %}
 {% block stylesheet %}
 {{ super() }}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/creativity.css') }}">
@@ -68,6 +68,7 @@
 				<input type="submit" value='{{ _("submit") }}' />
 			</div>
 		</form>
+		<div id="upload-hint" class="hidden">{{ _("upload succeed") }}</div>
 	</div>
 {% endblock %}
 {% block script %}

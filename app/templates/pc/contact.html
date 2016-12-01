@@ -1,5 +1,5 @@
 {% extends "pc/base.html" %}
-{% block title %}加入我们{% endblock %}
+{% block title %}{{ nav_dict['contact'].title }}{% endblock %}
 {% block stylesheet %}
 {{ super() }}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">

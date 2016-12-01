@@ -302,3 +302,17 @@ footer {
 
 .hidden {
   display: none; }
+
+#upload-hint {
+  width: 200px;
+  height: 80px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -40px;
+  margin-left: -100px;
+  border: 1px solid #777777;
+  text-align: center;
+  line-height: 80px;
+  background-color: #ffffff;
+  border-radius: 5px; }

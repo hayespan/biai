@@ -1,5 +1,5 @@
 {% extends "pc/base.html" %}
-{% block title %}加入我们{% endblock %}
+{% block title %}{{ nav_dict['join_us'].title }}{% endblock %}
 {% block stylesheet %}
 {{ super() }}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/join_us.css') }}">
@@ -61,6 +61,7 @@
 							<input type="submit" value='{{ _("submit") }}'/>
 						</div>
 					</form>
+					<div id="upload-hint" class="hidden">{{ _("upload succeed") }}</div>
 				</div>
 				<div class="join-recruit hidden">
 					<h1>{{ _("Job information") }}</h1>

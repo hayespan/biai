@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import logging
 from flask import Flask, request, session
 
 from flask.ext.sqlalchemy import SQLAlchemy
@@ -15,6 +16,16 @@ class App(object):
         self.app.config.from_object('config')
         self.app.config.from_pyfile('config.py')
         logger = self.app.logger
+        _format = (
+            '-' * 80 + '\n' +
+            '%(levelname)s in %(module)s [%(pathname)s:%(lineno)d]:\n' +
+            '%(message)s\n' +
+            '-' * 80
+        )
+        formatter = logging.Formatter(_format)
+        handler = logging.FileHandler('flask.log')
+        handler.setFormatter(formatter)
+        self.app.logger.addHandler(handler) 
         # config/xxx.py -- scence config
         # app.config.from_envvar('APP_CONFIG_FILE') # APP_CONFIG_FILE defined in start.sh
 

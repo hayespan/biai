@@ -109,7 +109,11 @@ $(document).ready(function() {
 					$('#valid-code').siblings('.alert-hint').text('验证码错误');
 					$('#valid-code').siblings('.alert-hint').removeClass('hidden');
 				} else {
-					location.reload();
+					$('#upload-hint').fadeIn(500, function() {
+						setTimeout(function() {
+							location.reload();
+						}, 1500);
+					});
 				}
 			}
 		});

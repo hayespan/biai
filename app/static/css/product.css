@@ -191,14 +191,19 @@ footer {
   width: 460px;
   height: 364px;
   float: left;
-  margin-right: 30px; }
-  .img-info img {
-    width: 86px;
-    height: 86px;
-    border: 1px solid #e6e6e6; }
-  .img-info > img:first-child {
+  margin-right: 30px;
+  overflow: hidden; }
+  .img-info .small {
+    width: 87px;
+    height: 87px;
+    border: 1px solid #e6e6e6;
+    cursor: pointer; }
+    .img-info .small:hover {
+      border-color: #a0a0a0; }
+  .img-info .big {
     width: 362px;
     height: 362px;
+    border: 1px solid #e6e6e6;
     float: right; }
 
 .text-info {
