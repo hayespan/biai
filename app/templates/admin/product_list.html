@@ -57,10 +57,42 @@
 				</div>
 				<div class="form-item form-attr">
 					<label>商品属性</label>
-					<div id="attrs_" class="attr-block">
-						<div class="attr-item">
+					<div id="attrs_" class="attr-block" data-min="9">
+						<div class="attr-item" style="display:none">
 							<input class="attr-name" type="text" placeholder="例如:主要材料" />
 							<input class="attr-value" type="text" placeholder="塑料、橡胶、纸" />
+						</div>
+						<div class="attr-item">
+							<input class="attr-name" type="text" value="主要材料" disabled />
+							<input class="attr-value" type="text" />
+						</div>
+						<div class="attr-item">
+							<input class="attr-name" type="text" value="装箱量" disabled />
+							<input class="attr-value" type="text" />
+						</div>
+						<div class="attr-item">
+							<input class="attr-name" type="text" value="毛/净重" disabled />
+							<input class="attr-value" type="text" />
+						</div>
+						<div class="attr-item">
+							<input class="attr-name" type="text" value="包装方式" disabled />
+							<input class="attr-value" type="text" />
+						</div>
+						<div class="attr-item">
+							<input class="attr-name" type="text" value="适合年龄" disabled />
+							<input class="attr-value" type="text" />
+						</div>
+						<div class="attr-item">
+							<input class="attr-name" type="text" value="电池类别" disabled />
+							<input class="attr-value" type="text" />
+						</div>
+						<div class="attr-item">
+							<input class="attr-name" type="text" value="外箱规格" disabled />
+							<input class="attr-value" type="text" />
+						</div>
+						<div class="attr-item">
+							<input class="attr-name" type="text" value="彩盒规格" disabled />
+							<input class="attr-value" type="text" />
 						</div>
 					</div>
 					<button class="button-simple delete-attr">删除属性</button>
@@ -68,10 +100,26 @@
 				</div>
 				<div class="form-item form-attr">
 					<label>产品属性</label>
-					<div id="oth_attrs_" class="attr-block">
-						<div class="attr-item">
+					<div id="oth_attrs_" class="attr-block" data-min="5">
+						<div class="attr-item" style="display:none">
 							<input class="attr-name" type="text" placeholder="例如:产品货号" />
 							<input class="attr-value" type="text" placeholder="BG687983" />
+						</div>
+						<div class="attr-item">
+							<input class="attr-name" type="text" value="产品货号" disabled />
+							<input class="attr-value" type="text" />
+						</div>
+						<div class="attr-item">
+							<input class="attr-name" type="text" value="产品颜色" disabled />
+							<input class="attr-value" type="text" />
+						</div>
+						<div class="attr-item">
+							<input class="attr-name" type="text" value="产品证书" disabled />
+							<input class="attr-value" type="text" />
+						</div>
+						<div class="attr-item">
+							<input class="attr-name" type="text" value="产品规格" disabled />
+							<input class="attr-value" type="text" />
 						</div>
 					</div>
 					<button class="button-simple delete-attr">删除属性</button>
