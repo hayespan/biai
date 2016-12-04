@@ -64,8 +64,8 @@ header, main {
   margin-right: 20px;
   margin-bottom: 10px; }
   .pic-item img {
-    max-width: 200px;
-    max-height: 200px; }
+    width: 200px;
+    height: 200px; }
 
 .product-form {
   width: 1142px; }
@@ -144,8 +144,8 @@ header, main {
     height: 200px;
     margin-bottom: 10px; }
   .img-item img {
-    max-width: 200px;
-    max-height: 200px; }
+    width: 200px;
+    height: 200px; }
   .img-item button {
     font-size: 12px;
     padding: 5px 10px; }

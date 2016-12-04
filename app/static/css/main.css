@@ -318,8 +318,11 @@ footer {
   float: right; }
   .video-menu .swiper-container {
     height: 229px; }
+  .video-menu .swiper-slide {
+    overflow: hidden; }
   .video-menu input {
-    width: 120px; }
+    width: 120px;
+    height: 70px; }
   .video-menu .swiper-button-prev {
     transform: rotate(90deg) scaleX(0.4);
     top: 0px;

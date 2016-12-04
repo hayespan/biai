@@ -17,32 +17,24 @@
 				<div class="title-video">视频内容</div>
 			</div>
 			<ul class="video-list">
-				<li class="video-item" style="display: none;">
+				<li class="video-item" style="display:none">
 					<div class="video-name">
-						<span class="item-display hidden"></span>
 						<input class="name item-input" type="text" placeholder="请输入视频名">
 					</div>
 					<div class="video-weight">
-						<span class="item-display hidden"></span>
 						<input class="weight item-input" type="text" placeholder="请输入视频权重">
 					</div>
 					<div class="video-img">
-						<img src="" class="item-display hidden"></img>
 						<input class="pic item-input" type="file">
 					</div>
 					<div class="video-content">
-						<video class="hidden video-js" controls preload="auto" width="260" height="200"
-						  poster="" data-setup="{}">
-						    <source src="" type='video/mp4'>
-						    <p class="vjs-no-js">
-						      To view this video please enable JavaScript, and consider upgrading to a web browser that
-						      <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
-						    </p>
-						</video>
 						<input class="video item-input" type="file">
 					</div>
+					<div class="process-bar-container hidden">
+						<div class="process-bar">0%</div>
+					</div>
 					<div class="item-controller">
-						<a data-id="" class="hidden delete-btn button-simple" href="#">删除</a>
+						<!-- <a data-id="" class="hidden delete-btn button-simple" href="#">删除</a> -->
 						<a class="submit-btn button-simple" href="#">提交</a>
 						<a class="cancel-btn button-simple" href="#">取消</a>
 					</div>

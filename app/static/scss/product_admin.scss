@@ -77,8 +77,10 @@ header, main {
 	margin-right: 20px;
 	margin-bottom: 10px;
 	img {
-		max-width: 200px;
-		max-height: 200px;
+		// max-width: 200px;
+		// max-height: 200px;
+		width: 200px;
+		height: 200px;
 	}
 }
 
@@ -177,8 +179,10 @@ header, main {
 		margin-bottom: 10px;
 	}
 	img {
-		max-width: 200px;
-		max-height: 200px;
+		// max-width: 200px;
+		// max-height: 200px;
+		width: 200px;
+		height: 200px;
 	}
 	button {
 		font-size: 12px;

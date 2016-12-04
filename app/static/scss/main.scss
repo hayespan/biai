@@ -409,8 +409,14 @@ footer {
 	.swiper-container {
 		height: 229px;
 	}
+	.swiper-slide {
+		overflow: hidden;
+	}
 	input {
 		width: 120px;
+		height: 70px;
+		// min-height: 70px;
+		// max-height: 70px;
 	}
 	.swiper-button-prev {
 		transform: rotate(90deg) scaleX(0.4);
