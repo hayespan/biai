@@ -80,7 +80,7 @@ $(document).ready(function() {
 
 	$('.delete-attr').on('click', function(e) {
 		e.preventDefault();
-		if ($(this).siblings('.attr-block').children().length > 1) {
+		if ($(this).siblings('.attr-block').children().length > $(this).siblings('.attr-block')[0].dataset.min) {
 			$(this).siblings('.attr-block').children().last().fadeOut('slow', function() {
 				this.remove();
 			});

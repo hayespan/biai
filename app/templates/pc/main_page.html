@@ -16,57 +16,61 @@
 		    <div class="swiper-button-prev swiper-button-white"></div>
 		    <div class="swiper-button-next swiper-button-white"></div>		
 		</div>
-		<div class="product-block">
-			<div class="product-header">
-				<img src="{{ url_for('static', filename='img/icon/monkey.png') }}" alt="monkey">
-				<span class="title {% if locale == 'en_US' %}title-en{% endif %}">{{ _("product category") }}</span>
-			</div>
-			<nav class="product-nav">
-				{% for product in product_category_list %}
-					<a href="/product/category/{{ product.name }}/1" class="product-nav-item" style="background-image: url('static/{{ product.get_file_path() }}')">{{ product.name }}</a>
-				{% endfor %}
-			</nav>
-		</div>
-		<div class="consult-video-block">
-			<div class="consult-block">
-				<div class="consult-header">
-					<h3>{{ _("information") }}</h3>
-					<a href="#">{{ _("more") }}>></a>
+		<div class="product-block-container">
+			<div class="product-block">
+				<div class="product-header">
+					<img src="{{ url_for('static', filename='img/icon/monkey.png') }}" alt="monkey">
+					<span class="title {% if locale == 'en_US' %}title-en{% endif %}">{{ _("product category") }}</span>
 				</div>
-				<ul class="consult-list">
-					{% for information in information_list %}
-						<li><a href="/news/{{ information.news_id }}">{{ information.title }}</a><span>{{ information.create_time.date() }}</span></li>
+				<nav class="product-nav">
+					{% for product in product_category_list %}
+						<a href="/product/category/{{ product.name }}/1" class="product-nav-item" style="background-image: url('static/{{ product.get_file_path() }}')"></a>
 					{% endfor %}
-				</ul>
-			</div>
-			<div class="video-block">
-				<div class="video-header">
-					<h3>{{ _("product video") }}</h3>
-				</div>
-				<div class="video-content">
-					{% if video_list != [] %}
-						<video id="my-video" class="video-js" controls preload="auto" width="500" height="274"
-						  poster="" data-setup="{}">
-						    <source src="{{ url_for('static', filename=video_list[0].get_file_path()) }}" type='video/mp4'>
-						    <p class="vjs-no-js">
-						      To view this video please enable JavaScript, and consider upgrading to a web browser that
-						      <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
-						    </p>
-						</video>
-					{% endif %}
-				</div>
-				<div class="video-menu">
-					<div class="swiper-container">
-						<div class="swiper-wrapper">
-							{% if video_list != [] %}
-								{% for video in video_list %}
-									<div class="swiper-slide" id="slide-{{ index }}"><input type="image" data-video="{{ video.file_id }}" src="{{ url_for('static', filename=video.get_pic_path()) }}" alt="{{ index }}"></div>
-								{% endfor %}
-							{% endif %}
-						</div>
+				</nav>
+			</div>			
+		</div>
+		<div class="consult-video-block-container">
+			<div class="consult-video-block">
+				<div class="consult-block">
+					<div class="consult-header">
+						<h3>{{ _("information") }}</h3>
+						<a href="#">{{ _("more") }}>></a>
 					</div>
-				    <div class="swiper-button-prev swiper-button-white"></div>
-				    <div class="swiper-button-next swiper-button-white"></div>
+					<ul class="consult-list">
+						{% for information in information_list %}
+							<li><a href="/news/{{ information.news_id }}">{{ information.title }}</a><span>{{ information.create_time.date() }}</span></li>
+						{% endfor %}
+					</ul>
+				</div>
+				<div class="video-block">
+					<div class="video-header">
+						<h3>{{ _("product video") }}</h3>
+					</div>
+					<div class="video-content">
+						{% if video_list != [] %}
+							<video id="my-video" class="video-js" controls preload="auto" width="500" height="274"
+							  poster="" data-setup="{}">
+							    <source src="{{ url_for('static', filename=video_list[0].get_file_path()) }}" type='video/mp4'>
+							    <p class="vjs-no-js">
+							      To view this video please enable JavaScript, and consider upgrading to a web browser that
+							      <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+							    </p>
+							</video>
+						{% endif %}
+					</div>
+					<div class="video-menu">
+						<div class="swiper-container">
+							<div class="swiper-wrapper">
+								{% if video_list != [] %}
+									{% for video in video_list %}
+										<div class="swiper-slide" id="slide-{{ index }}"><input type="image" data-video="{{ video.file_id }}" src="{{ url_for('static', filename=video.get_pic_path()) }}" alt="{{ index }}"></div>
+									{% endfor %}
+								{% endif %}
+							</div>
+						</div>
+					    <div class="swiper-button-prev swiper-button-white"></div>
+					    <div class="swiper-button-next swiper-button-white"></div>
+					</div>
 				</div>
 			</div>
 		</div>

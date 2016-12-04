@@ -87,11 +87,14 @@ $(document).ready(function() {
 		} else {
 			form_data.append('weight', $('#weight').val());
 		}
-		if ($('#img').val() == '') {
-			$('#img').siblings('.alert-hint').text('请选择分类图片');
-			$('#img').siblings('.alert-hint').removeClass('hidden');
-			return false;
-		} else {
+		// if ($('#img').val() == '') {
+		// 	$('#img').siblings('.alert-hint').text('请选择分类图片');
+		// 	$('#img').siblings('.alert-hint').removeClass('hidden');
+		// 	return false;
+		// } else {
+		// 	form_data.append('img', $('#img')[0].files[0]);
+		// }
+		if ($('#img').val() != '') {
 			form_data.append('img', $('#img')[0].files[0]);
 		}
 		return true;
