@@ -290,7 +290,11 @@ footer {
 			margin-bottom: 30px;
 		}
 		a {
-			color: #bebebe;
+			// color: #bebebe;
+			color: #000000;
+			&:hover {
+				color: #f18e43;
+			}
 		}
 		& > li:last-child {
 			margin-bottom: 0;

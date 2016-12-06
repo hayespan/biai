@@ -238,7 +238,9 @@ footer {
     .news-list-content ul li {
       margin-bottom: 30px; }
     .news-list-content ul a {
-      color: #bebebe; }
+      color: #000000; }
+      .news-list-content ul a:hover {
+        color: #f18e43; }
     .news-list-content ul > li:last-child {
       margin-bottom: 0; }
 

@@ -174,7 +174,7 @@ footer {
   width: 160px;
   padding-top: 62px;
   padding-bottom: 8px;
-  background-color: #fce9cb;
+  background-color: #f18e43;
   border-radius: 10px;
   background-image: url("../img/icon/title2.png");
   background-repeat: no-repeat;
@@ -190,13 +190,13 @@ footer {
       width: 100px;
       height: 42px;
       margin: auto;
-      border-bottom: 1px solid #e6e5f4; }
+      border-bottom: 1px solid #fcd764; }
       .product-type-nav ul li a {
-        color: #b5b4b3;
+        color: #333333;
         font-size: 14px; }
       .product-type-nav ul li .chosen {
         position: relative;
-        color: #b4b3dd;
+        color: #f18e43;
         font-size: 15px; }
         .product-type-nav ul li .chosen:after {
           font-family: FontAwesome;
@@ -212,7 +212,7 @@ footer {
 
 .product-content {
   width: 920px;
-  min-height: 1136px;
+  min-height: 1062px;
   background-color: #ffffff;
   border-radius: 6px;
   padding: 24px; }
@@ -223,7 +223,7 @@ footer {
   margin-bottom: 24px;
   padding: 10px 5px;
   width: 200px;
-  height: 254px;
+  height: 235px;
   border: 1px solid #d5d5f0;
   border-radius: 10px; }
   .product-item img {
