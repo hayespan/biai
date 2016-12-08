@@ -66,7 +66,7 @@ $(document).ready(function() {
 		});
 	});
 
-	$('form').on('submit', function(e) {
+	$('.creativity-form').on('submit', function(e) {
 		e.preventDefault();
 		var valid_code = $('#verify-code').val();
 		$.ajax({
