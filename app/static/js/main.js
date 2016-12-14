@@ -27,7 +27,11 @@ $(document).ready(function() {
 	})
 
 	$('.video-menu input').on('click', function() {
-		$('.video-content video').attr('src', '/static/video/mainpage/'+this.dataset.video);
+		if (this.dataset) {
+			$('.video-content video').attr('src', '/static/video/mainpage/'+this.dataset.video);
+		} else {
+			$('.video-content video').attr('src', '/static/video/mainpage/'+this.getAttribute('data-video'));
+		}
 	});
 });
 

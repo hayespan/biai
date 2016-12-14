@@ -3,6 +3,10 @@
 	box-sizing: inherit;
 }
 
+img {
+	border: none;
+}
+
 html, body {
 	margin: 0;
 	padding: 0;
@@ -29,7 +33,6 @@ header, main, footer {
 }
 
 main {
-	padding: 1px;
 	background-color: #d5d5f0;
 }
 
@@ -204,11 +207,18 @@ footer {
 
 /*****************************contact page*****************************/
 
+.main-container {
+	width: 100%;
+	background-color: #d5d5f0;
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+
 .contact-container {
 	padding: 60px;
 	padding-bottom: 130px;
 	width: 1102px;
-	margin: 40px auto 52px auto;
+	margin: 0px auto 52px auto;
 	background-color: #ffffff;
 	border-radius: 9px;
 	position: relative;

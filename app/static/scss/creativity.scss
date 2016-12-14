@@ -3,6 +3,10 @@
 	box-sizing: inherit;
 }
 
+img {
+	border: none;
+}
+
 html, body {
 	margin: 0;
 	padding: 0;
@@ -29,7 +33,6 @@ header, main, footer {
 }
 
 main {
-	padding: 1px;
 	background-color: #d5d5f0;
 }
 
@@ -204,11 +207,19 @@ footer {
 
 /******************************creativity page******************************/
 
+.main-container {
+	width: 100%;
+	background-color: #d5d5f0;
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+
 .creativity-container {
-	margin: 40px 169px 60px 169px;
+	margin: 0px auto 60px auto;
 	background-color: #ffffff;
 	border-radius: 10px;
 	padding: 60px;
+	width: 1102px;
 	h1 {
 		font-size: 30px;
 		color: #9193d5;

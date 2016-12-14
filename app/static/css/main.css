@@ -27,7 +27,6 @@ header, main, footer {
   background-color: #9193d5; }
 
 main {
-  padding: 1px;
   background-color: #d5d5f0; }
 
 ul {
@@ -169,7 +168,8 @@ footer {
 
 /******************************main page******************************/
 .main-container {
-  width: 100%; }
+  width: 100%;
+  background-color: #d5d5f0; }
 
 .banner-block {
   position: relative;
