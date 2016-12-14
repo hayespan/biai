@@ -6,7 +6,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<title>{% block title %}{% endblock %}</title>
 	{% block stylesheet %}
-	<link rel="stylesheet" href="{{ url_for('static', filename='css/swiper-3.3.1.min.css') }}">
+	<!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/swiper-3.3.1.min.css') }}"> -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/idangerous.swiper.css') }}">
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css') }}">
 	<link href="http://vjs.zencdn.net/5.11.6/video-js.css" rel="stylesheet">
 	{% endblock %}
@@ -177,7 +178,8 @@
 	</footer>
 	{% block script %}
 	<script src="{{ url_for('static', filename='js/jquery-3.0.0.min.js') }}"></script>
-	<script src="{{ url_for('static', filename='js/swiper-3.3.1.min.js') }}"></script>
+	<!-- <script src="{{ url_for('static', filename='js/swiper-3.3.1.min.js') }}"></script> -->
+	<script src="{{ url_for('static', filename='js/idangerous.swiper.min.js') }}"></script>
 	{% endblock %}
 </body>
 </html>

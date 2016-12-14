@@ -2,6 +2,9 @@
 * {
   box-sizing: inherit; }
 
+img {
+  border: none; }
+
 html, body {
   margin: 0;
   padding: 0;
@@ -176,6 +179,28 @@ footer {
     margin: auto; }
     .banner-block .swiper-container img {
       width: 100%; }
+  .banner-block .swiper-button-prev {
+    background: url("../img/icon/left.png");
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    width: 65px;
+    height: 100px;
+    z-index: 999;
+    transform: scaleY(1.5) translateY(-35%);
+    cursor: pointer; }
+  .banner-block .swiper-button-next {
+    background: url("../img/icon/right.png");
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    width: 65px;
+    height: 100px;
+    z-index: 999;
+    transform: scaleY(1.5) translateY(-35%);
+    cursor: pointer; }
 
 .product-block-container {
   width: 1440px;
@@ -314,33 +339,35 @@ footer {
   overflow: hidden;
   position: relative;
   height: 273px;
-  padding: 22px 0;
+  padding: 28px 0;
   float: right; }
   .video-menu .swiper-container {
-    height: 229px; }
+    height: 220px;
+    width: 120px; }
   .video-menu .swiper-slide {
     overflow: hidden; }
   .video-menu input {
     width: 120px;
     height: 70px; }
   .video-menu .swiper-button-prev {
-    transform: rotate(90deg) scaleX(0.4);
-    top: 0px;
-    left: 40px;
-    width: 40px;
-    height: 60px;
-    border-radius: 5px;
-    background-color: #ebeaf8;
-    position: absolute; }
+    top: 8px;
+    left: 32px;
+    width: 60px;
+    height: 15px;
+    background: url("../img/icon/video-button.png");
+    background-repeat: no-repeat;
+    position: absolute;
+    cursor: pointer; }
   .video-menu .swiper-button-next {
-    transform: rotate(90deg) scaleX(0.4);
-    top: 256px;
-    left: 40px;
-    width: 40px;
-    height: 60px;
-    border-radius: 5px;
-    background-color: #ebeaf8;
-    position: absolute; }
+    transform: rotate(180deg);
+    top: 250px;
+    left: 32px;
+    width: 60px;
+    height: 15px;
+    background: url("../img/icon/video-button.png");
+    background-repeat: no-repeat;
+    position: absolute;
+    cursor: pointer; }
 
 .video-list a {
   display: block;

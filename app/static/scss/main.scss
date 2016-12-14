@@ -3,6 +3,10 @@
 	box-sizing: inherit;
 }
 
+img {
+	border: none;
+}
+
 html, body {
 	margin: 0;
 	padding: 0;
@@ -211,6 +215,7 @@ footer {
 .banner-block {
 	position: relative;
 	padding-top: 40px;
+	// height: 850px;
 	.swiper-container {
 		// width: 1100px;
 		width: 100%;
@@ -219,24 +224,30 @@ footer {
 			width: 100%;
 		}
 	}
-	// .swiper-button-prev {
-	// 	top: 230px;
-	// 	left: 100px;
-	// 	width: 50px;
-	// 	height: 100px;
-	// 	border-radius: 5px;
-	// 	background-color: rgb(235,234,248);
-	// 	position: absolute;
-	// }
-	// .swiper-button-next {
-	// 	top: 230px;
-	// 	right: 100px;
-	// 	width: 50px;
-	// 	height: 100px;
-	// 	border-radius: 5px;
-	// 	background-color: rgb(235,234,248);
-	// 	position: absolute;
-	// }
+	.swiper-button-prev {
+		background: url('../img/icon/left.png');
+		background-repeat: no-repeat;
+		position: absolute;
+		left: 10px;
+		top: 50%;
+		width: 65px;
+		height: 100px;
+		z-index: 999;
+		transform: scaleY(1.5) translateY(-35%);
+		cursor: pointer;
+	}
+	.swiper-button-next {
+		background: url('../img/icon/right.png');
+		background-repeat: no-repeat;
+		position: absolute;
+		right: 10px;
+		top: 50%;
+		width: 65px;
+		height: 100px;
+		z-index: 999;
+		transform: scaleY(1.5) translateY(-35%);
+		cursor: pointer;
+	}
 }
 
 .product-block-container {
@@ -404,10 +415,11 @@ footer {
 	overflow: hidden;
 	position: relative;
 	height: 273px;
-	padding: 22px 0;
+	padding: 28px 0;
 	float: right;
 	.swiper-container {
-		height: 229px;
+		height: 220px;
+		width: 120px;
 	}
 	.swiper-slide {
 		overflow: hidden;
@@ -419,24 +431,25 @@ footer {
 		// max-height: 70px;
 	}
 	.swiper-button-prev {
-		transform: rotate(90deg) scaleX(0.4);
-		top: 0px;
-		left: 40px;
-		width: 40px;
-		height: 60px;
-		border-radius: 5px;
-		background-color: rgb(235,234,248);
+		top: 8px;
+		left: 32px;
+		width: 60px;
+		height: 15px;
+		background: url('../img/icon/video-button.png');
+		background-repeat: no-repeat;
 		position: absolute;
+		cursor: pointer;
 	}
 	.swiper-button-next {
-		transform: rotate(90deg) scaleX(0.4);
-		top: 256px;
-		left: 40px;
-		width: 40px;
-		height: 60px;
-		border-radius: 5px;
-		background-color: rgb(235,234,248);
+		transform: rotate(180deg);
+		top: 250px;
+		left: 32px;
+		width: 60px;
+		height: 15px;
+		background: url('../img/icon/video-button.png');
+		background-repeat: no-repeat;
 		position: absolute;
+		cursor: pointer;
 	}
 }
 
