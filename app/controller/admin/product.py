@@ -94,7 +94,7 @@ def r_product_category(id_):
 @adminbp.route('/product')
 @login_required
 def l_product():
-    page = request.args.get('page', 1)
+    page = int(request.args.get('page', 1))
     p_list = product_service.get_product_list(None, page)
     page_info = product_service.get_product_page_info(None, page)
     return admin_response('product_list.html',
