@@ -3,6 +3,10 @@
 	box-sizing: inherit;
 }
 
+img {
+	border: none;
+}
+
 html, body {
 	margin: 0;
 	padding: 0;
@@ -29,7 +33,6 @@ header, main, footer {
 }
 
 main {
-	padding: 1px;
 	background-color: #d5d5f0;
 }
 
@@ -204,8 +207,14 @@ footer {
 
 /******************************product page******************************/
 
+.main-container {
+	background-color: #d5d5f0;
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+
 .product-list-container {
-	margin: 40px 169px 60px 169px;
+	margin: 0px 169px 60px 169px;
 	overflow: hidden;
 }
 

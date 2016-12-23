@@ -2,6 +2,9 @@
 * {
   box-sizing: inherit; }
 
+img {
+  border: none; }
+
 html, body {
   margin: 0;
   padding: 0;
@@ -24,7 +27,6 @@ header, main, footer {
   background-color: #9193d5; }
 
 main {
-  padding: 1px;
   background-color: #d5d5f0; }
 
 ul {
@@ -165,12 +167,18 @@ footer {
       background-color: #7d7fc9; }
 
 /******************************about page******************************/
+.main-container {
+  width: 100%;
+  background-color: #d5d5f0;
+  padding-top: 40px;
+  padding-bottom: 40px; }
+
 .about-container {
   width: 1102px;
   background-color: #ffffff;
   padding: 60px 60px;
   padding-bottom: 130px;
-  margin: 40px auto 60px auto;
+  margin: 0px auto 60px auto;
   border-radius: 9px;
   position: relative; }
   .about-container h1 {

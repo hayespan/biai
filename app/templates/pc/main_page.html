@@ -65,6 +65,9 @@
 									{% for video in video_list %}
 										<div class="swiper-slide" id="slide-{{ index }}"><input type="image" data-video="{{ video.file_id }}" src="{{ url_for('static', filename=video.get_pic_path()) }}" alt="{{ index }}"></div>
 									{% endfor %}
+									{% for video in video_list %}
+										<div class="swiper-slide" id="slide-{{ index }}"><input type="image" data-video="{{ video.file_id }}" src="{{ url_for('static', filename=video.get_pic_path()) }}" alt="{{ index }}"></div>
+									{% endfor %}
 								{% endif %}
 							</div>
 						</div>

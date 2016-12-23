@@ -2,6 +2,9 @@
 * {
   box-sizing: inherit; }
 
+img {
+  border: none; }
+
 html, body {
   margin: 0;
   padding: 0;
@@ -24,7 +27,6 @@ header, main, footer {
   background-color: #9193d5; }
 
 main {
-  padding: 1px;
   background-color: #d5d5f0; }
 
 ul {
@@ -165,8 +167,13 @@ footer {
       background-color: #7d7fc9; }
 
 /******************************product page******************************/
+.main-container {
+  background-color: #d5d5f0;
+  padding-top: 40px;
+  padding-bottom: 40px; }
+
 .product-list-container {
-  margin: 40px 169px 60px 169px;
+  margin: 0px 169px 60px 169px;
   overflow: hidden; }
 
 .search-info {
