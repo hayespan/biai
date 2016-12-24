@@ -164,3 +164,40 @@
 	line-height: 34px;
 	color: #ff7676;
 }
+
+.page-nav {
+	margin-top: 20px;
+	float: right;
+	li {
+		border: 1px solid #cccccc;
+		float: left;
+		height: 32px;
+		line-height: 32px;
+		width: 32px;
+		text-align: center;
+		margin-right: 10px;
+		cursor: pointer;
+		a {
+			font-size: 14px;
+			color: #000000;
+		}
+		&:hover {
+			background-color: #e6e6e6;
+			border-color: #adadad;
+		}
+	}
+	ul > li:last-child {
+		margin-right: 0;
+	}
+	.chosen,
+	.disabled {
+		background-color: #e6e6e6;
+		&:hover {
+			border-color: #cccccc;
+		}
+	}
+}
+
+#last-page, #next-page {
+	width: 66px;
+}
