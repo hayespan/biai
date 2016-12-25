@@ -92,7 +92,7 @@ def r_news_category(id_):
 @adminbp.route('/news')
 @login_required
 def l_news():
-    page = request.args.get('page', 1)
+    page = int(request.args.get('page', 1))
     n_list = news_service.get_news_list(None, page)
     page_info = news_service.get_news_page_info(None, page)
     return admin_response('news_list.html',
