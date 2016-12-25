@@ -36,7 +36,7 @@
 					{% if page_info['cur'] == page_info['min'] %}
 						<li class="disabled" id="last-page"><a>上一页</a></li>
 					{% else %}
-						<li id="last-page"><a href="/admin/product?page={{ page_info['cur']-1 }}">上一页</a></li>
+						<li id="last-page"><a href="/admin/news?page={{ page_info['cur']-1 }}">上一页</a></li>
 					{% endif %}
 					{% if page_info['cur']-page_info['min'] > 2 %}
 						{% set min = page_info['cur'] - 2 %}
@@ -50,15 +50,15 @@
 					{% endif %}
 					{% for i in range(min, max+1) %}
 						{% if i == page_info['cur'] %}
-							<li class="chosen"><a href="/admin/product?page={{ i }}">{{ i }}</a></li>
+							<li class="chosen"><a href="/admin/news?page={{ i }}">{{ i }}</a></li>
 						{% else %}
-							<li><a href="/admin/product?page={{ i }}">{{ i }}</a></li>
+							<li><a href="/admin/news?page={{ i }}">{{ i }}</a></li>
 						{% endif %}
 					{% endfor %}
 					{% if page_info['cur'] == page_info['max'] %}
 						<li class="disabled" id="next-page"><a>下一页</a></li>
 					{% else %}
-						<li id="next-page"><a href="/admin/product?page={{ page_info['cur']+1 }}">下一页</a></li>
+						<li id="next-page"><a href="/admin/news?page={{ page_info['cur']+1 }}">下一页</a></li>
 					{% endif %}
 				</ul>
 			</div>
